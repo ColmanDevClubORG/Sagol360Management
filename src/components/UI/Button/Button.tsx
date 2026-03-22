@@ -1,12 +1,17 @@
-interface ButtonProps {
+import Button, { type ButtonProps as MuiButtonProps } from '@mui/material/Button'
+import { buttonStyles } from './styles'
+import type { SxProps, Theme } from '@mui/material/styles'
+
+interface ButtonProps extends Omit<MuiButtonProps, 'onClick' | 'style'> {
   text: string
   onClick: () => void
+  style?: SxProps<Theme>
 }
 
-export const Button = ({ text, onClick, ...props }: ButtonProps) => {
+export const SGLButton = ({ text, onClick, style, ...props }: ButtonProps) => {
   return (
-    <button onClick={onClick} {...props}>
+    <Button sx={{ ...buttonStyles, ...style }} onClick={onClick} {...props}>
       {text}
-    </button>
+    </Button>
   )
 }

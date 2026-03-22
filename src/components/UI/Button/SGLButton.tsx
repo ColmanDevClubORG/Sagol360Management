@@ -8,9 +8,15 @@ interface ButtonProps extends Omit<MuiButtonProps, 'onClick' | 'style'> {
   style?: SxProps<Theme>
 }
 
-export const SGLButton = ({ text, onClick, style, ...props }: ButtonProps) => {
+export const SGLButton = ({
+  text,
+  onClick,
+  style,
+  variant = 'contained',
+  ...props
+}: ButtonProps) => {
   return (
-    <Button sx={{ ...buttonStyles, ...style }} onClick={onClick} {...props}>
+    <Button sx={{ ...buttonStyles, ...style }} variant={variant} onClick={onClick} {...props}>
       {text}
     </Button>
   )

@@ -1,8 +1,8 @@
 export const linearProgressStyles = {
-  height: 10,
-  borderRadius: 25,
+  height: '0.6rem',
+  borderRadius: '0.3rem',
   [`& .MuiLinearProgress-bar`]: {
-    borderRadius: 25,
+    borderRadius: '0.3rem',
     backgroundColor: 'primary.main',
   },
 }

@@ -9,20 +9,20 @@ import { circularProgressStyles } from './styles'
 interface CircularProgressProps extends Omit<MuiCircularProgressProps, 'value' | 'style'> {
   value: number
   style?: SxProps<Theme>
-  trackSlot?: boolean
+  isTrackSlot?: boolean
 }
 
 export const SGLCircularProgress = ({
   value,
   style,
   variant = 'determinate',
-  trackSlot = true,
+  isTrackSlot = true,
   size = 50,
   ...props
 }: CircularProgressProps) => {
   return (
     <CircularProgress
-      enableTrackSlot={trackSlot}
+      enableTrackSlot={isTrackSlot}
       variant={variant}
       value={value}
       size={size}

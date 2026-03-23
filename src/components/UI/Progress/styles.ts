@@ -8,7 +8,6 @@ export const linearProgressStyles = {
 }
 
 export const circularProgressStyles = {
-  color: 'primary.main',
   '& .MuiCircularProgress-circle': {
     strokeLinecap: 'round',
   },

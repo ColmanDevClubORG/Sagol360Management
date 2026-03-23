@@ -1,2 +1,1 @@
-Sagol 360, enter more detailed README later on 
-
+Sagol 360, enter more detailed README later on

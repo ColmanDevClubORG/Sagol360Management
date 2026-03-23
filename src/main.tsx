@@ -4,17 +4,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import './index.css'
 import App from './App.tsx'
 
-declare module '@mui/material/styles' {
-  interface Palette {
-    purple: Palette['primary']
-    orange: Palette['primary']
-  }
-  interface PaletteOptions {
-    purple?: PaletteOptions['primary']
-    orange?: PaletteOptions['primary']
-  }
-}
-
 const theme = createTheme({
   palette: {
     error: {

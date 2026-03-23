@@ -1,5 +1,5 @@
 import Card, { type CardProps as MuiCardProps } from '@mui/material/Card'
-import { type SxProps, type Theme } from '@mui/material/styles'
+import { type SxProps, type Theme } from '@mui/material'
 import { getCardStyles, type CardVariant } from './styles'
 
 interface CardProps extends Omit<MuiCardProps, 'style' | 'sx' | 'variant'> {

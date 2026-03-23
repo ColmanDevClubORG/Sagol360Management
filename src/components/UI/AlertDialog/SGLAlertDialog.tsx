@@ -21,14 +21,14 @@ export const SGLAlertDialog = ({
   sx,
   topChildren,
   bottomChildren,
-  open,
+  open: isOpen = false,
   onClose,
   ...props
 }: SGLAlertDialogProps) => {
   return (
     <Dialog
       {...props}
-      open={open}
+      open={isOpen}
       onClose={onClose}
       sx={{
         ...dialogStyles,

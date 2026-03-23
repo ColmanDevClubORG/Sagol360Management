@@ -3,8 +3,8 @@ import { type SxProps, type Theme } from '@mui/material/styles'
 import { inputStyles } from './styles'
 
 interface InputProps extends Omit<TextFieldProps, 'style'> {
-  label: string
-  value: string
+  label?: string
+  value?: string
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   style?: SxProps<Theme>
 }
@@ -28,7 +28,7 @@ export const SGLInput = ({
       fullWidth={fullWidth}
       sx={{
         ...inputStyles,
-        ...(style as object),
+        ...style,
       }}
     />
   )

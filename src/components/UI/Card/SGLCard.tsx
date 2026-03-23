@@ -1,10 +1,17 @@
 import Card, { type CardProps as MuiCardProps } from '@mui/material/Card'
-import { getCardStyles, type CardColor } from './styles'
+import { type SxProps, type Theme } from '@mui/material/styles'
+import { getCardStyles, type CardVariant } from './styles'
 
-interface CardProps extends Omit<MuiCardProps, 'style' | 'sx'> {
-  color?: CardColor
+interface CardProps extends Omit<MuiCardProps, 'style' | 'sx' | 'variant'> {
+  variant?: CardVariant
+  style?: SxProps<Theme>
 }
 
-export const SGLCard = ({ color, ...props }: CardProps) => {
-  return <Card sx={(theme) => getCardStyles(theme, color)} {...props}></Card>
+export const SGLCard = ({ variant, style, ...props }: CardProps) => {
+  return (
+    <Card
+      sx={(theme) => ({ ...getCardStyles(theme, variant), ...(style as object) })}
+      {...props}
+    ></Card>
+  )
 }

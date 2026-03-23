@@ -1,6 +1,5 @@
 import './App.css'
 import { SGLButton } from './components/UI/Button/SGLButton'
-
 function App() {
   return (
     <>

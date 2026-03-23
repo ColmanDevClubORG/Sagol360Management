@@ -4,26 +4,27 @@ import {
   type DialogProps as MuiDialogProps,
   type SxProps,
   type Theme,
+  DialogContent,
 } from '@mui/material'
 import { dialogStyles, topBoxStyles, bottomBoxStyles } from './styles'
+import { type ReactNode } from 'react'
+import { SGLCloseIcon } from '../IconButton/SGLCloseIcon'
 
-import type { ReactNode } from 'react'
-interface AlertDialogProps extends Omit<MuiDialogProps, 'open' | 'onClose'> {
-  open: boolean
-  onClose: () => void
+interface SGLAlertDialogProps extends Omit<MuiDialogProps, 'onClose'> {
   sx?: SxProps<Theme>
   topChildren?: ReactNode
   bottomChildren?: ReactNode
+  onClose: () => void
 }
 
 export const SGLAlertDialog = ({
-  open,
-  onClose,
   sx,
   topChildren,
   bottomChildren,
+  open,
+  onClose,
   ...props
-}: AlertDialogProps) => {
+}: SGLAlertDialogProps) => {
   return (
     <Dialog
       {...props}
@@ -33,10 +34,17 @@ export const SGLAlertDialog = ({
         ...dialogStyles,
         ...sx,
       }}
+      scroll="paper"
     >
-      <Box sx={topBoxStyles}>{topChildren}</Box>
+      <SGLCloseIcon onClick={onClose} />
 
-      <Box sx={bottomBoxStyles}>{bottomChildren}</Box>
+      <Box sx={topBoxStyles}>
+        <DialogContent>{topChildren}</DialogContent>
+      </Box>
+
+      <Box sx={bottomBoxStyles}>
+        <DialogContent>{bottomChildren}</DialogContent>
+      </Box>
     </Dialog>
   )
 }

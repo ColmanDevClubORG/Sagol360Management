@@ -1,10 +1,13 @@
-export const selectStyles = {
-  backgroundColor: '#f3f4f6',
+import type { Theme } from '@mui/material/styles'
+import { alpha } from '@mui/material/styles'
+
+export const selectStyles = (theme: Theme) => ({
+  backgroundColor: theme.palette.lightGrey.main,
   '&:hover': {
-    backgroundColor: '#f3f4f6e8',
+    backgroundColor: alpha(theme.palette.lightGrey.main, 0.8),
   },
   borderRadius: '5px',
   '& .MuiSelect-select': {
     pl: 1,
   },
-}
+})

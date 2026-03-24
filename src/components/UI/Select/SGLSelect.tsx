@@ -1,7 +1,7 @@
 import Select, { type SelectProps as MuiSelectProps } from '@mui/material/Select'
 import { selectStyles } from './styles'
 import { MenuItem } from '@mui/material'
-import { type ReactElement, isValidElement } from 'react'
+import { type ReactElement } from 'react'
 
 type SelectOption = string | number | ReactElement
 
@@ -18,15 +18,11 @@ export const SGLSelect = ({ options = [], variant = 'standard', ...props }: Sele
       defaultValue={options[0]}
       {...props}
     >
-      {options.map((option, index) =>
-        isValidElement(option) ? (
-          option
-        ) : (
-          <MenuItem key={`${option}-${index}`} value={option as string}>
-            {option}
-          </MenuItem>
-        ),
-      )}
+      {options.map((option, index) => (
+        <MenuItem key={`${option}-${index}`} value={option as string}>
+          {option}
+        </MenuItem>
+      ))}
     </Select>
   )
 }

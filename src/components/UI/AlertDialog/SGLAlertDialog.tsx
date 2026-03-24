@@ -1,28 +1,21 @@
-import {
-  Dialog,
-  Box,
-  type DialogProps as MuiDialogProps,
-  type SxProps,
-  type Theme,
-  DialogContent,
-} from '@mui/material'
-import { dialogStyles, topBoxStyles, bottomBoxStyles } from './styles'
-import { type ReactNode } from 'react'
+import { type CSSProperties, type ReactNode } from 'react'
 import { SGLCloseIcon } from '../IconButton/SGLCloseIcon'
+import { Dialog, Box, type DialogProps as MuiDialogProps, DialogContent } from '@mui/material'
+import { dialogStyles, topBoxStyles, bottomBoxStyles } from './styles'
 
 interface SGLAlertDialogProps extends Omit<MuiDialogProps, 'onClose'> {
-  sx?: SxProps<Theme>
   topChildren?: ReactNode
   bottomChildren?: ReactNode
   onClose: () => void
+  styles?: CSSProperties
 }
 
 export const SGLAlertDialog = ({
-  sx,
   topChildren,
   bottomChildren,
-  open: isOpen = false,
   onClose,
+  open: isOpen = false,
+  styles,
   ...props
 }: SGLAlertDialogProps) => {
   return (
@@ -32,7 +25,7 @@ export const SGLAlertDialog = ({
       onClose={onClose}
       sx={{
         ...dialogStyles,
-        ...sx,
+        ...styles,
       }}
       scroll="paper"
     >

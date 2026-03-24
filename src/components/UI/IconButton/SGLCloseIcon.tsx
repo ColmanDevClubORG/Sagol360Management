@@ -1,16 +1,16 @@
-import type { SxProps, Theme } from '@mui/material/styles'
+import type { CSSProperties } from 'react'
 import { IconButton, type IconButtonProps as MuiIconButtonProps } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { closeIconStyles } from './styles'
 
-interface IconButtonProps extends Omit<MuiIconButtonProps, 'onClick' | 'style'> {
+interface IconButtonProps extends Omit<MuiIconButtonProps, 'onClick'> {
   onClick: () => void
-  style?: SxProps<Theme>
+  styles?: CSSProperties
 }
 
-export const SGLCloseIcon = ({ onClick, style, ...props }: IconButtonProps) => {
+export const SGLCloseIcon = ({ onClick, styles, ...props }: IconButtonProps) => {
   return (
-    <IconButton sx={{ ...style, ...closeIconStyles }} onClick={onClick} {...props}>
+    <IconButton sx={{ ...closeIconStyles, ...styles }} onClick={onClick} {...props}>
       <CloseIcon />
     </IconButton>
   )

@@ -22,7 +22,7 @@ export const SGLSelect = ({ options = [], variant = 'standard', ...props }: Sele
         isValidElement(option) ? (
           option
         ) : (
-          <MenuItem key={{ option } + '-' + { index }} value={option as string}>
+          <MenuItem key={`${option}-${index}`} value={option as string}>
             {option}
           </MenuItem>
         ),

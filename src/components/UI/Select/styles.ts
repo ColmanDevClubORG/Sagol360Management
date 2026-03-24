@@ -8,6 +8,11 @@ export const selectStyles = (theme: Theme) => ({
   },
   borderRadius: '5px',
   '& .MuiSelect-select': {
-    pl: 1,
+    textAlign: 'right',
+    paddingLeft: '24px',
+  },
+  '& .MuiSelect-icon': {
+    left: 0,
+    right: 'unset',
   },
 })

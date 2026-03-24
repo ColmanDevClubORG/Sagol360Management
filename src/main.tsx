@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.tsx'
 
 const theme = createTheme({
+  direction: 'rtl',
   palette: {
     error: {
       main: '#d32f2f',

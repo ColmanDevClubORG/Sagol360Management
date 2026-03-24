@@ -19,6 +19,9 @@ const theme = createTheme({
     orange: {
       main: '#F57C00',
     },
+    lightGrey: {
+      main: '#f3f4f6',
+    },
   },
 })
 

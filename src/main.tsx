@@ -12,6 +12,12 @@ const theme = createTheme({
     primary: {
       main: '#1976d2',
     },
+    purple: {
+      main: '#6D22AB',
+    },
+    orange: {
+      main: '#F57C00',
+    },
   },
 })
 

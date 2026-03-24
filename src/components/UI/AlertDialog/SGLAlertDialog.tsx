@@ -1,20 +1,21 @@
 import { type CSSProperties, type ReactNode } from 'react'
-import { SGLCloseIcon } from '../IconButton/SGLCloseIcon'
+import { SGLCloseIcon } from '../Icons/CloseIcon/SGLCloseIcon'
 import { Dialog, Box, type DialogProps as MuiDialogProps, DialogContent } from '@mui/material'
 import { dialogStyles, topBoxStyles, bottomBoxStyles } from './styles'
 
-interface SGLAlertDialogProps extends Omit<MuiDialogProps, 'onClose'> {
+interface SGLAlertDialogProps extends Omit<MuiDialogProps, 'onClose' | 'open'> {
   topChildren?: ReactNode
   bottomChildren?: ReactNode
   onClose: () => void
   styles?: CSSProperties
+  isOpen?: boolean
 }
 
 export const SGLAlertDialog = ({
   topChildren,
   bottomChildren,
   onClose,
-  open: isOpen = false,
+  isOpen = false,
   styles,
   ...props
 }: SGLAlertDialogProps) => {

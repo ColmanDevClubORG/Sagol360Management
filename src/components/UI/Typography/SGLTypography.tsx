@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import type { ReactNode } from 'react'
 
 const variantMap = {
   largeTitle: 'h1',
@@ -11,14 +12,13 @@ const variantMap = {
 
 interface TypographyProps {
   variant?: 'largeTitle' | 'mediumTitle' | 'smallTitle' | 'smallText' | 'mediumText' | 'largeText'
-  children: React.ReactNode
+  children: ReactNode
   color?: string
 }
 
 export const SGLTypography = ({ variant = 'largeTitle', children, color }: TypographyProps) => {
   return (
     <Typography color={color} variant={variantMap[variant]}>
-      {' '}
       {children}
     </Typography>
   )

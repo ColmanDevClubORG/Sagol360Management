@@ -9,6 +9,6 @@ declare module '@mui/material/styles' {
   interface PaletteOptions {
     purple?: PaletteOptions['primary']
     orange?: PaletteOptions['primary']
-    lightGrey: PaletteOptions['primary']
+    lightGrey?: PaletteOptions['primary']
   }
 }

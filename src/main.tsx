@@ -4,6 +4,11 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import './index.css'
 import App from './App.tsx'
 
+const textColors = {
+  black: '#000000',
+  grey: '#8F9098',
+}
+
 const theme = createTheme({
   direction: 'rtl',
   palette: {
@@ -27,31 +32,31 @@ const theme = createTheme({
     h1: {
       fontSize: '26px',
       fontWeight: 700,
-      color: '#000000',
+      color: textColors.black,
     },
     h2: {
       fontSize: '22px',
       fontWeight: 700,
-      color: '#000000',
+      color: textColors.black,
     },
     h3: {
       fontSize: '16px',
       fontWeight: 700,
-      color: '#000000',
+      color: textColors.black,
     },
     h4: {
       fontSize: '18px',
-      color: '#8F9098',
+      color: textColors.grey,
       fontWeight: 400,
     },
     h5: {
       fontSize: '16px',
-      color: '#8F9098',
+      color: textColors.grey,
       fontWeight: 400,
     },
     h6: {
       fontSize: '14px',
-      color: 'rgb(123, 123, 123)',
+      color: textColors.grey,
       fontWeight: 400,
     },
   },

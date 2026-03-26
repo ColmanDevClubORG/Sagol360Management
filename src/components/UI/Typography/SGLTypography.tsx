@@ -1,4 +1,3 @@
-import type { SGLTypographyVariantOptions } from '@/interfaces/SGLTypographyVariantOptions'
 import { Typography } from '@mui/material'
 import type { CSSProperties, ReactNode } from 'react'
 
@@ -12,7 +11,7 @@ const variantMap = {
 } as const
 
 interface TypographyProps {
-  variant?: SGLTypographyVariantOptions['variant']
+  variant?: 'largeTitle' | 'mediumTitle' | 'smallTitle' | 'smallText' | 'mediumText' | 'largeText'
   children: ReactNode
   styles?: CSSProperties
   color?: string

@@ -4,6 +4,7 @@ import { SGLSelect } from './components/UI/Select/SGLSelect'
 import { SGLCheckbox } from './components/UI/Checkbox/SGLCheckbox'
 import { SGLCard } from './components/UI/Card/SGLCard'
 import { SGLTypography } from './components/UI/Typography/SGLTypography'
+import WeekCalendar from './components/UI/Calendar/SGLCalendar'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <SGLTypography variant="mediumTitle" color="purple.main">
         התראות
       </SGLTypography>
+      <WeekCalendar />
     </>
   )
 }

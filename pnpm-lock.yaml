@@ -19,15 +19,18 @@ importers:
       '@mui/material':
         specifier: ^7.3.9
         version: 7.3.9(@emotion/react@11.14.0(@types/react@19.2.14)(react@19.2.4))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.14)(react@19.2.4))(@types/react@19.2.14)(react@19.2.4))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      i18next:
+        specifier: ^26.0.1
+        version: 26.0.1(typescript@5.9.3)
       react:
         specifier: ^19.2.0
         version: 19.2.4
       react-dom:
         specifier: ^19.2.0
         version: 19.2.4(react@19.2.4)
-      stylis-plugin-rtl:
-        specifier: ^2.1.1
-        version: 2.1.1(stylis@4.2.0)
+      react-i18next:
+        specifier: ^17.0.1
+        version: 17.0.1(i18next@26.0.1(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.1
@@ -844,7 +847,6 @@ packages:
       }
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.59.0':
     resolution:
@@ -853,7 +855,6 @@ packages:
       }
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.59.0':
     resolution:
@@ -862,7 +863,6 @@ packages:
       }
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.59.0':
     resolution:
@@ -871,7 +871,6 @@ packages:
       }
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-loong64-gnu@4.59.0':
     resolution:
@@ -880,7 +879,6 @@ packages:
       }
     cpu: [loong64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-loong64-musl@4.59.0':
     resolution:
@@ -889,7 +887,6 @@ packages:
       }
     cpu: [loong64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-ppc64-gnu@4.59.0':
     resolution:
@@ -898,7 +895,6 @@ packages:
       }
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-ppc64-musl@4.59.0':
     resolution:
@@ -907,7 +903,6 @@ packages:
       }
     cpu: [ppc64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-riscv64-gnu@4.59.0':
     resolution:
@@ -916,7 +911,6 @@ packages:
       }
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-musl@4.59.0':
     resolution:
@@ -925,7 +919,6 @@ packages:
       }
     cpu: [riscv64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-s390x-gnu@4.59.0':
     resolution:
@@ -934,7 +927,6 @@ packages:
       }
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.59.0':
     resolution:
@@ -943,7 +935,6 @@ packages:
       }
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.59.0':
     resolution:
@@ -952,7 +943,6 @@ packages:
       }
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-openbsd-x64@4.59.0':
     resolution:
@@ -1037,7 +1027,6 @@ packages:
     engines: { node: '>=10' }
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@swc/core-linux-arm64-musl@1.15.18':
     resolution:
@@ -1047,7 +1036,6 @@ packages:
     engines: { node: '>=10' }
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@swc/core-linux-x64-gnu@1.15.18':
     resolution:
@@ -1057,7 +1045,6 @@ packages:
     engines: { node: '>=10' }
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@swc/core-linux-x64-musl@1.15.18':
     resolution:
@@ -1067,7 +1054,6 @@ packages:
     engines: { node: '>=10' }
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@swc/core-win32-arm64-msvc@1.15.18':
     resolution:
@@ -1481,13 +1467,6 @@ packages:
       }
     engines: { node: '>= 8' }
 
-  cssjanus@2.3.0:
-    resolution:
-      {
-        integrity: sha512-ZZXXn51SnxRxAZ6fdY7mBDPmA4OZd83q/J9Gdqz3YmE9TUq+9tZl+tdOnCi7PpNygI6PEkehj9rgifv5+W8a5A==,
-      }
-    engines: { node: '>=10.0.0' }
-
   csstype@3.2.3:
     resolution:
       {
@@ -1847,6 +1826,12 @@ packages:
         integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==,
       }
 
+  html-parse-stringify@3.0.1:
+    resolution:
+      {
+        integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==,
+      }
+
   husky@9.1.7:
     resolution:
       {
@@ -1854,6 +1839,17 @@ packages:
       }
     engines: { node: '>=18' }
     hasBin: true
+
+  i18next@26.0.1:
+    resolution:
+      {
+        integrity: sha512-vtz5sXU4+nkCm8yEU+JJ6yYIx0mkg9e68W0G0PXpnOsmzLajNsW5o28DJMqbajxfsfq0gV3XdrBudsDQnwxfsQ==,
+      }
+    peerDependencies:
+      typescript: ^5 || ^6
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   ignore@5.3.2:
     resolution:
@@ -2249,6 +2245,25 @@ packages:
     peerDependencies:
       react: ^19.2.4
 
+  react-i18next@17.0.1:
+    resolution:
+      {
+        integrity: sha512-iG65FGnFHcYyHNuT01ukffYWCOBFTWSdVD8EZd/dCVWgtjFPObcSsvYYNwcsokO/rDcTb5d6D8Acv8MrOdm6Hw==,
+      }
+    peerDependencies:
+      i18next: '>= 26.0.1'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+      typescript: ^5 || ^6
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+      typescript:
+        optional: true
+
   react-is@16.13.1:
     resolution:
       {
@@ -2418,14 +2433,6 @@ packages:
       }
     engines: { node: '>=8' }
 
-  stylis-plugin-rtl@2.1.1:
-    resolution:
-      {
-        integrity: sha512-q6xIkri6fBufIO/sV55md2CbgS5c6gg9EhSVATtHHCdOnbN/jcI0u3lYhNVeuI65c4lQPo67g8xmq5jrREvzlg==,
-      }
-    peerDependencies:
-      stylis: 4.x
-
   stylis@4.2.0:
     resolution:
       {
@@ -2529,6 +2536,14 @@ packages:
         integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==,
       }
 
+  use-sync-external-store@1.6.0:
+    resolution:
+      {
+        integrity: sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==,
+      }
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   vite@7.3.1:
     resolution:
       {
@@ -2571,6 +2586,13 @@ packages:
         optional: true
       yaml:
         optional: true
+
+  void-elements@3.1.0:
+    resolution:
+      {
+        integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==,
+      }
+    engines: { node: '>=0.10.0' }
 
   which@2.0.2:
     resolution:
@@ -3430,8 +3452,6 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  cssjanus@2.3.0: {}
-
   csstype@3.2.3: {}
 
   debug@4.4.3:
@@ -3653,7 +3673,17 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
+  html-parse-stringify@3.0.1:
+    dependencies:
+      void-elements: 3.1.0
+
   husky@9.1.7: {}
+
+  i18next@26.0.1(typescript@5.9.3):
+    dependencies:
+      '@babel/runtime': 7.29.2
+    optionalDependencies:
+      typescript: 5.9.3
 
   ignore@5.3.2: {}
 
@@ -3853,6 +3883,17 @@ snapshots:
       react: 19.2.4
       scheduler: 0.27.0
 
+  react-i18next@17.0.1(i18next@26.0.1(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3):
+    dependencies:
+      '@babel/runtime': 7.29.2
+      html-parse-stringify: 3.0.1
+      i18next: 26.0.1(typescript@5.9.3)
+      react: 19.2.4
+      use-sync-external-store: 1.6.0(react@19.2.4)
+    optionalDependencies:
+      react-dom: 19.2.4(react@19.2.4)
+      typescript: 5.9.3
+
   react-is@16.13.1: {}
 
   react-is@19.2.4: {}
@@ -3961,11 +4002,6 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stylis-plugin-rtl@2.1.1(stylis@4.2.0):
-    dependencies:
-      cssjanus: 2.3.0
-      stylis: 4.2.0
-
   stylis@4.2.0: {}
 
   supports-color@7.2.0:
@@ -4022,6 +4058,10 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
+  use-sync-external-store@1.6.0(react@19.2.4):
+    dependencies:
+      react: 19.2.4
+
   vite@7.3.1(@types/node@24.12.0)(yaml@2.8.2):
     dependencies:
       esbuild: 0.27.3
@@ -4034,6 +4074,8 @@ snapshots:
       '@types/node': 24.12.0
       fsevents: 2.3.3
       yaml: 2.8.2
+
+  void-elements@3.1.0: {}
 
   which@2.0.2:
     dependencies:

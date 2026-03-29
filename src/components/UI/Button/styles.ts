@@ -1,23 +1,13 @@
-import type { SxProps, Theme } from '@mui/material/styles'
+import type { Theme } from '@mui/material/styles'
 
-export const buttonStyles = (
-  theme: Theme,
-  variant?: 'contained' | 'outlined',
-  color: 'primary' | 'secondary' | 'error' | 'purple' | 'orange' = 'secondary',
-  textColor: 'primary' | 'secondary' | 'error' | 'purple' | 'orange' | 'lightGrey' = 'primary',
-): SxProps<Theme> => {
-  if (variant === 'contained') {
-    return {
-      backgroundColor: theme.palette[color].main,
-      color: theme.palette[textColor].main,
-      borderRadius: '30px',
-    }
-  } else if (variant === 'outlined') {
-    return {
-      borderColor: theme.palette[color].main,
-      color: theme.palette[textColor].main,
-      borderRadius: '30px',
-    }
+export const buttonStyles = (theme: Theme) => {
+  return {
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.secondary.main,
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.background.paper,
+    },
+    borderRadius: '5px',
   }
-  return {}
 }

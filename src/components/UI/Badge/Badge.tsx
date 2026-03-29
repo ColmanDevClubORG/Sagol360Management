@@ -16,3 +16,4 @@ export const Badge: React.FC<BadgeProps> = ({ text, color = 'primary.main' }) =>
     </Box>
   )
 }
+

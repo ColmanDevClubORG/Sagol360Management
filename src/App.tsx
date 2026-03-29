@@ -5,6 +5,7 @@ import { SGLSelect } from './components/UI/Select/SGLSelect'
 import { SGLCheckbox } from './components/UI/Checkbox/SGLCheckbox'
 import { SGLCard } from './components/UI/Card/SGLCard'
 import { SGLTypography } from './components/UI/Typography/SGLTypography'
+import { SGLSlider } from './components/UI/Slider/SGLSlider'
 
 function App() {
   const { t, i18n } = useTranslation()
@@ -50,6 +51,7 @@ function App() {
       <SGLTypography variant="mediumTitle" color="purple.main">
         התראות
       </SGLTypography>
+      <SGLSlider value={7} onChange={() => {}} min={1} max={10} step={1} />
     </>
   )
 }

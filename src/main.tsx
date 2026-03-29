@@ -33,6 +33,9 @@ const theme = createTheme({
     lightGrey: {
       main: '#f3f4f6',
     },
+    mediumGrey: {
+      main: '#dfdcdc',
+    },
   },
   typography: {
     h1: {

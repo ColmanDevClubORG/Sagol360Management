@@ -11,8 +11,8 @@ export const buttonStyles = (theme: Theme) => {
       color: theme.palette.lightGrey.main,
     },
     '&.MuiButton-outlined': {
-      border: '2px solid',
-      borderColor: theme.palette.grey[300],
+      border: '1.5px solid',
+      borderColor: theme.palette.mediumGrey.main,
       color: theme.palette.text.primary,
     },
   }

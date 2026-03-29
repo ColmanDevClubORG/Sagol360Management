@@ -8,8 +8,12 @@ import { SGLTypography } from './components/UI/Typography/SGLTypography'
 function App() {
   return (
     <>
-      <SGLButton onClick={() => {}}>test</SGLButton>
-      <SGLButton onClick={() => {}}>test</SGLButton>
+      <SGLButton onClick={() => {}} variant="contained">
+        test
+      </SGLButton>
+      <SGLButton onClick={() => {}} variant="outlined">
+        test
+      </SGLButton>
       <SGLSelect options={[1, 1, 'sda']}></SGLSelect>
       <SGLCheckbox label="טקסט בדיקה" />
       <SGLCard variant="purple">

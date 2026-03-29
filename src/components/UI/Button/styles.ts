@@ -2,12 +2,18 @@ import type { Theme } from '@mui/material/styles'
 
 export const buttonStyles = (theme: Theme) => {
   return {
-    backgroundColor: theme.palette.background.paper,
-    color: theme.palette.secondary.main,
-    '&:hover': {
-      backgroundColor: theme.palette.secondary.main,
-      color: theme.palette.background.paper,
+    borderRadius: '10px',
+    fontWeight: 700,
+    fontSize: '10px',
+    padding: '0.5rem 2rem',
+    '&.MuiButton-contained': {
+      backgroundColor: theme.palette.purple.main,
+      color: theme.palette.lightGrey.main,
     },
-    borderRadius: '5px',
+    '&.MuiButton-outlined': {
+      border: '2px solid',
+      borderColor: theme.palette.grey[300],
+      color: theme.palette.text.primary,
+    },
   }
 }

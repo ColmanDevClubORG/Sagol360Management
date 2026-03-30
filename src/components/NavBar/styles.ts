@@ -47,18 +47,25 @@ export const navItems: CSSProperties = {
   paddingTop: '1rem',
 }
 
-export const navItem: CSSProperties = {
+export const navItem = {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',
   textDecoration: 'none',
   cursor: 'pointer',
   borderRadius: '0.5rem',
-  paddingRight: '1rem',
-  paddingTop: '0.5rem',
-  paddingBottom: '0.5rem',
+  pr: '1rem',
+  py: '0.5rem',
   height: '2.5rem',
-  transition: 'background-color 0.2s ease',
+  transition: 'background-color 0.2s ease, color 0.2s ease',
+  color: theme.palette.customGrey.main,
+  '&:hover': {
+    backgroundColor: theme.palette.lowOpacityPurple.main,
+    color: theme.palette.purple.main,
+    '& *': {
+      color: theme.palette.purple.main,
+    },
+  },
 }
 
 export const navItemHover: CSSProperties = {

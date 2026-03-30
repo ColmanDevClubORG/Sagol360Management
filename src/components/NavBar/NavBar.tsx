@@ -1,11 +1,12 @@
 import * as styles from './styles'
 import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { House, Calendar, Activity, ChartColumn } from 'lucide-react'
-import { useState } from 'react'
-import { theme } from '../../theme'
-import { SGLCard } from '../UI/Card/SGLCard'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import { MobileNavBar } from './MobileNavBar'
+import { Link } from 'react-router-dom'
+import { AddButton } from './AddButton'
+import Box from '@mui/material/Box'
 
 const navLinks = [
   { id: 'home', href: '/home', icon: House, key: 'nav.home' },
@@ -15,45 +16,26 @@ const navLinks = [
 ]
 
 export const NavBar = () => {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const isMobile = useIsMobile()
   const { t } = useTranslation()
 
   if (isMobile) {
-    return (
-      <nav style={styles.mobileNav}>
-        {navLinks.map(({ id, href, icon: Icon }) => (
-          <a key={id} href={href}>
-            <Icon color={theme.palette.customGrey.main} />
-          </a>
-        ))}
-      </nav>
-    )
+    return <MobileNavBar />
   }
 
   return (
     <nav style={styles.desktopNav}>
       <div style={styles.navItems}>
         {navLinks.map(({ id, href, icon: Icon, key: tKey }) => (
-          <a
-            key={id}
-            href={href}
-            style={hoveredItem === id ? styles.navItemHover : styles.navItem}
-            onMouseEnter={() => setHoveredItem(id)}
-            onMouseLeave={() => setHoveredItem(null)}
-          >
-            <Icon color={theme.palette.customGrey.main} />
+          <Box key={id} component={Link} to={href} sx={styles.navItem}>
+            <Icon />
             <SGLTypography variant="largeText">{t(tKey)}</SGLTypography>
-          </a>
+          </Box>
         ))}
       </div>
       {/*TODO: Add functionality for this card*/}
       <div style={styles.buttonsDivStyle}>
-        <SGLCard variant="purple" style={styles.buttonStyle}>
-          <SGLTypography variant="mediumTitle" color={theme.palette.background.paper}>
-            + הוסף
-          </SGLTypography>
-        </SGLCard>
+        <AddButton />
       </div>
     </nav>
   )

@@ -72,3 +72,13 @@ export const navItemHover: CSSProperties = {
   ...navItem,
   backgroundColor: theme.palette.lowOpacityPurple.main,
 }
+
+export const navItemActive = {
+  ...navItem,
+  backgroundColor: theme.palette.lowOpacityPurple.main,
+  borderRight: `3px solid ${theme.palette.purple.main}`,
+  color: theme.palette.purple.main,
+  '& *': {
+    color: theme.palette.purple.main,
+  },
+}

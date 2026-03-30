@@ -7,6 +7,7 @@ import { MobileNavBar } from './MobileNavBar'
 import { Link } from 'react-router-dom'
 import { AddButton } from './AddButton'
 import Box from '@mui/material/Box'
+import { useLocation } from 'react-router-dom'
 
 const navLinks = [
   { id: 'home', href: '/home', icon: House, key: 'nav.home' },
@@ -16,6 +17,7 @@ const navLinks = [
 ]
 
 export const NavBar = () => {
+  const location = useLocation()
   const isMobile = useIsMobile()
   const { t } = useTranslation()
 
@@ -26,12 +28,20 @@ export const NavBar = () => {
   return (
     <nav style={styles.desktopNav}>
       <div style={styles.navItems}>
-        {navLinks.map(({ id, href, icon: Icon, key: tKey }) => (
-          <Box key={id} component={Link} to={href} sx={styles.navItem}>
-            <Icon />
-            <SGLTypography variant="largeText">{t(tKey)}</SGLTypography>
-          </Box>
-        ))}
+        {navLinks.map(({ id, href, icon: Icon, key: tKey }) => {
+          const isActive = location.pathname === href
+          return (
+            <Box
+              key={id}
+              component={Link}
+              to={href}
+              sx={isActive ? styles.navItemActive : styles.navItem}
+            >
+              <Icon />
+              <SGLTypography variant="largeText">{t(tKey)}</SGLTypography>
+            </Box>
+          )
+        })}
       </div>
       {/*TODO: Add functionality for this card*/}
       <AddButton />

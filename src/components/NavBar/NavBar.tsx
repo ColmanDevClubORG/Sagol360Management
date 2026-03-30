@@ -34,9 +34,7 @@ export const NavBar = () => {
         ))}
       </div>
       {/*TODO: Add functionality for this card*/}
-      <div style={styles.buttonsDivStyle}>
-        <AddButton />
-      </div>
+      <AddButton />
     </nav>
   )
 }

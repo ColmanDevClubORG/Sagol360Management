@@ -44,6 +44,7 @@ export const navItem: CSSProperties = {
   paddingTop: '0.5rem',
   paddingBottom: '0.5rem',
   height: '2.5rem',
+  transition: 'background-color 0.2s ease',
 }
 
 export const navItemHover: CSSProperties = {

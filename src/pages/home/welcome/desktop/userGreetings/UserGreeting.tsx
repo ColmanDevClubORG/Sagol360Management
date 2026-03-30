@@ -1,7 +1,7 @@
 import { SGLAvatar } from '@/components/UI/Icons/Avatar/SGLAvatar'
-import { DoubleTypography } from '../../doubleTypography/DoubleTypography'
 import { welcomeDesktopStyles } from '../styles'
 import type { CSSProperties } from '@mui/material'
+import { SplitTitle } from '../../splitTitle/SpliteTitle'
 
 interface UserGreetingProps {
   userName: string
@@ -13,12 +13,11 @@ export const UserGreeting = ({ userName, styles }: UserGreetingProps) => {
 
   return (
     <div style={{ ...welcomeDesktopStyles.sections, ...styles }}>
-      <DoubleTypography
+      <SplitTitle
         firstChild={'good night,'}
         secondChild={`${userName} 👋`}
         firstVariant="smallText"
         secondVariant="smallTitle"
-        styles={{ gap: '4px' }}
       />
       <SGLAvatar styles={{ backgroundColor: 'purple.main' }}>{avatarText}</SGLAvatar>
     </div>

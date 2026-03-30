@@ -16,4 +16,10 @@ export const welcomeDesktopStyles = {
     justifyContent: 'center',
     gap: '0.7rem',
   },
+  fisrtChild: {
+    color: 'purple.main',
+  },
+  secondChild: {
+    color: 'orange.main',
+  },
 }

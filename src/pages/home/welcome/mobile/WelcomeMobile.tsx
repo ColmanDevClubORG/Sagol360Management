@@ -1,7 +1,7 @@
 import { SGLNotificationsBadgeIcon } from '@/components/UI/Icons/NotificationsBadge/SGLNotificationsBadgeIcon'
 import { welcomeMobileStyles } from './styles'
 import type { WelcomeProps } from '../types'
-import { DoubleTypography } from '../doubleTypography/DoubleTypography'
+import { SplitTitle } from '../splitTitle/SpliteTitle'
 
 export const WelcomeMobile = ({
   userName,
@@ -10,14 +10,14 @@ export const WelcomeMobile = ({
   styles,
 }: WelcomeProps) => {
   return (
-    <div style={{ ...welcomeMobileStyles, ...styles }}>
-      <DoubleTypography
+    <div style={{ ...welcomeMobileStyles.container, ...styles }}>
+      <SplitTitle
         firstChild="good night,"
         secondChild={userName}
         firstVariant="mediumText"
         secondVariant="largeTitle"
-        secondColor="purple.main"
-        styles={{ flexDirection: 'column', alignItems: 'flex-start' }}
+        secondStyles={welcomeMobileStyles.secondChild}
+        styles={welcomeMobileStyles.splitTitle}
       />
       <SGLNotificationsBadgeIcon notificationCount={notificationCount} onClick={onToggleDialog} />
     </div>

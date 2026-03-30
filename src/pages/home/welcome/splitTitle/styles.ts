@@ -1,4 +1,4 @@
-export const doubleTypographyStyles = {
+export const splitTitleStyles = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

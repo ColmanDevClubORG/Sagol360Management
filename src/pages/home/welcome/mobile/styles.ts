@@ -1,10 +1,19 @@
 import type { CSSProperties } from '@mui/material'
 
 export const welcomeMobileStyles = {
-  alignItems: 'center',
-  display: 'flex',
-  width: '100%',
-  justifyContent: 'space-between',
-  padding: '1rem',
-  boxSizing: 'border-box',
-} satisfies CSSProperties
+  container: {
+    alignItems: 'center',
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-between',
+    padding: '1rem',
+    boxSizing: 'border-box',
+  } satisfies CSSProperties,
+  splitTitle: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  } satisfies CSSProperties,
+  secondChild: {
+    color: 'purple.main',
+  },
+}

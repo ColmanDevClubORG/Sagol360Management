@@ -1,7 +1,7 @@
 import { SGLNotificationsBadgeIcon } from '@/components/UI/Icons/NotificationsBadge/SGLNotificationsBadgeIcon'
-import { DoubleTypography } from '../../doubleTypography/DoubleTypography'
 import { welcomeDesktopStyles } from '../styles'
 import type { CSSProperties } from 'react'
+import { SplitTitle } from '../../splitTitle/SpliteTitle'
 
 interface LogoProps {
   notificationCount: number
@@ -13,13 +13,13 @@ export const Logo = ({ notificationCount, onToggleDialog, styles }: LogoProps) =
   return (
     <div style={{ ...welcomeDesktopStyles.sections, ...styles }}>
       <SGLNotificationsBadgeIcon notificationCount={notificationCount} onClick={onToggleDialog} />
-      <DoubleTypography
+      <SplitTitle
         firstChild={'Sagol'}
         secondChild={'360'}
         firstVariant="largeTitle"
         secondVariant="largeTitle"
-        firstColor="purple.main"
-        secondColor="orange.main"
+        firstStyles={welcomeDesktopStyles.fisrtChild}
+        secondStyles={welcomeDesktopStyles.secondChild}
       />
     </div>
   )

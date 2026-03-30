@@ -1,32 +1,26 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
-import { doubleTypographyStyles } from './styles'
+import { splitTitleStyles } from './styles'
 import { useTranslation } from 'react-i18next'
-type TypographyVariant =
-  | 'largeTitle'
-  | 'mediumTitle'
-  | 'smallTitle'
-  | 'smallText'
-  | 'mediumText'
-  | 'largeText'
-interface DoubleTypographyProps {
+import type { TypographyVariant } from '@/components/UI/Typography/types'
+interface SplitTitleProps {
   firstChild: ReactNode
   secondChild: ReactNode
   firstVariant?: TypographyVariant
   secondVariant?: TypographyVariant
-  firstColor?: string
-  secondColor?: string
+  firstStyles?: CSSProperties
+  secondStyles?: CSSProperties
   styles?: CSSProperties
 }
-export const DoubleTypography = ({
+export const SplitTitle = ({
   firstChild,
   secondChild,
   firstVariant = 'mediumTitle',
   secondVariant = 'mediumTitle',
-  firstColor,
-  secondColor,
+  firstStyles,
+  secondStyles,
   styles,
-}: DoubleTypographyProps) => {
+}: SplitTitleProps) => {
   const { t, i18n } = useTranslation()
 
   const formatText = (content: ReactNode) => {
@@ -35,11 +29,11 @@ export const DoubleTypography = ({
   }
 
   return (
-    <div style={{ ...doubleTypographyStyles, ...styles }}>
-      <SGLTypography variant={firstVariant} color={firstColor}>
+    <div style={{ ...splitTitleStyles, ...styles }}>
+      <SGLTypography variant={firstVariant} styles={firstStyles}>
         {formatText(firstChild)}
       </SGLTypography>
-      <SGLTypography variant={secondVariant} color={secondColor}>
+      <SGLTypography variant={secondVariant} styles={secondStyles}>
         {formatText(secondChild)}
       </SGLTypography>
     </div>

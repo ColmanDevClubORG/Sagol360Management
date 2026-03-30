@@ -1,23 +1,17 @@
 import Button, { type ButtonProps as MuiButtonProps } from '@mui/material/Button'
 import { buttonStyles } from './styles'
-import type { SxProps, Theme } from '@mui/material/styles'
+import type { ReactNode } from 'react'
 
-interface ButtonProps extends Omit<MuiButtonProps, 'onClick' | 'style'> {
-  text: string
+interface ButtonProps extends Omit<MuiButtonProps, 'onClick' | 'style' | 'color'> {
+  children: ReactNode
   onClick: () => void
-  style?: SxProps<Theme>
+  variant?: 'contained' | 'outlined'
 }
 
-export const SGLButton = ({
-  text,
-  onClick,
-  style,
-  variant = 'contained',
-  ...props
-}: ButtonProps) => {
+export const SGLButton = ({ children, onClick, variant = 'contained', ...props }: ButtonProps) => {
   return (
-    <Button sx={{ ...buttonStyles, ...style }} variant={variant} onClick={onClick} {...props}>
-      {text}
+    <Button sx={buttonStyles} variant={variant} onClick={onClick} {...props}>
+      {children}
     </Button>
   )
 }

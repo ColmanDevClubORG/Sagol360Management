@@ -25,14 +25,18 @@ function App() {
       >
         <SGLTypography variant="largeTitle">{t('welcome')}</SGLTypography>
         <div style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
-          <SGLButton text="English" onClick={() => changeLanguage('en')} />
-          <SGLButton text="עברית" onClick={() => changeLanguage('he')} />
-          <SGLButton text="Русский" onClick={() => changeLanguage('ru')} />
-          <SGLButton text="العربية" onClick={() => changeLanguage('ar')} />
+          <SGLButton onClick={() => changeLanguage('en')}>English</SGLButton>
+          <SGLButton onClick={() => changeLanguage('he')}>"עברית</SGLButton>
+          <SGLButton onClick={() => changeLanguage('ru')}>Русский</SGLButton>
+          <SGLButton onClick={() => changeLanguage('ar')}>العربية</SGLButton>
         </div>
       </div>
-      <SGLButton text="test" onClick={() => {}} />
-      <SGLButton text="test" onClick={() => {}} />
+      <SGLButton variant="contained" onClick={() => {}}>
+        test
+      </SGLButton>
+      <SGLButton variant="outlined" onClick={() => {}}>
+        test
+      </SGLButton>
       <SGLSelect options={[1, 1, 'sda']}></SGLSelect>
       <SGLCheckbox label="טקסט בדיקה" />
       <SGLCard variant="purple">

@@ -1,5 +1,9 @@
 {
   "welcome": "Welcome to Sagol360 Management",
   "Sagol": "Sagol",
-  "good night,": "good night,"
+  "good night,": "good night,",
+  "nav.home": "Home",
+  "nav.calendar": "Schedule",
+  "nav.lifestyle": "Lifestyle",
+  "nav.metrics": "Metrics"
 }

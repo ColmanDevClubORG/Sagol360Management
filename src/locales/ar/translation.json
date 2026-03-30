@@ -1,5 +1,9 @@
 {
   "welcome": "مرحبًا بك في إدارة Sagol360",
   "Sagol": "ساجول",
-  "good night,": "تصبح على خير،"
+  "good night,": "تصبح على خير،",
+  "nav.home": "الرئيسية",
+  "nav.calendar": "الجدول الزمني",
+  "nav.lifestyle": "نمط الحياة",
+  "nav.metrics": "المقاييس"
 }

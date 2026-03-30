@@ -6,12 +6,22 @@ import { theme } from './theme.ts'
 import './index.css'
 import App from './App.tsx'
 import i18n from './i18n'
+import { MainLayout } from './layouts/mainLayout'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainLayout />,
+    children: [{ index: true, element: <App /> }],
+  },
+])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <I18nextProvider i18n={i18n}>
-        <App />
+        <RouterProvider router={router} />
       </I18nextProvider>
     </ThemeProvider>
   </StrictMode>,

@@ -1,29 +1,23 @@
 import * as styles from './styles'
 import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { House, Calendar, Activity, ChartColumn } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useMediaQuery } from '@mui/material'
 import { theme } from '../../theme'
 import { SGLCard } from '../UI/Card/SGLCard'
+import { useTranslation } from 'react-i18next'
 
-{
-  /*TODO: Add href for this navlinks*/
-}
 const navLinks = [
-  { id: 'home', href: '/', icon: House, label: 'ראשי' },
-  { id: 'calendar', href: '/', icon: Calendar, label: 'לו״ז' },
-  { id: 'lifestyle', href: '/', icon: Activity, label: 'אורח חיים' },
-  { id: 'metrics', href: '/', icon: ChartColumn, label: 'מדדים' },
+  { id: 'home', href: '/home', icon: House, key: 'nav.home' },
+  { id: 'calendar', href: '/schedule', icon: Calendar, key: 'nav.calendar' },
+  { id: 'lifestyle', href: '/lifeStyle', icon: Activity, key: 'nav.lifestyle' },
+  { id: 'metrics', href: '/dailyReports', icon: ChartColumn, key: 'nav.metrics' },
 ]
 
 export const NavBar = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const { t } = useTranslation()
 
   if (isMobile) {
     return (
@@ -40,7 +34,7 @@ export const NavBar = () => {
   return (
     <nav style={styles.desktopNav}>
       <div style={styles.navItems}>
-        {navLinks.map(({ id, href, icon: Icon, label }) => (
+        {navLinks.map(({ id, href, icon: Icon, key: tKey }) => (
           <a
             key={id}
             href={href}
@@ -49,7 +43,7 @@ export const NavBar = () => {
             onMouseLeave={() => setHoveredItem(null)}
           >
             <Icon color={theme.palette.customGrey.main} />
-            <SGLTypography variant="largeText">{label}</SGLTypography>
+            <SGLTypography variant="largeText">{t(tKey)}</SGLTypography>
           </a>
         ))}
       </div>

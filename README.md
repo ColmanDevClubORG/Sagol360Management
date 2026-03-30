@@ -1,13 +1,11 @@
 🐋 Docker Deployment - Sagol 360
 
 1. Build
-   Bash
-   docker build -t sagol360 .
+   `docker build -t sagol360 .`
 2. Run
-   Bash
-   docker run -d -p 8080:80 --name sagol360-container sagol360
+   `docker run -d -p 8080:80 --name sagol360-container sagol360`
 3. Access
-   URL: http://localhost:8080
+   URL: http://localhost:3000
 
 🛠️ Commands
 Stop: docker stop sagol360-container

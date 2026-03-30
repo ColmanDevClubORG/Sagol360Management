@@ -53,12 +53,11 @@ export const navItem = {
   gap: '0.5rem',
   textDecoration: 'none',
   cursor: 'pointer',
-  borderRadius: '0.5rem',
   pr: '1rem',
   py: '0.5rem',
   height: '2.5rem',
   transition: 'background-color 0.2s ease, color 0.2s ease',
-  color: theme.palette.customGrey.main,
+  color: theme.palette.midGrey.main,
   '&:hover': {
     backgroundColor: theme.palette.lowOpacityPurple.main,
     color: theme.palette.purple.main,

@@ -51,7 +51,7 @@ export const theme = createTheme({
     lightGrey: {
       main: '#f3f4f6',
     },
-    customGrey: {
+    midGrey: {
       main: '#8F9098',
     },
     lowOpacityPurple: {

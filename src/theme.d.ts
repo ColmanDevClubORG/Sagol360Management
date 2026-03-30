@@ -4,7 +4,7 @@ declare module '@mui/material/styles' {
     orange: Palette['primary']
     lightGrey: Palette['primary']
     mediumGrey: Palette['primary']
-    customGrey: Palette['primary']
+    midGrey: Palette['primary']
     lowOpacityPurple: Palette['primary']
   }
   interface PaletteOptions {
@@ -12,7 +12,7 @@ declare module '@mui/material/styles' {
     orange?: PaletteOptions['primary']
     lightGrey?: PaletteOptions['primary']
     mediumGrey?: PaletteOptions['primary']
-    customGrey?: PaletteOptions['primary']
+    midGrey?: PaletteOptions['primary']
     lowOpacityPurple?: PaletteOptions['primary']
   }
 }

@@ -2,10 +2,10 @@ import * as styles from './styles'
 import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { House, Calendar, Activity, ChartColumn } from 'lucide-react'
 import { useState } from 'react'
-import { useMediaQuery } from '@mui/material'
 import { theme } from '../../theme'
 import { SGLCard } from '../UI/Card/SGLCard'
 import { useTranslation } from 'react-i18next'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 const navLinks = [
   { id: 'home', href: '/home', icon: House, key: 'nav.home' },
@@ -16,7 +16,7 @@ const navLinks = [
 
 export const NavBar = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useIsMobile()
   const { t } = useTranslation()
 
   if (isMobile) {

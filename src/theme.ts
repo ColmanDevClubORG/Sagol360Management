@@ -5,8 +5,30 @@ const textColors = {
   grey: '#8F9098',
 }
 
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: false
+    sm: false
+    md: false
+    lg: false
+    xl: false
+    mobile: true
+    tablet: true
+    laptop: true
+    desktop: true
+  }
+}
+
 export const theme = createTheme({
   direction: 'rtl',
+  breakpoints: {
+    values: {
+      mobile: 425,
+      tablet: 640,
+      laptop: 1024,
+      desktop: 1200,
+    },
+  },
   palette: {
     primary: {
       main: '#1976d2',
@@ -34,6 +56,9 @@ export const theme = createTheme({
     },
     lowOpacityPurple: {
       main: '#6d22ab2c',
+    },
+    mediumGrey: {
+      main: '#dfdcdc',
     },
   },
   typography: {

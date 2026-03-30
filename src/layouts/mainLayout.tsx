@@ -1,9 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import { NavBar } from '../components/NavBar/NavBar'
-import { useMediaQuery } from '@mui/material'
-
+import { useIsMobile } from '@/hooks/useIsMobile'
 export const MainLayout = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useIsMobile()
 
   return (
     <div style={{ display: 'flex' }}>

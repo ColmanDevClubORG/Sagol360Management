@@ -19,6 +19,7 @@
     "@mui/icons-material": "7.3.9",
     "@mui/material": "^7.3.9",
     "i18next": "^26.0.1",
+    "lucide-react": "^1.7.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-i18next": "^17.0.1"

@@ -8,6 +8,7 @@ interface SGLAlertDialogProps extends Omit<MuiDialogProps, 'onClose' | 'open'> {
   bottomChildren?: ReactNode
   onClose: () => void
   styles?: CSSProperties
+  children?: ReactNode
   isOpen?: boolean
 }
 
@@ -17,6 +18,7 @@ export const SGLAlertDialog = ({
   onClose,
   isOpen = false,
   styles,
+  children,
   ...props
 }: SGLAlertDialogProps) => {
   return (
@@ -35,7 +37,7 @@ export const SGLAlertDialog = ({
       <Box sx={topBoxStyles}>
         <DialogContent>{topChildren}</DialogContent>
       </Box>
-
+      {children}
       <Box sx={bottomBoxStyles}>
         <DialogContent>{bottomChildren}</DialogContent>
       </Box>

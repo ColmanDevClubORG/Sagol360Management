@@ -1,4 +1,5 @@
 import './App.css'
+import { useTranslation } from 'react-i18next'
 import { SGLButton } from './components/UI/Button/SGLButton'
 import { SGLSelect } from './components/UI/Select/SGLSelect'
 import { SGLCheckbox } from './components/UI/Checkbox/SGLCheckbox'
@@ -6,12 +7,34 @@ import { SGLCard } from './components/UI/Card/SGLCard'
 import { SGLTypography } from './components/UI/Typography/SGLTypography'
 
 function App() {
+  const { t, i18n } = useTranslation()
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng)
+  }
+
   return (
     <>
-      <SGLButton onClick={() => {}} variant="contained">
+      <div
+        style={{
+          marginBottom: '24px',
+          padding: '16px',
+          border: '1px solid #ddd',
+          borderRadius: '8px',
+        }}
+      >
+        <SGLTypography variant="largeTitle">{t('welcome')}</SGLTypography>
+        <div style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
+          <SGLButton onClick={() => changeLanguage('en')}>English</SGLButton>
+          <SGLButton onClick={() => changeLanguage('he')}>"עברית</SGLButton>
+          <SGLButton onClick={() => changeLanguage('ru')}>Русский</SGLButton>
+          <SGLButton onClick={() => changeLanguage('ar')}>العربية</SGLButton>
+        </div>
+      </div>
+      <SGLButton variant="contained" onClick={() => {}}>
         test
       </SGLButton>
-      <SGLButton onClick={() => {}} variant="outlined">
+      <SGLButton variant="outlined" onClick={() => {}}>
         test
       </SGLButton>
       <SGLSelect options={[1, 1, 'sda']}></SGLSelect>

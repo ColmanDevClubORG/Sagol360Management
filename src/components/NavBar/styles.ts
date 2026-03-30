@@ -5,13 +5,11 @@ export const desktopNav: CSSProperties = {
   position: 'fixed',
   top: 0,
   right: 0,
-  minHeight: '49rem',
-  width: '15rem',
+  height: '100%',
+  width: '20%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  paddingTop: '2rem',
-  paddingBottom: '6rem',
   backgroundColor: theme.palette.lightGrey.main,
   //TODO: waiting fo the devider to be complete to add one
 }
@@ -25,12 +23,28 @@ export const buttonStyle: CSSProperties = {
   alignItems: 'center',
   height: '2.5rem',
 }
+export const buttonsDivStyle: CSSProperties = {
+  paddingBottom: '1rem',
+  display: 'flex',
+  justifyContent: 'center',
+}
 
-export const mobileNav: CSSProperties = {}
+export const mobileNav: CSSProperties = {
+  position: 'fixed',
+  bottom: 0,
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  backgroundColor: theme.palette.lightGrey.main,
+  width: '100%',
+  height: '10%',
+}
 
 export const navItems: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
+  paddingTop: '1rem',
 }
 
 export const navItem: CSSProperties = {

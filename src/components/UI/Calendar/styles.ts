@@ -1,25 +1,39 @@
-import type { Theme } from '@mui/material/styles'
+import type { DayStylesProps } from './types'
+import { alpha } from '@mui/material/styles'
 
-type DayStylesProps = {
-  isSelected: boolean
-  isToday: boolean
-  theme: Theme
+export const getDayStyles = ({
+  isSelected,
+  isToday,
+  theme,
+  variant = 'purple',
+}: DayStylesProps) => {
+  const color = theme.palette[variant].main
+
+  return {
+    cursor: 'pointer',
+    borderRadius: '0.5rem',
+    padding: '0.75rem',
+    transition: '0.2s',
+
+    backgroundColor: isSelected ? color : isToday ? alpha(color, 0.2) : 'transparent',
+  }
+}
+export const calendarGridStyles = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(7, minmax(0, 1fr))',
+  gap: { xs: '0.25rem', sm: '0.5rem' },
+  textAlign: 'center',
+  width: '100%',
 }
 
-export const paperStyles = {
-  p: 2,
-  borderRadius: 4,
-  maxWidth: 520,
-  backgroundColor: 'white',
+export const weekDayTextStyles = {
+  fontSize: '0.8rem',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 }
-export const getDayStyles = ({ isSelected, isToday, theme }: DayStylesProps) => ({
-  cursor: 'pointer',
-  borderRadius: 3,
-  p: 1.2,
-  transition: '0.2s',
-  backgroundColor: isSelected
-    ? theme.palette.purple.main
-    : isToday
-      ? theme.palette.lightGrey.main
-      : 'transparent',
-})
+export const dayNumberTextStyles = {
+  fontWeight: 700,
+  fontSize: '0.8rem',
+  lineHeight: 1.1,
+}

@@ -1,7 +1,7 @@
 import { alpha } from '@mui/material/styles'
 import { type Theme } from '@mui/material'
 
-export type CardVariant = 'purple' | 'orange'
+export type CardVariant = 'purple' | 'orange' | 'lightGrey'
 
 export const getCardStyles = (theme: Theme, variant: CardVariant = 'purple') => {
   const color = theme.palette[variant].main

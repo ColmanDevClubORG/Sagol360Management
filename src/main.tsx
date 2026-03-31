@@ -57,7 +57,7 @@ const theme = createTheme({
       main: '#f3f4f6',
     },
     mediumGrey: {
-      main: '#dfdcdc',
+      main: '#bfbfcf',
     },
     success: {
       main: '#4CAF50',

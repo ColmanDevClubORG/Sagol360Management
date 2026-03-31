@@ -1,5 +1,10 @@
 {
   "welcome": "Добро пожаловать в управление Sagol360",
   "Sagol": "Саголь",
-  "good night,": "Спокойной ночи,"
+  "good night,": "Спокойной ночи,",
+  "nav.home": "Главная",
+  "nav.calendar": "Расписание",
+  "nav.lifestyle": "Образ жизни",
+  "nav.metrics": "Метрики",
+  "nav.add": "+ Добавить"
 }

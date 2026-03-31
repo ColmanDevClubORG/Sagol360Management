@@ -1,5 +1,10 @@
 {
   "welcome": "ברוכים הבאים לניהול סגול 360",
   "Sagol": "סגול",
-  "good night,": "לילה טוב,"
+  "good night,": "לילה טוב,",
+  "nav.home": "ראשי",
+  "nav.calendar": "לו״ז",
+  "nav.lifestyle": "אורח חיים",
+  "nav.metrics": "מדדים",
+  "nav.add": "+ הוסף"
 }

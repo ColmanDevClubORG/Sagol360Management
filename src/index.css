@@ -1,4 +1,5 @@
 :root {
+  box-sizing: border-box;
   font-family:
     system-ui,
     -apple-system,
@@ -16,13 +17,16 @@
 
 body {
   margin: 0;
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 h1 {
   font-size: 3rem;
   letter-spacing: 0.03em;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }

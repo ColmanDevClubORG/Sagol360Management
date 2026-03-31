@@ -1,5 +1,5 @@
-import { alpha } from '@mui/material/styles'
 import { type Theme } from '@mui/material'
+import { lighten } from '@mui/material/styles'
 
 export type CardVariant = 'purple' | 'orange' | 'lightGrey'
 
@@ -8,6 +8,6 @@ export const getCardStyles = (theme: Theme, variant: CardVariant = 'purple') => 
 
   return {
     borderRadius: '10px',
-    background: `linear-gradient(135deg, ${alpha(color, 0.5)} 0%, ${color} 60%)`,
+    background: `linear-gradient(135deg, ${lighten(color, 0.2)} 0%, ${color} 70%)`,
   }
 }

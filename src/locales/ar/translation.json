@@ -9,5 +9,6 @@
   "nav.add": "+ إضافة",
   "progress.protocol": "بروتوكول 60",
   "progress.treatment": "علاج الغرفة الضغطية",
-  "progress.wellDone": "أحسنت على المثابرة!"
+  "progress.wellDone": "أحسنت على المثابرة!",
+  "progress.outOf": "من 60"
 }

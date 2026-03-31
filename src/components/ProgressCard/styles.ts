@@ -1,5 +1,6 @@
 import type { CSSProperties } from '@mui/material'
 import { theme } from '../../theme'
+import { alpha } from '@mui/material/styles'
 
 export const mobileCardStyle: CSSProperties = {
   display: 'flex',
@@ -31,6 +32,11 @@ export const circularProgress: CSSProperties = {
 
 export const purpleText: CSSProperties = {
   color: theme.palette.purple.main,
+  lineHeight: 1,
+}
+
+export const progressLabelText: CSSProperties = {
+  lineHeight: 1,
 }
 
 export const progressDiv: CSSProperties = {
@@ -38,4 +44,25 @@ export const progressDiv: CSSProperties = {
   justifyContent: 'center',
   flexDirection: 'column',
   alignItems: 'center',
+  lineHeight: 0.5,
+}
+
+export const desktopText: CSSProperties = {
+  color: theme.palette.background.paper,
+}
+
+export const desktopWellDoneText: CSSProperties = {
+  ...wellDoneText,
+  color: theme.palette.background.paper,
+  backgroundColor: alpha(theme.palette.background.paper, 0.25),
+}
+
+export const desktopCircularProgress: CSSProperties = {
+  ...circularProgress,
+  color: theme.palette.background.paper,
+}
+
+export const whiteText: CSSProperties = {
+  color: theme.palette.background.paper,
+  lineHeight: 1,
 }

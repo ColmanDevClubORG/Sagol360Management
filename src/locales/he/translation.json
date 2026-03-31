@@ -9,5 +9,6 @@
   "nav.add": "+ הוסף",
   "progress.protocol": "פרוטוקול 60",
   "progress.treatment": "טיפול בתא לחץ",
-  "progress.wellDone": "כל הכבוד על ההתמדה!"
+  "progress.wellDone": "כל הכבוד על ההתמדה!",
+  "progress.outOf": "מתוך 60"
 }

@@ -8,28 +8,33 @@ interface ProgressProps {
   value: number
 }
 
-export const MobileProgressCard = ({ value }: ProgressProps) => {
+export const DesktopProgressCard = ({ value }: ProgressProps) => {
   const { t } = useTranslation()
+
   return (
-    <SGLCard variant="white" style={styles.mobileCardStyle}>
+    <SGLCard variant="purple" style={styles.mobileCardStyle}>
       <div style={styles.textDiv}>
-        <SGLTypography variant="mediumTitle">{t('progress.protocol')}</SGLTypography>
-        <SGLTypography variant="mediumText">{t('progress.treatment')}</SGLTypography>
-        <SGLTypography variant="smallTitle" styles={styles.wellDoneText}>
+        <SGLTypography variant="mediumTitle" styles={styles.desktopText}>
+          {t('progress.protocol')}
+        </SGLTypography>
+        <SGLTypography variant="mediumText" styles={styles.desktopText}>
+          {t('progress.treatment')}
+        </SGLTypography>
+        <SGLTypography variant="smallTitle" styles={styles.desktopWellDoneText}>
           {t('progress.wellDone')}
         </SGLTypography>
       </div>
 
       <SGLCircularProgress
         value={value}
-        style={styles.circularProgress}
+        style={styles.desktopCircularProgress}
         size={75}
         label={
           <div style={styles.progressDiv}>
-            <SGLTypography variant="mediumTitle" styles={styles.purpleText}>
+            <SGLTypography variant="mediumTitle" styles={styles.whiteText}>
               {value}
             </SGLTypography>
-            <SGLTypography variant="smallText" styles={styles.progressLabelText}>
+            <SGLTypography variant="smallText" styles={styles.whiteText}>
               {t('progress.outOf')}
             </SGLTypography>
           </div>

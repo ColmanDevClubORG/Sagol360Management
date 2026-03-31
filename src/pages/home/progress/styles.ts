@@ -1,5 +1,5 @@
 import type { CSSProperties } from '@mui/material'
-import { theme } from '../../theme'
+import { theme } from '../../../theme'
 import { alpha } from '@mui/material/styles'
 
 export const mobileCardStyle: CSSProperties = {
@@ -10,7 +10,7 @@ export const mobileCardStyle: CSSProperties = {
   alignItems: 'center',
 }
 
-export const textDiv: CSSProperties = {
+export const protocol60TextDiv: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
 }

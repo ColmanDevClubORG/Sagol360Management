@@ -1,8 +1,8 @@
 import * as styles from './styles'
-import { SGLCard } from '../UI/Card/SGLCard'
-import { SGLTypography } from '../UI/Typography/SGLTypography'
+import { SGLCard } from '../../../components/UI/Card/SGLCard'
+import { SGLTypography } from '../../../components/UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
-import { SGLCircularProgress } from '../UI/Progress/SGLCircularProgress'
+import { SGLCircularProgress } from '../../../components/UI/Progress/SGLCircularProgress'
 
 interface ProgressProps {
   value: number
@@ -12,7 +12,7 @@ export const MobileProgressCard = ({ value }: ProgressProps) => {
   const { t } = useTranslation()
   return (
     <SGLCard variant="white" style={styles.mobileCardStyle}>
-      <div style={styles.textDiv}>
+      <div style={styles.protocol60TextDiv}>
         <SGLTypography variant="mediumTitle">{t('progress.protocol')}</SGLTypography>
         <SGLTypography variant="mediumText">{t('progress.treatment')}</SGLTypography>
         <SGLTypography variant="smallTitle" styles={styles.wellDoneText}>

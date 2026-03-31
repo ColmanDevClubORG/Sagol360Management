@@ -1,9 +1,8 @@
-import { ProgressCard } from '@/components/ProgressCard/ProgressCard'
+import { ProgressCard } from '@/pages/home/progress/ProgressCard'
 
 export const Home = () => {
   return (
     <>
-      <div>Home Page</div>
       <ProgressCard value={10}></ProgressCard>
     </>
   )

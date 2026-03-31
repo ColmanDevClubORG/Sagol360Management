@@ -11,10 +11,9 @@ export const getCardStyles = (theme: Theme, variant: CardVariant = 'purple') => 
       borderRadius: '10px',
       background: `linear-gradient(135deg, ${lighten(color, 0.2)} 0%, ${color} 70%)`,
     }
-  } else {
-    return {
-      borderRadius: '10px',
-      background: theme.palette.background.paper,
-    }
+  }
+  return {
+    borderRadius: '10px',
+    background: theme.palette.background.paper,
   }
 }

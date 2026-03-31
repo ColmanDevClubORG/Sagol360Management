@@ -15,7 +15,7 @@ export const protocol60TextDiv: CSSProperties = {
   flexDirection: 'column',
 }
 
-export const wellDoneText: CSSProperties = {
+const wellDoneText: CSSProperties = {
   color: theme.palette.purple.main,
   backgroundColor: theme.palette.lowOpacityPurple.main,
   borderRadius: '0.8rem',
@@ -26,16 +26,16 @@ export const wellDoneText: CSSProperties = {
   marginTop: '1rem',
 }
 
-export const circularProgress: CSSProperties = {
+const circularProgress: CSSProperties = {
   color: theme.palette.purple.main,
 }
 
-export const purpleText: CSSProperties = {
+const purpleText: CSSProperties = {
   color: theme.palette.purple.main,
   lineHeight: 1,
 }
 
-export const progressLabelText: CSSProperties = {
+const progressLabelText: CSSProperties = {
   lineHeight: 1,
 }
 
@@ -47,22 +47,41 @@ export const progressDiv: CSSProperties = {
   lineHeight: 0.5,
 }
 
-export const desktopText: CSSProperties = {
+const desktopText: CSSProperties = {
   color: theme.palette.background.paper,
 }
 
-export const desktopWellDoneText: CSSProperties = {
+const desktopWellDoneText: CSSProperties = {
   ...wellDoneText,
   color: theme.palette.background.paper,
   backgroundColor: alpha(theme.palette.background.paper, 0.25),
 }
 
-export const desktopCircularProgress: CSSProperties = {
+const desktopCircularProgress: CSSProperties = {
   ...circularProgress,
   color: theme.palette.background.paper,
 }
 
-export const whiteText: CSSProperties = {
+const whiteText: CSSProperties = {
   color: theme.palette.background.paper,
   lineHeight: 1,
+}
+
+export const variantStyles = {
+  mobile: {
+    card: 'white' as const,
+    text: undefined,
+    wellDone: wellDoneText,
+    progress: circularProgress,
+    valueText: purpleText,
+    labelText: progressLabelText,
+  },
+  desktop: {
+    card: 'purple' as const,
+    text: desktopText,
+    wellDone: desktopWellDoneText,
+    progress: desktopCircularProgress,
+    valueText: whiteText,
+    labelText: whiteText,
+  },
 }

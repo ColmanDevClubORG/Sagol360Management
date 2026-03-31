@@ -1,12 +1,11 @@
 import { type ReactNode } from 'react'
 import {
   CircularProgress,
-  Box,
-  Typography,
   type SxProps,
   type Theme,
   type CircularProgressProps as MuiCircularProgressProps,
 } from '@mui/material'
+import { SGLTypography } from '../Typography/SGLTypography'
 import {
   circularProgressStyles,
   circularProgressWrapperStyles,
@@ -30,7 +29,7 @@ export const SGLCircularProgress = ({
   ...props
 }: CircularProgressProps) => {
   return (
-    <Box sx={circularProgressWrapperStyles}>
+    <div style={circularProgressWrapperStyles}>
       <CircularProgress
         enableTrackSlot={isTrackSlot}
         variant={variant}
@@ -40,12 +39,10 @@ export const SGLCircularProgress = ({
         {...props}
       />
       {label && (
-        <Box sx={circularProgressLabelStyles}>
-          <Typography variant="caption" component="div">
-            {label}
-          </Typography>
-        </Box>
+        <div style={circularProgressLabelStyles}>
+          <SGLTypography variant="mediumTitle">{label}</SGLTypography>
+        </div>
       )}
-    </Box>
+    </div>
   )
 }

@@ -1,3 +1,5 @@
+import type { CSSProperties } from '@mui/material'
+
 export const linearProgressStyles = {
   height: '0.6rem',
   borderRadius: '0.3rem',
@@ -13,12 +15,12 @@ export const circularProgressStyles = {
   },
 }
 
-export const circularProgressWrapperStyles = {
+export const circularProgressWrapperStyles: CSSProperties = {
   position: 'relative',
   display: 'inline-flex',
 }
 
-export const circularProgressLabelStyles = {
+export const circularProgressLabelStyles: CSSProperties = {
   top: 0,
   left: 0,
   bottom: 0,

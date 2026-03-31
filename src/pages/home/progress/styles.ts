@@ -2,7 +2,7 @@ import type { CSSProperties } from '@mui/material'
 import { theme } from '../../../theme'
 import { alpha } from '@mui/material/styles'
 
-export const mobileCardStyle: CSSProperties = {
+export const cardStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',

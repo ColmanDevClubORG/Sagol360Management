@@ -6,5 +6,9 @@
   "nav.calendar": "الجدول الزمني",
   "nav.lifestyle": "نمط الحياة",
   "nav.metrics": "المقاييس",
-  "nav.add": "+ إضافة"
+  "nav.add": "+ إضافة",
+  "progress.protocol": "بروتوكول 60",
+  "progress.treatment": "علاج الغرفة الضغطية",
+  "progress.wellDone": "أحسنت على المثابرة!",
+  "progress.outOf": "من 60"
 }

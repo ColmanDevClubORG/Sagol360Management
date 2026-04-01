@@ -6,5 +6,9 @@
   "nav.calendar": "לו״ז",
   "nav.lifestyle": "אורח חיים",
   "nav.metrics": "מדדים",
-  "nav.add": "+ הוסף"
+  "nav.add": "+ הוסף",
+  "progress.protocol": "פרוטוקול 60",
+  "progress.treatment": "טיפול בתא לחץ",
+  "progress.wellDone": "כל הכבוד על ההתמדה!",
+  "progress.outOf": "מתוך 60"
 }

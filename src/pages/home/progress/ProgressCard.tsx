@@ -17,7 +17,7 @@ export const ProgressCard = ({ value }: ProgressCardProps) => {
 
   return (
     <SGLCard variant={specificVariantStyle.card} style={styles.cardStyle}>
-      <ProgressCardText s={specificVariantStyle} />
+      <ProgressCardText style={specificVariantStyle} />
 
       <SGLCircularProgress
         value={value}

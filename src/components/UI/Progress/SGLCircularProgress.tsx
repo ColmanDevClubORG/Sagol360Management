@@ -39,9 +39,9 @@ export const SGLCircularProgress = ({
         {...props}
       />
       {label && (
-        <div style={circularProgressLabelStyles}>
-          <SGLTypography variant="mediumTitle">{label}</SGLTypography>
-        </div>
+        <SGLTypography variant="mediumTitle" styles={circularProgressLabelStyles}>
+          {label}
+        </SGLTypography>
       )}
     </div>
   )

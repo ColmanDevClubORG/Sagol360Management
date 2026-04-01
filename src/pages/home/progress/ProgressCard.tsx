@@ -13,17 +13,17 @@ interface ProgressCardProps {
 
 export const ProgressCard = ({ value }: ProgressCardProps) => {
   const isMobile = useIsMobile()
-  const s = styles.variantStyles[isMobile ? 'mobile' : 'desktop']
+  const specificVariantStyle = styles.variantStyles[isMobile ? 'mobile' : 'desktop']
 
   return (
-    <SGLCard variant={s.card} style={styles.cardStyle}>
-      <ProgressCardText s={s} />
+    <SGLCard variant={specificVariantStyle.card} style={styles.cardStyle}>
+      <ProgressCardText s={specificVariantStyle} />
 
       <SGLCircularProgress
         value={value}
-        style={s.progress}
+        style={specificVariantStyle.progress}
         size={75}
-        label={<ProgressLabel value={value} s={s} />}
+        label={<ProgressLabel value={value} style={specificVariantStyle} />}
       />
     </SGLCard>
   )

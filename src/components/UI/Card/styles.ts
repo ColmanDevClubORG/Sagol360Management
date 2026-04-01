@@ -1,7 +1,13 @@
 import { type Theme } from '@mui/material'
 import { lighten } from '@mui/material/styles'
 
-export type CardVariant = 'purple' | 'orange' | 'white'
+export const CardVariant = {
+  Purple: 'purple',
+  Orange: 'orange',
+  White: 'white',
+}
+
+export type CardVariant = (typeof CardVariant)[keyof typeof CardVariant]
 
 export const getCardStyles = (theme: Theme, variant: CardVariant = 'purple') => {
   if (variant === 'purple' || variant === 'orange') {

@@ -1,6 +1,7 @@
 import type { CSSProperties } from '@mui/material'
 import { theme } from '../../../theme'
 import { alpha } from '@mui/material/styles'
+import { CardVariant } from '@/components/UI/Card/styles'
 
 export const cardStyle: CSSProperties = {
   display: 'flex',
@@ -69,7 +70,7 @@ const whiteText: CSSProperties = {
 
 export const variantStyles = {
   mobile: {
-    card: 'white' as const,
+    card: CardVariant.White,
     text: undefined,
     wellDone: wellDoneText,
     progress: circularProgress,
@@ -77,7 +78,7 @@ export const variantStyles = {
     labelText: progressLabelText,
   },
   desktop: {
-    card: 'purple' as const,
+    card: CardVariant.Purple,
     text: desktopText,
     wellDone: desktopWellDoneText,
     progress: desktopCircularProgress,

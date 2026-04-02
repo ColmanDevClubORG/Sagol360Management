@@ -60,6 +60,21 @@ export const theme = createTheme({
     mediumGrey: {
       main: '#dfdcdc',
     },
+    yellow: {
+      main: '#FFC107',
+    },
+    brown: {
+      main: '#795548',
+    },
+    lightBrown: {
+      main: '#A1887F',
+    },
+    lowOpacityYellow: {
+      main: '#FFC1072c',
+    },
+    lightYellow: {
+      main: '#FFF9C4',
+    },
   },
   typography: {
     h1: {

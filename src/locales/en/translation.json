@@ -10,5 +10,8 @@
   "progress.protocol": "Protocol 60",
   "progress.treatment": "Hyperbaric Chamber Treatment",
   "progress.wellDone": "Well done on your consistency!",
-  "progress.outOf": "out of 60"
+  "progress.outOf": "out of 60",
+  "daily tip": "Daily Tip",
+  "daily tip title": "Brain Health Tip",
+  "daily tip description": "Stay active and get enough sleep to support your brain health."
 }

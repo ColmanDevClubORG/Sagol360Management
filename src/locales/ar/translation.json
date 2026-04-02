@@ -10,5 +10,8 @@
   "progress.protocol": "بروتوكول 60",
   "progress.treatment": "علاج الغرفة الضغطية",
   "progress.wellDone": "أحسنت على المثابرة!",
-  "progress.outOf": "من 60"
+  "progress.outOf": "من 60",
+  "daily tip": "نصيحة يومية",
+  "daily tip title": "نصيحة لصحة الدماغ",
+  "daily tip description": "حافظ على النشاط البدني والنوم الكافي لدعم صحة دماغك."
 }

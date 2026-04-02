@@ -10,5 +10,8 @@
   "progress.protocol": "פרוטוקול 60",
   "progress.treatment": "טיפול בתא לחץ",
   "progress.wellDone": "כל הכבוד על ההתמדה!",
-  "progress.outOf": "מתוך 60"
+  "progress.outOf": "מתוך 60",
+  "daily tip": "טיפ יומי",
+  "daily tip title": "טיפ לבריאות המוח",
+  "daily tip description": "שמרו על פעילות גופנית ושינה מספקת לתמיכה בבריאות המוח שלכם."
 }

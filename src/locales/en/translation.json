@@ -6,5 +6,13 @@
   "nav.calendar": "Schedule",
   "nav.lifestyle": "Lifestyle",
   "nav.metrics": "Metrics",
-  "nav.add": "+ Add"
+  "nav.add": "+ Add",
+  "brain.training": "Brain Training",
+  "daily goal": "Daily Goal: 30 minutes",
+  "minutes": "min",
+  "out of": "out of 30",
+  "open": "Open",
+  "daily tip": "Daily Tip",
+  "daily tip title": "Oxygen and Sleep",
+  "daily tip description": "Did you know? Improved oxygenation can deepen sleep cycles. It is recommended to check your sleep data in 'My Metrics' tab."
 }

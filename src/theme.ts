@@ -48,14 +48,35 @@ export const theme = createTheme({
     orange: {
       main: '#F57C00',
     },
+    brown: {
+      main: '#50372e',
+    },
+    yellow: {
+      main: '#ffdd00',
+    },
+    lightBrown: {
+      main: '#775549',
+    },
+    lightYellow: {
+      main: '#fcff9a',
+    },
     lightGrey: {
       main: '#f3f4f6',
+    },
+    lightWhite: {
+      main: 'rgba(255, 255, 255, 0.58)',
     },
     midGrey: {
       main: '#8F9098',
     },
     lowOpacityPurple: {
       main: '#6d22ab2c',
+    },
+    lowOpacityYellow: {
+      main: '#ffff2b23',
+    },
+    lowOpacityWhite: {
+      main: 'rgba(255, 255, 255, 0.22)',
     },
     mediumGrey: {
       main: '#dfdcdc',

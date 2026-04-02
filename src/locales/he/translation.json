@@ -1,10 +1,18 @@
 {
   "welcome": "ברוכים הבאים לניהול סגול 360",
   "Sagol": "סגול",
-  "good night,": "לילה טוב,",
+  "good_night": "לילה טוב,",
   "nav.home": "ראשי",
   "nav.calendar": "לו״ז",
   "nav.lifestyle": "אורח חיים",
   "nav.metrics": "מדדים",
-  "nav.add": "+ הוסף"
+  "nav.add": "+ הוסף",
+  "brain training": "אימון מוחי",
+  "daily goal": "יעד יומי: 30 דקות",
+  "minutes": "דק'",
+  "out of": "מתוך 30",
+  "open": "פתח את",
+  "daily tip": "טיפ יומי",
+  "daily tip title": "חמצן ושינה",
+  "daily tip description": "הידעת? חמצון משופר יכול להעמיק את מחזורי השינה. מומלץ לבדוק את נתוני השינה שלך בטאב 'המדדים שלי'."
 }

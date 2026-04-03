@@ -20,5 +20,7 @@
   "appointment.showingSlots": "عرض المواعيد في {{location}}",
   "appointment.availableSpots": "{{count}} أماكن متاحة",
   "appointment.back": "رجوع",
-  "appointment.sendRequest": "إرسال الطلب"
+  "appointment.sendRequest": "إرسال الطلب",
+  "duration.hours": "{{count}} ساعات",
+  "duration.minutes": "{{count}} دقيقة"
 }

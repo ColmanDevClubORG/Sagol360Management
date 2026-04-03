@@ -20,5 +20,7 @@
   "appointment.showingSlots": "Showing slots at {{location}}",
   "appointment.availableSpots": "{{count}} available spots",
   "appointment.back": "Back",
-  "appointment.sendRequest": "Send Request"
+  "appointment.sendRequest": "Send Request",
+  "duration.hours": "{{count}} hours",
+  "duration.minutes": "{{count}} min"
 }

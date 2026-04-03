@@ -20,5 +20,7 @@
   "appointment.showingSlots": "מציג תורים בבניין {{location}}",
   "appointment.availableSpots": "{{count}} מקומות פנויים",
   "appointment.back": "חזרה",
-  "appointment.sendRequest": "שלח בקשה"
+  "appointment.sendRequest": "שלח בקשה",
+  "duration.hours": "{{count}} שעות",
+  "duration.minutes": "{{count}} דק'"
 }

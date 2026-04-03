@@ -20,5 +20,7 @@
   "appointment.showingSlots": "Показаны слоты в {{location}}",
   "appointment.availableSpots": "{{count}} свободных мест",
   "appointment.back": "Назад",
-  "appointment.sendRequest": "Отправить запрос"
+  "appointment.sendRequest": "Отправить запрос",
+  "duration.hours": "{{count}} ч",
+  "duration.minutes": "{{count}} мин"
 }

@@ -5,7 +5,6 @@ import { SGLSelect } from './components/UI/Select/SGLSelect'
 import { SGLCheckbox } from './components/UI/Checkbox/SGLCheckbox'
 import { SGLCard } from './components/UI/Card/SGLCard'
 import { SGLTypography } from './components/UI/Typography/SGLTypography'
-import { SGLCalendar } from './components/UI/Calendar/SGLCalendar'
 
 function App() {
   const { t, i18n } = useTranslation()
@@ -55,7 +54,6 @@ function App() {
       <SGLTypography variant="mediumTitle" color="purple.main">
         התראות
       </SGLTypography>
-      <SGLCalendar />
     </>
   )
 }

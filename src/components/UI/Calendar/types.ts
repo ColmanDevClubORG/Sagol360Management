@@ -1,9 +1,7 @@
-import type { Theme } from '@mui/material/styles'
-import type { CardVariant } from '../Card/styles'
+import { type Dayjs } from 'dayjs'
 
-export type DayStylesProps = {
-  isSelected: boolean
-  isToday: boolean
-  theme: Theme
-  variant?: CardVariant
+export type SGLCalendarProps = {
+  selectedDate: Dayjs
+  onDateChange: (date: Dayjs) => void
+  weekDate?: Dayjs
 }

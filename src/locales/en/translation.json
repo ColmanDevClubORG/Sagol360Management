@@ -6,5 +6,9 @@
   "nav.calendar": "Schedule",
   "nav.lifestyle": "Lifestyle",
   "nav.metrics": "Metrics",
-  "nav.add": "+ Add"
+  "nav.add": "+ Add",
+  "progress.protocol": "Protocol 60",
+  "progress.treatment": "Hyperbaric Chamber Treatment",
+  "progress.wellDone": "Well done on your consistency!",
+  "progress.outOf": "out of 60"
 }

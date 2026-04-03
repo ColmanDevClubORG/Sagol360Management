@@ -1,11 +1,15 @@
+import dayjs, { type Dayjs } from 'dayjs'
+
 export const getStartOfWeek = (date: Date): Date => {
-  const d = new Date(date)
-  const day = d.getDay()
+  const currentDate = new Date(date)
+  const day = currentDate.getDay()
 
-  const diff = d.getDate() - day
+  const diff = currentDate.getDate() - day
 
-  d.setDate(diff)
-  d.setHours(0, 0, 0, 0)
+  currentDate.setDate(diff)
+  currentDate.setHours(0, 0, 0, 0)
 
-  return d
+  return currentDate
 }
+
+export const getCurrentDay = (): Dayjs => dayjs()

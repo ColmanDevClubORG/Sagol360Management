@@ -1,3 +1,9 @@
+import { ProgressCard } from '@/pages/home/progress/ProgressCard'
+
 export const Home = () => {
-  return <div>Home Page</div>
+  return (
+    <>
+      <ProgressCard value={10}></ProgressCard>
+    </>
+  )
 }

@@ -6,5 +6,9 @@
   "nav.calendar": "Расписание",
   "nav.lifestyle": "Образ жизни",
   "nav.metrics": "Метрики",
-  "nav.add": "+ Добавить"
+  "nav.add": "+ Добавить",
+  "progress.protocol": "Протокол 60",
+  "progress.treatment": "Лечение в барокамере",
+  "progress.wellDone": "Отлично, продолжай в том же духе!",
+  "progress.outOf": "из 60"
 }

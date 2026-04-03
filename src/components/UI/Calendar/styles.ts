@@ -10,6 +10,7 @@ export const cardStyles = (theme: Theme) => ({
   padding: '0.5rem',
   minHeight: 'auto',
   boxSizing: 'border-box' as const,
+  boxShadow: `0.06rem 0.16rem 0.75rem ${alpha(theme.palette.common.black, 0.056)}`,
 })
 
 export const getTextColor = (theme: Theme, isSelected: boolean, isToday: boolean) => {

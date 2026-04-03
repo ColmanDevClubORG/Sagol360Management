@@ -1,8 +1,8 @@
 import { alpha } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
-import type { CSSProperties } from 'react'
+import type { CSSProperties } from '@mui/material'
 
-export const cardStyles = (theme: Theme) => ({
+export const cardStyles = (theme: Theme): CSSProperties => ({
   width: '92%',
   margin: '1rem auto',
   background: theme.palette.common.white,
@@ -55,6 +55,5 @@ export const calendarGridStyles: CSSProperties = {
   gap: '0.125rem',
   padding: '0.5rem 0.25rem',
   width: '100%',
-  direction: 'rtl',
   boxSizing: 'border-box',
 }

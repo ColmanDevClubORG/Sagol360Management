@@ -1,4 +1,4 @@
-import dayjs, { type Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 
 export const getStartOfWeek = (date: Date): Date => {
   const currentDate = new Date(date)
@@ -12,4 +12,4 @@ export const getStartOfWeek = (date: Date): Date => {
   return currentDate
 }
 
-export const getCurrentDay = (): Dayjs => dayjs()
+export const getCurrentDay = () => dayjs()

@@ -3,11 +3,17 @@ import 'dayjs/locale/he'
 import { SGLTypography } from '../Typography/SGLTypography'
 import { SGLCard } from '../Card/SGLCard'
 import { calendarGridStyles, cardStyles, getDayStyles, getTextColor } from './styles'
-import type { SGLCalendarProps } from './types'
-import { useSGLCalendar } from '../../../hooks/useSGLCalendar'
+import { useCalendar } from './useCalendar'
+import type { Dayjs } from 'dayjs'
+
+export type SGLCalendarProps = {
+  selectedDate: Dayjs
+  onDateChange: (date: Dayjs) => void
+  weekDate?: Dayjs
+}
 
 export const SGLCalendar = ({ selectedDate, onDateChange, weekDate }: SGLCalendarProps) => {
-  const { theme, today, weekDays } = useSGLCalendar({
+  const { theme, today, weekDays } = useCalendar({
     selectedDate,
     weekDate,
   })

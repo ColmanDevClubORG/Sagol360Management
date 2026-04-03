@@ -10,5 +10,15 @@
   "progress.protocol": "פרוטוקול 60",
   "progress.treatment": "טיפול בתא לחץ",
   "progress.wellDone": "כל הכבוד על ההתמדה!",
-  "progress.outOf": "מתוך 60"
+  "progress.outOf": "מתוך 60",
+  "appointment.moreDetails": "פרטים נוספים",
+  "appointment.changeDate": "שינוי מועד",
+  "appointment.whenConvenient": "מתי נוח לך יותר?",
+  "appointment.morning": "בוקר",
+  "appointment.afternoonEvening": "צהריים/ערב",
+  "appointment.chooseNewDate": "בחר מועד חדש",
+  "appointment.showingSlots": "מציג תורים בבניין {{location}}",
+  "appointment.availableSpots": "{{count}} מקומות פנויים",
+  "appointment.back": "חזרה",
+  "appointment.sendRequest": "שלח בקשה"
 }

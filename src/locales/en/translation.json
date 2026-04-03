@@ -10,5 +10,15 @@
   "progress.protocol": "Protocol 60",
   "progress.treatment": "Hyperbaric Chamber Treatment",
   "progress.wellDone": "Well done on your consistency!",
-  "progress.outOf": "out of 60"
+  "progress.outOf": "out of 60",
+  "appointment.moreDetails": "More Details",
+  "appointment.changeDate": "Change Date",
+  "appointment.whenConvenient": "When is more convenient for you?",
+  "appointment.morning": "Morning",
+  "appointment.afternoonEvening": "Afternoon/Evening",
+  "appointment.chooseNewDate": "Choose a New Date",
+  "appointment.showingSlots": "Showing slots at {{location}}",
+  "appointment.availableSpots": "{{count}} available spots",
+  "appointment.back": "Back",
+  "appointment.sendRequest": "Send Request"
 }

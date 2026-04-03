@@ -9,7 +9,7 @@ export const cardStyles = (theme: Theme): CSSProperties => ({
   borderRadius: '1rem',
   padding: '0.5rem',
   minHeight: 'auto',
-  boxSizing: 'border-box' as const,
+  boxSizing: 'border-box',
   boxShadow: `0.06rem 0.16rem 0.75rem ${alpha(theme.palette.common.black, 0.056)}`,
 })
 

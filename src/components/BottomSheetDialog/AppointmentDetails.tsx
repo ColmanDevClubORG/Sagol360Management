@@ -1,4 +1,3 @@
-// steps/AppointmentDetails.tsx
 import { IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'

@@ -4,7 +4,7 @@ import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDia
 import type { Appointment } from '@/components/BottomSheetDialog/types'
 
 export const Home = () => {
-  const [selectedAppointment, setSelectedAppointment] = useState<Appointment | null>({
+  const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
     id: '1',
     title: 'טיפול בתא לחץ',
     time: '00:07',
@@ -17,8 +17,8 @@ export const Home = () => {
       <ProgressCard value={10} />
       <BottomSheetDialog
         appointment={selectedAppointment}
-        open={!!selectedAppointment}
-        onClose={() => setSelectedAppointment(null)}
+        isOpen={!!selectedAppointment}
+        onClose={() => setSelectedAppointment(undefined)}
       />
     </>
   )

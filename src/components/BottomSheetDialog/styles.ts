@@ -92,7 +92,6 @@ export const slotCard: CSSProperties = {
   border: '1px solid',
   borderColor: theme.palette.mediumGrey.main,
   cursor: 'pointer',
-  textAlign: 'right',
 }
 
 export const slotCardSelected: CSSProperties = {

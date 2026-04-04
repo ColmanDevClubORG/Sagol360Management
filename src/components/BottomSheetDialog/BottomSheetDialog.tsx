@@ -8,8 +8,8 @@ import type { Appointment, RescheduleFormValues } from './types'
 import * as styles from './styles'
 
 interface BottomSheetDialogProps {
-  appointment: Appointment | null
-  open: boolean
+  appointment?: Appointment
+  isOpen: boolean
   onClose: () => void
 }
 
@@ -23,16 +23,25 @@ const slots = [
   { date: '05/04', time: '20:00', location: 'תא כתום', availableSpots: 13 },
 ]
 
-export const BottomSheetDialog = ({ appointment, open, onClose }: BottomSheetDialogProps) => {
-  const [step, setStep] = useState(0)
+const Step = {
+  DETAILS: 'DETAILS',
+  TIME_PREFERENCE: 'TIME_PREFERENCE',
+  SLOT_SELECTION: 'SLOT_SELECTION',
+}
+
+type Step = (typeof Step)[keyof typeof Step]
+
+export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetDialogProps) => {
+  const [step, setStep] = useState<Step>(Step.DETAILS)
   const methods = useForm<RescheduleFormValues>()
 
   const handleClose = () => {
-    setStep(0)
+    setStep(Step.DETAILS)
     methods.reset()
     onClose()
   }
 
+  //TODO: remove this and the _ of the data later
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (_data: RescheduleFormValues) => {
     // TODO: Replace with actual API call to reschedule appointment
@@ -43,25 +52,27 @@ export const BottomSheetDialog = ({ appointment, open, onClose }: BottomSheetDia
   return (
     <SwipeableDrawer
       anchor="bottom"
-      open={open}
+      open={isOpen}
       onClose={handleClose}
       onOpen={() => {}}
       slotProps={{ paper: { sx: styles.drawerPaperSx } }}
     >
       <FormProvider {...methods}>
-        {step === 0 && (
+        {step === Step.DETAILS && (
           <AppointmentDetails
             appointment={appointment}
-            onChangeDate={() => setStep(1)}
+            onChangeDate={() => setStep(Step.TIME_PREFERENCE)}
             onClose={handleClose}
           />
         )}
-        {step === 1 && <TimePreferencePicker onNext={() => setStep(2)} onClose={handleClose} />}
-        {step === 2 && (
+        {step === Step.TIME_PREFERENCE && (
+          <TimePreferencePicker onNext={() => setStep(Step.SLOT_SELECTION)} onClose={handleClose} />
+        )}
+        {step === Step.SLOT_SELECTION && (
           <SlotSelection
             appointment={appointment}
-            slots={slots} // from API hook
-            onBack={() => setStep(1)}
+            slots={slots}
+            onBack={() => setStep(Step.TIME_PREFERENCE)}
             onSubmit={methods.handleSubmit(onSubmit)}
             onClose={handleClose}
           />

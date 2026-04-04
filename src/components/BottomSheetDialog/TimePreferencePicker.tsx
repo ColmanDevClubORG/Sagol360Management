@@ -7,6 +7,7 @@ import type { RescheduleFormValues } from './types'
 import * as styles from './styles'
 import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
+import { TIME_PREFERENCE_RANGES } from './constants'
 
 interface TimePreferencePickerProps {
   onNext: () => void
@@ -35,13 +36,15 @@ export const TimePreferencePicker = ({ onNext, onClose }: TimePreferencePickerPr
         <Box sx={styles.card} onClick={() => handleSelect('morning')}>
           <WbSunnyOutlinedIcon style={styles.cardYellowIcon} />
           <SGLTypography variant="smallTitle">{t('appointment.morning')}</SGLTypography>
-          <SGLTypography variant="mediumText">07:00 - 12:00</SGLTypography>
+          <SGLTypography variant="mediumText">{TIME_PREFERENCE_RANGES.morning}</SGLTypography>
         </Box>
 
         <Box sx={styles.card} onClick={() => handleSelect('afternoon_evening')}>
           <DarkModeOutlinedIcon style={styles.cardBlueIcon} />
           <SGLTypography variant="smallTitle">{t('appointment.afternoonEvening')}</SGLTypography>
-          <SGLTypography variant="mediumText">15:00 - 20:00</SGLTypography>
+          <SGLTypography variant="mediumText">
+            {TIME_PREFERENCE_RANGES.afternoon_evening}
+          </SGLTypography>
         </Box>
       </div>
     </div>

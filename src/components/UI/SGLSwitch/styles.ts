@@ -1,6 +1,6 @@
-import type { Theme } from '@mui/material/styles';
+import { Switch, styled } from '@mui/material'
 
-export const getSwitchStyles = (theme: Theme) => ({
+export const StyledSwitch = styled(Switch)(({ theme }) => ({
   width: 42,
   height: 26,
   padding: 0,
@@ -24,7 +24,7 @@ export const getSwitchStyles = (theme: Theme) => ({
   },
   '& .MuiSwitch-track': {
     borderRadius: 13,
-    backgroundColor: theme.palette.grey[300],
+    backgroundColor: theme.palette.mediumGrey.main,
     opacity: 1,
   },
-});
+}))

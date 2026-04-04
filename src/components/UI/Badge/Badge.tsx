@@ -1,19 +1,14 @@
-import React from 'react'
-import { Box, Typography } from '@mui/material'
-import { getBadgeStyles } from './styles'
+import { BadgeContainer, BadgeText } from './styles'
 
 interface BadgeProps {
   text: string
   color?: string
 }
 
-export const Badge: React.FC<BadgeProps> = ({ text, color = 'primary.main' }) => {
+export const Badge = ({ text, color = 'primary.main' }: BadgeProps) => {
   return (
-    <Box sx={getBadgeStyles(color)}>
-      <Typography variant="caption" sx={{ fontWeight: 'bold', color: '#fff' }}>
-        {text}
-      </Typography>
-    </Box>
+    <BadgeContainer bgColor={color}>
+      <BadgeText>{text}</BadgeText>
+    </BadgeContainer>
   )
 }
-

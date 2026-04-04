@@ -10,5 +10,10 @@
   "progress.protocol": "Protocol 60",
   "progress.treatment": "Hyperbaric Chamber Treatment",
   "progress.wellDone": "Well done on your consistency!",
-  "progress.outOf": "out of 60"
+  "progress.outOf": "out of 60",
+  "charts.last7Days": "Last 7 days",
+  "charts.weeklyTrends": "Weekly Trends",
+  "charts.energyLevel": "Energy Level",
+  "charts.sleepQuality": "Sleep Quality",
+  "charts.days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 }

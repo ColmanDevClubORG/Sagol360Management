@@ -10,5 +10,10 @@
   "progress.protocol": "פרוטוקול 60",
   "progress.treatment": "טיפול בתא לחץ",
   "progress.wellDone": "כל הכבוד על ההתמדה!",
-  "progress.outOf": "מתוך 60"
+  "progress.outOf": "מתוך 60",
+  "charts.last7Days": "7 ימים אחרונים",
+  "charts.weeklyTrends": "מגמות שבועיות",
+  "charts.energyLevel": "רמת אנרגיה",
+  "charts.sleepQuality": "איכות שינה",
+  "charts.days": ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"]
 }

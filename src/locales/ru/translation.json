@@ -10,5 +10,10 @@
   "progress.protocol": "Протокол 60",
   "progress.treatment": "Лечение в барокамере",
   "progress.wellDone": "Отлично, продолжай в том же духе!",
-  "progress.outOf": "из 60"
+  "progress.outOf": "из 60",
+  "charts.last7Days": "Последние 7 дней",
+  "charts.weeklyTrends": "Еженедельные тренды",
+  "charts.energyLevel": "Уровень энергии",
+  "charts.sleepQuality": "Качество сна",
+  "charts.days": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
 }

@@ -10,5 +10,17 @@
   "progress.protocol": "Протокол 60",
   "progress.treatment": "Лечение в барокамере",
   "progress.wellDone": "Отлично, продолжай в том же духе!",
-  "progress.outOf": "из 60"
+  "progress.outOf": "из 60",
+  "appointment.moreDetails": "Подробнее",
+  "appointment.changeDate": "Изменить дату",
+  "appointment.whenConvenient": "Когда вам удобнее?",
+  "appointment.morning": "Утро",
+  "appointment.afternoonEvening": "День/Вечер",
+  "appointment.chooseNewDate": "Выберите новую дату",
+  "appointment.showingSlots": "Показаны слоты в {{location}}",
+  "appointment.availableSpots": "{{count}} свободных мест",
+  "appointment.back": "Назад",
+  "appointment.sendRequest": "Отправить запрос",
+  "duration.hours": "{{count}} ч",
+  "duration.minutes": "{{count}} мин"
 }

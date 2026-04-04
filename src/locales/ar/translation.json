@@ -10,5 +10,17 @@
   "progress.protocol": "بروتوكول 60",
   "progress.treatment": "علاج الغرفة الضغطية",
   "progress.wellDone": "أحسنت على المثابرة!",
-  "progress.outOf": "من 60"
+  "progress.outOf": "من 60",
+  "appointment.moreDetails": "مزيد من التفاصيل",
+  "appointment.changeDate": "تغيير الموعد",
+  "appointment.whenConvenient": "متى يناسبك أكثر؟",
+  "appointment.morning": "صباحاً",
+  "appointment.afternoonEvening": "ظهراً/مساءً",
+  "appointment.chooseNewDate": "اختر موعداً جديداً",
+  "appointment.showingSlots": "عرض المواعيد في {{location}}",
+  "appointment.availableSpots": "{{count}} أماكن متاحة",
+  "appointment.back": "رجوع",
+  "appointment.sendRequest": "إرسال الطلب",
+  "duration.hours": "{{count}} ساعات",
+  "duration.minutes": "{{count}} دقيقة"
 }

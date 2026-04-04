@@ -49,13 +49,15 @@ export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetD
   }
   if (!appointment) return null
 
+  const slotProps = { paper: { sx: styles.drawerPaperSx } }
+
   return (
     <SwipeableDrawer
       anchor="bottom"
       open={isOpen}
       onClose={handleClose}
       onOpen={() => {}}
-      slotProps={{ paper: { sx: styles.drawerPaperSx } }}
+      slotProps={slotProps}
     >
       <FormProvider {...methods}>
         {step === Step.DETAILS && (

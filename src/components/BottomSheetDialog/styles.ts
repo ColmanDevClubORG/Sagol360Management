@@ -49,7 +49,7 @@ export const icons: CSSProperties = {
 export const options: CSSProperties = {
   display: 'flex',
   gap: '1rem',
-  padding: '0rem 1rem 0rem 1rem',
+  padding: '0 1rem',
 }
 
 export const card: SxProps = {
@@ -62,7 +62,7 @@ export const card: SxProps = {
   border: '1px solid',
   borderColor: theme.palette.mediumGrey.main,
   cursor: 'pointer',
-  width: '100rem',
+  width: '100%',
   marginBottom: '2rem',
   marginTop: '1rem',
   transition: 'all 0.1s ease-in-out',

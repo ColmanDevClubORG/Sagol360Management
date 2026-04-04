@@ -1,5 +1,5 @@
 import { SGLCard } from '../UI/Card/SGLCard'
-import { BrainButton } from './button/BrainButton'
+import { BrainHQButton } from './buttonHQ/BrainButton'
 import { brainHqStyles } from './styles'
 import { BrainMinutesStats } from './minutesStats/BrainMinutesStats'
 import { BrainTitleMobile } from './mobile/title/BrainTitleMobile'
@@ -9,7 +9,7 @@ import { BrainPropgress } from './progress/BrainPropgress'
 
 export const SGLBrainHQ = () => {
   const isMobile = useIsMobile()
-  const progress = 15 //should come from DB
+  const progress = 15 //TODO should come from DB
   return (
     <SGLCard variant="orange" style={brainHqStyles.container}>
       <div style={brainHqStyles.textContainer}>
@@ -17,7 +17,7 @@ export const SGLBrainHQ = () => {
         <BrainMinutesStats current={progress} />
       </div>
       <BrainPropgress progress={progress} />
-      <BrainButton />
+      <BrainHQButton />
     </SGLCard>
   )
 }

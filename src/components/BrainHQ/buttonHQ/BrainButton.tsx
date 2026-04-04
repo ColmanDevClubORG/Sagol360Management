@@ -6,10 +6,10 @@ import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { externalLink } from '../utils/externalLink'
 import { BRAIN_HQ_CONSTANTS } from '../constants/BRAIN_HQ_CONSTANS'
-export const BrainButton = () => {
+export const BrainHQButton = () => {
   const isMobile = useIsMobile()
   const { t } = useTranslation()
-  const colors = isMobile ? 'orange' : 'white'
+  const color = isMobile ? 'orange' : 'white'
   return (
     <SGLButton
       onClick={() => externalLink(BRAIN_HQ_CONSTANTS.LINK)}
@@ -19,13 +19,13 @@ export const BrainButton = () => {
       }}
       variant={isMobile ? 'contained' : 'outlined'}
     >
-      <SGLTypography variant="smallText" color={colors}>
+      <SGLTypography variant="smallText" color={color}>
         {t('open')}
       </SGLTypography>
-      <SGLTypography variant="smallTitle" color={colors}>
+      <SGLTypography variant="smallTitle" color={color}>
         {t('BrainHQ')}
       </SGLTypography>
-      <SGLLink style={brainButtonStyles.link} color={colors} />
+      <SGLLink style={brainButtonStyles.link} color={color} />
     </SGLButton>
   )
 }

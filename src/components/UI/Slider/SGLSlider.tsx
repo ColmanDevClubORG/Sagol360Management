@@ -11,7 +11,7 @@ interface sliderProps extends Omit<MuiSliderProps, 'onChange'> {
 export const SGLSlider = ({ onChange, style, ...props }: sliderProps) => {
   return (
     <Slider
-      sx={{ ...sliderStyles, ...style }}
+      sx={(theme) => ({ ...sliderStyles(theme), ...style })}
       onChange={(_, value) => onChange(value as number)}
       {...props}
     />

@@ -9,9 +9,9 @@ export const BrainTitleDesktop = () => {
   return (
     <div style={{ ...brainTitleStyles.titleContainer, ...brainTitleStyles.desktopContainer }}>
       <SGLTypography styles={brainHqStyles.fadedWhite} variant="smallTitle">
-        {t('brain training')}
+        {t('brain.training')}
       </SGLTypography>
-      <BrainTitle title={'BrainHQ'} />
+      <BrainTitle title={t('BrainHQ')} />
     </div>
   )
 }

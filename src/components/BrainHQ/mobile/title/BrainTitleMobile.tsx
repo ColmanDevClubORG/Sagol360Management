@@ -8,7 +8,7 @@ export const BrainTitleMobile = () => {
   const { t } = useTranslation()
   return (
     <div style={{ ...brainTitleStyles.titleContainer, ...brainTitleStyles.mobileContainer }}>
-      <BrainTitle title="brain training" />
+      <BrainTitle title={t('brain.training')} />
       <SGLTypography variant="smallText" styles={brainHqStyles.fadedWhite}>
         {t('daily goal')}
       </SGLTypography>

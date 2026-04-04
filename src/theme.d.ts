@@ -3,7 +3,6 @@ declare module '@mui/material/styles' {
     purple: Palette['primary']
     brown: Palette['primary']
     orange: Palette['primary']
-    brown: Palette['primary']
     yellow: Palette['primary']
     lightGrey: Palette['primary']
     lightYellow: Palette['primary']

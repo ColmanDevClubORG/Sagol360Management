@@ -57,6 +57,9 @@ export const theme = createTheme({
     lowOpacityPurple: {
       main: '#6d22ab2c',
     },
+    lowOpacityGrey: {
+      main: '#7a7a7a27',
+    },
     mediumGrey: {
       main: '#dfdcdc',
     },

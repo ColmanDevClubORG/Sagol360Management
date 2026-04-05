@@ -1,4 +1,4 @@
-import type { CSSProperties } from '@mui/material/styles'
+import type { CSSProperties, SxProps, Theme } from '@mui/material/styles'
 import { theme } from '../../theme'
 
 export const drawerPaperSx: CSSProperties = {
@@ -52,7 +52,8 @@ export const options: CSSProperties = {
   padding: '0 1rem',
 }
 
-export const card: CSSProperties = {
+//
+export const card: SxProps<Theme> = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -68,7 +69,7 @@ export const card: CSSProperties = {
   transition: 'all 0.1s ease-in-out',
   '&:hover': {
     border: '1px solid',
-    borderBlockColor: theme.palette.purple.main,
+    borderColor: theme.palette.purple.main,
     backgroundColor: theme.palette.lowOpacityPurple.main,
   },
 }

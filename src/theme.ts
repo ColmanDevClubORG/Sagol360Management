@@ -87,9 +87,6 @@ export const theme = createTheme({
     emerald: {
       main: '#10B981',
     },
-    yellow: {
-      main: '#EAB308',
-    },
   },
   typography: {
     h1: {

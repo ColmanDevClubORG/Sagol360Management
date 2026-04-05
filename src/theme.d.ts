@@ -16,6 +16,7 @@ declare module '@mui/material/styles' {
     blue: Palette['primary']
     emerald: Palette['primary']
     yellow: Palette['primary']
+    brown: Palette['primary']
   }
   interface PaletteOptions {
     purple?: PaletteOptions['primary']
@@ -34,6 +35,7 @@ declare module '@mui/material/styles' {
     blue?: PaletteOptions['primary']
     emerald?: PaletteOptions['primary']
     yellow?: PaletteOptions['primary']
+    brown?: PaletteOptions['primary']
   }
 }
 

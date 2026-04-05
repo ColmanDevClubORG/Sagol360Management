@@ -1,4 +1,4 @@
-import { IconButton, Box } from '@mui/material'
+import { IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
@@ -33,19 +33,19 @@ export const TimePreferencePicker = ({ onNext, onClose }: TimePreferencePickerPr
       </div>
 
       <div style={styles.options}>
-        <Box sx={styles.card} onClick={() => handleSelect('morning')}>
+        <div style={styles.card} onClick={() => handleSelect('morning')}>
           <WbSunnyOutlinedIcon style={styles.cardYellowIcon} />
           <SGLTypography variant="smallTitle">{t('appointment.morning')}</SGLTypography>
           <SGLTypography variant="mediumText">{TIME_PREFERENCE_RANGES.morning}</SGLTypography>
-        </Box>
+        </div>
 
-        <Box sx={styles.card} onClick={() => handleSelect('afternoon_evening')}>
+        <div style={styles.card} onClick={() => handleSelect('afternoon_evening')}>
           <DarkModeOutlinedIcon style={styles.cardBlueIcon} />
           <SGLTypography variant="smallTitle">{t('appointment.afternoonEvening')}</SGLTypography>
           <SGLTypography variant="mediumText">
             {TIME_PREFERENCE_RANGES.afternoon_evening}
           </SGLTypography>
-        </Box>
+        </div>
       </div>
     </div>
   )

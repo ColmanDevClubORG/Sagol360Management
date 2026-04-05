@@ -27,6 +27,10 @@ export const appointmentColors: Record<AppointmentType, string> = {
   mri_imaging: theme.palette.yellow.main,
 }
 
+export const FormFields = {
+  SelectedSlot: 'selectedSlot',
+}
+
 export interface RescheduleFormValues {
   timePreference: 'morning' | 'afternoon_evening'
   selectedSlot: {

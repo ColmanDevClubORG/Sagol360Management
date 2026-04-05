@@ -21,6 +21,7 @@ export const AppointmentDetails = ({
   onClose,
 }: AppointmentDetailsProps) => {
   const { t } = useTranslation()
+  const formattedDuration = formatDuration(appointment.durationMinutes)
   return (
     <div style={styles.container}>
       <div style={styles.header}>
@@ -33,7 +34,7 @@ export const AppointmentDetails = ({
       <div style={styles.row}>
         <AccessTimeIcon style={styles.icons} />
         <SGLTypography variant="mediumText">
-          {appointment.time} ({formatDuration(appointment.durationMinutes)})
+          {appointment.time} ({formattedDuration})
         </SGLTypography>
       </div>
 

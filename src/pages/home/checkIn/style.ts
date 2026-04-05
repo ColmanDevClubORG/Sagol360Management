@@ -1,23 +1,22 @@
 import type { Theme } from '@mui/material/styles'
-
-export const CheckInStyles = (theme1: Theme) => {
+///import { color, type SxProps } from '@mui/system'
+export const CheckInStyles = (theme: Theme) => {
   return {
-    root: (theme: Theme) => ({
+    root: /*SxProps<Theme>*/ {
       width: '85%',
-      padding: '1.5rem',
       display: 'flex',
       flexDirection: 'column',
-      gap: '1rem',
-      color: theme1.palette.lightGrey.main,
-      backgroundColor: theme.palette.purple.main,
-    }),
-    containedButton: (theme: Theme) => ({
+      gap: 2,
+      backgroundColor: 'purple.main',
+      borderRadius: '16px',
+    },
+    containedButton: {
       backgroundColor: theme.palette.background.paper,
       color: theme.palette.purple.main,
-    }),
-    outlinedButton: (theme: Theme) => ({
+    },
+    outlinedButton: {
       borderColor: theme.palette.background.paper,
       color: theme.palette.background.paper,
-    }),
+    },
   }
 }

@@ -3,6 +3,7 @@ import { SGLTypography } from '../../../components/UI/Typography/SGLTypography'
 import { SGLButton } from '../../../components/UI/Button/SGLButton'
 import type { CSSProperties } from 'react'
 import { theme } from '@/theme'
+import { CheckInStyles } from './style'
 
 interface CheckInProps {
   onClose: () => void
@@ -11,15 +12,7 @@ interface CheckInProps {
 
 export const SGLCheckIn = ({ onClose }: CheckInProps) => {
   return (
-    <SGLCard
-      style={{
-        width: '85%',
-        padding: '1.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-      }}
-    >
+    <SGLCard /*sx={CheckInStyles(theme).root}*/>
       <SGLTypography variant="smallTitle" color="white">
         התור הבא * היום
       </SGLTypography>
@@ -30,20 +23,13 @@ export const SGLCheckIn = ({ onClose }: CheckInProps) => {
         18:05 - תא כתום - בניין אריסון
       </SGLTypography>
       <div>
-        <SGLButton
-          onClick={onClose}
-          variant="contained"
-          sx={{ backgroundColor: theme.palette.background.paper, color: theme.palette.purple.main }}
-        >
+        <SGLButton onClick={onClose} variant="contained" sx={CheckInStyles(theme).containedButton}>
           בצע צ'ק אין
         </SGLButton>
         <SGLButton
           onClick={() => void 0}
           variant="outlined"
-          sx={{
-            borderColor: theme.palette.background.paper,
-            color: theme.palette.background.paper,
-          }}
+          sx={CheckInStyles(theme).outlinedButton}
         >
           לא מגיע
         </SGLButton>

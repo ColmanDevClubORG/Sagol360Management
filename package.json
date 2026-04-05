@@ -18,10 +18,13 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "7.3.9",
     "@mui/material": "^7.3.9",
+    "@mui/x-charts": "^8.28.2",
+    "dayjs": "^1.11.20",
     "i18next": "^26.0.1",
     "lucide-react": "^1.7.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-hook-form": "^7.72.0",
     "react-i18next": "^17.0.1",
     "react-router-dom": "^7.13.2"
   },

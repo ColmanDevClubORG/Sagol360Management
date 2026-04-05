@@ -13,6 +13,9 @@ declare module '@mui/material/styles' {
     lowOpacityPurple: Palette['primary']
     lowOpacityYellow: Palette['primary']
     lowOpacityWhite: Palette['primary']
+    blue: Palette['primary']
+    emerald: Palette['primary']
+    yellow: Palette['primary']
   }
   interface PaletteOptions {
     purple?: PaletteOptions['primary']
@@ -28,6 +31,9 @@ declare module '@mui/material/styles' {
     lowOpacityPurple?: PaletteOptions['primary']
     lowOpacityYellow?: PaletteOptions['primary']
     lowOpacityWhite?: PaletteOptions['primary']
+    blue?: PaletteOptions['primary']
+    emerald?: PaletteOptions['primary']
+    yellow?: PaletteOptions['primary']
   }
 }
 

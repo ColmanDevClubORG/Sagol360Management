@@ -81,6 +81,15 @@ export const theme = createTheme({
     mediumGrey: {
       main: '#dfdcdc',
     },
+    blue: {
+      main: '#3B82F6',
+    },
+    emerald: {
+      main: '#10B981',
+    },
+    yellow: {
+      main: '#EAB308',
+    },
   },
   typography: {
     h1: {

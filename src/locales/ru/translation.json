@@ -22,7 +22,7 @@
   "appointment.back": "Назад",
   "appointment.sendRequest": "Отправить запрос",
   "duration.hours": "{{count}} ч",
-  "duration.minutes": "{{count}} мин"
+  "duration.minutes": "{{count}} мин",
   "charts.last7Days": "Последние 7 дней",
   "charts.weeklyTrends": "Еженедельные тренды",
   "charts.energyLevel": "Уровень энергии",

@@ -22,7 +22,7 @@
   "appointment.back": "Back",
   "appointment.sendRequest": "Send Request",
   "duration.hours": "{{count}} hours",
-  "duration.minutes": "{{count}} min"
+  "duration.minutes": "{{count}} min",
   "charts.last7Days": "Last 7 days",
   "charts.weeklyTrends": "Weekly Trends",
   "charts.energyLevel": "Energy Level",

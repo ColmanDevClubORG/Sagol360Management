@@ -22,7 +22,7 @@
   "appointment.back": "رجوع",
   "appointment.sendRequest": "إرسال الطلب",
   "duration.hours": "{{count}} ساعات",
-  "duration.minutes": "{{count}} دقيقة"
+  "duration.minutes": "{{count}} دقيقة",
   "charts.last7Days": "آخر 7 أيام",
   "charts.weeklyTrends": "الاتجاهات الأسبوعية",
   "charts.energyLevel": "مستوى الطاقة",

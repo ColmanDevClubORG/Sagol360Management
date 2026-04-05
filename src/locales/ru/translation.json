@@ -23,4 +23,9 @@
   "appointment.sendRequest": "Отправить запрос",
   "duration.hours": "{{count}} ч",
   "duration.minutes": "{{count}} мин"
+  "charts.last7Days": "Последние 7 дней",
+  "charts.weeklyTrends": "Еженедельные тренды",
+  "charts.energyLevel": "Уровень энергии",
+  "charts.sleepQuality": "Качество сна",
+  "charts.days": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
 }

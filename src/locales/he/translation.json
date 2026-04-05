@@ -23,4 +23,9 @@
   "appointment.sendRequest": "שלח בקשה",
   "duration.hours": "{{count}} שעות",
   "duration.minutes": "{{count}} דק'"
+  "charts.last7Days": "7 ימים אחרונים",
+  "charts.weeklyTrends": "מגמות שבועיות",
+  "charts.energyLevel": "רמת אנרגיה",
+  "charts.sleepQuality": "איכות שינה",
+  "charts.days": ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"]
 }

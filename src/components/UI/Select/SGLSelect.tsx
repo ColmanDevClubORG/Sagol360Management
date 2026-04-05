@@ -3,7 +3,7 @@ import { selectStyles } from './styles'
 import { MenuItem } from '@mui/material'
 import { type ReactElement } from 'react'
 
-type SelectOption = string | number | ReactElement
+export type SelectOption = string | number | ReactElement
 
 interface SelectProps extends Omit<MuiSelectProps, 'style'> {
   options?: SelectOption[]

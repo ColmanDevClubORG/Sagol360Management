@@ -1,4 +1,4 @@
-export const progressGraphHeaderStyles = {
+export const filterHeaderStyles = {
   container: {
     display: 'flex',
     justifyContent: 'space-between',

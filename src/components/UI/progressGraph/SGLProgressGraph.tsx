@@ -1,18 +1,20 @@
 import { LineChart, type LineChartProps } from '@mui/x-charts/LineChart'
-import type { SxProps, Theme } from '@mui/material'
-import { progressGraphSlotProps, progressGraphStyles } from './styles'
+import { progressGraphSlotProps, progressGraphStyles, chartAxesConfig } from './styles'
 
-interface SGLProgressGraphProps extends LineChartProps {
-  sx?: SxProps<Theme>
+interface SGLProgressGraphProps extends Omit<LineChartProps, 'xAxis' | 'yAxis'> {
+  xAxisData: string[]
 }
-export const SGLProgressGraph = ({ sx, ...props }: SGLProgressGraphProps) => {
+
+export const SGLProgressGraph = ({ xAxisData, series, ...props }: SGLProgressGraphProps) => {
   return (
     <LineChart
-      sx={{ ...progressGraphStyles, ...sx }}
       {...props}
-      slotProps={{
-        ...progressGraphSlotProps,
-      }}
+      series={series}
+      xAxis={[{ ...chartAxesConfig.xAxis, data: xAxisData }]}
+      yAxis={[{ ...chartAxesConfig.yAxis }]}
+      sx={progressGraphStyles}
+      slotProps={progressGraphSlotProps}
+      disableAxisListener
     />
   )
 }

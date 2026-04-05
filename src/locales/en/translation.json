@@ -36,5 +36,7 @@
   "charts.weeklyTrends": "Weekly Trends",
   "charts.energyLevel": "Energy Level",
   "charts.sleepQuality": "Sleep Quality",
-  "charts.days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  "charts.days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "goal.minutes": "{{count}} minutes",
+  "daily.activity.goal": "Daily activity goal"
 }

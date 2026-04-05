@@ -36,5 +36,7 @@
   "charts.weeklyTrends": "Еженедельные тренды",
   "charts.energyLevel": "Уровень энергии",
   "charts.sleepQuality": "Качество сна",
-  "charts.days": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+  "charts.days": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  "goal.minutes": "{{count}} минут",
+  "daily.activity.goal": "Ежедневная цель активности"
 }

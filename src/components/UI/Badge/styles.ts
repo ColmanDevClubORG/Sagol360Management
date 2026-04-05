@@ -1,17 +1,15 @@
-import { styled } from '@mui/material'
+export const bellStyle = {
+  color: 'purple.main',
+}
 
-export const BadgeContainer = styled('div')<{ bgColor: string }>(({ bgColor }) => ({
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '2px 8px',
-  borderRadius: '12px',
-  backgroundColor: bgColor,
-  minWidth: '24px',
-}))
+export const messageStyle = {
+  '& .MuiBadge-badge': {
+    backgroundColor: 'error.main',
+    color: 'common.white',
+  },
+}
 
-export const BadgeText = styled('span')(() => ({
-  fontWeight: 'bold',
-  color: '#fff',
-  fontSize: '0.75rem',
-}))
+export const anchorOrigin = {
+  vertical: 'top',
+  horizontal: 'left',
+} as const

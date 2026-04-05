@@ -1,14 +1,15 @@
-import { BadgeContainer, BadgeText } from './styles'
+import Badge from '@mui/material/Badge'
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
+import { bellStyle, anchorOrigin, messageStyle } from './styles'
 
-interface BadgeProps {
-  text: string
-  color?: string
+type SGLBadgeProps = {
+  count?: number
 }
 
-export const Badge = ({ text, color = 'primary.main' }: BadgeProps) => {
+export const SGLBadge = ({ count = 0 }: SGLBadgeProps) => {
   return (
-    <BadgeContainer bgColor={color}>
-      <BadgeText>{text}</BadgeText>
-    </BadgeContainer>
+    <Badge badgeContent={count} sx={messageStyle} anchorOrigin={anchorOrigin}>
+      <NotificationsNoneIcon sx={bellStyle} />
+    </Badge>
   )
 }

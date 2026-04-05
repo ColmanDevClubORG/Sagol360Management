@@ -1,6 +1,6 @@
 import { Switch, styled } from '@mui/material'
 
-export const StyledSwitch = styled(Switch)(({ theme }) => ({
+export const SGLSwitch = styled(Switch)(({ theme }) => ({
   width: 42,
   height: 26,
   padding: 0,
@@ -10,7 +10,7 @@ export const StyledSwitch = styled(Switch)(({ theme }) => ({
     transitionDuration: '300ms',
     '&.Mui-checked': {
       transform: 'translateX(16px)',
-      color: '#fff',
+      color: theme.palette.common.white,
       '& + .MuiSwitch-track': {
         backgroundColor: theme.palette.primary.main,
         opacity: 1,

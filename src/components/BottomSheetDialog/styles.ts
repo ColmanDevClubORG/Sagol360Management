@@ -1,4 +1,4 @@
-import type { CSSProperties, SxProps, Theme } from '@mui/material/styles'
+import type { CSSProperties } from '@mui/material/styles'
 import { theme } from '../../theme'
 
 export const drawerPaperSx: CSSProperties = {
@@ -51,9 +51,7 @@ export const options: CSSProperties = {
   gap: '1rem',
   padding: '0 1rem',
 }
-
-//
-export const card: SxProps<Theme> = {
+export const card: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

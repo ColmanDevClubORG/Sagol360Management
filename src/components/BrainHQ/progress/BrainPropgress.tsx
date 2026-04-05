@@ -15,7 +15,7 @@ export const BrainPropgress = ({ progress }: brainProgressProps) => {
     <div>
       {!isMobile && (
         <SGLTypography variant="smallText" styles={brainHqStyles.fadedWhite}>
-          {t('daily goal')}
+          {t('daily.goal')}
         </SGLTypography>
       )}
       <SGLLinearProgress value={progress} style={brainProgressStyles.progressBar} />

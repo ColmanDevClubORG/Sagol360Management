@@ -4,7 +4,7 @@ import { SGLLink } from '@/components/UI/Icons/Link/SGLLink'
 import { brainButtonStyles } from './styles'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/useIsMobile'
-import { externalLink } from '../utils/externalLink'
+import { openExternalLink } from '../utils/openExternalLink'
 import { BRAIN_HQ_CONSTANTS } from '../constants/BRAIN_HQ_CONSTANS'
 export const BrainHQButton = () => {
   const isMobile = useIsMobile()
@@ -12,7 +12,7 @@ export const BrainHQButton = () => {
   const color = isMobile ? 'orange' : 'white'
   return (
     <SGLButton
-      onClick={() => externalLink(BRAIN_HQ_CONSTANTS.LINK)}
+      onClick={() => openExternalLink(BRAIN_HQ_CONSTANTS.LINK)}
       styles={{
         ...brainButtonStyles.button,
         ...(isMobile ? brainButtonStyles.mobileButton : brainButtonStyles.desktopButton),

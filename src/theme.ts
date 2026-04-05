@@ -64,7 +64,7 @@ export const theme = createTheme({
       main: '#f3f4f6',
     },
     lightWhite: {
-      main: 'rgba(255, 255, 255, 0.58)',
+      main: '#FFFFFF94',
     },
     midGrey: {
       main: '#8F9098',
@@ -76,7 +76,7 @@ export const theme = createTheme({
       main: '#ffff2b23',
     },
     lowOpacityWhite: {
-      main: 'rgba(255, 255, 255, 0.22)',
+      main: '#FFFFFF38',
     },
     mediumGrey: {
       main: '#dfdcdc',

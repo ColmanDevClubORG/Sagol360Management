@@ -20,7 +20,7 @@ export const BrainMinutesStats = ({ current }: MinutesStatsProps) => {
         </SGLTypography>
       </div>
       <SGLTypography variant="smallText" styles={brainHqStyles.fadedWhite}>
-        {t('out of')}
+        {t('out.of')}
       </SGLTypography>
     </div>
   )

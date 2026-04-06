@@ -3,7 +3,8 @@ import { styled, Badge } from '@mui/material'
 export const StyledBadge = styled(Badge)(({ theme }) => ({
   cursor: 'pointer',
   '& .MuiBadge-badge': {
-    ...theme.typography.caption,
+    ...theme.typography.h6,
+    fontSize: '0.625rem',
     backgroundColor: theme.palette.error.main,
     color: theme.palette.background.paper,
     border: `0.1rem solid ${theme.palette.background.paper}`,

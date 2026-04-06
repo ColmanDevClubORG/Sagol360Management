@@ -1,19 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { SGLSwitchContainer, SGLToggleButton } from './styles'
 
-export const SGLSwitch = () => {
-  const [alignment, setAlignment] = useState<string | null>('patient')
+interface SGLOption {
+  label: string
+  value: string
+}
 
-  const handleChange = (_event: React.MouseEvent<HTMLElement>, newAlignment: string | null) => {
-    if (newAlignment !== null) {
-      setAlignment(newAlignment)
+interface SGLSwitchProps {
+  options: SGLOption[]
+  value: string
+  onChange: (newValue: string) => void
+}
+
+export const SGLSwitch = ({ options, value, onChange }: SGLSwitchProps) => {
+  const handleChange = (_event: React.MouseEvent<HTMLElement>, newValue: string | null) => {
+    if (newValue !== null) {
+      onChange(newValue)
     }
   }
 
   return (
-    <SGLSwitchContainer value={alignment} exclusive onChange={handleChange}>
-      <SGLToggleButton value="patient">מטופל</SGLToggleButton>
-      <SGLToggleButton value="staff">איש צוות</SGLToggleButton>
+    <SGLSwitchContainer value={value} exclusive onChange={handleChange}>
+      {options.map((option) => (
+        <SGLToggleButton key={option.value} value={option.value}>
+          {option.label}
+        </SGLToggleButton>
+      ))}
     </SGLSwitchContainer>
   )
 }

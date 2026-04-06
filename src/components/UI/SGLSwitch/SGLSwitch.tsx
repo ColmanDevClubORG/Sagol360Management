@@ -8,11 +8,13 @@ interface SGLOption {
 
 interface SGLSwitchProps {
   options: SGLOption[]
-  value: string
+  value?: string
   onChange: (newValue: string) => void
 }
 
 export const SGLSwitch = ({ options, value, onChange }: SGLSwitchProps) => {
+  const currentValue = value || (options.length > 0 ? options[0].value : '')
+
   const handleChange = (_event: React.MouseEvent<HTMLElement>, newValue: string | null) => {
     if (newValue !== null) {
       onChange(newValue)
@@ -20,7 +22,7 @@ export const SGLSwitch = ({ options, value, onChange }: SGLSwitchProps) => {
   }
 
   return (
-    <SGLSwitchContainer value={value} exclusive onChange={handleChange}>
+    <SGLSwitchContainer value={currentValue} exclusive onChange={handleChange}>
       {options.map((option) => (
         <SGLToggleButton key={option.value} value={option.value}>
           {option.label}

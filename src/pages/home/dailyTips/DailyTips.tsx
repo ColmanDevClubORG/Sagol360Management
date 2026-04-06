@@ -17,7 +17,7 @@ export const DailyTips = () => {
       }}
     >
       <SGLLightIcon />
-      {!isMobile && <SGLTypography variant="smallText">{t('daily tip')}</SGLTypography>}
+      {!isMobile && <SGLTypography variant="smallText">{t('daily.tip')}</SGLTypography>}
       {isMobile ? (
         <div style={dailyTipsStyles.textContainer}>
           <TitleAndDescription />

@@ -8,10 +8,10 @@ export const TitleAndDescription = () => {
   return (
     <>
       <SGLTypography variant="smallTitle" styles={titleAndDescriptionStyles.title}>
-        {t('daily tip title')}
+        {t('daily.tip.title')}
       </SGLTypography>
       <SGLTypography variant="smallText" styles={titleAndDescriptionStyles.description}>
-        {t('daily tip description')}
+        {t('daily.tip.description')}
       </SGLTypography>
     </>
   )

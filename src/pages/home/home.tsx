@@ -3,6 +3,7 @@ import { ProgressCard } from '@/pages/home/progress/ProgressCard'
 import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
 import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
+import { DailyTips } from './dailyTips/DailyTips'
 
 export const Home = () => {
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
@@ -22,6 +23,7 @@ export const Home = () => {
         onClose={() => setSelectedAppointment(undefined)}
       />
       <TrainingGoal />
+      <DailyTips />
     </>
   )
 }

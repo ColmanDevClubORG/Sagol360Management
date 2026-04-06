@@ -87,6 +87,12 @@ export const theme = createTheme({
     emerald: {
       main: '#10B981',
     },
+    lightGreen: {
+      main: '#e8f5e9',
+    },
+    darkGreen: {
+      main: '#1B5E20',
+    },
   },
   typography: {
     h1: {

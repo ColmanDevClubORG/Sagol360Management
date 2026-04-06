@@ -36,5 +36,7 @@
   "charts.weeklyTrends": "Weekly Trends",
   "charts.energyLevel": "Energy Level",
   "charts.sleepQuality": "Sleep Quality",
-  "charts.days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  "charts.days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "dietMenu.sugarBalance": "Tailored for Sugar Balance",
+  "dietMenu.meals": "• Breakfast: Eggs with avocado and vegetables\n• Snack: Mixed nuts (small handful)\n• Lunch: Salmon with roasted vegetables\n• Dinner: Chicken breast with green salad"
 }

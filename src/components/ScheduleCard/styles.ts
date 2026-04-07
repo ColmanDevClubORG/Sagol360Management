@@ -1,5 +1,6 @@
 import { theme } from '@/theme'
 import type { CSSProperties } from 'react'
+
 export const scheduleCardStyles = {
   container: {
     display: 'flex',
@@ -7,10 +8,8 @@ export const scheduleCardStyles = {
     justifyContent: 'space-between',
     margin: '0 2rem',
     padding: '1rem',
-    borderTop: `0.0625rem solid ${theme.palette.mediumGrey.main}`,
-    borderLeft: `0.0625rem solid ${theme.palette.mediumGrey.main}`,
-    borderBottom: `0.0625rem solid ${theme.palette.mediumGrey.main}`,
-    borderRight: `0.3rem solid ${theme.palette.purple.main}`,
+    border: `0.0625rem solid ${theme.palette.mediumGrey.main}`,
+    borderRight: '0.25rem solid',
     borderRadius: '1rem',
   } satisfies CSSProperties,
   content: {
@@ -33,6 +32,6 @@ export const scheduleCardStyles = {
     height: '2.2rem',
     borderRadius: '50%',
     padding: 0,
-    backgroundColor: 'lowOpacityGrey.main',
+    backgroundColor: theme.palette.lowOpacityGrey.main,
   } satisfies CSSProperties,
-} as const
+}

@@ -44,10 +44,20 @@ export const AppointmentDetails = ({
       </div>
 
       <div style={styles.actions}>
-        <SGLButton variant="outlined" onClick={() => {}} fullWidth>
+        <SGLButton
+          variant="outlined"
+          onClick={() => {}}
+          fullWidth
+          styles={styles.actionButtonOutlined}
+        >
           <SGLTypography variant="smallTitle">{t('appointment.moreDetails')}</SGLTypography>
         </SGLButton>
-        <SGLButton variant="contained" onClick={onChangeDate} fullWidth>
+        <SGLButton
+          variant="contained"
+          onClick={onChangeDate}
+          fullWidth
+          styles={styles.actionButtonFilled}
+        >
           <SGLTypography variant="smallTitle" color="white">
             {t('appointment.changeDate')}
           </SGLTypography>

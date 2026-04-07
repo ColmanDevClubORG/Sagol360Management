@@ -36,8 +36,14 @@ export const actions: CSSProperties = {
   marginBottom: '1rem',
 }
 
-export const actionButton: CSSProperties = {
-  borderRadius: 25,
+export const actionButtonFilled: CSSProperties = {
+  borderRadius: '0.4rem',
+  backgroundColor: theme.palette.purple.main,
+}
+
+export const actionButtonOutlined: CSSProperties = {
+  borderRadius: '0.4rem',
+  borderColor: theme.palette.purple.main,
 }
 
 export const icons: CSSProperties = {

@@ -38,5 +38,17 @@
   "charts.sleepQuality": "איכות שינה",
   "charts.days": ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"],
   "goal.minutes": "{{count}} דקות",
-  "daily.activity.goal": "יעד יומי לפעילות"
+  "daily.activity.goal": "יעד יומי לפעילות",
+  "lang.en": "אנגלית",
+  "lang.he": "עברית",
+  "lang.ru": "רוסית",
+  "lang.ar": "ערבית",
+  "test": "test",
+  "example.text": "טקסט לדוגמא",
+  "alerts": "התראות",
+  "daily.report": "דיווח יומי",
+  "orange.cell": "תא כתום",
+  "time.to.fill.report": "הגיע הזמן למלא את הדיווח היומי שלך",
+  "click.me": "Click Me",
+  "lifestyle.page": "LifeStyle Page"
 }

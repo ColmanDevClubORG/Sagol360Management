@@ -4,9 +4,10 @@ import { containerStyles } from './styles'
 
 interface SGLContainerProps extends Omit<BoxProps, 'sx' | 'style'> {
   styles?: CSSProperties
+  onClick?: () => void
 }
 export const SGLContainer = forwardRef<HTMLElement, SGLContainerProps>(
-  ({ styles, ...props }, ref) => {
-    return <Box sx={{ ...containerStyles, ...styles }} ref={ref} {...props} />
+  ({ styles, onClick, ...props }, ref) => {
+    return <Box sx={{ ...containerStyles, ...styles }} ref={ref} onClick={onClick} {...props} />
   },
 )

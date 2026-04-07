@@ -13,7 +13,7 @@ interface SGLSwitchProps {
 }
 
 export const SGLSwitch = ({ options, value, onChange }: SGLSwitchProps) => {
-  const currentValue = value || (options.length > 0 ? options[0].value : '')
+  const currentValue = value ?? options[0]?.value ?? ''
 
   const handleChange = (_event: React.MouseEvent<HTMLElement>, newValue: string | null) => {
     if (newValue !== null) {

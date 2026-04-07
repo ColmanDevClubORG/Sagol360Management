@@ -36,5 +36,7 @@
   "charts.weeklyTrends": "الاتجاهات الأسبوعية",
   "charts.energyLevel": "مستوى الطاقة",
   "charts.sleepQuality": "جودة النوم",
-  "charts.days": ["أ", "ب", "ج", "د", "هـ", "و", "ز"]
+  "charts.days": ["أ", "ب", "ج", "د", "هـ", "و", "ز"],
+  "goal.minutes": "{{count}} دقيقة",
+  "daily.activity.goal": "الهدف اليومي للنشاط"
 }

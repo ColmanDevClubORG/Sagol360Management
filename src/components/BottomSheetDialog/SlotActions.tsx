@@ -14,10 +14,16 @@ export const SlotActions = ({ onBack, onSubmit, selectedSlot }: SlotActionsProps
   const { t } = useTranslation()
   return (
     <div style={styles.actions}>
-      <SGLButton variant="outlined" onClick={onBack} fullWidth>
+      <SGLButton variant="outlined" onClick={onBack} fullWidth styles={styles.actionButtonOutlined}>
         <SGLTypography variant="smallTitle">{t('appointment.back')}</SGLTypography>
       </SGLButton>
-      <SGLButton variant="contained" onClick={onSubmit} fullWidth disabled={!selectedSlot}>
+      <SGLButton
+        variant="contained"
+        onClick={onSubmit}
+        fullWidth
+        disabled={!selectedSlot}
+        styles={styles.actionButtonFilled}
+      >
         <SGLTypography variant="smallTitle" color="white">
           {t('appointment.sendRequest')}
         </SGLTypography>

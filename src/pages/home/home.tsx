@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ProgressCard } from '@/pages/home/progress/ProgressCard'
 import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
 import type { Appointment } from '@/components/BottomSheetDialog/types'
+import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
 
 export const Home = () => {
@@ -21,6 +22,7 @@ export const Home = () => {
         isOpen={!!selectedAppointment}
         onClose={() => setSelectedAppointment(undefined)}
       />
+      <TrainingGoal />
       <DailyTips />
     </>
   )

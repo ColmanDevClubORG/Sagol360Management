@@ -36,5 +36,7 @@
   "charts.weeklyTrends": "מגמות שבועיות",
   "charts.energyLevel": "רמת אנרגיה",
   "charts.sleepQuality": "איכות שינה",
-  "charts.days": ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"]
+  "charts.days": ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"],
+  "goal.minutes": "{{count}} דקות",
+  "daily.activity.goal": "יעד יומי לפעילות"
 }

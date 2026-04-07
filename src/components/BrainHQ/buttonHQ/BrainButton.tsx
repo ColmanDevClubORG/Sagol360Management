@@ -5,7 +5,7 @@ import { brainButtonStyles } from './styles'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { openExternalLink } from '../utils/openExternalLink'
-import { BRAIN_HQ_CONSTANTS } from '../constants/BRAIN_HQ_CONSTANS'
+import { BRAIN_HQ_CONSTANTS } from '../constants/BRAIN_HQ_CONSTANTS'
 export const BrainHQButton = () => {
   const isMobile = useIsMobile()
   const { t } = useTranslation()

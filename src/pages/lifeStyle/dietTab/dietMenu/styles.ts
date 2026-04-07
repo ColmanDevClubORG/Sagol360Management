@@ -16,11 +16,11 @@ export const titleDivStyle: CSSProperties = {
   flexDirection: 'row',
   alignItems: 'center',
   gap: '0.5rem',
-  marginRight: '1rem',
+  marginInlineStart: '1rem',
 }
 
 export const bodyDivStyle: CSSProperties = {
-  marginRight: '2rem',
+  marginInlineStart: '2rem',
 }
 
 export const iconSize = 16

@@ -25,34 +25,34 @@ function App() {
       >
         <SGLTypography variant="largeTitle">{t('welcome')}</SGLTypography>
         <div style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
-          <SGLButton onClick={() => changeLanguage('en')}>English</SGLButton>
-          <SGLButton onClick={() => changeLanguage('he')}>"עברית</SGLButton>
-          <SGLButton onClick={() => changeLanguage('ru')}>Русский</SGLButton>
-          <SGLButton onClick={() => changeLanguage('ar')}>العربية</SGLButton>
+          <SGLButton onClick={() => changeLanguage('en')}>{t('lang.en')}</SGLButton>
+          <SGLButton onClick={() => changeLanguage('he')}>{t('lang.he')}</SGLButton>
+          <SGLButton onClick={() => changeLanguage('ru')}>{t('lang.ru')}</SGLButton>
+          <SGLButton onClick={() => changeLanguage('ar')}>{t('lang.ar')}</SGLButton>
         </div>
       </div>
       <SGLButton variant="contained" onClick={() => {}}>
-        test
+        {t('test')}
       </SGLButton>
       <SGLButton variant="outlined" onClick={() => {}}>
-        test
+        {t('test')}
       </SGLButton>
       <SGLSelect options={[1, 1, 'sda']}></SGLSelect>
       <SGLCheckbox label="טקסט בדיקה" />
       <SGLCard variant="purple">
-        <h1>Example text</h1>
+        <h1>{t('example.text')}</h1>
       </SGLCard>
       <SGLCard variant="orange">
-        <h1>Example text</h1>
+        <h1>{t('example.text')}</h1>
       </SGLCard>
-      <SGLTypography variant="largeTitle">טיפול בתא לחץ</SGLTypography>
-      <SGLTypography variant="mediumTitle">התראות</SGLTypography>
-      <SGLTypography variant="smallTitle">דיווח יומי</SGLTypography>
-      <SGLTypography variant="largeText">תא כתום</SGLTypography>
-      <SGLTypography variant="mediumText">הגיע הזמן למלא את הדיווח היומי שלך</SGLTypography>
-      <SGLTypography variant="smallText">איכות שינה</SGLTypography>
+      <SGLTypography variant="largeTitle">{t('progress.treatment')}</SGLTypography>
+      <SGLTypography variant="mediumTitle">{t('alerts')}</SGLTypography>
+      <SGLTypography variant="smallTitle">{t('daily.report')}</SGLTypography>
+      <SGLTypography variant="largeText">{t('orange.cell')}</SGLTypography>
+      <SGLTypography variant="mediumText">{t('time.to.fill.report')}</SGLTypography>
+      <SGLTypography variant="smallText">{t('charts.sleepQuality')}</SGLTypography>
       <SGLTypography variant="mediumTitle" color="purple.main">
-        התראות
+        {t('alerts')}
       </SGLTypography>
     </>
   )

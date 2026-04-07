@@ -38,5 +38,17 @@
   "charts.sleepQuality": "Sleep Quality",
   "charts.days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   "goal.minutes": "{{count}} minutes",
-  "daily.activity.goal": "Daily activity goal"
+  "daily.activity.goal": "Daily activity goal",
+  "lang.en": "English",
+  "lang.he": "Hebrew",
+  "lang.ru": "Russian",
+  "lang.ar": "Arabic",
+  "test": "test",
+  "example.text": "Example text",
+  "alerts": "Alerts",
+  "daily.report": "Daily Report",
+  "orange.cell": "Orange Cell",
+  "time.to.fill.report": "It's time to fill your daily report",
+  "click.me": "Click Me",
+  "lifestyle.page": "LifeStyle Page"
 }

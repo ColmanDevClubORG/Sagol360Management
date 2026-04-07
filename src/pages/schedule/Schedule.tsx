@@ -5,7 +5,7 @@ import { ScheduleCard } from '@/components/ScheduleCard/ScheduleCard'
 import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
 import { SGLContainer } from '@/components/UI/Container/SGLContainer'
-import { scheduleCardStyles } from '@/components/ScheduleCard/styles'
+import { scheduleStyles } from './styles'
 
 const MOK_SCHEDULE_ITEMS: Appointment[] = [
   {
@@ -31,7 +31,7 @@ export const Schedule = () => {
   const [activeAppointment, setActiveAppointment] = useState<Appointment | undefined>()
 
   return (
-    <SGLContainer styles={scheduleCardStyles.container}>
+    <SGLContainer styles={{ ...scheduleStyles.container }}>
       <SGLCalendar selectedDate={selectedDate} onDateChange={setSelectedDate} />
 
       {MOK_SCHEDULE_ITEMS.map((item) => (

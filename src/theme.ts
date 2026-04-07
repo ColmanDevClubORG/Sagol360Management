@@ -54,6 +54,9 @@ export const theme = createTheme({
     yellow: {
       main: '#ffdd00',
     },
+    green: {
+      main: '#02b134',
+    },
     lightBrown: {
       main: '#775549',
     },
@@ -77,6 +80,9 @@ export const theme = createTheme({
     },
     lowOpacityWhite: {
       main: '#FFFFFF38',
+    },
+    lowOpacityGrey: {
+      main: '#7a7a7a27',
     },
     mediumGrey: {
       main: '#dfdcdc',

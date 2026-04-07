@@ -39,4 +39,18 @@
   "charts.days": ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"],
   "dietMenu.sugarBalance": "מותאם לאיזון סוכר",
   "dietMenu.meals": "• ארוחת בוקר: ביצים עם אבוקדו וירקות\n• חטיף: אגוזים מעורבים (חופן קטן)\n• ארוחת צהריים: סלמון עם ירקות אפויים\n• ארוחת ערב: חזה עוף עם סלט ירוק"
+  "goal.minutes": "{{count}} דקות",
+  "daily.activity.goal": "יעד יומי לפעילות",
+  "lang.en": "אנגלית",
+  "lang.he": "עברית",
+  "lang.ru": "רוסית",
+  "lang.ar": "ערבית",
+  "test": "test",
+  "example.text": "טקסט לדוגמא",
+  "alerts": "התראות",
+  "daily.report": "דיווח יומי",
+  "orange.cell": "תא כתום",
+  "time.to.fill.report": "הגיע הזמן למלא את הדיווח היומי שלך",
+  "click.me": "Click Me",
+  "lifestyle.page": "LifeStyle Page"
 }

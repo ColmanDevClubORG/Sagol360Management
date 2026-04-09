@@ -38,7 +38,7 @@
   "charts.sleepQuality": "Sleep Quality",
   "charts.days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   "dietMenu.sugarBalance": "Tailored for Sugar Balance",
-  "dietMenu.meals": "• Breakfast: Eggs with avocado and vegetables\n• Snack: Mixed nuts (small handful)\n• Lunch: Salmon with roasted vegetables\n• Dinner: Chicken breast with green salad"
+  "dietMenu.meals": "• Breakfast: Eggs with avocado and vegetables\n• Snack: Mixed nuts (small handful)\n• Lunch: Salmon with roasted vegetables\n• Dinner: Chicken breast with green salad",
   "goal.minutes": "{{count}} minutes",
   "daily.activity.goal": "Daily activity goal",
   "lang.en": "English",

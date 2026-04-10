@@ -2,7 +2,7 @@ import { theme } from '@/theme'
 import type { CSSProperties } from '@mui/material'
 
 export const cardStyle: CSSProperties = {
-  backgroundColor: `${theme.palette.orange.main}20`,
+  backgroundColor: theme.palette.lightOrange.main,
   borderColor: `${theme.palette.orange.main}50`,
 }
 
@@ -20,7 +20,7 @@ export const iconStyle: CSSProperties = {
 }
 
 export const typographyStyle: CSSProperties = {
-  color: theme.palette.brown.main,
+  color: theme.palette.warmBrown.main,
 }
 
 export const bodyContainerStyle: CSSProperties = {

@@ -51,11 +51,10 @@ export const SGLCheckIn = ({ onClose }: CheckInProps) => {
           בצע צ'ק אין
         </SGLButton>
         <SGLButton
-          onClick={() => void 0}
+          onClick={() => {}}
           variant="outlined"
           styles={CheckInStyles(theme).outlinedButton}
         >
-          {' '}
           לא מגיע
         </SGLButton>
       </div>

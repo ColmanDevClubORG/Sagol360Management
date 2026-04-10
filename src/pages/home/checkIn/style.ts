@@ -9,7 +9,7 @@ export const CheckInStyles = (theme: Theme) => {
       flexDirection: 'column',
       gap: 2,
       backgroundColor: 'purple.main',
-      borderRadius: '16px',
+      borderRadius: '1rem',
       padding: '1.5rem',
     } as CSSProperties,
     detailContainer: {
@@ -37,12 +37,12 @@ export const CheckInStyles = (theme: Theme) => {
       backgroundColor: theme.palette.background.paper,
       color: theme.palette.purple.main,
       flex: 1,
-      borderRadius: '12px',
+      borderRadius: '0.8rem',
     },
     outlinedButton: {
       borderColor: theme.palette.background.paper,
       color: theme.palette.background.paper,
-      borderRadius: '12px',
+      borderRadius: '0.8rem',
     },
   }
 }

@@ -59,5 +59,12 @@
   "appointment.room203": "Room 203",
   "balanceTraining.title": "Tailored to improve balance",
   "balanceTraining.description": "A series of exercises to improve stability and prevent falls, personally tailored to your needs.",
-  "balanceTraining.button": "Watch balance training videos"
+  "balanceTraining.button": "Watch balance training videos",
+  "checkIn.nextAppointment": "Next Appointment",
+  "checkIn.today": "Today",
+  "checkIn.hyperbaricTreatment": "Hyperbaric Treatment",
+  "checkIn.arisonBuilding": "Arison Building",
+  "checkIn.performCheckIn": "Perform Check-In",
+  "checkIn.notComing": "Not Coming",
+  "checkIn.completedSuccessfully": "Completed Successfully"
 }

@@ -47,5 +47,12 @@
   "appointment.room203": "Комната 203",
   "balanceTraining.title": "Адаптировано для улучшения равновесия",
   "balanceTraining.description": "Серия упражнений для улучшения устойчивости и предотвращения падений, подобранная индивидуально.",
-  "balanceTraining.button": "Смотреть видео тренировки равновесия"
+  "balanceTraining.button": "Смотреть видео тренировки равновесия",
+  "checkIn.nextAppointment": "Следующая запись",
+  "checkIn.today": "Сегодня",
+  "checkIn.hyperbaricTreatment": "Гипербарическое лечение",
+  "checkIn.arisonBuilding": "Здание Арисон",
+  "checkIn.performCheckIn": "Отметиться",
+  "checkIn.notComing": "Не приду",
+  "checkIn.completedSuccessfully": "Успешно выполнено"
 }

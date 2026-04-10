@@ -12,27 +12,11 @@ export const CheckInStyles = (theme: Theme) => {
       borderRadius: '1rem',
       padding: '1.5rem',
     } as CSSProperties,
-    detailContainer: {
-      display: 'flex',
-      flexDirection: 'row',
-      gap: '1rem',
-    } as CSSProperties,
-    iconCintainer: {
-      display: 'flex',
-      flexDirection: 'row',
-      gap: '0.3rem',
-      alignItems: 'center',
-    } as CSSProperties,
+
     icon: {
       color: theme.palette.background.paper,
     },
-    buttonsContainer: {
-      display: 'flex',
-      gap: '2rem',
-      marginTop: '1rem',
-      width: '100%',
-      alignItems: 'center',
-    },
+
     containedButton: {
       backgroundColor: theme.palette.background.paper,
       color: theme.palette.purple.main,
@@ -44,5 +28,36 @@ export const CheckInStyles = (theme: Theme) => {
       color: theme.palette.background.paper,
       borderRadius: '0.8rem',
     },
+    completedButton: {
+      gap: '0.5rem',
+      backgroundColor: theme.palette.green.main,
+      color: theme.palette.background.paper,
+      width: '100%',
+      borderRadius: '0.8rem',
+      '&:hover': {
+        backgroundColor: theme.palette.text.primary,
+      },
+    },
   }
 }
+
+export const detailContainer = {
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '1rem',
+} as CSSProperties
+
+export const iconCintainer = {
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '0.3rem',
+  alignItems: 'center',
+} as CSSProperties
+
+export const buttonsContainer = {
+  display: 'flex',
+  gap: '2rem',
+  marginTop: '1rem',
+  width: '100%',
+  alignItems: 'center',
+} as CSSProperties

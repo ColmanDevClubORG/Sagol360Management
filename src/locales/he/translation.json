@@ -60,5 +60,12 @@
   "appointment.room203": "חדר 203",
   "balanceTraining.title": "מותאם לשיפור שיווי משקל",
   "balanceTraining.description": "סדרת תרגילים לשיפור יציבות ומניעת נפילות, מותאמת אישית לצרכיך.",
-  "balanceTraining.button": "צפה בסרטוני שיווי משקל"
+  "balanceTraining.button": "צפה בסרטוני שיווי משקל",
+  "checkIn.nextAppointment": "התור הבא",
+  "checkIn.today": "היום",
+  "checkIn.hyperbaricTreatment": "טיפול בתא לחץ",
+  "checkIn.arisonBuilding": "בניין אריסון",
+  "checkIn.performCheckIn": "בצע צ'ק אין",
+  "checkIn.notComing": "לא מגיע",
+  "checkIn.completedSuccessfully": "בוצע בהצלחה"
 }

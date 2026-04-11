@@ -2,28 +2,29 @@ import { styled, ToggleButtonGroup, ToggleButton } from '@mui/material'
 
 export const SGLSwitchContainer = styled(ToggleButtonGroup)(({ theme }) => ({
   backgroundColor: theme.palette.lightGrey.main,
-  borderRadius: theme.spacing(3),
+  borderRadius: theme.spacing(1.5),
   padding: theme.spacing(0.5),
   border: 'none',
   display: 'flex',
-  width: 'fit-content',
+  width: '100%',
+  maxWidth: '350px',
   '& .MuiToggleButtonGroup-grouped': {
     border: 0,
-    borderRadius: theme.spacing(2.5),
-    margin: theme.spacing(0, 0.25),
+    borderRadius: theme.spacing(1),
   },
 }))
 
 export const SGLToggleButton = styled(ToggleButton)(({ theme }) => ({
-  ...theme.typography.h6,
+  flex: 1,
   textTransform: 'none',
-  padding: theme.spacing(0.75, 2.5),
+  padding: theme.spacing(1, 2),
   color: theme.palette.midGrey.main,
   border: 'none',
-  borderRadius: theme.spacing(2.5),
+  transition: theme.transitions.create(['background-color', 'color', 'box-shadow'], {
+    duration: theme.transitions.duration.short,
+  }),
   '&.Mui-selected': {
     backgroundColor: theme.palette.background.paper,
-    color: theme.palette.primary.main,
     boxShadow: theme.shadows[1],
     '&:hover': {
       backgroundColor: theme.palette.background.paper,

@@ -8,7 +8,14 @@ interface SGLBadgeProps {
 
 export const SGLBadge = ({ count }: SGLBadgeProps) => {
   return (
-    <StyledBadge badgeContent={<SGLTypography variant="smallText">{count}</SGLTypography>}>
+    <StyledBadge
+      badgeContent={<SGLTypography variant="smallText">{count}</SGLTypography>}
+      overlap="circular"
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'left',
+      }}
+    >
       <NotificationsNoneIcon />
     </StyledBadge>
   )

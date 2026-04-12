@@ -6,7 +6,7 @@ export const LifeStyle = () => {
   return (
     <>
       <div>{t('lifestyle.page')}</div>
-      <BalanceTraining></BalanceTraining>
+      <BalanceTraining />
     </>
   )
 }

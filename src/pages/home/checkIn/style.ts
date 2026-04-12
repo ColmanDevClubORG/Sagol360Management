@@ -30,7 +30,7 @@ export const CheckInStyles = (theme: Theme) => {
     },
     completedButton: {
       gap: '0.5rem',
-      backgroundColor: theme.palette.green.main,
+      backgroundColor: theme.palette.success.main,
       color: theme.palette.background.paper,
       width: '100%',
       borderRadius: '0.8rem',
@@ -47,7 +47,7 @@ export const detailContainer = {
   gap: '1rem',
 } as CSSProperties
 
-export const iconCintainer = {
+export const iconContainer = {
   display: 'flex',
   flexDirection: 'row',
   gap: '0.3rem',

@@ -46,7 +46,7 @@ export const theme = createTheme({
       main: '#6D22AB',
     },
     orange: {
-      main: '#F57C00',
+      main: '#fa7315',
     },
     brown: {
       main: '#50372e',
@@ -98,6 +98,12 @@ export const theme = createTheme({
     },
     darkGreen: {
       main: '#1B5E20',
+    },
+    lightOrange: {
+      main: '#fff8ed',
+    },
+    warmBrown: {
+      main: '#8a3720',
     },
   },
   typography: {

@@ -3,7 +3,7 @@ import type { CSSProperties } from '@mui/material'
 
 export const cardStyle: CSSProperties = {
   backgroundColor: theme.palette.lightOrange.main,
-  borderColor: `${theme.palette.orange.main}50`,
+  borderColor: `${theme.palette.orange.main}20`,
 }
 
 export const titleRowStyle: CSSProperties = {

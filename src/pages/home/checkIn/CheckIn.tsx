@@ -9,13 +9,14 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import BusinessIcon from '@mui/icons-material/Business'
 import { CheckInActions } from './CheckInActions'
+import { DOT } from '@/constants/index'
 
 interface CheckInProps {
-  onClose: () => void
+  onDone: () => void
   style?: CSSProperties
 }
 
-export const CheckIn = ({ onClose }: CheckInProps) => {
+export const CheckIn = ({ onDone }: CheckInProps) => {
   const { t } = useTranslation()
   const [isCheckedIn, setIsCheckedIn] = useState(false)
 
@@ -24,34 +25,34 @@ export const CheckIn = ({ onClose }: CheckInProps) => {
   }
 
   return (
-    <SGLCard style={root(theme)}>
+    <SGLCard style={{ ...root(theme) }}>
       <SGLTypography variant="smallTitle" color="white">
-        {t('checkIn.nextAppointment')} {'•'} {t('checkIn.today')}
+        {t('checkIn.nextAppointment')} {DOT} {t('checkIn.today')}
       </SGLTypography>
       <SGLTypography variant="largeTitle" color="white">
         {t('checkIn.hyperbaricTreatment')}
       </SGLTypography>
-      <div style={detailContainer}>
-        <div style={iconContainer}>
-          <AccessTimeIcon style={icon(theme)}></AccessTimeIcon>
+      <div style={{ ...detailContainer }}>
+        <div style={{ ...iconContainer }}>
+          <AccessTimeIcon style={{ ...icon(theme) }}></AccessTimeIcon>
           <SGLTypography variant="mediumText" color="white">
             18:00
           </SGLTypography>
         </div>
-        <div style={iconContainer}>
-          <LocationOnIcon style={icon(theme)}></LocationOnIcon>
+        <div style={{ ...iconContainer }}>
+          <LocationOnIcon style={{ ...icon(theme) }}></LocationOnIcon>
           <SGLTypography variant="mediumText" color="white">
             {t('chckIn.orangeCell')}
           </SGLTypography>
         </div>
-        <div style={iconContainer}>
-          <BusinessIcon style={icon(theme)}></BusinessIcon>
+        <div style={{ ...iconContainer }}>
+          <BusinessIcon style={{ ...icon(theme) }}></BusinessIcon>
           <SGLTypography variant="mediumText" color="white">
             {t('checkIn.arisonBuilding')}
           </SGLTypography>
         </div>
       </div>
-      <CheckInActions onClose={onClose} onCheckIn={handleCheckIn} isCheckedIn={isCheckedIn} />
+      <CheckInActions onDone={onDone} onCheckIn={handleCheckIn} isCheckedIn={isCheckedIn} />
     </SGLCard>
   )
 }

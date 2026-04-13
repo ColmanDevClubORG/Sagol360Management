@@ -1,6 +1,6 @@
 import { SGLButton } from '@/components/UI/Button/SGLButton'
 import { useTranslation } from 'react-i18next'
-import { outlinedButton, containedButton } from './style'
+import { outlinedButtonStyles, containedButtonStyles } from './style'
 import { theme } from '@/theme'
 
 interface CheckInOptionsProps {
@@ -12,10 +12,10 @@ export const CheckInOptions = ({ onCheckIn }: CheckInOptionsProps) => {
 
   return (
     <>
-      <SGLButton onClick={onCheckIn} variant="contained" styles={containedButton(theme)}>
+      <SGLButton onClick={onCheckIn} variant="contained" styles={containedButtonStyles(theme)}>
         {t('checkIn.performCheckIn')}
       </SGLButton>
-      <SGLButton onClick={() => {}} variant="outlined" styles={outlinedButton(theme)}>
+      <SGLButton onClick={() => {}} variant="outlined" styles={outlinedButtonStyles(theme)}>
         {t('checkIn.notComing')}
       </SGLButton>
     </>

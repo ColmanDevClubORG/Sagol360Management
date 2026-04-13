@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react'
 
 export const root = (theme: Theme) => {
   return {
-    width: '100%',
+    width: '95%',
     display: 'flex',
     flexDirection: 'column',
     gap: 2,
@@ -19,7 +19,7 @@ export const icon = (theme: Theme) => {
   } as CSSProperties
 }
 
-export const containedButton = (theme: Theme) => {
+export const containedButtonStyles = (theme: Theme) => {
   return {
     backgroundColor: theme.palette.background.paper,
     color: theme.palette.purple.main,
@@ -27,7 +27,7 @@ export const containedButton = (theme: Theme) => {
     borderRadius: '0.8rem',
   } as CSSProperties
 }
-export const outlinedButton = (theme: Theme) => {
+export const outlinedButtonStyles = (theme: Theme) => {
   return {
     borderColor: theme.palette.background.paper,
     color: theme.palette.background.paper,

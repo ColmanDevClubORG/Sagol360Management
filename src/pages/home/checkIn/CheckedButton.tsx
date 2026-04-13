@@ -6,14 +6,14 @@ import { completedButton } from './style'
 import { theme } from '@/theme'
 
 interface checkedButtonProps {
-  onClose: () => void
+  onDone: () => void
 }
 
-export const CheckedButton = ({ onClose }: checkedButtonProps) => {
+export const CheckedButton = ({ onDone }: checkedButtonProps) => {
   const { t } = useTranslation()
 
   return (
-    <SGLButton onClick={onClose} variant="contained" styles={completedButton(theme)}>
+    <SGLButton onClick={onDone} variant="contained" styles={completedButton(theme)}>
       <SGLTypography variant="smallTitle" color="white">
         {t('checkIn.completedSuccessfully')}
       </SGLTypography>

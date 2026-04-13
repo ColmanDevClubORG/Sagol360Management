@@ -1,5 +1,5 @@
 import { ProgressCard } from '@/pages/home/progress/ProgressCard'
-import { SGLBadge } from '@/components/UI/Icons/Badge/Badge'
+import { SGLBadge } from '@/components/UI/Icons/Badge/SGLBadge'
 import { NavContainer, HomeWrapper } from './styles'
 
 export const Home = () => {

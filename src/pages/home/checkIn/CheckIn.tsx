@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { theme } from '@/theme'
-import { CheckInStyles, detailContainer, iconContainer } from './style'
+import { detailContainer, iconContainer, root, icon } from './style'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import BusinessIcon from '@mui/icons-material/Business'
@@ -24,7 +24,7 @@ export const CheckIn = ({ onClose }: CheckInProps) => {
   }
 
   return (
-    <SGLCard style={{ ...CheckInStyles(theme).root }}>
+    <SGLCard style={root(theme)}>
       <SGLTypography variant="smallTitle" color="white">
         {t('checkIn.nextAppointment')} {'•'} {t('checkIn.today')}
       </SGLTypography>
@@ -33,19 +33,19 @@ export const CheckIn = ({ onClose }: CheckInProps) => {
       </SGLTypography>
       <div style={detailContainer}>
         <div style={iconContainer}>
-          <AccessTimeIcon style={CheckInStyles(theme).icon}></AccessTimeIcon>
+          <AccessTimeIcon style={icon(theme)}></AccessTimeIcon>
           <SGLTypography variant="mediumText" color="white">
             18:00
           </SGLTypography>
         </div>
         <div style={iconContainer}>
-          <LocationOnIcon style={CheckInStyles(theme).icon}></LocationOnIcon>
+          <LocationOnIcon style={icon(theme)}></LocationOnIcon>
           <SGLTypography variant="mediumText" color="white">
             {t('chckIn.orangeCell')}
           </SGLTypography>
         </div>
         <div style={iconContainer}>
-          <BusinessIcon style={CheckInStyles(theme).icon}></BusinessIcon>
+          <BusinessIcon style={icon(theme)}></BusinessIcon>
           <SGLTypography variant="mediumText" color="white">
             {t('checkIn.arisonBuilding')}
           </SGLTypography>

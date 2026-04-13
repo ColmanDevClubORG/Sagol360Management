@@ -1,44 +1,51 @@
 import type { Theme } from '@mui/material/styles'
 import type { CSSProperties } from 'react'
 
-export const CheckInStyles = (theme: Theme) => {
+export const root = (theme: Theme) => {
   return {
-    root: {
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 2,
-      backgroundColor: 'purple.main',
-      borderRadius: '1rem',
-      padding: '1.5rem',
-    } as CSSProperties,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 2,
+    backgroundColor: theme.palette.purple.main,
+    borderRadius: '1rem',
+    padding: '1.5rem',
+  } as const
+}
 
-    icon: {
-      color: theme.palette.background.paper,
-    },
+export const icon = (theme: Theme) => {
+  return {
+    color: theme.palette.background.paper,
+  } as CSSProperties
+}
 
-    containedButton: {
-      backgroundColor: theme.palette.background.paper,
-      color: theme.palette.purple.main,
-      flex: 1,
-      borderRadius: '0.8rem',
+export const containedButton = (theme: Theme) => {
+  return {
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.purple.main,
+    flex: 1,
+    borderRadius: '0.8rem',
+  } as CSSProperties
+}
+export const outlinedButton = (theme: Theme) => {
+  return {
+    borderColor: theme.palette.background.paper,
+    color: theme.palette.background.paper,
+    borderRadius: '0.8rem',
+  } as CSSProperties
+}
+
+export const completedButton = (theme: Theme) => {
+  return {
+    gap: '0.5rem',
+    backgroundColor: theme.palette.success.main,
+    color: theme.palette.background.paper,
+    width: '100%',
+    borderRadius: '0.8rem',
+    '&:hover': {
+      backgroundColor: theme.palette.text.primary,
     },
-    outlinedButton: {
-      borderColor: theme.palette.background.paper,
-      color: theme.palette.background.paper,
-      borderRadius: '0.8rem',
-    },
-    completedButton: {
-      gap: '0.5rem',
-      backgroundColor: theme.palette.success.main,
-      color: theme.palette.background.paper,
-      width: '100%',
-      borderRadius: '0.8rem',
-      '&:hover': {
-        backgroundColor: theme.palette.text.primary,
-      },
-    },
-  }
+  } as CSSProperties
 }
 
 export const detailContainer = {

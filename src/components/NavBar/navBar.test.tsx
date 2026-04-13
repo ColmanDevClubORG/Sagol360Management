@@ -22,23 +22,25 @@ const renderNavBar = (initialRoute: string) => {
 }
 
 describe('NavBar', () => {
+  const activeLink = NAV_LINKS[0]
+
   it('should display the active page icon in active color', () => {
-    renderNavBar('/home')
+    renderNavBar(activeLink.href)
 
     const allLinks = screen.getAllByRole('link')
-    const homeLink = allLinks.find((link) => link.getAttribute('href') === '/home')!
-    const otherLinks = allLinks.filter((link) => link.getAttribute('href') !== '/home')
+    const homeLink = allLinks.find((link) => link.getAttribute('href') === activeLink.href)!
+    const otherLinks = allLinks.filter((link) => link.getAttribute('href') !== activeLink.href)
 
-    expect(homeLink.className).not.toBe(otherLinks[0].className)
+    expect(homeLink).toHaveAttribute('aria-current', 'page')
 
     otherLinks.forEach((link) => {
-      expect(link.className).toBe(otherLinks[0].className)
+      expect(link).not.toHaveAttribute('aria-current')
     })
   })
 
   it('should change the URL when clicking each navbar button', async () => {
     const user = userEvent.setup()
-    renderNavBar('/home')
+    renderNavBar(activeLink.href)
 
     for (const navLink of NAV_LINKS) {
       const linkElement = screen
@@ -53,7 +55,8 @@ describe('NavBar', () => {
       const clickedLink = updatedLinks.find((l) => l.getAttribute('href') === navLink.href)!
       const inactiveLink = updatedLinks.find((l) => l.getAttribute('href') !== navLink.href)!
 
-      expect(clickedLink.className).not.toBe(inactiveLink.className)
+      expect(clickedLink).toHaveAttribute('aria-current', 'page')
+      expect(inactiveLink).not.toHaveAttribute('aria-current')
     }
   })
 })

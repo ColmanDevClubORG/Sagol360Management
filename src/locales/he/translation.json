@@ -55,5 +55,7 @@
   "lifestyle.page": "LifeStyle Page",
   "balanceTraining.title": "מותאם לשיפור שיווי משקל",
   "balanceTraining.description": "סדרת תרגילים לשיפור יציבות ומניעת נפילות, מותאמת אישית לצרכיך.",
-  "balanceTraining.button": "צפה בסרטוני שיווי משקל"
+  "balanceTraining.button": "צפה בסרטוני שיווי משקל",
+  "login.patient": "מטופל",
+  "login.staff": "איש צוות"
 }

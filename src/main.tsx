@@ -11,8 +11,10 @@ import { Home } from './pages/home/home.tsx'
 import { Schedule } from './pages/schedule/Schedule.tsx'
 import { LifeStyle } from './pages/lifeStyle/LifeStyle.tsx'
 import { DailyReports } from './pages/dailyReports/DailyReports.tsx'
+import { LoginOption } from './pages/login/LoginOption/LoginOption.tsx'
 
 const router = createBrowserRouter([
+  { path: 'login', element: <LoginOption /> },
   {
     path: '/',
     element: <MainLayout />,

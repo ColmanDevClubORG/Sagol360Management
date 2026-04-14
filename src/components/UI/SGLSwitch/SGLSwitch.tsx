@@ -31,7 +31,7 @@ export const SGLSwitch = ({ options, value, onChange }: SGLSwitchProps) => {
         return (
           <SGLToggleButton key={option.value} value={option.value}>
             <SGLTypography
-              variant="mediumText"
+              variant={isSelected ? 'smallTitle' : 'mediumText'}
               color={isSelected ? theme.palette.purple.main : theme.palette.midGrey.main}
             >
               {option.label}

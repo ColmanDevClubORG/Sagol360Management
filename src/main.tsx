@@ -11,19 +11,24 @@ import { Home } from './pages/home/home.tsx'
 import { Schedule } from './pages/schedule/Schedule.tsx'
 import { LifeStyle } from './pages/lifeStyle/LifeStyle.tsx'
 import { DailyReports } from './pages/dailyReports/DailyReports.tsx'
-import { LoginOption } from './pages/login/LoginOption/LoginOption.tsx'
+import { Login } from './pages/login/Login.tsx'
+import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute.tsx'
 
 const router = createBrowserRouter([
-  { path: 'login', element: <LoginOption /> },
+  { path: '/', element: <Login /> },
   {
-    path: '/',
-    element: <MainLayout />,
+    element: <ProtectedRoute />,
     children: [
-      { index: true, element: <Home /> },
-      { path: 'home', element: <Home /> },
-      { path: 'schedule', element: <Schedule /> },
-      { path: 'lifeStyle', element: <LifeStyle /> },
-      { path: 'dailyReports', element: <DailyReports /> },
+      {
+        path: '/',
+        element: <MainLayout />,
+        children: [
+          { path: 'home', element: <Home /> },
+          { path: 'schedule', element: <Schedule /> },
+          { path: 'lifeStyle', element: <LifeStyle /> },
+          { path: 'dailyReports', element: <DailyReports /> },
+        ],
+      },
     ],
   },
 ])

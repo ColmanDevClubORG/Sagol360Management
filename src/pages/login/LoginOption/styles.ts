@@ -1,17 +1,10 @@
 import { theme } from '@/theme'
 import type { CSSProperties } from '@mui/material'
 
-export const pageLayout: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  height: '100vh',
-  justifyContent: 'center',
-  alignItems: 'center',
-}
-
 export const containerStyle: CSSProperties = {
   backgroundColor: theme.palette.background.paper,
-  width: '20rem',
+  width: '70%',
+  maxWidth: '20rem',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

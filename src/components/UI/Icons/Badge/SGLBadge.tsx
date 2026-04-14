@@ -1,22 +1,15 @@
+import Badge from '@mui/material/Badge'
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
-import { StyledBadge } from './styles'
-import { SGLTypography } from '../../Typography/SGLTypography'
+import { bellStyle, anchorOrigin, messageStyle } from './styles'
 
-interface SGLBadgeProps {
-  count: number
+type SGLBadgeProps = {
+  count?: number
 }
 
-export const SGLBadge = ({ count }: SGLBadgeProps) => {
+export const SGLBadge = ({ count = 0 }: SGLBadgeProps) => {
   return (
-    <StyledBadge
-      badgeContent={<SGLTypography variant="smallText">{count}</SGLTypography>}
-      overlap="circular"
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'left',
-      }}
-    >
-      <NotificationsNoneIcon />
-    </StyledBadge>
+    <Badge badgeContent={count} sx={messageStyle} anchorOrigin={anchorOrigin}>
+      <NotificationsNoneIcon sx={bellStyle} />
+    </Badge>
   )
 }

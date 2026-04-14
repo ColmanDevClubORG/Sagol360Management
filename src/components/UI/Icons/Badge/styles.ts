@@ -1,18 +1,17 @@
-import { styled, Badge } from '@mui/material'
-
-export const StyledBadge = styled(Badge)(({ theme }) => ({
+export const bellStyle = {
+  color: 'purple.main',
   cursor: 'pointer',
+}
+
+export const messageStyle = {
   '& .MuiBadge-badge': {
-    backgroundColor: theme.palette.error.main,
-    color: theme.palette.background.paper,
-    border: `2px solid ${theme.palette.background.paper}`,
-    height: '18px',
-    minWidth: '18px',
-    borderRadius: '50%',
-    padding: '0',
+    backgroundColor: 'error.main',
+    color: 'common.white',
   },
-  '& .MuiSvgIcon-root': {
-    color: theme.palette.purple.main,
-    fontSize: '28px',
-  },
-}))
+  cursor: 'pointer',
+}
+
+export const anchorOrigin = {
+  vertical: 'top',
+  horizontal: 'left',
+} as const

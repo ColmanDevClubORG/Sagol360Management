@@ -2,6 +2,7 @@
   "welcome": "ברוכים הבאים לניהול סגול 360",
   "Sagol": "סגול",
   "good night": "לילה טוב,",
+  "good night,": "לילה טוב,",
   "nav.home": "ראשי",
   "nav.calendar": "לו״ז",
   "nav.lifestyle": "אורח חיים",
@@ -53,6 +54,10 @@
   "time.to.fill.report": "הגיע הזמן למלא את הדיווח היומי שלך",
   "click.me": "Click Me",
   "lifestyle.page": "LifeStyle Page",
+  "appointment.cognitiveAssessment": "הערכת קוגניטיבית",
+  "appointment.orangeCellArizon": "תא כתום • בניין אריסון",
+  "appointment.room102": "חדר 102",
+  "appointment.room203": "חדר 203",
   "balanceTraining.title": "מותאם לשיפור שיווי משקל",
   "balanceTraining.description": "סדרת תרגילים לשיפור יציבות ומניעת נפילות, מותאמת אישית לצרכיך.",
   "balanceTraining.button": "צפה בסרטוני שיווי משקל"

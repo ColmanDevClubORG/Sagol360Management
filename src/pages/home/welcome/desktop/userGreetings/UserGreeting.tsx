@@ -2,6 +2,7 @@ import { SGLAvatar } from '@/components/UI/Icons/Avatar/SGLAvatar'
 import { welcomeDesktopStyles } from '../styles'
 import type { CSSProperties } from '@mui/material'
 import { SplitTitle } from '../../splitTitle/SpliteTitle'
+import { useTranslation } from 'react-i18next'
 
 interface UserGreetingProps {
   userName: string
@@ -9,12 +10,13 @@ interface UserGreetingProps {
 }
 
 export const UserGreeting = ({ userName, styles }: UserGreetingProps) => {
+  const { t } = useTranslation()
   const avatarText = userName.slice(0, 2)
 
   return (
     <div style={{ ...welcomeDesktopStyles.sections, ...styles }}>
       <SplitTitle
-        firstChild={'good night,'}
+        firstChild={t('good night,')}
         secondChild={`${userName} 👋`}
         firstVariant="smallText"
         secondVariant="smallTitle"

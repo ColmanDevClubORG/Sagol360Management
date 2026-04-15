@@ -6,29 +6,31 @@ import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
 import { SGLContainer } from '@/components/UI/Container/SGLContainer'
 import { scheduleStyles } from './styles'
-
-const MOK_SCHEDULE_ITEMS: Appointment[] = [
-  {
-    id: '1',
-    title: 'טיפול בתא לחץ',
-    time: '10:00',
-    durationMinutes: 45,
-    location: 'חדר 102',
-    type: 'hyperbaric_chamber',
-  },
-  {
-    id: '2',
-    title: 'הערכת קוגניטיבית',
-    time: '11:00',
-    durationMinutes: 60,
-    location: 'חדר 203',
-    type: 'cognitive_assessment',
-  },
-]
+import { useTranslation } from 'react-i18next'
 
 export const Schedule = () => {
+  const { t } = useTranslation()
   const [selectedDate, setSelectedDate] = useState(dayjs())
   const [activeAppointment, setActiveAppointment] = useState<Appointment | undefined>()
+
+  const MOK_SCHEDULE_ITEMS: Appointment[] = [
+    {
+      id: '1',
+      title: t('progress.treatment'),
+      time: '10:00',
+      durationMinutes: 45,
+      location: t('appointment.room102'),
+      type: 'hyperbaric_chamber',
+    },
+    {
+      id: '2',
+      title: t('appointment.cognitiveAssessment'),
+      time: '11:00',
+      durationMinutes: 60,
+      location: t('appointment.room203'),
+      type: 'cognitive_assessment',
+    },
+  ]
 
   return (
     <SGLContainer styles={{ ...scheduleStyles.container }}>

@@ -16,7 +16,7 @@ export const UserGreeting = ({ userName, styles }: UserGreetingProps) => {
   return (
     <div style={{ ...welcomeDesktopStyles.sections, ...styles }}>
       <SplitTitle
-        firstChild={t('good night,')}
+        firstChild={t('good.night')}
         secondChild={`${userName} 👋`}
         firstVariant="smallText"
         secondVariant="smallTitle"

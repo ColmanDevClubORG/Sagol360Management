@@ -15,7 +15,7 @@ export const WelcomeMobile = ({
   return (
     <div style={{ ...welcomeMobileStyles.container, ...styles }}>
       <SplitTitle
-        firstChild={t('good night,')}
+        firstChild={t('good.night')}
         secondChild={userName}
         firstVariant="mediumText"
         secondVariant="largeTitle"

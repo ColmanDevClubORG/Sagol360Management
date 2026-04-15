@@ -55,5 +55,7 @@
   "lifestyle.page": "LifeStyle Page",
   "balanceTraining.title": "Tailored to improve balance",
   "balanceTraining.description": "A series of exercises to improve stability and prevent falls, personally tailored to your needs.",
-  "balanceTraining.button": "Watch balance training videos"
+  "balanceTraining.button": "Watch balance training videos",
+  "login.patient": "Patient",
+  "login.staff": "Staff"
 }

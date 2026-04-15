@@ -43,5 +43,7 @@
   "daily.activity.goal": "Ежедневная цель активности",
   "balanceTraining.title": "Адаптировано для улучшения равновесия",
   "balanceTraining.description": "Серия упражнений для улучшения устойчивости и предотвращения падений, подобранная индивидуально.",
-  "balanceTraining.button": "Смотреть видео тренировки равновесия"
+  "balanceTraining.button": "Смотреть видео тренировки равновесия",
+  "login.patient": "Пациент",
+  "login.staff": "Персонал"
 }

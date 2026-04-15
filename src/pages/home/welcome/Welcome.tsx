@@ -10,7 +10,7 @@ export const Welcome = () => {
   const toggleDialog = () => {
     setIsOpen((prev) => !prev)
   }
-  //TODO Replace with dynamic data from API
+
   const welcomeProps = {
     userName: 'ישראל',
     notificationCount: 2,

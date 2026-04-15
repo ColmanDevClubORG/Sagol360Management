@@ -1,7 +1,7 @@
 {
   "welcome": "مرحبًا بك في إدارة Sagol360",
   "Sagol": "ساجول",
-  "good night,": "تصبح على خير،",
+  "good.night": "تصبح على خير،",
   "nav.home": "الرئيسية",
   "nav.calendar": "الجدول الزمني",
   "nav.lifestyle": "نمط الحياة",
@@ -53,6 +53,10 @@
   "time.to.fill.report": "حان الوقت لملء تقريرك اليومي",
   "click.me": "اضغط هنا",
   "lifestyle.page": "صفحة نمط الحياة",
+  "appointment.cognitiveAssessment": "التقييم المعرفي",
+  "appointment.orangeCellArizon": "الخلية البرتقالية • مبنى أريزون",
+  "appointment.room102": "غرفة 102",
+  "appointment.room203": "غرفة 203",
   "balanceTraining.title": "مصمم لتحسين التوازن",
   "balanceTraining.description": "سلسلة تمارين لتحسين الاستقرار ومنع السقوط، مصممة خصيصًا لاحتياجاتك.",
   "balanceTraining.button": "شاهد مقاطع تدريب التوازن"

@@ -1,7 +1,7 @@
 import type { Theme } from '@mui/material/styles'
 import type { CSSProperties } from 'react'
 
-export const root = (theme: Theme) => {
+export const rootStyle = (theme: Theme) => {
   return {
     width: '95%',
     display: 'flex',
@@ -13,7 +13,7 @@ export const root = (theme: Theme) => {
   } as const
 }
 
-export const icon = (theme: Theme) => {
+export const iconStyle = (theme: Theme) => {
   return {
     color: theme.palette.background.paper,
   } as CSSProperties
@@ -35,7 +35,7 @@ export const outlinedButtonStyles = (theme: Theme) => {
   } as CSSProperties
 }
 
-export const completedButton = (theme: Theme) => {
+export const completedButtonStyle = (theme: Theme) => {
   return {
     gap: '0.5rem',
     backgroundColor: theme.palette.success.main,
@@ -48,20 +48,20 @@ export const completedButton = (theme: Theme) => {
   } as CSSProperties
 }
 
-export const detailContainer = {
+export const detailContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
   gap: '1rem',
 } as CSSProperties
 
-export const iconContainer = {
+export const iconContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
   gap: '0.3rem',
   alignItems: 'center',
 } as CSSProperties
 
-export const buttonsContainer = {
+export const buttonsContainerStyle = {
   display: 'flex',
   gap: '2rem',
   marginTop: '1rem',

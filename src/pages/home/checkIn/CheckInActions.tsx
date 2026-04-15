@@ -1,4 +1,4 @@
-import { buttonsContainer } from './style'
+import { buttonsContainerStyle } from './style'
 import { CheckInOptions } from './CheckInOptions'
 import { CheckedButton } from './CheckedButton'
 
@@ -10,7 +10,7 @@ interface CheckInActionsProps {
 
 export const CheckInActions = ({ onDone, onCheckIn, isCheckedIn }: CheckInActionsProps) => {
   return (
-    <div style={buttonsContainer}>
+    <div style={buttonsContainerStyle}>
       {isCheckedIn ? <CheckedButton onDone={onDone} /> : <CheckInOptions onCheckIn={onCheckIn} />}
     </div>
   )

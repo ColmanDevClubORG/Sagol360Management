@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { theme } from '@/theme'
-import { detailContainer, iconContainer, root, icon } from './style'
+import { detailContainerStyle, iconContainerStyle, rootStyle, iconStyle } from './style'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import BusinessIcon from '@mui/icons-material/Business'
@@ -25,28 +25,28 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
   }
 
   return (
-    <SGLCard style={{ ...root(theme) }}>
+    <SGLCard style={rootStyle(theme)}>
       <SGLTypography variant="smallTitle" color="white">
         {t('checkIn.nextAppointment')} {DOT} {t('checkIn.today')}
       </SGLTypography>
       <SGLTypography variant="largeTitle" color="white">
         {t('checkIn.hyperbaricTreatment')}
       </SGLTypography>
-      <div style={{ ...detailContainer }}>
-        <div style={{ ...iconContainer }}>
-          <AccessTimeIcon style={{ ...icon(theme) }}></AccessTimeIcon>
+      <div style={detailContainerStyle}>
+        <div style={iconContainerStyle}>
+          <AccessTimeIcon style={iconStyle(theme)}></AccessTimeIcon>
           <SGLTypography variant="mediumText" color="white">
             18:00
           </SGLTypography>
         </div>
-        <div style={{ ...iconContainer }}>
-          <LocationOnIcon style={{ ...icon(theme) }}></LocationOnIcon>
+        <div style={iconContainerStyle}>
+          <LocationOnIcon style={iconStyle(theme)}></LocationOnIcon>
           <SGLTypography variant="mediumText" color="white">
             {t('chckIn.orangeCell')}
           </SGLTypography>
         </div>
-        <div style={{ ...iconContainer }}>
-          <BusinessIcon style={{ ...icon(theme) }}></BusinessIcon>
+        <div style={iconContainerStyle}>
+          <BusinessIcon style={iconStyle(theme)}></BusinessIcon>
           <SGLTypography variant="mediumText" color="white">
             {t('checkIn.arisonBuilding')}
           </SGLTypography>

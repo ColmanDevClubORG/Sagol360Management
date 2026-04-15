@@ -13,9 +13,11 @@ import { LifeStyle } from './pages/lifeStyle/LifeStyle.tsx'
 import { DailyReports } from './pages/dailyReports/DailyReports.tsx'
 import { Login } from './pages/login/Login.tsx'
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute.tsx'
+import { Navigate } from 'react-router-dom'
 
 const router = createBrowserRouter([
-  { path: '/', element: <Login /> },
+  { path: '/', element: <Navigate to="/login" replace /> },
+  { path: '/login', element: <Login /> },
   {
     element: <ProtectedRoute />,
     children: [

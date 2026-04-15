@@ -46,10 +46,28 @@ export const theme = createTheme({
       main: '#6D22AB',
     },
     orange: {
-      main: '#F57C00',
+      main: '#fa7315',
+    },
+    brown: {
+      main: '#50372e',
+    },
+    yellow: {
+      main: '#ffdd00',
+    },
+    green: {
+      main: '#02b134',
+    },
+    lightBrown: {
+      main: '#775549',
+    },
+    lightYellow: {
+      main: '#fcff9a',
     },
     lightGrey: {
       main: '#f3f4f6',
+    },
+    lightWhite: {
+      main: '#FFFFFF94',
     },
     midGrey: {
       main: '#8F9098',
@@ -57,8 +75,35 @@ export const theme = createTheme({
     lowOpacityPurple: {
       main: '#6d22ab2c',
     },
+    lowOpacityYellow: {
+      main: '#ffff2b23',
+    },
+    lowOpacityWhite: {
+      main: '#FFFFFF38',
+    },
+    lowOpacityGrey: {
+      main: '#7a7a7a27',
+    },
     mediumGrey: {
       main: '#dfdcdc',
+    },
+    blue: {
+      main: '#3B82F6',
+    },
+    emerald: {
+      main: '#10B981',
+    },
+    lightGreen: {
+      main: '#e8f5e9',
+    },
+    darkGreen: {
+      main: '#1B5E20',
+    },
+    lightOrange: {
+      main: '#fff8ed',
+    },
+    warmBrown: {
+      main: '#8a3720',
     },
   },
   typography: {

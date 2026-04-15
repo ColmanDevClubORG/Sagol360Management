@@ -1,15 +1,29 @@
+import { useState } from 'react'
 import { ProgressCard } from '@/pages/home/progress/ProgressCard'
-import { SGLBadge } from '@/components/UI/Icons/Badge/SGLBadge'
-import { NavContainer, HomeWrapper } from './styles'
+import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
+import type { Appointment } from '@/components/BottomSheetDialog/types'
+import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
+import { DailyTips } from './dailyTips/DailyTips'
 
 export const Home = () => {
+  const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
+    id: '1',
+    title: 'טיפול בתא לחץ',
+    time: '00:07',
+    durationMinutes: 120,
+    location: 'תא כתום • בניין אריסון',
+    type: 'hyperbaric_chamber',
+  })
   return (
-    <HomeWrapper>
-      <NavContainer>
-        <SGLBadge count={2} />
-      </NavContainer>
-
+    <>
       <ProgressCard value={10} />
-    </HomeWrapper>
+      <BottomSheetDialog
+        appointment={selectedAppointment}
+        isOpen={!!selectedAppointment}
+        onClose={() => setSelectedAppointment(undefined)}
+      />
+      <TrainingGoal />
+      <DailyTips />
+    </>
   )
 }

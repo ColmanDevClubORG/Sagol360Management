@@ -29,6 +29,7 @@ export const NavBar = () => {
               component={Link}
               to={href}
               sx={isActive ? styles.navItemActive : styles.navItem}
+              aria-current={isActive ? 'page' : undefined}
             >
               <Icon />
               <SGLTypography variant="largeText">{t(tKey)}</SGLTypography>

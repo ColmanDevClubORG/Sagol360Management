@@ -103,5 +103,14 @@
   "metricCard.label.veryClear": "صافٍ جدًا",
   "metricCard.label.low": "منخفض",
   "metricCard.label.excellentState": "ممتاز",
-  "metricCard.label.noPain": "بدون ألم"
+  "metricCard.label.noPain": "بدون ألم",
+  
+  "checkIn.nextAppointment": "الموعد القادم",
+  "checkIn.today": "اليوم",
+  "checkIn.hyperbaricTreatment": "علاج في غرفة الضغط",
+  "chckIn.orangeCell": "خلية برتقالية",
+  "checkIn.arisonBuilding": "مبنى أريسون",
+  "checkIn.performCheckIn": "قم بتسجيل الدخول",
+  "checkIn.notComing": "لن أحضر",
+  "checkIn.completedSuccessfully": "تم بنجاح"
 }

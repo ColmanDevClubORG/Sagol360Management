@@ -103,5 +103,26 @@
   "metricCard.label.veryClear": "Очень ясное",
   "metricCard.label.low": "Низкое",
   "metricCard.label.excellentState": "Отличное",
-  "metricCard.label.noPain": "Без боли"
+  "metricCard.label.noPain": "Без боли",
+  
+  "lang.en": " Английский",
+  "lang.he": "Иврит",
+  "lang.ru": "Русский",
+  "lang.ar": "Арабский",
+  "test": "тест",
+  "example.text": "Пример текста",
+  "alerts": "Уведомления",
+  "daily.report": "Ежедневный отчет",
+  "orange.cell": "Оранжевая клетка",
+  "time.to.fill.report": "Пора заполнить ваш ежедневный отчет",
+  "click.me": "Нажми меня",
+  "lifestyle.page": "Страница образа жизни",
+  "checkIn.nextAppointment": "Следующая запись",
+  "checkIn.today": "Сегодня",
+  "checkIn.hyperbaricTreatment": "Гипербарическое лечение",
+  "chckIn.orangeCell": "Оранжевая клетка",
+  "checkIn.arisonBuilding": "Здание Арисон",
+  "checkIn.performCheckIn": "Отметиться",
+  "checkIn.notComing": "Не приду",
+  "checkIn.completedSuccessfully": "Успешно выполнено"
 }

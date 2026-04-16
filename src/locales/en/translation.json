@@ -103,5 +103,14 @@
   "metricCard.label.veryClear": "Very clear",
   "metricCard.label.low": "Low",
   "metricCard.label.excellentState": "Excellent",
-  "metricCard.label.noPain": "No pain"
+  "metricCard.label.noPain": "No pain",
+  
+  "checkIn.nextAppointment": "Next Appointment",
+  "checkIn.today": "Today",
+  "checkIn.hyperbaricTreatment": "Hyperbaric Treatment",
+  "chckIn.orangeCell": "Orange Cell",
+  "checkIn.arisonBuilding": "Arison Building",
+  "checkIn.performCheckIn": "Perform Check-In",
+  "checkIn.notComing": "Not Coming",
+  "checkIn.completedSuccessfully": "Completed Successfully"
 }

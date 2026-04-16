@@ -104,5 +104,13 @@
   "metricCard.label.veryClear": "צלול מאוד",
   "metricCard.label.low": "ירוד",
   "metricCard.label.excellentState": "מצוין",
-  "metricCard.label.noPain": "ללא כאב"
+  "metricCard.label.noPain": "ללא כאב",
+  "checkIn.nextAppointment": "התור הבא",
+  "checkIn.today": "היום",
+  "checkIn.hyperbaricTreatment": "טיפול בתא לחץ",
+  "chckIn.orangeCell": "תא כתום",
+  "checkIn.arisonBuilding": "בניין אריסון",
+  "checkIn.performCheckIn": "בצע צ'ק אין",
+  "checkIn.notComing": "לא מגיע",
+  "checkIn.completedSuccessfully": "בוצע בהצלחה"
 }

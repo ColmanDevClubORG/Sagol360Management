@@ -57,5 +57,14 @@
   "balanceTraining.description": "سلسلة تمارين لتحسين الاستقرار ومنع السقوط، مصممة خصيصًا لاحتياجاتك.",
   "balanceTraining.button": "شاهد مقاطع تدريب التوازن",
   "login.patient": "مريض",
-  "login.staff": "موظف"
+  "login.staff": "موظف",
+  "login.enterPatientNumber": "أدخل رقم المريض",
+  "login.example": "مثال: 123456789",
+  "login.sendCode": "أرسل رمز التحقق",
+  "login.quickLogin": "أو تسجيل الدخول السريع",
+  "login.scanQr": "مسح رمز QR",
+  "login.supportInfo": "إذا كنت لا تتذكر تفاصيل تسجيل الدخول الخاصة بك، يمكنك الاتصال بسكرتارية العيادة أو طلب المساعدة من أفراد الأسرة.",
+  "login.errors.requiredId": "الرجاء إدخال رقم الهوية",
+  "login.errors.numbersOnly": "يجب أن يحتوي رقم الهوية على أرقام فقط",
+  "login.errors.length9": "يجب أن يتكون رقم الهوية من 9 أرقام"
 }

@@ -12,6 +12,7 @@ export const pageLayout: CSSProperties = {
 export const formContainer: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
   gap: '1rem',
   marginTop: '1rem',
   width: '100%',

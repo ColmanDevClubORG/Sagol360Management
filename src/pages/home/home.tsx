@@ -5,6 +5,7 @@ import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
 import { useTranslation } from 'react-i18next'
+import { CheckIn } from './checkIn/CheckIn'
 
 export const Home = () => {
   const { t } = useTranslation()
@@ -26,6 +27,7 @@ export const Home = () => {
       />
       <TrainingGoal />
       <DailyTips />
+      <CheckIn onDone={() => {}} />
     </>
   )
 }

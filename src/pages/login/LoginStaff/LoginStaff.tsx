@@ -3,6 +3,7 @@ import { LoginForm } from '../LoginForm/LoginForm'
 import { createLoginSchema, type LoginFormSchema } from '../loginSchema'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { loginStaffStyles } from './styles'
 
 export const LoginStaff = () => {
   const { t } = useTranslation()
@@ -22,7 +23,7 @@ export const LoginStaff = () => {
         buttonText={t('login.enterDashboard')}
         title={t('login.enterStaffNumber')}
         onSubmit={methods.handleSubmit(onSubmit)}
-        styles={{ paddingBottom: '1rem' }}
+        styles={loginStaffStyles}
       />
     </FormProvider>
   )

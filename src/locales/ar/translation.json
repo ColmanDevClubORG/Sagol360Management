@@ -66,5 +66,8 @@
   "login.supportInfo": "إذا كنت لا تتذكر تفاصيل تسجيل الدخول الخاصة بك، يمكنك الاتصال بسكرتارية العيادة أو طلب المساعدة من أفراد الأسرة.",
   "login.errors.requiredId": "الرجاء إدخال رقم الهوية",
   "login.errors.numbersOnly": "يجب أن يحتوي رقم الهوية على أرقام فقط",
-  "login.errors.length9": "يجب أن يتكون رقم الهوية من 9 أرقام"
+  "login.errors.length9": "يجب أن يتكون رقم الهوية من 9 أرقام",
+  "login.enterStaffNumber": "أدخل رقم الموظف",
+  "login.staffNumber": "رقم الموظف",
+  "login.enterDashboard": "الدخول إلى لوحة التحكم"
 }

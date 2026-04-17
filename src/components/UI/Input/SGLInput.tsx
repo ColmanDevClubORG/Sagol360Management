@@ -4,12 +4,13 @@ import { inputStyles } from './styles'
 import { InputAdornment } from '@mui/material'
 import type { ReactNode } from 'react'
 
-interface InputProps extends Omit<TextFieldProps, 'style'> {
+interface InputProps extends Omit<TextFieldProps, 'style' | 'slotProps'> {
   label?: string
   value?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   style?: SxProps<Theme>
   icon?: ReactNode
+  customInputProps?: TextFieldProps['slotProps']
 }
 
 export const SGLInput = ({
@@ -20,7 +21,7 @@ export const SGLInput = ({
   variant = 'outlined',
   fullWidth = true,
   icon,
-  slotProps,
+  customInputProps,
   ...props
 }: InputProps) => {
   return (
@@ -32,13 +33,13 @@ export const SGLInput = ({
       variant={variant}
       fullWidth={fullWidth}
       slotProps={{
-        ...slotProps,
+        ...customInputProps,
         input: {
-          ...slotProps?.input,
+          ...customInputProps?.input,
           startAdornment: icon ? <InputAdornment position="start">{icon}</InputAdornment> : null,
         },
         htmlInput: {
-          ...slotProps?.htmlInput,
+          ...customInputProps?.htmlInput,
         },
       }}
       sx={{

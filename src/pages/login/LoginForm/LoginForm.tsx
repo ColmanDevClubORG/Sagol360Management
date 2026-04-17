@@ -1,7 +1,7 @@
 import { SGLInput } from '@/components/UI/Input/SGLInput'
 import { SGLButton } from '@/components/UI/Button/SGLButton'
 import { SGLLeftArrowIcon } from '@/components/UI/Icons/LeftArrowIcon/SGLLeftArrowIcon'
-import { SGLID } from '@/components/UI/Icons/ID/SGLID'
+import { SGLIdIcon } from '@/components/UI/Icons/ID/SGLIdIcon'
 import { theme } from '@/theme'
 import * as styles from '../styles'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
@@ -27,14 +27,9 @@ export const LoginForm = ({ inputText, buttonText, title, onSubmit }: LoginFormP
       <SGLInput
         {...register('serializedNumber')}
         placeholder={inputText}
-        icon={<SGLID />}
+        icon={<SGLIdIcon />}
         style={styles.roundedInputStyle}
-        slotProps={{
-          htmlInput: {
-            maxLength: 9,
-            inputMode: 'numeric',
-          },
-        }}
+        customInputProps={styles.loginFormSlotProps}
         error={!!errors.serializedNumber}
         helperText={errors.serializedNumber?.message}
       />

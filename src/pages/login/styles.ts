@@ -25,6 +25,16 @@ export const roundedInputStyle: SxProps<Theme> = {
       borderColor: theme.palette.midGrey.main,
     },
   },
+  '& .MuiFormHelperText-root': {
+    textAlign: 'center',
+  },
+}
+
+export const loginFormSlotProps = {
+  htmlInput: {
+    maxLength: 9,
+    inputMode: 'numeric',
+  },
 }
 export const submitButtonContent: CSSProperties = {
   display: 'flex',

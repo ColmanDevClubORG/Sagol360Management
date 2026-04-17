@@ -1,10 +1,10 @@
 import { QrCode } from 'lucide-react'
 import type { CSSProperties } from 'react'
-interface SGLQRProps {
+interface SGLQrIconProps {
   size?: number
   color?: string
   styles?: CSSProperties
 }
-export const SGLQR = ({ size, color, styles, ...props }: SGLQRProps) => {
+export const SGLQrIcon = ({ size, color, styles, ...props }: SGLQrIconProps) => {
   return <QrCode size={size} color={color} style={{ ...styles }} {...props} />
 }

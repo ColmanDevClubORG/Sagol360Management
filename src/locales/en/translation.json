@@ -57,5 +57,14 @@
   "balanceTraining.description": "A series of exercises to improve stability and prevent falls, personally tailored to your needs.",
   "balanceTraining.button": "Watch balance training videos",
   "login.patient": "Patient",
-  "login.staff": "Staff"
+  "login.staff": "Staff",
+  "login.enterPatientNumber": "Enter patient number",
+  "login.example": "Example: 123456789",
+  "login.sendCode": "Send verification code",
+  "login.quickLogin": "Or quick login",
+  "login.scanQr": "Scan QR code",
+  "login.supportInfo": "If you do not remember your login details, you can contact the clinic secretariat or ask family members for help.",
+  "login.errors.requiredId": "Please enter an ID number",
+  "login.errors.numbersOnly": "ID number must contain only numbers",
+  "login.errors.length9": "ID number must be 9 digits"
 }

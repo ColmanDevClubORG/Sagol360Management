@@ -66,5 +66,8 @@
   "login.supportInfo": "If you do not remember your login details, you can contact the clinic secretariat or ask family members for help.",
   "login.errors.requiredId": "Please enter an ID number",
   "login.errors.numbersOnly": "ID number must contain only numbers",
-  "login.errors.length9": "ID number must be 9 digits"
+  "login.errors.length9": "ID number must be 9 digits",
+  "login.enterStaffNumber": "Enter staff number",
+  "login.staffNumber": "Staff number",
+  "login.enterDashboard": "Login to dashboard"
 }

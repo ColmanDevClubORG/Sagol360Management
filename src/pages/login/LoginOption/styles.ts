@@ -10,6 +10,5 @@ export const containerStyle: CSSProperties = {
   alignItems: 'center',
   boxShadow: theme.shadows[4],
   borderRadius: '1rem',
-  minHeight: '20rem',
   padding: '1rem',
 }

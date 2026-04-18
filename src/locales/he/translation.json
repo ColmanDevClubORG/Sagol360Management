@@ -66,5 +66,8 @@
   "login.supportInfo": "אם אינך זוכר את פרטי ההתחברות שלך, ניתן לפנות למזכירות המרפאה או לבקש עזרה מבני המשפחה.",
   "login.errors.requiredId": "אנא הכנס מספר מזהה",
   "login.errors.numbersOnly": "חובה להזין מספרים בלבד",
-  "login.errors.length9": "מספר מזהה חייב להיות 9 ספרות"
+  "login.errors.length9": "מספר מזהה חייב להיות 9 ספרות",
+  "login.enterStaffNumber": "הזן מספר עובד",
+  "login.staffNumber": "מספר עובד",
+  "login.enterDashboard": "כניסה לדשבורד"
 }

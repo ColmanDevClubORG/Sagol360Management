@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import * as styles from './styles'
 import { SGLSwitch } from '@/components/UI/SGLSwitch/SGLSwitch'
 import { LoginPatient } from '../LoginPatient/LoginPatient'
+import { LoginStaff } from '../LoginStaff/LoginStaff'
 
 export const LoginOption = () => {
   const { t } = useTranslation()
@@ -16,7 +17,7 @@ export const LoginOption = () => {
   return (
     <div style={styles.containerStyle}>
       <SGLSwitch options={switchOptions} value={selected} onChange={setSelected} />
-      <LoginPatient />
+      {selected === 'patient' ? <LoginPatient /> : <LoginStaff />}
     </div>
   )
 }

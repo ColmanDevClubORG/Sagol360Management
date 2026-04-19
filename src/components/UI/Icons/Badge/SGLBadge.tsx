@@ -1,26 +1,27 @@
-import React from 'react'
-import Badge from '@mui/material/Badge'
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
-import { SGLTypography } from '../../Typography/SGLTypography'
-import { bellStyle, anchorOrigin, messageStyle } from './styles'
+import React from 'react';
+import Badge from '@mui/material/Badge';
+import { SGLTypography } from '../../Typography/SGLTypography';
+import { bellStyle, anchorOrigin } from './styles';
 
 type SGLBadgeProps = {
-  count?: number
-}
+  count: number;
+  children: React.ReactNode;
+};
 
-export const SGLBadge = ({ count = 0 }: SGLBadgeProps) => {
+export const SGLBadge = ({ count, children }: SGLBadgeProps) => {
   return (
-    <Badge 
+    <Badge
       badgeContent={
-        <SGLTypography variant="smallText" color="common.white">
-          {count}
-        </SGLTypography>
-      } 
-      sx={messageStyle} 
+        <span style={{ display: 'flex' }}>
+          <SGLTypography variant="smallText" color="common.white">
+            {count}
+          </SGLTypography>
+        </span>
+      }
+      sx={bellStyle}
       anchorOrigin={anchorOrigin}
-      showZero={false}
     >
-      <NotificationsNoneIcon sx={bellStyle} />
+      {children}
     </Badge>
-  )
-}
+  );
+};

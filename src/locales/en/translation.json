@@ -1,4 +1,9 @@
 {
+  "schedule.updatedAt": "Updated on {{date}} at {{time}}",
+  "schedule.today": "Today",
+  "schedule.tomorrow": "Tomorrow",
+  "schedule.upcomingWeek": "Upcoming Week",
+  "schedule.noAppointments": "No upcoming appointments",
   "welcome": "Welcome to Sagol360 Management",
   "Sagol": "Sagol",
   "good.night": "good night,",

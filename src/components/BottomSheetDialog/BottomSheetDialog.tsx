@@ -29,12 +29,12 @@ export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetD
 
   // TODO: Replace with API call
   const slots = [
-    { date: '04/04', time: '15:00', location: t('orange.cell'), availableSpots: 8 },
-    { date: '04/04', time: '17:30', location: t('orange.cell'), availableSpots: 11 },
-    { date: '04/04', time: '20:00', location: t('orange.cell'), availableSpots: 13 },
-    { date: '05/04', time: '15:00', location: t('orange.cell'), availableSpots: 11 },
-    { date: '05/04', time: '17:30', location: t('orange.cell'), availableSpots: 12 },
-    { date: '05/04', time: '20:00', location: t('orange.cell'), availableSpots: 13 },
+    { startAt: '2026-04-04T15:00:00', location: t('orange.cell'), availableSpots: 8 },
+    { startAt: '2026-04-04T17:30:00', location: t('orange.cell'), availableSpots: 11 },
+    { startAt: '2026-04-04T20:00:00', location: t('orange.cell'), availableSpots: 13 },
+    { startAt: '2026-04-20T13:00:00', location: t('orange.cell'), availableSpots: 11 },
+    { startAt: '2026-05-04T17:30:00', location: t('orange.cell'), availableSpots: 12 },
+    { startAt: '2026-05-04T20:00:00', location: t('orange.cell'), availableSpots: 13 },
   ]
 
   const handleClose = () => {

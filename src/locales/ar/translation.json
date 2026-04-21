@@ -1,4 +1,9 @@
 {
+  "schedule.updatedAt": "تم التحديث في {{date}} الساعة {{time}}",
+  "schedule.today": "اليوم",
+  "schedule.tomorrow": "غدًا",
+  "schedule.upcomingWeek": "خلال الأسبوع القادم",
+  "schedule.noAppointments": "لا توجد مواعيد قريبة",
   "welcome": "مرحبًا بك في إدارة Sagol360",
   "Sagol": "ساجول",
   "good.night": "تصبح على خير،",

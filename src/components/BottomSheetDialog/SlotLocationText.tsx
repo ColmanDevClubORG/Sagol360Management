@@ -9,7 +9,9 @@ export const SlotLocationText = ({ location }: SlotLocationTextProps) => {
   const { t } = useTranslation()
   return (
     <SGLTypography variant="mediumText">
-      {t('appointment.showingSlots', { location })}
+      {t('appointment.showingSlots', {
+        location: t(location),
+      })}
     </SGLTypography>
   )
 }

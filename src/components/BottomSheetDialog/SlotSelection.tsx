@@ -7,8 +7,7 @@ import { SlotList } from './SlotList'
 import { SlotActions } from './SlotActions'
 
 export interface Slot {
-  date: string
-  time: string
+  startAt: string
   location: string
   availableSpots: number
 }
@@ -33,12 +32,10 @@ export const SlotSelection = ({
 
   const handleSelectSlot = (slot: Slot) => {
     setValue('selectedSlot', {
-      date: slot.date,
-      time: slot.time,
+      startAt: slot.startAt,
       location: slot.location,
     })
   }
-
   return (
     <div style={styles.container}>
       <SlotSelectionHeader onClose={onClose} />

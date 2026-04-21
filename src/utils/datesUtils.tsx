@@ -13,3 +13,13 @@ export const getStartOfWeek = (date: Date): Date => {
 }
 
 export const getCurrentDay = () => dayjs()
+
+export const formatDate = (startAt: string) => {
+  const date = dayjs(startAt)
+  return date.isValid() ? date.format('DD/MM') : ''
+}
+
+export const formatTime = (startAt: string) => {
+  const date = dayjs(startAt)
+  return date.isValid() ? date.format('HH:mm') : ''
+}

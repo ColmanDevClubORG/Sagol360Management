@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { ScheduleCardMeta } from './ScheduleCardMeta'
-import { scheduleCardStyles } from './styles'
 import type { ScheduleCardContentProps } from './types'
+import { scheduleCardStyles } from './scheduleCardStyles'
 
 export const ScheduleCardContent = ({
   title,
-  time,
+  startAt,
   durationMinutes,
   location,
 }: ScheduleCardContentProps) => {
@@ -15,7 +15,7 @@ export const ScheduleCardContent = ({
   return (
     <div style={scheduleCardStyles.content}>
       <SGLTypography variant="smallTitle">{t(title)}</SGLTypography>
-      <ScheduleCardMeta time={time} durationMinutes={durationMinutes} />
+      <ScheduleCardMeta startAt={startAt} durationMinutes={durationMinutes} />
       <SGLTypography variant="smallText">{t(location)}</SGLTypography>
     </div>
   )

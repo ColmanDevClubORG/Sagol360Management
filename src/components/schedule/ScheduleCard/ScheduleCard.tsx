@@ -1,9 +1,9 @@
 import { SGLButton } from '@/components/UI/Button/SGLButton'
 import { SGLLeftArrowIcon } from '@/components/UI/Icons/LeftArrowIcon/SGLLeftArrowIcon'
 import { ScheduleCardContent } from './ScheduleCardContent'
-import { scheduleCardStyles } from './styles'
-import { SGLContainer } from '../UI/Container/SGLContainer'
-import { type Appointment, appointmentColors } from '../BottomSheetDialog/types'
+import { SGLContainer } from '../../UI/Container/SGLContainer'
+import { type Appointment, appointmentColors } from '../../BottomSheetDialog/types'
+import { scheduleCardStyles } from './scheduleCardStyles'
 
 interface ScheduleCardProps extends Appointment {
   onClick: () => void
@@ -11,7 +11,7 @@ interface ScheduleCardProps extends Appointment {
 
 export const ScheduleCard = ({
   title,
-  time,
+  startAt,
   durationMinutes,
   location,
   type,
@@ -27,7 +27,7 @@ export const ScheduleCard = ({
     >
       <ScheduleCardContent
         title={title}
-        time={time}
+        startAt={startAt}
         durationMinutes={durationMinutes}
         location={location}
       />

@@ -1,5 +1,5 @@
 export interface ScheduleCardMetaProps {
-  time: string
+  startAt: string
   durationMinutes: number
 }
 

@@ -4,17 +4,15 @@ import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDia
 import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
-import { useTranslation } from 'react-i18next'
 import { CheckIn } from './checkIn/CheckIn'
 
 export const Home = () => {
-  const { t } = useTranslation()
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
     id: '1',
-    title: t('progress.treatment'),
-    time: '00:07',
+    title: 'progress.treatment',
     durationMinutes: 120,
-    location: t('appointment.orangeCellArizon'),
+    location: 'appointment.orangeCellArizon',
+    startAt: '2026-04-21T10:12:00',
     type: 'hyperbaric_chamber',
   })
   return (

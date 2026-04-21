@@ -13,7 +13,7 @@ export type AppointmentType = (typeof APPOINTMENT_TYPES)[number]
 export interface Appointment {
   id: string
   title: string
-  time: string
+  startAt: string
   location: string
   durationMinutes: number
   type: AppointmentType
@@ -34,8 +34,7 @@ export const FormFields = {
 export interface RescheduleFormValues {
   timePreference: 'morning' | 'afternoon_evening'
   selectedSlot: {
-    date: string
-    time: string
+    startAt: string
     location: string
   }
 }

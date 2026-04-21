@@ -8,6 +8,7 @@ import * as styles from './styles'
 import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { SGLButton } from '../UI/Button/SGLButton'
 import { useTranslation } from 'react-i18next'
+import { formatTime } from '@/utils/datesUtils'
 
 interface AppointmentDetailsProps {
   appointment: Appointment
@@ -25,7 +26,7 @@ export const AppointmentDetails = ({
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <SGLTypography variant="largeTitle">{appointment.title}</SGLTypography>
+        <SGLTypography variant="largeTitle">{t(appointment.title)}</SGLTypography>
         <IconButton onClick={onClose}>
           <CloseIcon />
         </IconButton>
@@ -34,13 +35,13 @@ export const AppointmentDetails = ({
       <div style={styles.row}>
         <AccessTimeIcon style={styles.icons} />
         <SGLTypography variant="mediumText">
-          {appointment.time} ({formattedDuration})
+          {formatTime(appointment.startAt)} ({formattedDuration})
         </SGLTypography>
       </div>
 
       <div style={styles.row}>
         <LocationOnOutlinedIcon style={styles.icons} />
-        <SGLTypography variant="mediumText">{appointment.location}</SGLTypography>
+        <SGLTypography variant="mediumText">{t(appointment.location)}</SGLTypography>
       </div>
 
       <div style={styles.actions}>

@@ -7,18 +7,23 @@ import { LoginForm } from '../LoginForm/LoginForm'
 import { QuickLoginQRButton } from './QuickLoginQRButton/QuickLoginQRButton'
 import { LoginSupportInfo } from './LoginSupportInfo/LoginSupportInfo'
 import * as styles from './styles'
+import { useNavigate } from 'react-router-dom'
 
 export const LoginPatient = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
 
   const loginSchema = createLoginSchema(t)
   const methods = useForm<LoginFormSchema>({
     resolver: zodResolver(loginSchema),
   })
+
   const onSubmit = (data: LoginFormSchema) => {
     console.log('Final Number:', data.serializedNumber)
+    navigate('/home')
     methods.reset()
   }
+
   return (
     <div style={styles.loginPatientStyles}>
       <FormProvider {...methods}>

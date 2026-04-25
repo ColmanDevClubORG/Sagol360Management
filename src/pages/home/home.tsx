@@ -6,6 +6,7 @@ import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
 import { useTranslation } from 'react-i18next'
 import { CheckIn } from './checkIn/CheckIn'
+import { SGLVideoCard } from '@/components/UI/Video/SGLVideoCard'
 
 export const Home = () => {
   const { t } = useTranslation()
@@ -28,6 +29,11 @@ export const Home = () => {
       <TrainingGoal />
       <DailyTips />
       <CheckIn onDone={() => {}} />
+      <SGLVideoCard
+        title={t('balanceTraining.title')}
+        description={t('balanceTraining.description')}
+        durationMinutes={10}
+      />
     </>
   )
 }

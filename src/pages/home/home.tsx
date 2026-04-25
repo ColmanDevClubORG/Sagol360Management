@@ -6,6 +6,7 @@ import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
 import { useTranslation } from 'react-i18next'
 import { CheckIn } from './checkIn/CheckIn'
+import { SGLDivider } from '@/components/UI/Divider/SGLDivider'
 
 export const Home = () => {
   const { t } = useTranslation()
@@ -17,6 +18,7 @@ export const Home = () => {
     location: t('appointment.orangeCellArizon'),
     type: 'hyperbaric_chamber',
   })
+
   return (
     <>
       <ProgressCard value={10} />
@@ -26,6 +28,7 @@ export const Home = () => {
         onClose={() => setSelectedAppointment(undefined)}
       />
       <TrainingGoal />
+      <SGLDivider>{t('common.or') || 'או'}</SGLDivider>
       <DailyTips />
       <CheckIn onDone={() => {}} />
     </>

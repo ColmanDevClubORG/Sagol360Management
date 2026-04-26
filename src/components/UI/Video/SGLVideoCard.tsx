@@ -1,6 +1,7 @@
 import { SGLCard } from '../Card/SGLCard'
 import { SGLTypography } from '../Typography/SGLTypography'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import { SGLPlayArrowIcon } from '../Icons/PlayArrowIcon/SGLPlayArrowIcon'
+import { SGLImage } from '../Image/SGLImage'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '@mui/material'
 import * as styles from './styles'
@@ -14,8 +15,8 @@ interface SGLVideoCardProps {
 }
 
 export const SGLVideoCard = ({
-  title,
-  description,
+  title = '',
+  description = '',
   durationMinutes,
   thumbnailUrl,
   onClick,
@@ -33,14 +34,10 @@ export const SGLVideoCard = ({
         </SGLTypography>
       </div>
       <div style={styles.thumbnailWrapper}>
-        {thumbnailUrl ? (
-          <img src={thumbnailUrl} alt={title} style={styles.thumbnail} />
-        ) : (
-          <div style={styles.thumbnailPlaceholder(theme)} />
-        )}
+        <SGLImage src={thumbnailUrl} alt={title} />
         <div style={styles.playOverlay}>
           <div style={styles.playButton(theme)}>
-            <PlayArrowIcon style={styles.playIcon(theme)} />
+            <SGLPlayArrowIcon style={styles.playIcon(theme)} />
           </div>
         </div>
       </div>

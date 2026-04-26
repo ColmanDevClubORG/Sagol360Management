@@ -20,18 +20,6 @@ export const thumbnailWrapper: CSSProperties = {
   overflow: 'hidden',
 }
 
-export const thumbnail: CSSProperties = {
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
-}
-
-export const thumbnailPlaceholder = (theme: Theme): CSSProperties => ({
-  width: '100%',
-  height: '100%',
-  backgroundColor: theme.palette.midGrey.main,
-})
-
 export const playOverlay: CSSProperties = {
   position: 'absolute',
   inset: 0,

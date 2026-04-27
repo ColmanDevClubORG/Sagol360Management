@@ -3,10 +3,9 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { SwipeableDrawer } from '@mui/material'
 import { AppointmentDetails } from './AppointmentDetails'
 import { TimePreferencePicker } from './TimePreferencePicker'
-import { SlotSelection } from './SlotSelection'
+import { SlotSelection, type Slot } from './SlotSelection'
 import type { Appointment, RescheduleFormValues } from './types'
 import * as styles from './styles'
-import { useTranslation } from 'react-i18next'
 
 interface BottomSheetDialogProps {
   appointment?: Appointment
@@ -23,18 +22,47 @@ const Step = {
 type Step = (typeof Step)[keyof typeof Step]
 
 export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetDialogProps) => {
-  const { t } = useTranslation()
   const [step, setStep] = useState<Step>(Step.DETAILS)
   const methods = useForm<RescheduleFormValues>()
 
   // TODO: Replace with API call
-  const slots = [
-    { startAt: '2026-04-04T15:00:00', location: t('orange.cell'), availableSpots: 8 },
-    { startAt: '2026-04-04T17:30:00', location: t('orange.cell'), availableSpots: 11 },
-    { startAt: '2026-04-04T20:00:00', location: t('orange.cell'), availableSpots: 13 },
-    { startAt: '2026-04-20T13:00:00', location: t('orange.cell'), availableSpots: 11 },
-    { startAt: '2026-05-04T17:30:00', location: t('orange.cell'), availableSpots: 12 },
-    { startAt: '2026-05-04T20:00:00', location: t('orange.cell'), availableSpots: 13 },
+  const slots: Slot[] = [
+    {
+      date: '2026-04-04',
+      time: '15:00:00',
+      chamber: 'appointment.chamber.hyperbaric',
+      availableSpots: 8,
+    },
+    {
+      date: '2026-04-04',
+      time: '17:30:00',
+      chamber: 'appointment.chamber.hyperbaric',
+      availableSpots: 11,
+    },
+    {
+      date: '2026-04-04',
+      time: '20:00:00',
+      chamber: 'appointment.chamber.hyperbaric',
+      availableSpots: 13,
+    },
+    {
+      date: '2026-04-20',
+      time: '13:00:00',
+      chamber: 'appointment.chamber.hyperbaric',
+      availableSpots: 11,
+    },
+    {
+      date: '2026-05-04',
+      time: '17:30:00',
+      chamber: 'appointment.chamber.hyperbaric',
+      availableSpots: 12,
+    },
+    {
+      date: '2026-05-04',
+      time: '20:00:00',
+      chamber: 'appointment.chamber.hyperbaric',
+      availableSpots: 13,
+    },
   ]
 
   const handleClose = () => {

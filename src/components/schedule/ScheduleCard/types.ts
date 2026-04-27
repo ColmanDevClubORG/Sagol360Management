@@ -1,9 +1,7 @@
 export interface ScheduleCardMetaProps {
-  startAt: string
-  durationMinutes: number
+  time: string
 }
 
 export interface ScheduleCardContentProps extends ScheduleCardMetaProps {
-  title: string
-  location: string
+  chamber: string
 }

@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form'
-import type { Appointment, RescheduleFormValues } from './types'
+import type { Appointment, AppointmentDate, RescheduleFormValues } from './types'
 import * as styles from './styles'
 import { SlotSelectionHeader } from './SlotSelectionHeader'
 import { SlotLocationText } from './SlotLocationText'
@@ -7,8 +7,9 @@ import { SlotList } from './SlotList'
 import { SlotActions } from './SlotActions'
 
 export interface Slot {
-  startAt: string
-  location: string
+  date: AppointmentDate
+  time: string
+  chamber: string
   availableSpots: number
 }
 
@@ -32,14 +33,15 @@ export const SlotSelection = ({
 
   const handleSelectSlot = (slot: Slot) => {
     setValue('selectedSlot', {
-      startAt: slot.startAt,
-      location: slot.location,
+      date: slot.date,
+      time: slot.time,
+      chamber: slot.chamber,
     })
   }
   return (
     <div style={styles.container}>
       <SlotSelectionHeader onClose={onClose} />
-      <SlotLocationText location={appointment.location} />
+      <SlotLocationText chamber={appointment.chamber} />
       <SlotList slots={slots} selectedSlot={selectedSlot} onSelect={handleSelectSlot} />
       <SlotActions onBack={onBack} onSubmit={onSubmit} selectedSlot={selectedSlot} />
     </div>

@@ -1,5 +1,6 @@
-import dayjs, { type Dayjs } from 'dayjs'
 import type { Appointment } from '@/components/BottomSheetDialog/types'
+import { getAppointmentTimestamp } from '@/utils/appointmentUtils'
+import { isSameDay, parseIsoDate } from '@/utils/datesUtils'
 
 export type ScheduleSectionKey = 'today' | 'tomorrow' | 'upcomingWeek'
 
@@ -10,23 +11,27 @@ export const SECTION_LABEL_KEYS: Record<ScheduleSectionKey, string> = {
 }
 
 export const getSection = (
-  startAt: string,
-  todayStart: Dayjs,
-  tomorrowStart: Dayjs,
-  dayAfterTomorrowStart: Dayjs,
-  nextWeekEnd: Dayjs,
+  appointmentDate: string,
+  todayStart: Date,
+  tomorrowStart: Date,
+  dayAfterTomorrowStart: Date,
+  nextWeekEnd: Date,
 ): ScheduleSectionKey | null => {
-  const parsedDate = dayjs(startAt)
+  const parsedDate = parseIsoDate(appointmentDate)
 
-  if (parsedDate.isSame(todayStart, 'day')) {
+  if (!parsedDate) {
+    return null
+  }
+
+  if (isSameDay(parsedDate, todayStart)) {
     return 'today'
   }
 
-  if (parsedDate.isSame(tomorrowStart, 'day')) {
+  if (isSameDay(parsedDate, tomorrowStart)) {
     return 'tomorrow'
   }
 
-  if (!parsedDate.isBefore(dayAfterTomorrowStart) && !parsedDate.isAfter(nextWeekEnd)) {
+  if (parsedDate >= dayAfterTomorrowStart && parsedDate <= nextWeekEnd) {
     return 'upcomingWeek'
   }
 
@@ -35,36 +40,132 @@ export const getSection = (
 
 export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
   {
-    id: '1',
-    title: 'progress.treatment',
-    startAt: '2026-04-21T10:12:50',
-    durationMinutes: 45,
-    location: 'appointment.room102',
-    type: 'hyperbaric_chamber',
+    appointmentId: '1',
+    patientId: 1622017,
+    time: '10:12:50',
+    date: '2026-04-27',
+    chamber: 'appointment.chamber.hyperbaric',
+    chairNumber: 9,
+    treatmentNumber: 2,
+    status: 'pending',
   },
   {
-    id: '2',
-    title: 'appointment.cognitiveAssessment',
-    startAt: '2026-04-22T11:00:00',
-    durationMinutes: 60,
-    location: 'appointment.room203',
-    type: 'cognitive_assessment',
+    appointmentId: '2',
+    patientId: 1622018,
+    time: '15:10:21',
+    date: '2026-04-29',
+    chamber: 'appointment.chamber.cognitiveAssessment',
+    chairNumber: 4,
+    treatmentNumber: 3,
+    status: 'cancelled',
   },
   {
-    id: '3',
-    title: 'progress.treatment',
-    startAt: '2026-04-28T09:30:00',
-    durationMinutes: 30,
-    location: 'appointment.room102',
-    type: 'hyperbaric_chamber',
+    appointmentId: '3',
+    patientId: 1622019,
+    time: '09:05:00',
+    date: '2026-05-02',
+    chamber: 'appointment.chamber.physiotherapy',
+    chairNumber: 2,
+    treatmentNumber: 4,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '4',
+    patientId: 1622020,
+    time: '12:30:00',
+    date: '2026-05-03',
+    chamber: 'appointment.chamber.stressTest',
+    chairNumber: 1,
+    treatmentNumber: 5,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '6',
+    patientId: 1622022,
+    time: '08:15:00',
+    date: '2026-04-28',
+    chamber: 'appointment.chamber.cognitiveAssessment',
+    chairNumber: 3,
+    treatmentNumber: 1,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '5',
+    patientId: 1622021,
+    time: '08:45:00',
+    date: '2026-04-26',
+    chamber: 'appointment.chamber.imagingInstitute',
+    chairNumber: 6,
+    treatmentNumber: 6,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '7',
+    patientId: 1622022,
+    time: '08:15:00',
+    date: '2026-04-27',
+    chamber: 'appointment.chamber.cognitiveAssessment',
+    chairNumber: 3,
+    treatmentNumber: 1,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '8',
+    patientId: 1622023,
+    time: '09:30:00',
+    date: '2026-04-27',
+    chamber: 'appointment.chamber.red',
+    chairNumber: 2,
+    treatmentNumber: 2,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '9',
+    patientId: 1622024,
+    time: '11:00:00',
+    date: '2026-04-28',
+    chamber: 'appointment.room102',
+    chairNumber: 5,
+    treatmentNumber: 7,
+    status: 'pending',
+  },
+  {
+    appointmentId: '10',
+    patientId: 1622025,
+    time: '13:20:00',
+    date: '2026-04-28',
+    chamber: 'appointment.room203',
+    chairNumber: 4,
+    treatmentNumber: 4,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '11',
+    patientId: 1622026,
+    time: '10:45:00',
+    date: '2026-04-30',
+    chamber: 'appointment.orangeCellArizon',
+    chairNumber: 8,
+    treatmentNumber: 9,
+    status: 'confirmed',
+  },
+  {
+    appointmentId: '12',
+    patientId: 1622027,
+    time: '14:10:00',
+    date: '2026-05-01',
+    chamber: 'orange.cell',
+    chairNumber: 10,
+    treatmentNumber: 11,
+    status: 'cancelled',
   },
 ] //TODO should come from db
 export const buildSectionItems = (
   appointments: Appointment[],
-  todayStart: Dayjs,
-  tomorrowStart: Dayjs,
-  dayAfterTomorrowStart: Dayjs,
-  nextWeekEnd: Dayjs,
+  todayStart: Date,
+  tomorrowStart: Date,
+  dayAfterTomorrowStart: Date,
+  nextWeekEnd: Date,
 ): Record<ScheduleSectionKey, Appointment[]> => {
   const sectionItems: Record<ScheduleSectionKey, Appointment[]> = {
     today: [],
@@ -73,12 +174,12 @@ export const buildSectionItems = (
   }
 
   const sortedAppointments = [...appointments].sort((a, b) => {
-    return dayjs(a.startAt).valueOf() - dayjs(b.startAt).valueOf()
+    return getAppointmentTimestamp(a) - getAppointmentTimestamp(b)
   })
 
   for (const item of sortedAppointments) {
     const section = getSection(
-      item.startAt,
+      item.date,
       todayStart,
       tomorrowStart,
       dayAfterTomorrowStart,

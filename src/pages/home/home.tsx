@@ -8,12 +8,14 @@ import { CheckIn } from './checkIn/CheckIn'
 
 export const Home = () => {
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
-    id: '1',
-    title: 'progress.treatment',
-    durationMinutes: 120,
-    location: 'appointment.orangeCellArizon',
-    startAt: '2026-04-21T10:12:00',
-    type: 'hyperbaric_chamber',
+    appointmentId: '1',
+    patientId: 1622017,
+    time: '10:12:50',
+    date: '2026-05-15',
+    chamber: 'appointment.chamber.hyperbaric',
+    chairNumber: 9,
+    treatmentNumber: 2,
+    status: 'confirmed',
   })
   return (
     <>

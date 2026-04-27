@@ -23,10 +23,8 @@ export const ScheduleSections = ({ sections, onAppointmentClick }: ScheduleSecti
 
             {items.map((item) => (
               <ScheduleCard
-                key={item.id}
+                key={item.appointmentId}
                 {...item}
-                title={item.title}
-                location={item.location}
                 onClick={() => onAppointmentClick(item)}
               />
             ))}

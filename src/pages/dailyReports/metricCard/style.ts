@@ -18,7 +18,7 @@ export const cardHeaderStyle = {
 export const headerTitleStyle = {
   display: 'flex',
   flexDirection: 'row',
-  gap: '5px',
+  gap: '7px',
 } as React.CSSProperties
 
 export const headerValueStyle = (theme: Theme) => ({

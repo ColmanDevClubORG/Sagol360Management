@@ -47,5 +47,25 @@
   "appointment.room203": "Комната 203",
   "balanceTraining.title": "Адаптировано для улучшения равновесия",
   "balanceTraining.description": "Серия упражнений для улучшения устойчивости и предотвращения падений, подобранная индивидуально.",
-  "balanceTraining.button": "Смотреть видео тренировки равновесия"
+  "balanceTraining.button": "Смотреть видео тренировки равновесия",
+
+  "metricCard.energyLevel": "Уровень энергии",
+  "metricCard.sleepQuality": "Качество сна",
+  "metricCard.painLevel": "Уровень боли",
+  "metricCard.concentration": "Концентрация",
+  "metricCard.brainFog": "Затуманенность сознания",
+  "metricCard.mood": "Настроение",
+
+  "metricCard.label.exhausted": "Истощение",
+  "metricCard.label.energetic": "Энергичность",
+  "metricCard.label.poor": "Плохое",
+  "metricCard.label.excellent": "Отличное",
+  "metricCard.label.severePain": "Сильная боль",
+  "metricCard.label.difficultyConcentrating": "Трудно сосредоточиться",
+  "metricCard.label.highlyFocused": "Высокая концентрация",
+  "metricCard.label.veryHeavy": "Очень тяжёлое",
+  "metricCard.label.veryClear": "Очень ясное",
+  "metricCard.label.low": "Низкое",
+  "metricCard.label.excellentState": "Отличное",
+  "metricCard.label.noPain": "Без боли"
 }

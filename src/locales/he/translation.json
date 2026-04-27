@@ -60,5 +60,25 @@
   "appointment.room203": "חדר 203",
   "balanceTraining.title": "מותאם לשיפור שיווי משקל",
   "balanceTraining.description": "סדרת תרגילים לשיפור יציבות ומניעת נפילות, מותאמת אישית לצרכיך.",
-  "balanceTraining.button": "צפה בסרטוני שיווי משקל"
+  "balanceTraining.button": "צפה בסרטוני שיווי משקל",
+
+  "metricCard.energyLevel": "רמת אנרגיה",
+  "metricCard.sleepQuality": "איכות שינה",
+  "metricCard.painLevel": "רמת כאב",
+  "metricCard.concentration": "ריכוז",
+  "metricCard.brainFog": "ערפול מוחי",
+  "metricCard.mood": "מצב רוח",
+
+  "metricCard.label.exhausted": "תשישות",
+  "metricCard.label.energetic": "אנרגטיות",
+  "metricCard.label.poor": "גרועה",
+  "metricCard.label.excellent": "מעולה",
+  "metricCard.label.severePain": "כאב חזק",
+  "metricCard.label.difficultyConcentrating": "קושי להתרכז",
+  "metricCard.label.highlyFocused": "מרוכז מאוד",
+  "metricCard.label.veryHeavy": "כבד מאוד",
+  "metricCard.label.veryClear": "צלול מאוד",
+  "metricCard.label.low": "ירוד",
+  "metricCard.label.excellentState": "מצוין",
+  "metricCard.label.noPain": "ללא כאב"
 }

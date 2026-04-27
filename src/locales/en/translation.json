@@ -59,5 +59,25 @@
   "appointment.room203": "Room 203",
   "balanceTraining.title": "Tailored to improve balance",
   "balanceTraining.description": "A series of exercises to improve stability and prevent falls, personally tailored to your needs.",
-  "balanceTraining.button": "Watch balance training videos"
+  "balanceTraining.button": "Watch balance training videos",
+
+  "metricCard.energyLevel": "Energy level",
+  "metricCard.sleepQuality": "Sleep quality",
+  "metricCard.painLevel": "Pain level",
+  "metricCard.concentration": "Concentration",
+  "metricCard.brainFog": "Brain fog",
+  "metricCard.mood": "Mood",
+
+  "metricCard.label.exhausted": "Exhausted",
+  "metricCard.label.energetic": "Energetic",
+  "metricCard.label.poor": "Poor",
+  "metricCard.label.excellent": "Excellent",
+  "metricCard.label.severePain": "Severe pain",
+  "metricCard.label.difficultyConcentrating": "Difficulty concentrating",
+  "metricCard.label.highlyFocused": "Highly focused",
+  "metricCard.label.veryHeavy": "Very heavy",
+  "metricCard.label.veryClear": "Very clear",
+  "metricCard.label.low": "Low",
+  "metricCard.label.excellentState": "Excellent",
+  "metricCard.label.noPain": "No pain"
 }

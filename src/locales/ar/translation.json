@@ -59,5 +59,25 @@
   "appointment.room203": "غرفة 203",
   "balanceTraining.title": "مصمم لتحسين التوازن",
   "balanceTraining.description": "سلسلة تمارين لتحسين الاستقرار ومنع السقوط، مصممة خصيصًا لاحتياجاتك.",
-  "balanceTraining.button": "شاهد مقاطع تدريب التوازن"
+  "balanceTraining.button": "شاهد مقاطع تدريب التوازن",
+
+  "metricCard.energyLevel": "مستوى الطاقة",
+  "metricCard.sleepQuality": "جودة النوم",
+  "metricCard.painLevel": "مستوى الألم",
+  "metricCard.concentration": "التركيز",
+  "metricCard.brainFog": "ضبابية الدماغ",
+  "metricCard.mood": "الحالة المزاجية",
+
+  "metricCard.label.exhausted": "إرهاق",
+  "metricCard.label.energetic": "نشاط",
+  "metricCard.label.poor": "سيئة",
+  "metricCard.label.excellent": "ممتازة",
+  "metricCard.label.severePain": "ألم شديد",
+  "metricCard.label.difficultyConcentrating": "صعوبة في التركيز",
+  "metricCard.label.highlyFocused": "تركيز عالٍ",
+  "metricCard.label.veryHeavy": "ثقيل جدًا",
+  "metricCard.label.veryClear": "صافٍ جدًا",
+  "metricCard.label.low": "منخفض",
+  "metricCard.label.excellentState": "ممتاز",
+  "metricCard.label.noPain": "بدون ألم"
 }

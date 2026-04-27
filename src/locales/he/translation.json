@@ -68,5 +68,11 @@
   "checkIn.arisonBuilding": "בניין אריסון",
   "checkIn.performCheckIn": "בצע צ'ק אין",
   "checkIn.notComing": "לא מגיע",
-  "checkIn.completedSuccessfully": "בוצע בהצלחה"
+  "checkIn.completedSuccessfully": "בוצע בהצלחה",
+  "pain.level": "רמת כאב",
+  "pain.high": "כאב חזק",
+  "pain.low": "ללא כאב",
+  "concentration": "ריכוז",
+  "concentration.high": "קשי להתרכז",
+  "concentration.low": "מרוכז מאוד"
 }

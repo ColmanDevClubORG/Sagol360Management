@@ -67,5 +67,11 @@
   "checkIn.arisonBuilding": "Здание Арисон",
   "checkIn.performCheckIn": "Отметиться",
   "checkIn.notComing": "Не приду",
-  "checkIn.completedSuccessfully": "Успешно выполнено"
+  "checkIn.completedSuccessfully": "Успешно выполнено",
+  "pain.level": "Уровень боли",
+  "pain.high": "Сильная боль",
+  "pain.low": "Нет боли",
+  "concentration": "Концентрация",
+  "concentration.high": "Трудно сосредоточиться",
+  "concentration.low": "Очень сосредоточен"
 }

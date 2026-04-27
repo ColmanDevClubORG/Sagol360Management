@@ -5,12 +5,15 @@ export const dividerStyles = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    gap: 1,
-    my: 2,
+    gap: 0.5,
+    py: 1.5,
+    borderBottom: '1px solid',
+    borderColor: 'mediumGrey.main',
   } as SxProps<Theme>,
 
   header: {
     display: 'flex',
+    flexDirection: 'row-reverse',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
@@ -18,28 +21,25 @@ export const dividerStyles = {
 
   headerRight: {
     display: 'flex',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     gap: 1,
   } as SxProps<Theme>,
 
-  icon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  } as SxProps<Theme>,
-
-  progress: {
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: 'lightGrey.main',
+  getProgress: (theme: Theme): SxProps<Theme> => ({
+    height: 6,
+    borderRadius: '10px',
+    backgroundColor: theme.palette.mediumGrey.main,
+    transform: 'scaleX(-1)',
     '& .MuiLinearProgress-bar': {
-      borderRadius: 4,
-      backgroundColor: 'purple.main',
+      borderRadius: '10px',
+      backgroundColor: theme.palette.purple.main,
     },
-  } as SxProps<Theme>,
+  }),
 
   footer: {
     display: 'flex',
+    flexDirection: 'row-reverse',
     justifyContent: 'space-between',
     width: '100%',
   } as SxProps<Theme>,

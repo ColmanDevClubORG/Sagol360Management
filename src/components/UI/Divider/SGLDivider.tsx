@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { Box, LinearProgress } from '@mui/material'
+import { Box, LinearProgress, useTheme } from '@mui/material'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { dividerStyles } from './styles'
 
@@ -20,27 +20,29 @@ export const SGLDivider = ({
   highLabel,
   icon,
 }: SGLDividerProps) => {
+  const theme = useTheme()
+
   return (
     <Box sx={dividerStyles.container}>
       <Box sx={dividerStyles.header}>
-        <SGLTypography color="purple.main" styles={{ fontWeight: 700 }}>
+        <SGLTypography variant="smallTitle" color="secondary.main">
           {value}
         </SGLTypography>
         <Box sx={dividerStyles.headerRight}>
-          <SGLTypography styles={{ fontWeight: 700 }}>{label}</SGLTypography>
-          {icon && <Box sx={dividerStyles.icon}>{icon}</Box>}
+          <SGLTypography variant="smallTitle">{label}</SGLTypography>
+          {icon && <Box>{icon}</Box>}
         </Box>
       </Box>
 
-      <LinearProgress variant="determinate" value={percent} sx={dividerStyles.progress} />
+      <LinearProgress
+        variant="determinate"
+        value={100 - percent}
+        sx={dividerStyles.getProgress(theme)}
+      />
 
       <Box sx={dividerStyles.footer}>
-        <SGLTypography color="midGrey.main" styles={{ fontSize: '12px' }}>
-          {lowLabel}
-        </SGLTypography>
-        <SGLTypography color="midGrey.main" styles={{ fontSize: '12px' }}>
-          {highLabel}
-        </SGLTypography>
+        <SGLTypography variant="smallText">{lowLabel}</SGLTypography>
+        <SGLTypography variant="smallText">{highLabel}</SGLTypography>
       </Box>
     </Box>
   )

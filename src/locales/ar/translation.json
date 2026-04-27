@@ -67,5 +67,11 @@
   "checkIn.arisonBuilding": "مبنى أريسون",
   "checkIn.performCheckIn": "قم بتسجيل الدخول",
   "checkIn.notComing": "لن أحضر",
-  "checkIn.completedSuccessfully": "تم بنجاح"
+  "checkIn.completedSuccessfully": "تم بنجاح",
+  "pain.level": "مستوى الألم",
+  "pain.high": "ألم شديد",
+  "pain.low": "لا ألم",
+  "concentration": "التركيز",
+  "concentration.high": "صعوبة في التركيز",
+  "concentration.low": "تركيز عالٍ"
 }

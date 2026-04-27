@@ -1,8 +1,8 @@
 import { theme } from '@/theme'
+import type { IsoDateString } from '@/utils/datesUtils'
 
 export type AppointmentStatus = 'confirmed' | 'pending' | 'cancelled'
-export type AppointmentDate =
-  `${number}${number}${number}${number}-${number}${number}-${number}${number}`
+export type AppointmentDate = IsoDateString
 
 export interface Appointment {
   appointmentId: string

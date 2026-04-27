@@ -1,5 +1,8 @@
 import dayjs from 'dayjs'
 
+export type IsoDateString =
+  `${number}${number}${number}${number}-${number}${number}-${number}${number}`
+
 export const ISO_DATE_REGEX = /^(\d{4})-(\d{2})-(\d{2})$/
 
 export const getStartOfWeek = (date: Date): Date => {
@@ -39,13 +42,39 @@ export const addDays = (date: Date, days: number) => {
   nextDate.setDate(nextDate.getDate() + days)
   return nextDate
 }
+
+export const addMonths = (date: Date, months: number) => {
+  const nextDate = new Date(date)
+  nextDate.setMonth(nextDate.getMonth() + months)
+  return nextDate
+}
+
 export const padTwo = (value: number) => value.toString().padStart(2, '0')
+
+export const formatIsoDate = (date: Date): IsoDateString =>
+  `${date.getFullYear()}-${padTwo(date.getMonth() + 1)}-${padTwo(date.getDate())}` as IsoDateString
 
 export const formatDisplayDate = (date: Date) =>
   `${padTwo(date.getDate())}/${padTwo(date.getMonth() + 1)}/${date.getFullYear()}`
 
-export const formatDisplayTime = (date: Date) =>
-  `${padTwo(date.getHours())}:${padTwo(date.getMinutes())}`
+export const formatShortDisplayDate = (date: string) => {
+  const dateParts = ISO_DATE_REGEX.exec(date)
+
+  if (!dateParts) {
+    return date
+  }
+
+  const [, , month, day] = dateParts
+  return `${day}/${month}`
+}
+
+export const formatDisplayTime = (date: Date | string) => {
+  if (typeof date === 'string') {
+    return date.slice(0, 5)
+  }
+
+  return `${padTwo(date.getHours())}:${padTwo(date.getMinutes())}`
+}
 
 export const isSameDay = (date: Date, targetDate: Date) =>
   date.getFullYear() === targetDate.getFullYear() &&

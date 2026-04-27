@@ -27,10 +27,7 @@ export const Schedule = () => {
     dayAfterTomorrowStart,
     nextWeekEnd,
   )
-  const hasAppointments =
-    sectionItems.today.length > 0 ||
-    sectionItems.tomorrow.length > 0 ||
-    sectionItems.upcomingWeek.length > 0
+  const hasAppointments = sectionItems.some(({ items }) => items.length > 0)
 
   return (
     <SGLContainer styles={scheduleStyles.container}>

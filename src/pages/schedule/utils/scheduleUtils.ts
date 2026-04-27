@@ -1,14 +1,26 @@
 import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { getAppointmentTimestamp } from '@/utils/appointmentUtils'
-import { isSameDay, parseIsoDate } from '@/utils/datesUtils'
+import { addDays, formatIsoDate, isSameDay, parseIsoDate } from '@/utils/datesUtils'
 
 export type ScheduleSectionKey = 'today' | 'tomorrow' | 'upcomingWeek'
 
-export const SECTION_LABEL_KEYS: Record<ScheduleSectionKey, string> = {
-  today: 'schedule.today',
-  tomorrow: 'schedule.tomorrow',
-  upcomingWeek: 'schedule.upcomingWeek',
+interface ScheduleSectionDefinition {
+  key: ScheduleSectionKey
+  labelKey: string
 }
+
+export interface ScheduleSectionItems extends ScheduleSectionDefinition {
+  items: Appointment[]
+}
+
+const SCHEDULE_SECTION_DEFINITIONS: ScheduleSectionDefinition[] = [
+  { key: 'today', labelKey: 'schedule.today' },
+  { key: 'tomorrow', labelKey: 'schedule.tomorrow' },
+  { key: 'upcomingWeek', labelKey: 'schedule.upcomingWeek' },
+]
+
+const getMockScheduleDate = (daysFromToday: number) =>
+  formatIsoDate(addDays(new Date(), daysFromToday))
 
 export const getSection = (
   appointmentDate: string,
@@ -43,7 +55,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '1',
     patientId: 1622017,
     time: '10:12:50',
-    date: '2026-04-27',
+    date: getMockScheduleDate(0),
     chamber: 'appointment.chamber.hyperbaric',
     chairNumber: 9,
     treatmentNumber: 2,
@@ -53,7 +65,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '2',
     patientId: 1622018,
     time: '15:10:21',
-    date: '2026-04-29',
+    date: getMockScheduleDate(2),
     chamber: 'appointment.chamber.cognitiveAssessment',
     chairNumber: 4,
     treatmentNumber: 3,
@@ -63,7 +75,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '3',
     patientId: 1622019,
     time: '09:05:00',
-    date: '2026-05-02',
+    date: getMockScheduleDate(5),
     chamber: 'appointment.chamber.physiotherapy',
     chairNumber: 2,
     treatmentNumber: 4,
@@ -73,7 +85,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '4',
     patientId: 1622020,
     time: '12:30:00',
-    date: '2026-05-03',
+    date: getMockScheduleDate(6),
     chamber: 'appointment.chamber.stressTest',
     chairNumber: 1,
     treatmentNumber: 5,
@@ -83,7 +95,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '6',
     patientId: 1622022,
     time: '08:15:00',
-    date: '2026-04-28',
+    date: getMockScheduleDate(1),
     chamber: 'appointment.chamber.cognitiveAssessment',
     chairNumber: 3,
     treatmentNumber: 1,
@@ -93,7 +105,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '5',
     patientId: 1622021,
     time: '08:45:00',
-    date: '2026-04-26',
+    date: getMockScheduleDate(4),
     chamber: 'appointment.chamber.imagingInstitute',
     chairNumber: 6,
     treatmentNumber: 6,
@@ -103,7 +115,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '7',
     patientId: 1622022,
     time: '08:15:00',
-    date: '2026-04-27',
+    date: getMockScheduleDate(0),
     chamber: 'appointment.chamber.cognitiveAssessment',
     chairNumber: 3,
     treatmentNumber: 1,
@@ -113,7 +125,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '8',
     patientId: 1622023,
     time: '09:30:00',
-    date: '2026-04-27',
+    date: getMockScheduleDate(0),
     chamber: 'appointment.chamber.red',
     chairNumber: 2,
     treatmentNumber: 2,
@@ -123,7 +135,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '9',
     patientId: 1622024,
     time: '11:00:00',
-    date: '2026-04-28',
+    date: getMockScheduleDate(1),
     chamber: 'appointment.room102',
     chairNumber: 5,
     treatmentNumber: 7,
@@ -133,7 +145,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '10',
     patientId: 1622025,
     time: '13:20:00',
-    date: '2026-04-28',
+    date: getMockScheduleDate(1),
     chamber: 'appointment.room203',
     chairNumber: 4,
     treatmentNumber: 4,
@@ -143,7 +155,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '11',
     patientId: 1622026,
     time: '10:45:00',
-    date: '2026-04-30',
+    date: getMockScheduleDate(3),
     chamber: 'appointment.orangeCellArizon',
     chairNumber: 8,
     treatmentNumber: 9,
@@ -153,7 +165,7 @@ export const MOCK_SCHEDULE_ITEMS: Appointment[] = [
     appointmentId: '12',
     patientId: 1622027,
     time: '14:10:00',
-    date: '2026-05-01',
+    date: getMockScheduleDate(4),
     chamber: 'orange.cell',
     chairNumber: 10,
     treatmentNumber: 11,
@@ -166,7 +178,7 @@ export const buildSectionItems = (
   tomorrowStart: Date,
   dayAfterTomorrowStart: Date,
   nextWeekEnd: Date,
-): Record<ScheduleSectionKey, Appointment[]> => {
+): ScheduleSectionItems[] => {
   const sectionItems: Record<ScheduleSectionKey, Appointment[]> = {
     today: [],
     tomorrow: [],
@@ -191,5 +203,9 @@ export const buildSectionItems = (
     }
   }
 
-  return sectionItems
+  return SCHEDULE_SECTION_DEFINITIONS.map(({ key, labelKey }) => ({
+    key,
+    labelKey,
+    items: sectionItems[key],
+  }))
 }

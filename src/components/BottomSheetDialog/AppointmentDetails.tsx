@@ -8,6 +8,7 @@ import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { SGLButton } from '../UI/Button/SGLButton'
 import { useTranslation } from 'react-i18next'
 import { getAppointmentTitleKey } from '@/utils/appointmentUtils'
+import { formatDisplayTime } from '@/utils/datesUtils'
 
 interface AppointmentDetailsProps {
   appointment: Appointment
@@ -21,7 +22,7 @@ export const AppointmentDetails = ({
   onClose,
 }: AppointmentDetailsProps) => {
   const { t } = useTranslation()
-  const displayTime = appointment.time.slice(0, 5)
+  const displayTime = formatDisplayTime(appointment.time)
   const titleKey = getAppointmentTitleKey(appointment.chamber)
 
   return (

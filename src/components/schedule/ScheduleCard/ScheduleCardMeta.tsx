@@ -4,6 +4,7 @@ import type { ScheduleCardMetaProps } from './types'
 import { DOT } from '@/constants'
 import { scheduleCardStyles } from './scheduleCardStyles'
 import { useTranslation } from 'react-i18next'
+import { formatDisplayTime } from '@/utils/datesUtils'
 
 export const ScheduleCardMeta = ({ time }: ScheduleCardMetaProps) => {
   const { t } = useTranslation()
@@ -12,7 +13,7 @@ export const ScheduleCardMeta = ({ time }: ScheduleCardMetaProps) => {
     <div style={scheduleCardStyles.meta}>
       <div style={scheduleCardStyles.timeRow}>
         <SGLClockIcon />
-        <SGLTypography variant="smallText">{time.slice(0, 5)}</SGLTypography>
+        <SGLTypography variant="smallText">{formatDisplayTime(time)}</SGLTypography>
       </div>
       <SGLTypography variant="smallText">{DOT}</SGLTypography>
       <SGLTypography variant="smallText">{t('appointment.duration.twoHours')}</SGLTypography>

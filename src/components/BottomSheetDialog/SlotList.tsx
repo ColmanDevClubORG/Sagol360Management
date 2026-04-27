@@ -4,27 +4,26 @@ import * as styles from './styles'
 import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
 import type { Slot } from './SlotSelection'
+import { formatDisplayTime, formatShortDisplayDate } from '@/utils/datesUtils'
 
 interface SlotListProps {
   slots: Slot[]
-  selectedSlot: RescheduleFormValues['selectedSlot']
+  selectedSlot?: RescheduleFormValues['selectedSlot']
   onSelect: (slot: Slot) => void
 }
 
 export const SlotList = ({ slots, selectedSlot, onSelect }: SlotListProps) => {
   const { t } = useTranslation()
+  const { date: selectedDate, time: selectedTime, chamber: selectedChamber } = selectedSlot ?? {}
 
-  const isSelected = (slot: Slot) =>
-    selectedSlot?.date === slot.date &&
-    selectedSlot.time === slot.time &&
-    selectedSlot.chamber === slot.chamber
+  const isSelected = ({ date, time, chamber }: Slot) =>
+    selectedDate === date && selectedTime === time && selectedChamber === chamber
 
   return (
     <div style={styles.slotList}>
       {slots.map((slot) => {
-        const [, month, day] = slot.date.split('-')
-        const date = `${day}/${month}`
-        const time = slot.time.slice(0, 5)
+        const date = formatShortDisplayDate(slot.date)
+        const time = formatDisplayTime(slot.time)
 
         return (
           <div

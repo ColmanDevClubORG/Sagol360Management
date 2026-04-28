@@ -14,7 +14,6 @@ interface MetricCardProps {
 
 export const MetricCard = ({
   titleKey,
-  ///value,
   icon,
   onChange,
   minLabelKey,
@@ -28,7 +27,7 @@ export const MetricCard = ({
   }
 
   return (
-    <div className="metric-card" style={rootStyle}>
+    <div style={rootStyle}>
       <MetricCardHeader titleKey={titleKey} icon={icon} value={sliderValue} />
       <SGLSlider onChange={handleUpdate} value={sliderValue} min={1} max={10} />
       <MetricCardLabel minLabelKey={minLabelKey} maxLabelKey={maxLabelKey} />

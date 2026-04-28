@@ -1,16 +1,17 @@
 import { useTranslation } from 'react-i18next'
 import { useTheme } from '@mui/material'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
-import { headerTitleStyle, headerValueStyle, cardHeaderStyle } from './style'
+import { IconStyle, headerTitleStyle, headerValueStyle, cardHeaderStyle } from './style'
 import { METRIC_MAX_VALUE } from '@/constants'
 
 interface CardHeaderProps {
   titleKey: string
   icon: React.ReactNode
   value: number
+  colorIcon: 'primary' | 'secondary' | 'error' | 'midGrey' | 'yellow' | 'green'
 }
 
-export const MetricCardHeader = ({ titleKey, icon, value }: CardHeaderProps) => {
+export const MetricCardHeader = ({ titleKey, icon, value, colorIcon }: CardHeaderProps) => {
   const { t } = useTranslation()
   const theme = useTheme()
 
@@ -25,7 +26,7 @@ export const MetricCardHeader = ({ titleKey, icon, value }: CardHeaderProps) => 
         <div>
           <SGLTypography variant="mediumTitle">{t(titleKey)}</SGLTypography>
         </div>
-        <div>{icon}</div>
+        <div style={IconStyle(theme, colorIcon)}>{icon}</div>
       </div>
     </div>
   )

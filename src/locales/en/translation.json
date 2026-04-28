@@ -67,5 +67,11 @@
   "checkIn.arisonBuilding": "Arison Building",
   "checkIn.performCheckIn": "Perform Check-In",
   "checkIn.notComing": "Not Coming",
-  "checkIn.completedSuccessfully": "Completed Successfully"
+  "checkIn.completedSuccessfully": "Completed Successfully",
+  "pain.level": "Pain Level",
+"pain.high": "High Pain",
+"pain.low": "No Pain",
+"concentration": "Concentration",
+"concentration.high": "Hard to Focus",
+"concentration.low": "Very Focused"
 }

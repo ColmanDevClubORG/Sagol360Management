@@ -79,5 +79,9 @@
   "metricCard.label.veryClear": "Very clear",
   "metricCard.label.low": "Low",
   "metricCard.label.excellentState": "Excellent",
-  "metricCard.label.noPain": "No pain"
+  "metricCard.label.noPain": "No pain",
+
+  "metricsReport.title": "Daily report",
+  "metricsReport.description": "Your report helps us improve your care",
+  "metricsReport.button": "Submit daily report"
 }

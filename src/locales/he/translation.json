@@ -80,5 +80,9 @@
   "metricCard.label.veryClear": "צלול מאוד",
   "metricCard.label.low": "ירוד",
   "metricCard.label.excellentState": "מצוין",
-  "metricCard.label.noPain": "ללא כאב"
+  "metricCard.label.noPain": "ללא כאב",
+
+  "metricsReport.title": "דיווח יומי",
+  "metricsReport.description": "הדיווח שלך עוזר לנו לשפר את הטיפול",
+  "metricsReport.button": "שלח דיווח יומי"
 }

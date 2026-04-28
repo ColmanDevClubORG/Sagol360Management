@@ -79,5 +79,9 @@
   "metricCard.label.veryClear": "صافٍ جدًا",
   "metricCard.label.low": "منخفض",
   "metricCard.label.excellentState": "ممتاز",
-  "metricCard.label.noPain": "بدون ألم"
+  "metricCard.label.noPain": "بدون ألم",
+
+  "metricsReport.title": "تقرير يومي",
+  "metricsReport.description": "يساعدنا تقريرك على تحسين الرعاية",
+  "metricsReport.button": "إرسال تقرير يومي"
 }

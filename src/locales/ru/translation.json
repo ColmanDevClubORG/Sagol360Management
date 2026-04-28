@@ -67,5 +67,9 @@
   "metricCard.label.veryClear": "Очень ясное",
   "metricCard.label.low": "Низкое",
   "metricCard.label.excellentState": "Отличное",
-  "metricCard.label.noPain": "Без боли"
+  "metricCard.label.noPain": "Без боли",
+
+  "metricsReport.title": "Ежедневный отчет",
+  "metricsReport.description": "Ваш отчет помогает нам улучшить лечение",
+  "metricsReport.button": "Отправить ежедневный отчет"
 }

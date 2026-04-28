@@ -1,4 +1,5 @@
 import type { Theme } from '@mui/material/styles'
+import type { PaletteColorKey } from './MetricCard'
 
 export const rootStyle = {
   display: 'flex',
@@ -34,8 +35,6 @@ export const labelTextStyle = (theme: Theme) => ({
   color: theme.palette.midGrey.main,
 })
 
-type PaletteColorKey = 'primary' | 'secondary' | 'error' | 'midGrey' | 'yellow' | 'green'
-
-export const IconStyle = (theme: Theme, color: PaletteColorKey) => ({
+export const iconStyle = (theme: Theme, color: PaletteColorKey) => ({
   color: theme.palette[color].main,
 })

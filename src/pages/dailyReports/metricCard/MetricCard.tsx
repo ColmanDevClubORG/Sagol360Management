@@ -3,14 +3,17 @@ import { MetricCardHeader } from './metricCardHeader'
 import { MetricCardLabel } from './metricCardLabel'
 import { rootStyle } from './style'
 import { SGLSlider } from '@/components/UI/Slider/SGLSlider'
+import type { ReactNode } from 'react'
+
+export type PaletteColorKey = 'primary' | 'secondary' | 'error' | 'midGrey' | 'yellow' | 'green'
 
 interface MetricCardProps {
   titleKey: string
-  icon: React.ReactNode
+  icon: ReactNode
   onChange: (value: number) => void
   minLabelKey: string
   maxLabelKey: string
-  colorIcon: 'primary' | 'secondary' | 'error' | 'midGrey' | 'yellow' | 'green'
+  colorIcon: PaletteColorKey
 }
 
 export const MetricCard = ({

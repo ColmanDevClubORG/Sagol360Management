@@ -6,8 +6,8 @@ export const MetricsReportHeader = () => {
 
   return (
     <div>
-      <SGLTypography>{t('metricsReport.title')}</SGLTypography>
-      <SGLTypography>{t('metricsReport.description')}</SGLTypography>
+      <SGLTypography variant="mediumTitle">{t('metricsReport.title')}</SGLTypography>
+      <SGLTypography variant="mediumText">{t('metricsReport.description')}</SGLTypography>
     </div>
   )
 }

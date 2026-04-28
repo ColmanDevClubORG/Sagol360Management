@@ -83,5 +83,6 @@
 
   "metricsReport.title": "Daily report",
   "metricsReport.description": "Your report helps us improve your care",
-  "metricsReport.button": "Submit daily report"
+  "metricsReport.sendButton": "Submit daily report",
+  "metricsReport.submitSuccess": "Submitted successfully!"
 }

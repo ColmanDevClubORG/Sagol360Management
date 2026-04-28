@@ -83,5 +83,6 @@
 
   "metricsReport.title": "تقرير يومي",
   "metricsReport.description": "يساعدنا تقريرك على تحسين الرعاية",
-  "metricsReport.button": "إرسال تقرير يومي"
+  "metricsReport.sendButton": "إرسال تقرير يومي",
+  "metricsReport.submitSuccess": "تم الإرسال بنجاح!"
 }

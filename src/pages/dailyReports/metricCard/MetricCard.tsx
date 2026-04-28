@@ -10,6 +10,7 @@ interface MetricCardProps {
   onChange: (value: number) => void
   minLabelKey: string
   maxLabelKey: string
+  colorIcon: 'primary' | 'secondary' | 'error' | 'midGrey' | 'yellow' | 'green'
 }
 
 export const MetricCard = ({
@@ -18,6 +19,7 @@ export const MetricCard = ({
   onChange,
   minLabelKey,
   maxLabelKey,
+  colorIcon,
 }: MetricCardProps) => {
   const [sliderValue, setSliderValue] = useState(1)
 
@@ -28,7 +30,7 @@ export const MetricCard = ({
 
   return (
     <div style={rootStyle}>
-      <MetricCardHeader titleKey={titleKey} icon={icon} value={sliderValue} />
+      <MetricCardHeader titleKey={titleKey} icon={icon} value={sliderValue} colorIcon={colorIcon} />
       <SGLSlider onChange={handleUpdate} value={sliderValue} min={1} max={10} />
       <MetricCardLabel minLabelKey={minLabelKey} maxLabelKey={maxLabelKey} />
     </div>

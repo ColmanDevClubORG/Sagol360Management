@@ -17,6 +17,7 @@ export const cardHeaderStyle = {
 export const headerTitleStyle = {
   display: 'flex',
   flexDirection: 'row',
+  gap: '5px',
 } as React.CSSProperties
 
 export const headerValueStyle = (theme: Theme) => ({
@@ -31,4 +32,10 @@ export const labelContainerStyle = {
 
 export const labelTextStyle = (theme: Theme) => ({
   color: theme.palette.midGrey.main,
+})
+
+type PaletteColorKey = 'primary' | 'secondary' | 'error' | 'midGrey' | 'yellow' | 'green'
+
+export const IconStyle = (theme: Theme, color: PaletteColorKey) => ({
+  color: theme.palette[color].main,
 })

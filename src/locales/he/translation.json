@@ -70,9 +70,9 @@
   "checkIn.notComing": "לא מגיע",
   "checkIn.completedSuccessfully": "בוצע בהצלחה",
   "pain.level": "רמת כאב",
-"pain.high": "כאב חזק",
-"pain.low": "ללא כאב",
-"concentration": "ריכוז",
-"concentration.high": "קשה להתרכז",
-"concentration.low": "מרוכז מאוד"
+  "pain.high": "כאב חזק",
+  "pain.low": "ללא כאב",
+  "concentration": "ריכוז",
+  "concentration.high": "קשה להתרכז",
+  "concentration.low": "מרוכז מאוד"
 }

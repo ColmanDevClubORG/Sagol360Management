@@ -69,9 +69,9 @@
   "checkIn.notComing": "Not Coming",
   "checkIn.completedSuccessfully": "Completed Successfully",
   "pain.level": "Pain Level",
-"pain.high": "High Pain",
-"pain.low": "No Pain",
-"concentration": "Concentration",
-"concentration.high": "Hard to Focus",
-"concentration.low": "Very Focused"
+  "pain.high": "High Pain",
+  "pain.low": "No Pain",
+  "concentration": "Concentration",
+  "concentration.high": "Hard to Focus",
+  "concentration.low": "Very Focused"
 }

@@ -1,9 +1,10 @@
 import dayjs from 'dayjs'
+import { z } from 'zod'
 
 export type IsoDateString =
   `${number}${number}${number}${number}-${number}${number}-${number}${number}`
 
-export const ISO_DATE_REGEX = /^(\d{4})-(\d{2})-(\d{2})$/
+export const IsoDateStringSchema = z.iso.date()
 
 export const getStartOfWeek = (date: Date): Date => {
   const currentDate = new Date(date)
@@ -58,13 +59,13 @@ export const formatDisplayDate = (date: Date) =>
   `${padTwo(date.getDate())}/${padTwo(date.getMonth() + 1)}/${date.getFullYear()}`
 
 export const formatShortDisplayDate = (date: string) => {
-  const dateParts = ISO_DATE_REGEX.exec(date)
+  const dateParts = IsoDateStringSchema.safeParse(date)
 
-  if (!dateParts) {
+  if (!dateParts.success) {
     return date
   }
 
-  const [, , month, day] = dateParts
+  const [, month, day] = dateParts.data.split('-')
   return `${day}/${month}`
 }
 
@@ -82,25 +83,16 @@ export const isSameDay = (date: Date, targetDate: Date) =>
   date.getDate() === targetDate.getDate()
 
 export const parseIsoDate = (date: string): Date | null => {
-  const dateParts = ISO_DATE_REGEX.exec(date)
+  const dateParts = IsoDateStringSchema.safeParse(date)
 
-  if (!dateParts) {
+  if (!dateParts.success) {
     return null
   }
 
-  const [, year, month, day] = dateParts
+  const [year, month, day] = dateParts.data.split('-')
   const fullYear = Number(year)
   const monthNumber = Number(month)
   const dayNumber = Number(day)
-  const parsedDate = new Date(fullYear, monthNumber - 1, dayNumber)
 
-  if (
-    parsedDate.getFullYear() !== fullYear ||
-    parsedDate.getMonth() !== monthNumber - 1 ||
-    parsedDate.getDate() !== dayNumber
-  ) {
-    return null
-  }
-
-  return parsedDate
+  return new Date(fullYear, monthNumber - 1, dayNumber)
 }

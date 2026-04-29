@@ -3,7 +3,7 @@ import { formatShortDisplayDate, IsoDateStringSchema, parseIsoDate } from './dat
 
 const validIsoDate = '2024-02-29'
 const invalidIsoDateFormat = '2024-2-29'
-const invalidNonExistentDate = '2024-02-30' // February has no 30th day
+const invalidNonExistentDate = '2024-02-30'
 
 describe('IsoDateStringSchema', () => {
   it('validates ISO date strings', () => {

@@ -32,7 +32,7 @@ export const Home = () => {
       <SGLVideoCard
         title={t('balanceTraining.title')}
         description={t('balanceTraining.description')}
-        durationMinutes={10}
+        durationInMinutes={10}
       />
     </>
   )

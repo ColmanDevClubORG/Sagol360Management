@@ -9,7 +9,7 @@ import * as styles from './styles'
 interface SGLVideoCardProps {
   title: string
   description: string
-  durationMinutes: number
+  durationInMinutes: number
   thumbnailUrl?: string
   onClick?: () => void
 }
@@ -17,7 +17,7 @@ interface SGLVideoCardProps {
 export const SGLVideoCard = ({
   title = '',
   description = '',
-  durationMinutes,
+  durationInMinutes,
   thumbnailUrl,
   onClick,
 }: SGLVideoCardProps) => {
@@ -30,7 +30,7 @@ export const SGLVideoCard = ({
         <SGLTypography variant="smallTitle">{title}</SGLTypography>
         <SGLTypography variant="smallText">{description}</SGLTypography>
         <SGLTypography variant="smallText" styles={styles.durationChip(theme)}>
-          {t('duration.minutes', { count: durationMinutes })}
+          {t('duration.minutes', { count: durationInMinutes })}
         </SGLTypography>
       </div>
       <div style={styles.thumbnailWrapper}>

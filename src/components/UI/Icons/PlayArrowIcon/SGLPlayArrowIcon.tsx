@@ -5,6 +5,6 @@ interface SGLPlayArrowIconProps {
   style?: CSSProperties
 }
 
-export const SGLPlayArrowIcon = ({ style }: SGLPlayArrowIconProps) => {
-  return <PlayArrowIcon style={style} />
+export const SGLPlayArrowIcon = ({ style, ...props }: SGLPlayArrowIconProps) => {
+  return <PlayArrowIcon style={style} {...props} />
 }

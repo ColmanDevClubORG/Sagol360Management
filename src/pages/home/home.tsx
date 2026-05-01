@@ -6,6 +6,7 @@ import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
 import { CheckIn } from './checkIn/CheckIn'
 import { SGLVideoCard } from '@/components/UI/Video/SGLVideoCard'
+import { useTranslation } from 'react-i18next'
 
 export const Home = () => {
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
@@ -18,6 +19,9 @@ export const Home = () => {
     treatmentNumber: 2,
     status: 'confirmed',
   })
+
+  const { t } = useTranslation()
+
   return (
     <>
       <ProgressCard value={10} />

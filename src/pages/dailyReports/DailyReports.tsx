@@ -1,13 +1,11 @@
-import { MetricsReportButton } from './metricsReport/MetricsReportButton'
-import { MetricsReportHeader } from './metricsReport/MetricsReportHeader'
+import { MetricsReport } from './metricsReport/MetricsReport'
 import { ProgressGraph } from './progressGraph/ProgressGraph'
 
 export const DailyReports = () => {
   return (
     <div>
       <ProgressGraph />
-      <MetricsReportHeader />
-      <MetricsReportButton onClick={() => ({})} />
+      <MetricsReport onClick={() => {}} />
     </div>
   )
 }

@@ -1,6 +1,16 @@
-import { Box } from '@mui/material'
-import { dividerStyles } from './styles'
+import { Box, useTheme } from '@mui/material'
+import { getDividerStyles } from './styles'
 
-export const SGLDivider = () => {
-  return <Box sx={dividerStyles.divider} />
+interface SGLDividerProps {
+  orientation?: 'horizontal' | 'vertical'
+}
+
+export const SGLDivider = ({ orientation = 'horizontal' }: SGLDividerProps = {}) => {
+  const theme = useTheme()
+  const dividerStyles = getDividerStyles(theme)
+
+  const styles =
+    orientation === 'vertical' ? dividerStyles.dividerVertical : dividerStyles.dividerHorizontal
+
+  return <Box style={styles} />
 }

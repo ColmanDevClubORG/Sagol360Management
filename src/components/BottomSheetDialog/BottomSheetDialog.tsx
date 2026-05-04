@@ -6,7 +6,7 @@ import { TimePreferencePicker } from './TimePreferencePicker'
 import { SlotSelection } from './SlotSelection'
 import type { Appointment, RescheduleFormValues } from './types'
 import * as styles from './styles'
-import { useTranslation } from 'react-i18next'
+import { MOCK_SLOTS } from './mockSlots'
 
 interface BottomSheetDialogProps {
   appointment?: Appointment
@@ -23,19 +23,8 @@ const Step = {
 type Step = (typeof Step)[keyof typeof Step]
 
 export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetDialogProps) => {
-  const { t } = useTranslation()
   const [step, setStep] = useState<Step>(Step.DETAILS)
   const methods = useForm<RescheduleFormValues>()
-
-  // TODO: Replace with API call
-  const slots = [
-    { date: '04/04', time: '15:00', location: t('orange.cell'), availableSpots: 8 },
-    { date: '04/04', time: '17:30', location: t('orange.cell'), availableSpots: 11 },
-    { date: '04/04', time: '20:00', location: t('orange.cell'), availableSpots: 13 },
-    { date: '05/04', time: '15:00', location: t('orange.cell'), availableSpots: 11 },
-    { date: '05/04', time: '17:30', location: t('orange.cell'), availableSpots: 12 },
-    { date: '05/04', time: '20:00', location: t('orange.cell'), availableSpots: 13 },
-  ]
 
   const handleClose = () => {
     setStep(Step.DETAILS)
@@ -75,7 +64,7 @@ export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetD
         {step === Step.SLOT_SELECTION && (
           <SlotSelection
             appointment={appointment}
-            slots={slots}
+            slots={MOCK_SLOTS}
             onBack={() => setStep(Step.TIME_PREFERENCE)}
             onSubmit={methods.handleSubmit(onSubmit)}
             onClose={handleClose}

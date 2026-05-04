@@ -1,4 +1,10 @@
 import dayjs from 'dayjs'
+import { z } from 'zod'
+
+export type IsoDateString =
+  `${number}${number}${number}${number}-${number}${number}-${number}${number}`
+
+export const IsoDateStringSchema = z.iso.date()
 
 export const getStartOfWeek = (date: Date): Date => {
   const currentDate = new Date(date)
@@ -11,5 +17,82 @@ export const getStartOfWeek = (date: Date): Date => {
 
   return currentDate
 }
+export const getScheduleDateRange = (date: Date) => {
+  const todayStart = getStartOfDay(date)
+  const tomorrowStart = addDays(todayStart, 1)
+  const dayAfterTomorrowStart = addDays(todayStart, 2)
+  const nextWeekEnd = addDays(todayStart, 7)
+  nextWeekEnd.setHours(23, 59, 59, 999)
 
+  return {
+    todayStart,
+    tomorrowStart,
+    dayAfterTomorrowStart,
+    nextWeekEnd,
+  }
+}
 export const getCurrentDay = () => dayjs()
+export const getStartOfDay = (date: Date) => {
+  const startOfDay = new Date(date)
+  startOfDay.setHours(0, 0, 0, 0)
+  return startOfDay
+}
+
+export const addDays = (date: Date, days: number) => {
+  const nextDate = new Date(date)
+  nextDate.setDate(nextDate.getDate() + days)
+  return nextDate
+}
+
+export const addMonths = (date: Date, months: number) => {
+  const nextDate = new Date(date)
+  nextDate.setMonth(nextDate.getMonth() + months)
+  return nextDate
+}
+
+export const padTwo = (value: number) => value.toString().padStart(2, '0')
+
+export const formatIsoDate = (date: Date): IsoDateString =>
+  `${date.getFullYear()}-${padTwo(date.getMonth() + 1)}-${padTwo(date.getDate())}` as IsoDateString
+
+export const formatDisplayDate = (date: Date) =>
+  `${padTwo(date.getDate())}/${padTwo(date.getMonth() + 1)}/${date.getFullYear()}`
+
+export const formatShortDisplayDate = (date: string) => {
+  const dateParts = IsoDateStringSchema.safeParse(date)
+
+  if (!dateParts.success) {
+    return date
+  }
+
+  const [, month, day] = dateParts.data.split('-')
+  return `${day}/${month}`
+}
+
+export const formatDisplayTime = (date: Date | string) => {
+  if (typeof date === 'string') {
+    return date.slice(0, 5)
+  }
+
+  return `${padTwo(date.getHours())}:${padTwo(date.getMinutes())}`
+}
+
+export const isSameDay = (date: Date, targetDate: Date) =>
+  date.getFullYear() === targetDate.getFullYear() &&
+  date.getMonth() === targetDate.getMonth() &&
+  date.getDate() === targetDate.getDate()
+
+export const parseIsoDate = (date: string): Date | null => {
+  const dateParts = IsoDateStringSchema.safeParse(date)
+
+  if (!dateParts.success) {
+    return null
+  }
+
+  const [year, month, day] = dateParts.data.split('-')
+  const fullYear = Number(year)
+  const monthNumber = Number(month)
+  const dayNumber = Number(day)
+
+  return new Date(fullYear, monthNumber - 1, dayNumber)
+}

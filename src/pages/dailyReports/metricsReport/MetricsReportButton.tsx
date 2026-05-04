@@ -20,7 +20,6 @@ export const MetricsReportButton = ({ onClick }: MetricsReportButtonProps) => {
     onClick()
     setReport(true)
   }
-
   return (
     <div>
       {report ? (

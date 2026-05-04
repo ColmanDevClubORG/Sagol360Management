@@ -7,6 +7,7 @@ import { useTheme } from '@mui/material'
 interface MetricsReportProps {
   onClick: () => void
 }
+
 export const MetricsReport = ({ onClick }: MetricsReportProps) => {
   const theme = useTheme()
   return (

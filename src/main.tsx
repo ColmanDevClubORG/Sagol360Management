@@ -11,6 +11,9 @@ import { Home } from './pages/home/home.tsx'
 import { Schedule } from './pages/schedule/Schedule.tsx'
 import { LifeStyle } from './pages/lifeStyle/LifeStyle.tsx'
 import { DailyReports } from './pages/dailyReports/DailyReports.tsx'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -28,10 +31,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <I18nextProvider i18n={i18n}>
-        <RouterProvider router={router} />
-      </I18nextProvider>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <I18nextProvider i18n={i18n}>
+          <RouterProvider router={router} />
+        </I18nextProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   </StrictMode>,
 )

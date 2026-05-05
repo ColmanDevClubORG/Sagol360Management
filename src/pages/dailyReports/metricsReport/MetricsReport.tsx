@@ -1,4 +1,4 @@
-import { MetrcsReportListCard } from './MetricsReportListCard'
+import { MetricsReportListCard } from './MetricsReportListCard'
 import { MetricsReportButton } from './MetricsReportButton'
 import { MetricsReportHeader } from './MetricsReportHeader'
 import { rootStyle } from './style'
@@ -13,7 +13,7 @@ export const MetricsReport = ({ onClick }: MetricsReportProps) => {
   return (
     <div style={rootStyle(theme)}>
       <MetricsReportHeader />
-      <MetrcsReportListCard />
+      <MetricsReportListCard />
       <MetricsReportButton onClick={onClick} />
     </div>
   )

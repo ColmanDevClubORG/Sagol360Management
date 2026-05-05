@@ -4,6 +4,7 @@ import { MetricCardLabel } from './metricCardLabel'
 import { rootStyle } from './style'
 import { SGLSlider } from '@/components/UI/Slider/SGLSlider'
 import type { ReactNode } from 'react'
+import { SLIDER_MAX_VALUE, SLIDER_MIN_VALUE } from '@/constants'
 
 export type PaletteColorKey = 'primary' | 'secondary' | 'error' | 'midGrey' | 'yellow' | 'green'
 
@@ -34,7 +35,12 @@ export const MetricCard = ({
   return (
     <div style={rootStyle}>
       <MetricCardHeader titleKey={titleKey} icon={icon} value={sliderValue} colorIcon={colorIcon} />
-      <SGLSlider onChange={handleUpdate} value={sliderValue} min={1} max={10} />
+      <SGLSlider
+        onChange={handleUpdate}
+        value={sliderValue}
+        min={SLIDER_MIN_VALUE}
+        max={SLIDER_MAX_VALUE}
+      />
       <MetricCardLabel minLabelKey={minLabelKey} maxLabelKey={maxLabelKey} />
     </div>
   )

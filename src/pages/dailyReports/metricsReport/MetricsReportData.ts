@@ -5,13 +5,22 @@ import { SGLCloudIcon } from '@/components/UI/Icons/CloudIcon/SGLCloudIcon'
 import { SGLMoonIcon } from '@/components/UI/Icons/MoonIcon/SGLMoonIcon'
 import { SGLSmileIcon } from '@/components/UI/Icons/SmileIcon/SGLSmileIcon'
 
-export const MetricsReportData = [
+export const PaletteColorKey = {
+  Primary: 'primary',
+  Secondary: 'secondary',
+  Error: 'error',
+  MidGrey: 'midGrey',
+  Yellow: 'yellow',
+  Green: 'green',
+} as const
+
+export const METRICS_REPORT_DATA = [
   {
     titleKey: 'metricCard.energyLevel',
     minLabelKey: 'metricCard.label.exhausted',
     maxLabelKey: 'metricCard.label.energetic',
     onChange: () => {},
-    colorIcon: 'yellow',
+    colorIcon: PaletteColorKey.Yellow,
     icon: SGLElectricIcon,
   },
   {
@@ -19,7 +28,7 @@ export const MetricsReportData = [
     minLabelKey: 'metricCard.label.poor',
     maxLabelKey: 'metricCard.label.excellent',
     onChange: () => {},
-    colorIcon: 'primary',
+    colorIcon: PaletteColorKey.Primary,
     icon: SGLMoonIcon,
   },
   {
@@ -27,7 +36,7 @@ export const MetricsReportData = [
     minLabelKey: 'metricCard.label.severePain',
     maxLabelKey: 'metricCard.label.noPain',
     onChange: () => {},
-    colorIcon: 'error',
+    colorIcon: PaletteColorKey.Error,
     icon: SGLHeartIcon,
   },
   {
@@ -35,7 +44,7 @@ export const MetricsReportData = [
     minLabelKey: 'metricCard.label.difficultyConcentrating',
     maxLabelKey: 'metricCard.label.highlyFocused',
     onChange: () => {},
-    colorIcon: 'secondary',
+    colorIcon: PaletteColorKey.Secondary,
     icon: SGLPsychologyIcon,
   },
   {
@@ -43,7 +52,7 @@ export const MetricsReportData = [
     minLabelKey: 'metricCard.label.veryHeavy',
     maxLabelKey: 'metricCard.label.veryClear',
     onChange: () => {},
-    colorIcon: 'midGrey',
+    colorIcon: PaletteColorKey.MidGrey,
     icon: SGLCloudIcon,
   },
   {
@@ -51,7 +60,7 @@ export const MetricsReportData = [
     minLabelKey: 'metricCard.label.low',
     maxLabelKey: 'metricCard.label.excellentState',
     onChange: () => {},
-    colorIcon: 'green',
+    colorIcon: PaletteColorKey.Green,
     icon: SGLSmileIcon,
   },
 ]

@@ -9,17 +9,17 @@ const apiClient = axios.create({
   },
 })
 
-const get = async <TResponse>(url: string, config?: AxiosRequestConfig): Promise<TResponse> => {
-  const response = await apiClient.get<TResponse>(url, config)
+const get = async <T>(url: string, config?: AxiosRequestConfig): Promise<T> => {
+  const response = await apiClient.get<T>(url, config)
   return response.data
 }
 
-const post = async <TResponse, TBody = unknown>(
+const post = async <T, TBody = unknown>(
   url: string,
   body?: TBody,
   config?: AxiosRequestConfig,
-): Promise<TResponse> => {
-  const response = await apiClient.post<TResponse>(url, body, config)
+): Promise<T> => {
+  const response = await apiClient.post<T>(url, body, config)
   return response.data
 }
 

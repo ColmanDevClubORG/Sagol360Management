@@ -51,7 +51,7 @@ export const rootStyle = (theme: Theme) =>
     gap: '2rem',
     paddingTop: '1.5rem',
     paddingBottom: '1.5rem',
-    width: '95%',
+    width: '90%',
     borderRadius: '1rem',
     boxShadow: theme.shadows[1],
   }) as CSSProperties

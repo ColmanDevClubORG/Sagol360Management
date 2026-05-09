@@ -1,0 +1,1 @@
+export { SGLMealRecommendation } from './MealRecommendation'

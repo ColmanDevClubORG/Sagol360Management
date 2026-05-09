@@ -4,6 +4,7 @@ import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDia
 import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
+import { DietTabExample } from '../lifeStyle/dietTab/DietTabExample'
 import { useTranslation } from 'react-i18next'
 import { CheckIn } from './checkIn/CheckIn'
 
@@ -27,6 +28,7 @@ export const Home = () => {
       />
       <TrainingGoal />
       <DailyTips />
+      <DietTabExample />
       <CheckIn onDone={() => {}} />
     </>
   )

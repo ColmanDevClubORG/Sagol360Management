@@ -1,11 +1,6 @@
 import type { Theme } from '@mui/material'
 import type { CSSProperties } from 'react'
 
-export enum DividerOrientation {
-  HORIZONTAL = 'horizontal',
-  VERTICAL = 'vertical',
-}
-
 export interface DividerStylesInterface {
   dividerHorizontal: CSSProperties
   dividerVertical: CSSProperties

@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -10,10 +13,8 @@ import i18nextPlugin from 'eslint-plugin-i18next'
 
 export default defineConfig([
   globalIgnores(['dist', 'node_modules']),
-
   js.configs.recommended,
   ...tseslint.configs.recommended,
-
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -39,10 +40,8 @@ export default defineConfig([
       'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
   },
-
   eslintPluginPrettierRecommended,
   prettier,
-
   {
     files: [
       '**/constants.ts',
@@ -58,4 +57,5 @@ export default defineConfig([
       'i18next/no-literal-string': 'off',
     },
   },
+  ...storybook.configs["flat/recommended"]
 ])

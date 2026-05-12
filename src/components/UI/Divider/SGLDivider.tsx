@@ -1,5 +1,6 @@
 import { Box, useTheme } from '@mui/material'
-import { getDividerStyles, DividerOrientation } from './styles'
+import { getDividerStyles } from './styles'
+import { DividerOrientation } from './types'
 
 interface SGLDividerProps {
   orientation?: DividerOrientation

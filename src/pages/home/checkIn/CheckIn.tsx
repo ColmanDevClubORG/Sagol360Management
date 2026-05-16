@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { theme } from '@/theme'
 import { detailContainerStyle, iconContainerStyle, rootStyle, iconStyle } from './style'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import LocationOnIcon from '@mui/icons-material/LocationOn'
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import BusinessIcon from '@mui/icons-material/Business'
 import { CheckInActions } from './CheckInActions'
 import { DOT } from '@/constants/index'
@@ -34,19 +34,19 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
       </SGLTypography>
       <div style={detailContainerStyle}>
         <div style={iconContainerStyle}>
-          <AccessTimeIcon style={iconStyle(theme)}></AccessTimeIcon>
+          <AccessTimeIcon style={iconStyle(theme)} fontSize="small" />
           <SGLTypography variant="mediumText" color="white">
             18:00
           </SGLTypography>
         </div>
         <div style={iconContainerStyle}>
-          <LocationOnIcon style={iconStyle(theme)}></LocationOnIcon>
+          <LocationOnOutlinedIcon style={iconStyle(theme)} fontSize="small" />
           <SGLTypography variant="mediumText" color="white">
             {t('chckIn.orangeCell')}
           </SGLTypography>
         </div>
         <div style={iconContainerStyle}>
-          <BusinessIcon style={iconStyle(theme)}></BusinessIcon>
+          <BusinessIcon style={iconStyle(theme)} fontSize="small" />
           <SGLTypography variant="mediumText" color="white">
             {t('checkIn.arisonBuilding')}
           </SGLTypography>

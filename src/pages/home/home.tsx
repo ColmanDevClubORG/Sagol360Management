@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { ProgressCard } from '@/pages/home/progress/ProgressCard'
 import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
 import type { Appointment } from '@/components/BottomSheetDialog/types'
-import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
 import { CheckIn } from './checkIn/CheckIn'
-import { SGLVideoCard } from '@/components/UI/Video/SGLVideoCard'
+import { HomeWrapper } from './styles'
+import { SGLBrainHQ } from '@/components/BrainHQ/SGLBrainHQ'
+import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
 
 export const Home = () => {
@@ -23,21 +24,19 @@ export const Home = () => {
   const { t } = useTranslation()
 
   return (
-    <>
+    <div style={HomeWrapper}>
       <ProgressCard value={10} />
       <BottomSheetDialog
         appointment={selectedAppointment}
         isOpen={!!selectedAppointment}
         onClose={() => setSelectedAppointment(undefined)}
       />
-      <TrainingGoal />
-      <DailyTips />
       <CheckIn onDone={() => {}} />
-      <SGLVideoCard
-        title={t('balanceTraining.title')}
-        description={t('balanceTraining.description')}
-        durationInMinutes={10}
-      />
-    </>
+      <SGLBrainHQ />
+      <div>
+        <SGLTypography variant="mediumTitle">{t('daily.tip')}</SGLTypography>
+      </div>
+      <DailyTips />
+    </div>
   )
 }

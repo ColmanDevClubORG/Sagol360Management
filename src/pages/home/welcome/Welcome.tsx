@@ -8,13 +8,6 @@ import { apiService } from '@/services/api/api.service'
 
 const PATIENT_ID = '1622017'
 
-interface PatientResponse {
-  patientId: string
-  firstName: string
-  totalProtocolTreatments: number
-  currentTreatmentNumber: number
-}
-
 export const Welcome = () => {
   const [isOpen, setIsOpen] = useState(false)
   const isMobile = useIsMobile()
@@ -24,7 +17,7 @@ export const Welcome = () => {
 
   const { data: patient } = useQuery({
     queryKey: ['patient', PATIENT_ID],
-    queryFn: () => apiService.get<PatientResponse>(`/api/patients/${PATIENT_ID}`),
+    queryFn: () => apiService.get<{ firstName: string }>(`/api/patients/${PATIENT_ID}`),
   })
 
   const welcomeProps = {

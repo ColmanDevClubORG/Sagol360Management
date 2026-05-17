@@ -12,6 +12,7 @@
     "format:fix": "prettier . --write",
     "preview": "vite preview",
     "test": "vitest",
+    "test:ci": "vitest run --reporter=verbose",
     "test:ui": "vitest --ui",
     "prepare": "husky"
   },

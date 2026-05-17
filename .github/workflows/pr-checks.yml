@@ -1,0 +1,74 @@
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Build, lint, prettier and tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6.0.8
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Print environment info
+        run: |
+          echo "::group::Environment"
+          echo "Node version:"
+          node --version
+          echo "pnpm version:"
+          pnpm --version
+          echo "Current branch:"
+          echo "${{ github.head_ref }}"
+          echo "Target branch:"
+          echo "${{ github.base_ref }}"
+          echo "PR number:"
+          echo "${{ github.event.pull_request.number }}"
+          echo "::endgroup::"
+
+      - name: Install dependencies
+        run: |
+          echo "::group::Install dependencies"
+          pnpm install --frozen-lockfile
+          echo "::endgroup::"
+
+      - name: Run ESLint
+        run: |
+          echo "::group::ESLint"
+          pnpm lint
+          echo "::endgroup::"
+
+      - name: Run Prettier check
+        run: |
+          echo "::group::Prettier"
+          pnpm format
+          echo "::endgroup::"
+
+      - name: Run tests
+        run: |
+          echo "::group::Vitest"
+          pnpm test:ci
+          echo "::endgroup::"
+
+      - name: Run build
+        run: |
+          echo "::group::Build"
+          pnpm build
+          echo "::endgroup::"

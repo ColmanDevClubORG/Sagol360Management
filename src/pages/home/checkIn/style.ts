@@ -53,6 +53,7 @@ export const detailContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
   gap: '0.7rem',
+  flexWrap: 'wrap',
 } as CSSProperties
 
 export const iconContainerStyle = {

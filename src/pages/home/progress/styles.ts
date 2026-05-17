@@ -9,6 +9,7 @@ export const cardStyle: CSSProperties = {
   justifyContent: 'space-between',
   padding: '1rem',
   alignItems: 'center',
+  borderRadius: '1rem',
 }
 
 export const protocol60TextDiv: CSSProperties = {

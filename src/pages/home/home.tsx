@@ -4,10 +4,11 @@ import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDia
 import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { DailyTips } from './dailyTips/DailyTips'
 import { CheckIn } from './checkIn/CheckIn'
-import { HomeWrapper } from './styles'
+import { HomeButtomDesktop, HomeButtomMobile, HomeTopDesktop, HomeTopMobile } from './styles'
 import { SGLBrainHQ } from '@/components/BrainHQ/SGLBrainHQ'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export const Home = () => {
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
@@ -22,21 +23,28 @@ export const Home = () => {
   })
 
   const { t } = useTranslation()
+  const isMobile = useIsMobile()
 
   return (
-    <div style={HomeWrapper}>
-      <ProgressCard value={10} />
-      <BottomSheetDialog
-        appointment={selectedAppointment}
-        isOpen={!!selectedAppointment}
-        onClose={() => setSelectedAppointment(undefined)}
-      />
-      <CheckIn onDone={() => {}} />
-      <SGLBrainHQ />
-      <div>
-        <SGLTypography variant="mediumTitle">{t('daily.tip')}</SGLTypography>
+    // <div style={HomeWrapperMobile}>
+    <>
+      <div style={isMobile ? HomeTopMobile : HomeTopDesktop}>
+        <ProgressCard value={10} />
+        <BottomSheetDialog
+          appointment={selectedAppointment}
+          isOpen={!!selectedAppointment}
+          onClose={() => setSelectedAppointment(undefined)}
+        />
+        {isMobile ? <CheckIn onDone={() => {}} /> : undefined}
       </div>
-      <DailyTips />
-    </div>
+      <div style={isMobile ? HomeButtomMobile : HomeButtomDesktop}>
+        <SGLBrainHQ />
+        {isMobile ? (
+          <SGLTypography variant="mediumTitle">{t('daily.tip')}</SGLTypography>
+        ) : undefined}
+        <DailyTips />
+      </div>
+    </>
+    // </div>
   )
 }

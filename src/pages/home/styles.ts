@@ -25,7 +25,7 @@ export const HomeButtomMobile = {
   margin: '0 auto',
   gap: '1rem',
   paddingTop: '1rem',
-  paddingBottom: '1.5rem',
+  paddingBottom: '2.5rem',
 } as CSSProperties
 
 export const HomeButtomDesktop = {

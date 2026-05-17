@@ -1,8 +1,10 @@
 import type { Theme } from '@mui/material/styles'
 import type { CSSProperties } from 'react'
+import { alpha } from '@mui/material/styles'
 
 export const rootStyle = (theme: Theme) => {
   return {
+    position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     gap: '0.8rem',
@@ -70,3 +72,36 @@ export const buttonsContainerStyle = {
   width: '100%',
   alignItems: 'center',
 } as CSSProperties
+
+export const warpperTopStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+} as CSSProperties
+
+export const wrapperTimeIconStyle = (theme: Theme) => {
+  return {
+    position: 'absolute',
+    top: -40,
+    left: -40,
+    backgroundColor: alpha(theme.palette.background.paper, 0.1),
+    height: '8rem',
+    width: '8rem',
+    borderRadius: '9rem',
+  } as CSSProperties
+}
+
+export const TimeIconStyle = (theme: Theme) => {
+  return {
+    position: 'absolute',
+    width: '2.5rem',
+    height: '2.5rem',
+    top: 60,
+    left: 60,
+    borderRadius: '0.8rem',
+    backgroundColor: alpha(theme.palette.common.white, 0.2),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  } as CSSProperties
+}

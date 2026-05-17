@@ -34,7 +34,7 @@ export const theme = createTheme({
       main: '#1976d2',
     },
     secondary: {
-      main: '#8b2cf5',
+      main: '#9333ea',
     },
     error: {
       main: '#d32f2f',
@@ -43,13 +43,13 @@ export const theme = createTheme({
       paper: '#ffffff',
     },
     purple: {
-      main: '#6D22AB',
+      main: '#7e22ce',
     },
     orange: {
-      main: '#fa7315',
+      main: '#f97316',
     },
     brown: {
-      main: '#50372e',
+      main: '#7c2d12',
     },
     yellow: {
       main: '#ffdd00',
@@ -58,16 +58,16 @@ export const theme = createTheme({
       main: '#02b134',
     },
     lightBrown: {
-      main: '#775549',
+      main: '#9a3412',
     },
     lightYellow: {
-      main: '#fcff9a',
+      main: '#ffedd5',
     },
     lightGrey: {
       main: '#f3f4f6',
     },
     lightWhite: {
-      main: '#FFFFFF94',
+      main: '#e5e5e5',
     },
     midGrey: {
       main: '#8F9098',
@@ -76,7 +76,7 @@ export const theme = createTheme({
       main: '#6d22ab2c',
     },
     lowOpacityYellow: {
-      main: '#ffff2b23',
+      main: '#fff7ed',
     },
     lowOpacityWhite: {
       main: '#FFFFFF38',
@@ -104,6 +104,9 @@ export const theme = createTheme({
     },
     warmBrown: {
       main: '#8a3720',
+    },
+    darkOrange: {
+      main: '#ef4444',
     },
   },
   typography: {

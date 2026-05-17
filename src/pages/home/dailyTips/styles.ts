@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react'
 
 export const dailyTipsStyles = {
   container: {
-    padding: '1.5rem',
+    padding: '1rem',
     display: 'flex',
     backgroundColor: 'lowOpacityYellow.main',
     backgroundImage: 'none',

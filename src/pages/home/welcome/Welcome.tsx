@@ -7,7 +7,7 @@ import { useIsMobile } from '@/hooks/useIsMobile'
 import { apiService } from '@/services/api/api.service'
 import { API_ENDPOINTS } from '@/constants/api.constants'
 
-//TODO: remove hardcoded user and get if from the login
+//TODO: remove hardcoded user and get it from the login
 const PATIENT_ID = '1622017'
 
 export const Welcome = () => {

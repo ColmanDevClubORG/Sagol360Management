@@ -5,7 +5,9 @@ import { WelcomeDesktop } from './desktop/WelcomeDesktop'
 import { SGLAlertDialog } from '@/components/UI/AlertDialog/SGLAlertDialog'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { apiService } from '@/services/api/api.service'
+import { API_ENDPOINTS } from '@/constants/api.constants'
 
+//TODO: remove hardcoded user and get if from the login
 const PATIENT_ID = '1622017'
 
 export const Welcome = () => {
@@ -17,7 +19,7 @@ export const Welcome = () => {
 
   const { data: patient } = useQuery({
     queryKey: ['patient', PATIENT_ID],
-    queryFn: () => apiService.get<{ firstName: string }>(`/api/patients/${PATIENT_ID}`),
+    queryFn: () => apiService.get<{ firstName: string }>(`${API_ENDPOINTS.patient}${PATIENT_ID}`),
   })
 
   const welcomeProps = {

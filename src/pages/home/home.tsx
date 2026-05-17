@@ -7,6 +7,7 @@ import { DailyTips } from './dailyTips/DailyTips'
 import { CheckIn } from './checkIn/CheckIn'
 import { SGLVideoCard } from '@/components/UI/Video/SGLVideoCard'
 import { useTranslation } from 'react-i18next'
+import { Welcome } from './welcome/Welcome'
 
 export const Home = () => {
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
@@ -24,6 +25,7 @@ export const Home = () => {
 
   return (
     <>
+      <Welcome />
       <ProgressCard value={10} />
       <BottomSheetDialog
         appointment={selectedAppointment}

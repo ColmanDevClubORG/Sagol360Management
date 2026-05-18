@@ -3,11 +3,10 @@ import type { CSSProperties } from 'react'
 
 export const rootStyle = (theme: Theme) => {
   return {
-    width: '95%',
     display: 'flex',
     flexDirection: 'column',
-    gap: 2,
-    backgroundColor: theme.palette.purple.main,
+    gap: '0.8rem',
+    backgroundColor: theme.palette.orange.main,
     borderRadius: '1rem',
     padding: '1.5rem',
   } as const
@@ -25,6 +24,7 @@ export const containedButtonStyles = (theme: Theme) => {
     color: theme.palette.purple.main,
     flex: 1,
     borderRadius: '0.8rem',
+    height: '2.3rem',
   } as CSSProperties
 }
 export const outlinedButtonStyles = (theme: Theme) => {
@@ -32,6 +32,7 @@ export const outlinedButtonStyles = (theme: Theme) => {
     borderColor: theme.palette.background.paper,
     color: theme.palette.background.paper,
     borderRadius: '0.8rem',
+    height: '2.3rem',
   } as CSSProperties
 }
 
@@ -41,7 +42,7 @@ export const completedButtonStyle = (theme: Theme) => {
     backgroundColor: theme.palette.success.main,
     color: theme.palette.background.paper,
     width: '100%',
-    borderRadius: '0.8rem',
+    borderRadius: '0.7rem',
     '&:hover': {
       backgroundColor: theme.palette.text.primary,
     },
@@ -51,19 +52,19 @@ export const completedButtonStyle = (theme: Theme) => {
 export const detailContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
-  gap: '1rem',
+  gap: '0.7rem',
 } as CSSProperties
 
 export const iconContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
-  gap: '0.3rem',
+  gap: '0.1rem',
   alignItems: 'center',
 } as CSSProperties
 
 export const buttonsContainerStyle = {
   display: 'flex',
-  gap: '2rem',
+  gap: '1rem',
   marginTop: '1rem',
   width: '100%',
   alignItems: 'center',

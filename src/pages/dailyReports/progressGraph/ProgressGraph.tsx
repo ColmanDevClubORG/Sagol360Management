@@ -8,7 +8,7 @@ export const ProgressGraph = () => {
   const { t } = useTranslation()
 
   const MOCK_GRAPH_DATA = {
-    xLabels: ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"],
+    xLabels: t('charts.days', { returnObjects: true }) as string[],
     seriesData: [
       {
         labelKey: 'charts.sleepQuality',

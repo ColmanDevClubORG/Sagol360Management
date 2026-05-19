@@ -8,7 +8,7 @@ export const scheduleCardStyles = {
     justifyContent: 'space-between',
     margin: '0 2rem',
     padding: '1rem',
-    border: `0.0625rem solid ${theme.palette.mediumGrey.main}`,
+    border: `0.0625rem solid ${theme.palette.lowOpacityGrey.main}`,
     borderRight: '0.25rem solid',
     borderRadius: '1rem',
   } satisfies CSSProperties,

@@ -1,31 +1,41 @@
 import { theme } from '@/theme'
+import type { IsoDateString } from '@/utils/datesUtils'
 
-export const APPOINTMENT_TYPES = [
-  'hyperbaric_chamber',
-  'cognitive_assessment',
-  'physiotherapy',
-  'stress_test',
-  'mri_imaging',
-]
-
-export type AppointmentType = (typeof APPOINTMENT_TYPES)[number]
+export type AppointmentStatus = 'confirmed' | 'pending' | 'cancelled'
+export type AppointmentDate = IsoDateString
 
 export interface Appointment {
-  id: string
-  title: string
+  appointmentId: string
+  patientId: number
   time: string
-  location: string
-  durationMinutes: number
-  type: AppointmentType
+  date: AppointmentDate
+  chamber: string
+  chairNumber: number
+  treatmentNumber: number
+  status: AppointmentStatus
 }
 
-export const appointmentColors: Record<AppointmentType, string> = {
-  hyperbaric_chamber: theme.palette.purple.main,
-  cognitive_assessment: theme.palette.blue.main,
-  physiotherapy: theme.palette.emerald.main,
-  stress_test: theme.palette.orange.main,
-  mri_imaging: theme.palette.yellow.main,
+export const appointmentStatusColors: Record<AppointmentStatus, string> = {
+  confirmed: theme.palette.purple.main,
+  pending: theme.palette.orange.main,
+  cancelled: theme.palette.error.main,
 }
+
+export const appointmentChamberColors: Record<string, string> = {
+  'appointment.chamber.hyperbaric': theme.palette.purple.main,
+  'appointment.chamber.cognitiveAssessment': theme.palette.blue.main,
+  'appointment.chamber.physiotherapy': theme.palette.emerald.main,
+  'appointment.chamber.stressTest': theme.palette.orange.main,
+  'appointment.chamber.imagingInstitute': theme.palette.green.main,
+  'appointment.chamber.red': theme.palette.error.main,
+  'appointment.room102': theme.palette.brown.main,
+  'appointment.room203': theme.palette.secondary.main,
+  'appointment.orangeCellArizon': theme.palette.warmBrown.main,
+  'orange.cell': theme.palette.yellow.main,
+}
+
+export const getAppointmentChamberColor = (chamber: string) =>
+  appointmentChamberColors[chamber] ?? theme.palette.midGrey.main
 
 export const FormFields = {
   SelectedSlot: 'selectedSlot',
@@ -34,8 +44,8 @@ export const FormFields = {
 export interface RescheduleFormValues {
   timePreference: 'morning' | 'afternoon_evening'
   selectedSlot: {
-    date: string
+    date: AppointmentDate
     time: string
-    location: string
+    chamber: string
   }
 }

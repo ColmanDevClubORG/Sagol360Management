@@ -2,14 +2,16 @@ import { SGLTypography } from '../UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
 
 interface SlotLocationTextProps {
-  location: string
+  chamber: string
 }
 
-export const SlotLocationText = ({ location }: SlotLocationTextProps) => {
+export const SlotLocationText = ({ chamber }: SlotLocationTextProps) => {
   const { t } = useTranslation()
   return (
     <SGLTypography variant="mediumText">
-      {t('appointment.showingSlots', { location })}
+      {t('appointment.showingSlots', {
+        location: t(chamber),
+      })}
     </SGLTypography>
   )
 }

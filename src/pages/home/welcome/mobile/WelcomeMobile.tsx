@@ -2,6 +2,7 @@ import { SGLNotificationsBadgeIcon } from '@/components/UI/Icons/NotificationsBa
 import { welcomeMobileStyles } from './styles'
 import type { WelcomeProps } from '../types'
 import { SplitTitle } from '../splitTitle/SpliteTitle'
+import { useTranslation } from 'react-i18next'
 
 export const WelcomeMobile = ({
   userName,
@@ -9,10 +10,12 @@ export const WelcomeMobile = ({
   onToggleDialog,
   styles,
 }: WelcomeProps) => {
+  const { t } = useTranslation()
+
   return (
     <div style={{ ...welcomeMobileStyles.container, ...styles }}>
       <SplitTitle
-        firstChild="good night,"
+        firstChild={t('good.night')}
         secondChild={userName}
         firstVariant="mediumText"
         secondVariant="largeTitle"

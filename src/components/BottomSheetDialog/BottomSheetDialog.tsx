@@ -6,22 +6,13 @@ import { TimePreferencePicker } from './TimePreferencePicker'
 import { SlotSelection } from './SlotSelection'
 import type { Appointment, RescheduleFormValues } from './types'
 import * as styles from './styles'
+import { MOCK_SLOTS } from './mockSlots'
 
 interface BottomSheetDialogProps {
   appointment?: Appointment
   isOpen: boolean
   onClose: () => void
 }
-
-// TODO: Replace with API call
-const slots = [
-  { date: '04/04', time: '15:00', location: 'תא כתום', availableSpots: 8 },
-  { date: '04/04', time: '17:30', location: 'תא כתום', availableSpots: 11 },
-  { date: '04/04', time: '20:00', location: 'תא כתום', availableSpots: 13 },
-  { date: '05/04', time: '15:00', location: 'תא כתום', availableSpots: 11 },
-  { date: '05/04', time: '17:30', location: 'תא כתום', availableSpots: 12 },
-  { date: '05/04', time: '20:00', location: 'תא כתום', availableSpots: 13 },
-]
 
 const Step = {
   DETAILS: 'DETAILS',
@@ -73,7 +64,7 @@ export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetD
         {step === Step.SLOT_SELECTION && (
           <SlotSelection
             appointment={appointment}
-            slots={slots}
+            slots={MOCK_SLOTS}
             onBack={() => setStep(Step.TIME_PREFERENCE)}
             onSubmit={methods.handleSubmit(onSubmit)}
             onClose={handleClose}

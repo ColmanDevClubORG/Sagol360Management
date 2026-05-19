@@ -69,6 +69,9 @@ export const theme = createTheme({
     lightWhite: {
       main: '#FFFFFF94',
     },
+    lightPurple: {
+      main: '#7f18d358',
+    },
     midGrey: {
       main: '#8F9098',
     },

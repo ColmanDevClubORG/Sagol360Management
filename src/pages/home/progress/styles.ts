@@ -4,6 +4,7 @@ import { alpha } from '@mui/material/styles'
 import { CardVariant } from '@/components/UI/Card/styles'
 
 export const cardStyle: CSSProperties = {
+  flex: 1,
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',

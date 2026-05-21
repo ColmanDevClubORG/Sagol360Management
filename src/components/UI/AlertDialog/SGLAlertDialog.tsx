@@ -37,7 +37,7 @@ export const SGLAlertDialog = ({
       <Box sx={topBoxStyles}>
         <DialogContent>{topChildren}</DialogContent>
       </Box>
-      {children}
+      <DialogContent style={{ padding: '0.5rem' }}>{children}</DialogContent>
       <Box sx={bottomBoxStyles}>
         <DialogContent>{bottomChildren}</DialogContent>
       </Box>

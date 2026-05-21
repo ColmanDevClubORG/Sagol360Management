@@ -55,7 +55,7 @@ export const theme = createTheme({
       main: '#ffdd00',
     },
     green: {
-      main: '#02b134',
+      main: '#22c55e',
     },
     lightBrown: {
       main: '#9a3412',

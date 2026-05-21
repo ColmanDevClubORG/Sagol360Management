@@ -11,11 +11,12 @@ export const HomeTopMobile = {
 } as CSSProperties
 
 export const HomeTopDesktop = {
-  display: 'grid',
-  gap: '1rem',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem',
   width: '90%',
   margin: '0 auto',
-  paddingTop: '1rem',
+  paddingTop: '2rem',
 } as CSSProperties
 
 export const HomeButtomMobile = {

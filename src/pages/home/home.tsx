@@ -9,6 +9,7 @@ import { SGLBrainHQ } from '@/components/BrainHQ/SGLBrainHQ'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/useIsMobile'
+import { Welcome } from './welcome/Welcome'
 
 export const Home = () => {
   const [selectedAppointment, setSelectedAppointment] = useState<Appointment | undefined>({
@@ -26,15 +27,15 @@ export const Home = () => {
   const isMobile = useIsMobile()
 
   return (
-    // <div style={HomeWrapperMobile}>
     <>
+      <BottomSheetDialog
+        appointment={selectedAppointment}
+        isOpen={!!selectedAppointment}
+        onClose={() => setSelectedAppointment(undefined)}
+      />
       <div style={isMobile ? HomeTopMobile : HomeTopDesktop}>
+        <Welcome />
         <ProgressCard value={10} />
-        <BottomSheetDialog
-          appointment={selectedAppointment}
-          isOpen={!!selectedAppointment}
-          onClose={() => setSelectedAppointment(undefined)}
-        />
         {isMobile ? <CheckIn onDone={() => {}} /> : undefined}
       </div>
       <div style={isMobile ? HomeButtomMobile : HomeButtomDesktop}>
@@ -45,6 +46,5 @@ export const Home = () => {
         <DailyTips />
       </div>
     </>
-    // </div>
   )
 }

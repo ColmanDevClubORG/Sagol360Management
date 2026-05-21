@@ -6,7 +6,7 @@ export const DailyReports = () => {
   return (
     <div style={rootStyle}>
       <ProgressGraph />
-      <MetricsReport onClick={() => {}} />
+      <MetricsReport />
     </div>
   )
 }

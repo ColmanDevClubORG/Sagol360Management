@@ -18,14 +18,14 @@ export const useMetricsReport = () => {
   const { data } = useQuery({
     queryKey: ['metrics', 'today', PATIENT_ID],
     queryFn: async () => {
-      const response = await apiService.get<boolean>(`${API_ENDPOINTS.metrics}today/${PATIENT_ID}`)
+      const response = await apiService.get<boolean>(`${API_ENDPOINTS.metricsToday}${PATIENT_ID}`)
       return response
     },
   })
 
-  const { mutate } = useMutation({
+  const { mutateAsync } = useMutation({
     mutationFn: (metrics: MetricsPayload) =>
-      apiService.post(`${API_ENDPOINTS.metrics}${PATIENT_ID}`, metrics),
+      apiService.post<void>(`${API_ENDPOINTS.metrics}${PATIENT_ID}`, metrics),
   })
-  return { sentToday: data, submitReport: mutate }
+  return { sentToday: data, submitReport: mutateAsync }
 }

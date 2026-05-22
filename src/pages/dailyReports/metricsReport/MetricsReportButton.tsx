@@ -8,7 +8,7 @@ import { useTheme } from '@mui/material'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 
 interface MetricsReportButtonProps {
-  onClick: () => void
+  onClick: () => Promise<void>
   sentToday: boolean
 }
 
@@ -17,8 +17,8 @@ export const MetricsReportButton = ({ onClick, sentToday }: MetricsReportButtonP
   const { t } = useTranslation()
   const theme = useTheme()
 
-  const hndleButtonClick = () => {
-    onClick()
+  const hndleButtonClick = async () => {
+    await onClick()
     setReport(true)
   }
   return (

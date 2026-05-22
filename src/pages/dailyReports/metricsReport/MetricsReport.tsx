@@ -25,7 +25,7 @@ export const MetricsReport = () => {
     <div style={rootStyle(theme)}>
       <MetricsReportHeader />
       <MetricsReportListCard onChange={handleChange} />
-      <MetricsReportButton onClick={() => submitReport(metrics)} sentToday={sentToday ?? false} />
+      <MetricsReportButton onClick={() => submitReport(metrics)} sentToday={!!sentToday} />
     </div>
   )
 }

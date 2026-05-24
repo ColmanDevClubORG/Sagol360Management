@@ -24,3 +24,7 @@ export const bottomBoxStyles = {
   backgroundColor: 'background.paper',
   width: '100%',
 }
+
+export const boxChildrenStyle = {
+  padding: '0.5rem',
+}

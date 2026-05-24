@@ -11,14 +11,14 @@ export const CardVariant = {
 export type CardVariant = (typeof CardVariant)[keyof typeof CardVariant]
 
 export const getCardStyles = (theme: Theme, variant: CardVariant = 'purple') => {
-  if (variant === 'purple') {
-    const color = theme.palette[variant].main
+  if (variant === CardVariant.Purple) {
+    const color = theme.palette.purple.main
     return {
       borderRadius: '10px',
       background: `linear-gradient(135deg, ${theme.palette.secondary.main} 0%,${darken(color, 0.2)} 100%)`,
     }
-  } else if (variant === 'orange') {
-    const color = theme.palette[variant].main
+  } else if (variant === CardVariant.Orange) {
+    const color = theme.palette.orange.main
 
     return {
       borderRadius: '10px',

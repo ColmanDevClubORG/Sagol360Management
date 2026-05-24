@@ -1,13 +1,14 @@
 import type { Theme } from '@mui/material/styles'
 import type { CSSProperties } from 'react'
+import { alpha } from '@mui/material/styles'
 
 export const rootStyle = (theme: Theme) => {
   return {
-    width: '95%',
+    position: 'relative',
     display: 'flex',
     flexDirection: 'column',
-    gap: 2,
-    backgroundColor: theme.palette.purple.main,
+    gap: '0.8rem',
+    backgroundColor: theme.palette.orange.main,
     borderRadius: '1rem',
     padding: '1.5rem',
   } as const
@@ -25,6 +26,7 @@ export const containedButtonStyles = (theme: Theme) => {
     color: theme.palette.purple.main,
     flex: 1,
     borderRadius: '0.8rem',
+    height: '2.3rem',
   } as CSSProperties
 }
 export const outlinedButtonStyles = (theme: Theme) => {
@@ -32,6 +34,7 @@ export const outlinedButtonStyles = (theme: Theme) => {
     borderColor: theme.palette.background.paper,
     color: theme.palette.background.paper,
     borderRadius: '0.8rem',
+    height: '2.3rem',
   } as CSSProperties
 }
 
@@ -41,7 +44,7 @@ export const completedButtonStyle = (theme: Theme) => {
     backgroundColor: theme.palette.success.main,
     color: theme.palette.background.paper,
     width: '100%',
-    borderRadius: '0.8rem',
+    borderRadius: '0.7rem',
     '&:hover': {
       backgroundColor: theme.palette.text.primary,
     },
@@ -51,20 +54,54 @@ export const completedButtonStyle = (theme: Theme) => {
 export const detailContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
-  gap: '1rem',
+  gap: '0.7rem',
+  flexWrap: 'wrap',
 } as CSSProperties
 
 export const iconContainerStyle = {
   display: 'flex',
   flexDirection: 'row',
-  gap: '0.3rem',
+  gap: '0.1rem',
   alignItems: 'center',
 } as CSSProperties
 
 export const buttonsContainerStyle = {
   display: 'flex',
-  gap: '2rem',
+  gap: '1rem',
   marginTop: '1rem',
   width: '100%',
   alignItems: 'center',
 } as CSSProperties
+
+export const warpperTopStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+} as CSSProperties
+
+export const wrapperTimeIconStyle = (theme: Theme) => {
+  return {
+    position: 'absolute',
+    top: -40,
+    left: -40,
+    backgroundColor: alpha(theme.palette.background.paper, 0.1),
+    height: '8rem',
+    width: '8rem',
+    borderRadius: '9rem',
+  } as CSSProperties
+}
+
+export const TimeIconStyle = (theme: Theme) => {
+  return {
+    position: 'absolute',
+    width: '2.5rem',
+    height: '2.5rem',
+    top: 60,
+    left: 60,
+    borderRadius: '0.8rem',
+    backgroundColor: alpha(theme.palette.common.white, 0.2),
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  } as CSSProperties
+}

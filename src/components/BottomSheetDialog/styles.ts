@@ -12,20 +12,20 @@ export const drawerPaperSx: CSSProperties = {
 export const container: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
-  padding: '1rem',
-  gap: '1rem',
+  padding: '1.5rem',
+  gap: '0.5rem',
 }
 
 export const header: CSSProperties = {
   display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  marginBottom: '1rem',
+  marginBottom: '0.8rem',
+  margin: '0 auto',
 }
 
 export const row: CSSProperties = {
   display: 'flex',
   alignItems: 'center',
+  padding: '0.3rem',
 }
 
 export const actions: CSSProperties = {
@@ -33,16 +33,15 @@ export const actions: CSSProperties = {
   justifyContent: 'center',
   gap: '1rem',
   marginTop: '2rem',
-  marginBottom: '1rem',
 }
 
 export const actionButtonFilled: CSSProperties = {
-  borderRadius: '0.4rem',
+  borderRadius: '0.7rem',
   backgroundColor: theme.palette.purple.main,
 }
 
 export const actionButtonOutlined: CSSProperties = {
-  borderRadius: '0.4rem',
+  borderRadius: '0.7rem',
   borderColor: theme.palette.purple.main,
 }
 
@@ -55,14 +54,13 @@ export const icons: CSSProperties = {
 export const options: CSSProperties = {
   display: 'flex',
   gap: '1rem',
-  padding: '0 1rem',
 }
 export const card: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   gap: '1rem',
-  padding: '1.5rem',
+  padding: '0.5rem',
   borderRadius: 7,
   border: '1px solid',
   borderColor: theme.palette.mediumGrey.main,

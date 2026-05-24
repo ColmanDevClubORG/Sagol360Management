@@ -2,11 +2,13 @@ import { useState } from 'react'
 import { ProgressCard } from '@/pages/home/progress/ProgressCard'
 import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
 import type { Appointment } from '@/components/BottomSheetDialog/types'
-import { TrainingGoal } from '../lifeStyle/physioAndTrainingTab/TraningGoal'
 import { DailyTips } from './dailyTips/DailyTips'
 import { CheckIn } from './checkIn/CheckIn'
-import { SGLVideoCard } from '@/components/UI/Video/SGLVideoCard'
+import { HomeButtomDesktop, HomeButtomMobile, HomeTopDesktop, HomeTopMobile } from './styles'
+import { SGLBrainHQ } from '@/components/BrainHQ/SGLBrainHQ'
+import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
+import { useIsMobile } from '@/hooks/useIsMobile'
 import { Welcome } from './welcome/Welcome'
 
 export const Home = () => {
@@ -22,24 +24,27 @@ export const Home = () => {
   })
 
   const { t } = useTranslation()
+  const isMobile = useIsMobile()
 
   return (
     <>
-      <Welcome />
-      <ProgressCard value={10} />
       <BottomSheetDialog
         appointment={selectedAppointment}
         isOpen={!!selectedAppointment}
         onClose={() => setSelectedAppointment(undefined)}
       />
-      <TrainingGoal />
-      <DailyTips />
-      <CheckIn onDone={() => {}} />
-      <SGLVideoCard
-        title={t('balanceTraining.title')}
-        description={t('balanceTraining.description')}
-        durationInMinutes={10}
-      />
+      <div style={isMobile ? HomeTopMobile : HomeTopDesktop}>
+        <Welcome />
+        <ProgressCard value={10} />
+        {isMobile ? <CheckIn onDone={() => {}} /> : undefined}
+      </div>
+      <div style={isMobile ? HomeButtomMobile : HomeButtomDesktop}>
+        <SGLBrainHQ />
+        {isMobile ? (
+          <SGLTypography variant="mediumTitle">{t('daily.tip')}</SGLTypography>
+        ) : undefined}
+        <DailyTips />
+      </div>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { type CSSProperties, type ReactNode } from 'react'
 import { SGLCloseIcon } from '../Icons/CloseIcon/SGLCloseIcon'
 import { Dialog, Box, type DialogProps as MuiDialogProps, DialogContent } from '@mui/material'
-import { dialogStyles, topBoxStyles, bottomBoxStyles } from './styles'
+import { dialogStyles, topBoxStyles, bottomBoxStyles, boxChildrenStyle } from './styles'
 
 interface SGLAlertDialogProps extends Omit<MuiDialogProps, 'onClose' | 'open'> {
   topChildren?: ReactNode
@@ -37,7 +37,7 @@ export const SGLAlertDialog = ({
       <Box sx={topBoxStyles}>
         <DialogContent>{topChildren}</DialogContent>
       </Box>
-      {children}
+      <DialogContent style={boxChildrenStyle}>{children}</DialogContent>
       <Box sx={bottomBoxStyles}>
         <DialogContent>{bottomChildren}</DialogContent>
       </Box>

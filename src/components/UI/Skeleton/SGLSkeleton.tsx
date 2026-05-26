@@ -2,26 +2,24 @@ import Skeleton, {
   type SkeletonProps as MuiSkeletonProps,
 } from '@mui/material/Skeleton'
 
-import type { SxProps, Theme } from '@mui/material/styles'
+import type { CSSProperties } from '@mui/material/styles'
+import { skeletonStyles } from './styles'
 
-interface SGLSkeletonProps
-  extends Omit<MuiSkeletonProps, 'sx'> {
-  skeletonColor?: string
-  sx?: SxProps<Theme>
+interface SGLSkeletonProps extends Omit<MuiSkeletonProps, 'style' | 'sx'> {
+  style?: CSSProperties
 }
 
 export const SGLSkeleton = ({
-  skeletonColor = '#8F3DFF',
   animation = 'wave',
-  sx,
+  style,
   ...props
 }: SGLSkeletonProps) => {
   return (
     <Skeleton
-      sx={{
-        bgcolor: skeletonColor,
-        ...sx,
-      }}
+      sx={(theme) => ({
+        ...skeletonStyles(theme),
+        ...style,
+      })}
       animation={animation}
       {...props}
     />

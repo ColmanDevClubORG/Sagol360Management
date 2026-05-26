@@ -3,6 +3,7 @@ import type { Appointment } from '@/components/BottomSheetDialog/types'
 import { scheduleStyles } from '@/pages/schedule/styles'
 import type { ScheduleSectionItems } from '@/pages/schedule/utils/scheduleUtils'
 import { ScheduleCard } from '../ScheduleCard/ScheduleCard'
+import { SCHEDULE_SECTION_KEYS } from '@/pages/schedule/utils/scheduleUtils'
 
 interface ScheduleSectionsProps {
   sections: ScheduleSectionItems[]
@@ -16,11 +17,12 @@ export const ScheduleSectionsDesktop = ({
   const { t } = useTranslation()
 
   const mainSections = sections.filter(
-    (section) => section.key === 'today' || section.key === 'tomorrow',
+    (section) =>
+      section.key === SCHEDULE_SECTION_KEYS.today || section.key === SCHEDULE_SECTION_KEYS.tomorrow,
   )
 
   const weekSections = sections.filter(
-    (section) => section.key !== 'today' && section.key !== 'tomorrow',
+    (section) => section.key === SCHEDULE_SECTION_KEYS.upcomingWeek,
   )
 
   const renderSections = (sectionsToRender: ScheduleSectionItems[]) =>

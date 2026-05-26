@@ -4,6 +4,7 @@ import { SGLCircularProgress } from '../../../components/UI/Progress/SGLCircular
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { ProgressLabel } from './ProgressLabel'
 import { ProgressCardText } from './ProgressCardText'
+import { CheckIn } from '@/pages/home/checkIn/CheckIn'
 
 export type VariantStyle = (typeof styles.variantStyles)['mobile' | 'desktop']
 
@@ -25,6 +26,7 @@ export const ProgressCard = ({ value }: ProgressCardProps) => {
         size={75}
         label={<ProgressLabel value={value} style={specificVariantStyle} />}
       />
+      {isMobile ? undefined : <CheckIn onDone={() => {}} />}
     </SGLCard>
   )
 }

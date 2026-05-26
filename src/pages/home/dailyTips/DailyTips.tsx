@@ -11,6 +11,7 @@ export const DailyTips = () => {
   const { t } = useTranslation()
   return (
     <SGLCard
+      variant="white"
       style={{
         ...dailyTipsStyles.container,
         ...(isMobile ? dailyTipsStyles.containerMobile : dailyTipsStyles.containerDesktop),

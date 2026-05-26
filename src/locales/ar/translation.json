@@ -75,13 +75,5 @@
   "appointment.room203": "غرفة 203",
   "balanceTraining.title": "مصمم لتحسين التوازن",
   "balanceTraining.description": "سلسلة تمارين لتحسين الاستقرار ومنع السقوط، مصممة خصيصًا لاحتياجاتك.",
-  "balanceTraining.button": "شاهد مقاطع تدريب التوازن",
-  "checkIn.nextAppointment": "الموعد القادم",
-  "checkIn.today": "اليوم",
-  "checkIn.hyperbaricTreatment": "علاج في غرفة الضغط",
-  "chckIn.orangeCell": "خلية برتقالية",
-  "checkIn.arisonBuilding": "مبنى أريسون",
-  "checkIn.performCheckIn": "قم بتسجيل الدخول",
-  "checkIn.notComing": "لن أحضر",
-  "checkIn.completedSuccessfully": "تم بنجاح"
+  "balanceTraining.button": "شاهد مقاطع تدريب التوازن"
 }

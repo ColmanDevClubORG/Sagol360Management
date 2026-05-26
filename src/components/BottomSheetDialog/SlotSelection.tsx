@@ -21,13 +21,7 @@ interface SlotSelectionProps {
   onClose: () => void
 }
 
-export const SlotSelection = ({
-  appointment,
-  slots,
-  onBack,
-  onSubmit,
-  onClose,
-}: SlotSelectionProps) => {
+export const SlotSelection = ({ appointment, slots, onBack, onSubmit }: SlotSelectionProps) => {
   const { setValue, watch } = useFormContext<RescheduleFormValues>()
   const selectedSlot = watch('selectedSlot')
 
@@ -40,7 +34,7 @@ export const SlotSelection = ({
   }
   return (
     <div style={styles.container}>
-      <SlotSelectionHeader onClose={onClose} />
+      <SlotSelectionHeader />
       <SlotLocationText chamber={appointment.chamber} />
       <SlotList slots={slots} selectedSlot={selectedSlot} onSelect={handleSelectSlot} />
       <SlotActions onBack={onBack} onSubmit={onSubmit} selectedSlot={selectedSlot} />

@@ -14,6 +14,7 @@ import { SGLCalendarIcon } from '@/components/UI/Icons/calender/SGLCalenderIcon.
 import { theme } from '@/theme.ts'
 import { useIsMobile } from '@/hooks/useIsMobile.ts'
 import { ScheduleSectionsDesktop } from '@/components/schedule/ScheduleSectionsDesktop/ScheduleSectionDesktop.tsx'
+import { Welcome } from '../home/welcome/Welcome.tsx'
 
 export const Schedule = () => {
   const { t } = useTranslation()
@@ -35,6 +36,7 @@ export const Schedule = () => {
   const isMobile = useIsMobile()
   return (
     <SGLContainer styles={scheduleStyles.container}>
+      <Welcome />
       <div style={scheduleStyles.title}>
         <SGLTypography variant="largeTitle" color="purple">
           {t('schedule.myScheduleTitle')}

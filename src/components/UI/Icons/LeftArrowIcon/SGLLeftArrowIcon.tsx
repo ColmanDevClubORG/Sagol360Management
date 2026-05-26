@@ -10,7 +10,7 @@ interface ClockIconProps {
 export const SGLLeftArrowIcon = ({
   size = 20,
   styles,
-  color = theme.palette.background.paper,
+  color = theme.palette.midGrey.main,
   ...props
 }: ClockIconProps) => {
   return (

@@ -3,8 +3,6 @@ import { describe, it, expect, vi } from 'vitest'
 import { SGLCheckbox } from './SGLCheckbox'
 
 describe('SGLCheckbox', () => {
-  //tests for the checkbox!!
-  // test 1:
   it('should toggle from checked to unchecked', () => {
     render(<SGLCheckbox defaultChecked={true} />)
 
@@ -14,7 +12,6 @@ describe('SGLCheckbox', () => {
 
     expect(checkbox).not.toBeChecked()
   })
-  // test 2:
   it('should toggle from  unchecked to checked ', () => {
     render(<SGLCheckbox defaultChecked={false} />)
 
@@ -24,7 +21,6 @@ describe('SGLCheckbox', () => {
 
     expect(checkbox).toBeChecked()
   })
-  // test 3:
   it('should be disabled ', () => {
     render(<SGLCheckbox disabled />)
 
@@ -32,7 +28,6 @@ describe('SGLCheckbox', () => {
 
     expect(checkbox).toBeDisabled()
   })
-  //test 4:
   it('should change on onChange', () => {
     const HandleOnChange = vi.fn()
 

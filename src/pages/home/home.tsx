@@ -33,8 +33,8 @@ export const Home = () => {
         isOpen={!!selectedAppointment}
         onClose={() => setSelectedAppointment(undefined)}
       />
-      <Welcome />
       <div style={isMobile ? HomeTopMobile : HomeTopDesktop}>
+        <Welcome />
         <ProgressCard value={10} />
         {isMobile ? <CheckIn onDone={() => {}} /> : undefined}
       </div>

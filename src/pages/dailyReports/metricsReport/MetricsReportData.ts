@@ -16,6 +16,7 @@ export const PaletteColorKey = {
 
 export const METRICS_REPORT_DATA = [
   {
+    id: 'energyLevel',
     titleKey: 'metricCard.energyLevel',
     minLabelKey: 'metricCard.label.exhausted',
     maxLabelKey: 'metricCard.label.energetic',
@@ -24,6 +25,7 @@ export const METRICS_REPORT_DATA = [
     icon: SGLElectricIcon,
   },
   {
+    id: 'sleepQuality',
     titleKey: 'metricCard.sleepQuality',
     minLabelKey: 'metricCard.label.poor',
     maxLabelKey: 'metricCard.label.excellent',
@@ -32,6 +34,7 @@ export const METRICS_REPORT_DATA = [
     icon: SGLMoonIcon,
   },
   {
+    id: 'painLevel',
     titleKey: 'metricCard.painLevel',
     minLabelKey: 'metricCard.label.severePain',
     maxLabelKey: 'metricCard.label.noPain',
@@ -40,6 +43,7 @@ export const METRICS_REPORT_DATA = [
     icon: SGLHeartIcon,
   },
   {
+    id: 'concentration',
     titleKey: 'metricCard.concentration',
     minLabelKey: 'metricCard.label.difficultyConcentrating',
     maxLabelKey: 'metricCard.label.highlyFocused',
@@ -48,6 +52,7 @@ export const METRICS_REPORT_DATA = [
     icon: SGLPsychologyIcon,
   },
   {
+    id: 'brainFog',
     titleKey: 'metricCard.brainFog',
     minLabelKey: 'metricCard.label.veryHeavy',
     maxLabelKey: 'metricCard.label.veryClear',
@@ -56,6 +61,7 @@ export const METRICS_REPORT_DATA = [
     icon: SGLCloudIcon,
   },
   {
+    id: 'mood',
     titleKey: 'metricCard.mood',
     minLabelKey: 'metricCard.label.low',
     maxLabelKey: 'metricCard.label.excellentState',

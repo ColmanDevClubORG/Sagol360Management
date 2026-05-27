@@ -8,21 +8,22 @@ import { useTheme } from '@mui/material'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 
 interface MetricsReportButtonProps {
-  onClick: () => void
+  onClick: () => Promise<void>
+  sentToday: boolean
 }
 
-export const MetricsReportButton = ({ onClick }: MetricsReportButtonProps) => {
+export const MetricsReportButton = ({ onClick, sentToday }: MetricsReportButtonProps) => {
   const [report, setReport] = useState(false)
   const { t } = useTranslation()
   const theme = useTheme()
 
-  const hndleButtonClick = () => {
-    onClick()
+  const hndleButtonClick = async () => {
+    await onClick()
     setReport(true)
   }
   return (
     <div>
-      {report ? (
+      {report || sentToday ? (
         <SGLButton variant="contained" onClick={() => {}} styles={succssesReportButtonStyle(theme)}>
           <SGLTypography variant="smallTitle" color={theme.palette.background.paper}>
             {t('metricsReport.submitSuccess')}

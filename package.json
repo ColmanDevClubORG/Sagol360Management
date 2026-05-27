@@ -26,6 +26,7 @@
     "@tanstack/react-query": "^5.100.9",
     "axios": "^1.16.0",
     "dayjs": "^1.11.20",
+    "html5-qrcode": "^2.3.8",
     "i18next": "^26.0.1",
     "lucide-react": "^1.7.0",
     "qrcode.react": "^4.2.0",

@@ -10,6 +10,10 @@ import { buildSectionItems, MOCK_SCHEDULE_ITEMS } from './utils/scheduleUtils.ts
 import { ScheduleSections } from '@/components/schedule/ScheduleSections/ScheduleSections.tsx'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography.tsx'
 import { formatDisplayDate, formatDisplayTime, getScheduleDateRange } from '@/utils/datesUtils.tsx'
+import { SGLCalendarIcon } from '@/components/UI/Icons/calender/SGLCalenderIcon.tsx'
+import { theme } from '@/theme.ts'
+import { useIsMobile } from '@/hooks/useIsMobile.ts'
+import { ScheduleSectionsDesktop } from '@/components/schedule/ScheduleSectionsDesktop/ScheduleSectionDesktop.tsx'
 
 export const Schedule = () => {
   const { t } = useTranslation()
@@ -28,11 +32,23 @@ export const Schedule = () => {
     nextWeekEnd,
   )
   const hasAppointments = sectionItems.some(({ items }) => items.length > 0)
-
+  const isMobile = useIsMobile()
   return (
     <SGLContainer styles={scheduleStyles.container}>
+      <div style={scheduleStyles.title}>
+        <SGLTypography variant="largeTitle" color="purple">
+          {t('schedule.myScheduleTitle')}
+        </SGLTypography>
+      </div>
       <SGLCalendar selectedDate={selectedDate} onDateChange={setSelectedDate} />
-      <ScheduleSections sections={sectionItems} onAppointmentClick={setActiveAppointment} />
+      {isMobile ? (
+        <ScheduleSections sections={sectionItems} onAppointmentClick={setActiveAppointment} />
+      ) : (
+        <ScheduleSectionsDesktop
+          sections={sectionItems}
+          onAppointmentClick={setActiveAppointment}
+        />
+      )}
       {!hasAppointments && <div>{t('schedule.noAppointments')}</div>}
       {activeAppointment && (
         <BottomSheetDialog
@@ -42,6 +58,7 @@ export const Schedule = () => {
         />
       )}
       <SGLTypography variant="mediumText" styles={scheduleStyles.pageUpdate}>
+        <SGLCalendarIcon styles={{ color: theme.palette.midGrey.main }} />
         {t('schedule.updatedAt', {
           date: formatDisplayDate(now),
           time: formatDisplayTime(now),

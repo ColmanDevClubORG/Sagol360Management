@@ -5,6 +5,7 @@ import { SGLCard } from '../Card/SGLCard'
 import { calendarGridStyles, cardStyles, getDayStyles, getTextColor } from './styles'
 import { useCalendar } from './useCalendar'
 import type { Dayjs } from 'dayjs'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export type SGLCalendarProps = {
   selectedDate: Dayjs
@@ -18,8 +19,10 @@ export const SGLCalendar = ({ selectedDate, onDateChange, weekDate }: SGLCalenda
     weekDate,
   })
 
+  const isMobile = useIsMobile()
+
   return (
-    <SGLCard variant="lightGrey" style={cardStyles(theme)}>
+    <SGLCard variant="white" style={cardStyles(theme, isMobile)}>
       <div style={calendarGridStyles}>
         {weekDays.map((day) => {
           const isSelected = day.isSame(selectedDate, 'day')

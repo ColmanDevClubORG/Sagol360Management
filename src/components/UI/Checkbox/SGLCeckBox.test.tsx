@@ -29,15 +29,15 @@ describe('SGLCheckbox', () => {
     expect(checkbox).toBeDisabled()
   })
   it('should change on onChange', () => {
-    const HandleOnChange = vi.fn()
+    const handleOnChange = vi.fn()
 
-    render(<SGLCheckbox onChange={HandleOnChange} />)
+    render(<SGLCheckbox onChange={handleOnChange} />)
 
     const checkbox = screen.getByRole('checkbox')
 
     expect(checkbox).not.toBeChecked()
     fireEvent.click(checkbox)
     expect(checkbox).toBeChecked()
-    expect(HandleOnChange).toHaveBeenCalledTimes(1)
+    expect(handleOnChange).toHaveBeenCalledTimes(1)
   })
 })

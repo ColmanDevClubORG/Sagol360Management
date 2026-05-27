@@ -56,6 +56,7 @@
   "dietMenu.sugarBalance": "Адаптировано для баланса сахара",
   "dietMenu.meals": "• Завтрак: Яйца с авокадо и овощами\n• Перекус: Смесь орехов (небольшая горсть)\n• Обед: Лосось с запечёнными овощами\n• Ужин: Куриная грудка с зелёным салатом",
   "goal.minutes": "{{count}} минут",
+  "duration.minutes": "{{count}} мин",
   "daily.activity.goal": "Ежедневная цель активности",
   "appointment.cognitiveAssessment": "Когнитивная оценка",
   "appointment.orangeCellArizon": "Оранжевая камера • Здание Аризон",

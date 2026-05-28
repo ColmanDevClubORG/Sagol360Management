@@ -5,6 +5,7 @@ import { rootStyle } from './style'
 import { useTheme } from '@mui/material'
 import { useMetricsReport } from '@/hooks/useMetricsReport'
 import { useState } from 'react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
 export const MetricsReport = () => {
   const theme = useTheme()
@@ -20,9 +21,10 @@ export const MetricsReport = () => {
   const handleChange = (id: string, value: number) => {
     setMetrics((prev) => ({ ...prev, [id]: value }))
   }
+  const isMobile = useIsMobile()
 
   return (
-    <div style={rootStyle(theme)}>
+    <div style={rootStyle(theme, isMobile)}>
       <MetricsReportHeader />
       <MetricsReportListCard onChange={handleChange} />
       <MetricsReportButton onClick={() => submitReport(metrics)} sentToday={!!sentToday} />

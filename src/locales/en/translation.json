@@ -124,5 +124,6 @@
   "metricsReport.title": "Daily report",
   "metricsReport.description": "Your report helps us improve your care",
   "metricsReport.sendButton": "Submit daily report",
-  "metricsReport.submitSuccess": "Submitted successfully!"
+  "metricsReport.submitSuccess": "Submitted successfully!",
+  "dailyReport.title": "My Metrics (PROMs)"
 }

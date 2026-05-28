@@ -2,6 +2,7 @@ import type { Theme } from '@mui/material/styles'
 
 export const sliderStyles = (theme: Theme) => ({
   '& .MuiSlider-thumb': {
+    marginInline: '-1rem',
     backgroundColor: theme.palette.purple.main,
     border: `2.5px solid ${theme.palette.background.paper}`,
     boxShadow: theme.shadows[1],

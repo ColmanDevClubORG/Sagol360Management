@@ -3,9 +3,11 @@ import { progressGraphStyles } from './styles'
 import { useTranslation } from 'react-i18next'
 import { SGLFilterHeader } from '@/components/UI/FilterHeader/SGLFilterHeader'
 import { useGraphData } from '@/hooks/useGraphData'
+import { useTheme } from '@mui/material'
 
 export const ProgressGraph = () => {
   const { t } = useTranslation()
+  const theme = useTheme()
 
   const MOCK_GRAPH_DATA = {
     xLabels: t('charts.days', { returnObjects: true }) as string[],
@@ -26,9 +28,13 @@ export const ProgressGraph = () => {
   const graphData = useGraphData(MOCK_GRAPH_DATA)
 
   return (
-    <div style={progressGraphStyles.container}>
-      <SGLFilterHeader title={t('charts.weeklyTrends')} options={[t('charts.last7Days')]} />
-      <div style={progressGraphStyles.chartWrapper}>
+    <div style={progressGraphStyles(theme).container}>
+      <SGLFilterHeader
+        styles={progressGraphStyles(theme).header}
+        title={t('charts.weeklyTrends')}
+        options={[t('charts.last7Days')]}
+      />
+      <div style={progressGraphStyles(theme).chartWrapper}>
         <SGLProgressGraph {...graphData} />
       </div>
     </div>

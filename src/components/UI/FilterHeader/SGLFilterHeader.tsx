@@ -14,7 +14,7 @@ export const SGLFilterHeader = ({ styles, options, title, ...props }: PropsFilte
   return (
     <div style={{ ...filterHeaderStyles.container, ...styles }} {...props}>
       <SGLSelect options={options} />
-      <SGLTypography variant="mediumTitle">{title}</SGLTypography>
+      <SGLTypography variant="smallTitle">{title}</SGLTypography>
     </div>
   )
 }

@@ -124,5 +124,6 @@
   "metricsReport.title": "Ежедневный отчет",
   "metricsReport.description": "Ваш отчет помогает нам улучшить лечение",
   "metricsReport.sendButton": "Отправить ежедневный отчет",
-  "metricsReport.submitSuccess": "Отправлено успешно!"
+  "metricsReport.submitSuccess": "Отправлено успешно!",
+  "dailyReport.title": "Мои показатели (PROMs)"
 }

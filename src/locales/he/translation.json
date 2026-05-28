@@ -125,5 +125,6 @@
   "metricsReport.title": "דיווח יומי",
   "metricsReport.description": "הדיווח שלך עוזר לנו לשפר את הטיפול",
   "metricsReport.sendButton": "שלח דיווח יומי",
-  "metricsReport.submitSuccess": "בוצע בהצלחה!"
+  "metricsReport.submitSuccess": "בוצע בהצלחה!",
+  "dailyReport.title": "המדדים שלי (PROMs)"
 }

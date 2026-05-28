@@ -36,7 +36,7 @@ export const Schedule = () => {
   return (
     <SGLContainer styles={scheduleStyles.container}>
       <div style={scheduleStyles.title}>
-        <SGLTypography variant="largeTitle" color="purple">
+        <SGLTypography variant="largeTitle" color="darkPurple">
           {t('schedule.myScheduleTitle')}
         </SGLTypography>
       </div>

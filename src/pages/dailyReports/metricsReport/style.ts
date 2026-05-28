@@ -37,18 +37,19 @@ export const sendIconStyle = {
   transform: 'rotate(135deg)',
 } as CSSProperties
 
-export const reportListCardStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '3rem',
-} as CSSProperties
+export const reportListCardStyle = (isMobile: boolean) =>
+  ({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: isMobile ? '3rem' : '1rem',
+  }) as CSSProperties
 
-export const rootStyle = (theme: Theme) =>
+export const rootStyle = (theme: Theme, isMobile: boolean) =>
   ({
     display: 'flex',
     flexDirection: 'column',
     margin: '0 auto',
-    gap: '2rem',
+    gap: isMobile ? '1.5rem' : '1rem',
     paddingTop: '1.5rem',
     paddingBottom: '1.5rem',
     width: '90%',

@@ -52,6 +52,8 @@ export const content: CSSProperties = {
 export const durationChip = (theme: Theme): CSSProperties => ({
   padding: '0.2rem 0.5rem',
   borderRadius: '0.2rem',
+  display: 'flex',
+  justifyContent: 'center',
   width: '3rem',
   border: `1px solid ${theme.palette.mediumGrey.main}`,
 })

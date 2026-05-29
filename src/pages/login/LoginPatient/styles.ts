@@ -44,3 +44,9 @@ export const qrCardContainer: CSSProperties = {
   backgroundColor: theme.palette.lightGrey.main,
   borderRadius: '1rem',
 }
+
+export const errorText: CSSProperties = {
+  color: theme.palette.error.main,
+  textAlign: 'center',
+  padding: '0.5rem',
+}

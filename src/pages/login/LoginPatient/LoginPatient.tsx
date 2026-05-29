@@ -19,6 +19,7 @@ export const LoginPatient = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [scannerOpen, setScannerOpen] = useState(false)
+  const [scannerError, setScannerError] = useState<string | null>(null)
   const [qrToken, setQrToken] = useState<string | null>(null)
 
   const loginSchema = createLoginSchema(t)
@@ -45,12 +46,13 @@ export const LoginPatient = () => {
       await verifyToken(token)
       navigate('/home')
     } catch {
-      console.error('QR login parsing failed')
+      setScannerError(t('login.qrLoginFailed'))
+      setScannerOpen(false)
     }
   }
 
-  const handleContinue = () => {
-    navigate('/home')
+  const handleBackToLogin = () => {
+    setQrToken(null)
   }
 
   return (
@@ -66,7 +68,18 @@ export const LoginPatient = () => {
             />
           </FormProvider>
           <SGLDividerWithText text={t('login.quickLogin')} />
-          <QuickLoginQRButton buttonText={t('login.scanQr')} onClick={() => setScannerOpen(true)} />
+          <QuickLoginQRButton
+            buttonText={t('login.scanQr')}
+            onClick={() => {
+              setScannerError(null)
+              setScannerOpen(true)
+            }}
+          />
+          {scannerError && (
+            <SGLTypography styles={styles.errorText} variant="smallText">
+              {scannerError}
+            </SGLTypography>
+          )}
           {scannerOpen && <QRScanner onSuccess={handleQrSuccess} />}
           <LoginSupportInfo text={t('login.supportInfo')} />
         </>
@@ -74,7 +87,7 @@ export const LoginPatient = () => {
         <div style={styles.qrCardContainer}>
           <SGLTypography variant="mediumTitle">{t('login.scanQrCode')}</SGLTypography>
           <QRGeneration token={qrToken} />
-          <SGLButton onClick={handleContinue}>{t('login.continue')}</SGLButton>
+          <SGLButton onClick={handleBackToLogin}>{t('login.back')}</SGLButton>
         </div>
       )}
     </div>

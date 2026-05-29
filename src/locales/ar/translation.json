@@ -78,5 +78,11 @@
   "balanceTraining.title": "مصمم لتحسين التوازن",
   "balanceTraining.description": "سلسلة تمارين لتحسين الاستقرار ومنع السقوط، مصممة خصيصًا لاحتياجاتك.",
   "balanceTraining.button": "شاهد مقاطع تدريب التوازن",
-  "dailyReport.title": "مؤشراتي (PROMs)"
+  "dailyReport.title": "مؤشراتي (PROMs)",
+  "lifeStyle.todayRecommendations": "توصيات اليوم",
+  "lifeStyle.balanceExercises": "تمارين التوازن",
+  "lifeStyle.morningStretchingTitle": "تمارين التمدد الصباحية",
+  "lifeStyle.morningStretchingDescription": "تحسين تدفق الدم والمرونة",
+  "lifeStyle.balanceTrainingTitle": "تمارين التوازن",
+  "lifeStyle.balanceTrainingDescription": "تقوية عضلات الجسم الأساسية وتحسين القوام"
 }

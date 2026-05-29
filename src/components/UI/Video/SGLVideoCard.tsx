@@ -25,7 +25,7 @@ export const SGLVideoCard = ({
   const theme = useTheme()
 
   return (
-    <SGLCard variant="outlined" style={styles.card} onClick={onClick}>
+    <SGLCard variant="white" style={styles.card} onClick={onClick}>
       <div style={styles.content}>
         <SGLTypography variant="smallTitle">{title}</SGLTypography>
         <SGLTypography variant="smallText">{description}</SGLTypography>

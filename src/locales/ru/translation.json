@@ -125,5 +125,11 @@
   "metricsReport.description": "Ваш отчет помогает нам улучшить лечение",
   "metricsReport.sendButton": "Отправить ежедневный отчет",
   "metricsReport.submitSuccess": "Отправлено успешно!",
-  "dailyReport.title": "Мои показатели (PROMs)"
+  "dailyReport.title": "Мои показатели (PROMs)",
+  "lifeStyle.todayRecommendations": "Рекомендации на сегодня",
+  "lifeStyle.balanceExercises": "Упражнения на равновесие",
+  "lifeStyle.morningStretchingTitle": "Утренняя растяжка",
+  "lifeStyle.morningStretchingDescription": "Улучшение кровообращения и гибкости",
+  "lifeStyle.balanceTrainingTitle": "Тренировка равновесия",
+  "lifeStyle.balanceTrainingDescription": "Укрепление мышц кора и осанки"
 }

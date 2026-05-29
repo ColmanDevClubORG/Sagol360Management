@@ -10,7 +10,6 @@ export const progressGraphStyles = (theme: Theme) => ({
     width: '90%',
     borderRadius: '1rem',
     boxShadow: theme.shadows[2],
-    //boxShadow: '0 2px 12px rgba(0, 0, 0, 0.06)',
   } as CSSProperties,
 
   chartWrapper: {

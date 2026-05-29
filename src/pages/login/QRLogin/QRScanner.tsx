@@ -23,7 +23,12 @@ export const QRScanner = ({ onSuccess }: QRScannerProps) => {
 
     Html5Qrcode.getCameras()
       .then((devices) => {
-        if (cancelled || !devices?.length) return
+        if (cancelled) return
+        if (!devices?.length) {
+          setLoading(false)
+          console.error('No camera devices found')
+          return
+        }
 
         const cameraId = devices[0].id
 
@@ -51,6 +56,7 @@ export const QRScanner = ({ onSuccess }: QRScannerProps) => {
       })
       .catch((err) => {
         if (!cancelled) {
+          setLoading(false)
           console.log(err?.message || 'Camera access denied or unavailable')
         }
       })

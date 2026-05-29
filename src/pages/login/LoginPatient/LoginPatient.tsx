@@ -10,11 +10,16 @@ import * as styles from './styles'
 import { useNavigate } from 'react-router-dom'
 import { QRScanner } from '../QRLogin/QRScanner'
 import { useState } from 'react'
+import { QRGeneration } from '../QRLogin/QRGeneration'
+import { createToken, verifyToken } from '../QRLogin/qrLoginService'
+import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
+import { SGLButton } from '@/components/UI/Button/SGLButton'
 
 export const LoginPatient = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [scannerOpen, setScannerOpen] = useState(false)
+  const [qrToken, setQrToken] = useState<string | null>(null)
 
   const loginSchema = createLoginSchema(t)
   const methods = useForm<LoginFormSchema>({
@@ -23,38 +28,55 @@ export const LoginPatient = () => {
 
   const onSubmit = (data: LoginFormSchema) => {
     console.log('Final Number:', data.serializedNumber)
-    navigate('/home')
+    const token = createToken(data.serializedNumber)
+    setQrToken(token)
+
     methods.reset()
   }
 
   const handleQrSuccess = async (result: string) => {
     try {
-      console.log('QR result:', result)
       const url = new URL(result)
       const token = url.searchParams.get('token')
 
       if (!token) {
         throw new Error('cant get token')
       }
-    } catch (err) {
-      console.error(err)
+      await verifyToken(token)
+      navigate('/home')
+    } catch {
+      console.error('QR login parsing failed')
     }
+  }
+
+  const handleContinue = () => {
+    navigate('/home')
   }
 
   return (
     <div style={styles.loginPatientStyles}>
-      <FormProvider {...methods}>
-        <LoginForm
-          title={t('login.enterPatientNumber')}
-          inputText={t('login.example')}
-          buttonText={t('login.sendCode')}
-          onSubmit={methods.handleSubmit(onSubmit)}
-        />
-      </FormProvider>
-      <SGLDividerWithText text={t('login.quickLogin')} />
-      <QuickLoginQRButton buttonText={t('login.scanQr')} onClick={() => setScannerOpen(true)} />
-      {scannerOpen && <QRScanner onSuccess={handleQrSuccess} />}
-      <LoginSupportInfo text={t('login.supportInfo')} />
+      {!qrToken ? (
+        <>
+          <FormProvider {...methods}>
+            <LoginForm
+              title={t('login.enterPatientNumber')}
+              inputText={t('login.example')}
+              buttonText={t('login.sendCode')}
+              onSubmit={methods.handleSubmit(onSubmit)}
+            />
+          </FormProvider>
+          <SGLDividerWithText text={t('login.quickLogin')} />
+          <QuickLoginQRButton buttonText={t('login.scanQr')} onClick={() => setScannerOpen(true)} />
+          {scannerOpen && <QRScanner onSuccess={handleQrSuccess} />}
+          <LoginSupportInfo text={t('login.supportInfo')} />
+        </>
+      ) : (
+        <div style={styles.qrCardContainer}>
+          <SGLTypography variant="mediumTitle">{t('login.scanQrCode')}</SGLTypography>
+          <QRGeneration token={qrToken} />
+          <SGLButton onClick={handleContinue}>{t('login.continue')}</SGLButton>
+        </div>
+      )}
     </div>
   )
 }

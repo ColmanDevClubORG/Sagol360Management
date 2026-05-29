@@ -34,3 +34,13 @@ export const infoBox: CSSProperties = {
   borderRadius: '1rem',
   padding: '0.5rem',
 }
+
+export const qrCardContainer: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '1.5rem',
+  padding: '2rem',
+  backgroundColor: theme.palette.lightGrey.main,
+  borderRadius: '1rem',
+}

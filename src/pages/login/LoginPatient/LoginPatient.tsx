@@ -11,16 +11,18 @@ import { useNavigate } from 'react-router-dom'
 import { QRScanner } from '../QRLogin/QRScanner'
 import { useState } from 'react'
 import { QRGeneration } from '../QRLogin/QRGeneration'
-import { createToken, verifyToken } from '../QRLogin/qrLoginService'
+import { createToken, verifyToken } from '@/services/qrService'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { SGLButton } from '@/components/UI/Button/SGLButton'
+import { extractQrToken } from '@/utils/qrUtils'
+import { NAV_ROUTES } from '@/components/NavBar/constants'
 
 export const LoginPatient = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [scannerOpen, setScannerOpen] = useState(false)
   const [scannerError, setScannerError] = useState<string | null>(null)
-  const [qrToken, setQrToken] = useState<string | null>(null)
+  const [qrToken, setQrToken] = useState<string>()
 
   const loginSchema = createLoginSchema(t)
   const methods = useForm<LoginFormSchema>({
@@ -37,14 +39,14 @@ export const LoginPatient = () => {
 
   const handleQrSuccess = async (result: string) => {
     try {
-      const url = new URL(result)
-      const token = url.searchParams.get('token')
+      const token = extractQrToken(result)
+      console.log(NAV_ROUTES.home)
 
       if (!token) {
         throw new Error('cant get token')
       }
       await verifyToken(token)
-      navigate('/home')
+      navigate(NAV_ROUTES.home)
     } catch {
       setScannerError(t('login.qrLoginFailed'))
       setScannerOpen(false)
@@ -52,7 +54,7 @@ export const LoginPatient = () => {
   }
 
   const handleBackToLogin = () => {
-    setQrToken(null)
+    setQrToken(undefined)
   }
 
   return (

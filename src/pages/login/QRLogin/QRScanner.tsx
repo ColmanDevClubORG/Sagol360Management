@@ -8,6 +8,7 @@ interface QRScannerProps {
 export const QRScanner = ({ onSuccess }: QRScannerProps) => {
   const qrRef = useRef<Html5Qrcode | null>(null)
   const startedRef = useRef(false)
+  const stoppedRef = useRef(false)
   const scannerReadyRef = useRef(false)
   const [loading, setLoading] = useState(true)
 
@@ -39,15 +40,14 @@ export const QRScanner = ({ onSuccess }: QRScannerProps) => {
               fps: 10,
               qrbox: 250,
             },
-            (decodedText) => {
+            async (decodedText) => {
               if (stopped) return
               stopped = true
+              stoppedRef.current = true
+              await qr.stop()
               onSuccess(decodedText)
-              qr.stop()
             },
-            (errorMessage) => {
-              console.warn(`Code scan error = ${errorMessage}`)
-            },
+            () => {},
           )
           .then(() => {
             scannerReadyRef.current = true
@@ -64,8 +64,8 @@ export const QRScanner = ({ onSuccess }: QRScannerProps) => {
     return () => {
       cancelled = true
       stopped = true
-      if (scannerReadyRef.current) {
-        qrRef.current?.stop()
+      if (scannerReadyRef.current && qrRef.current && !stoppedRef.current) {
+        qrRef.current.stop().catch(() => {})
       }
       qrRef.current = null
       startedRef.current = false

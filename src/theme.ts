@@ -111,6 +111,9 @@ export const theme = createTheme({
     darkOrange: {
       main: '#ef4444',
     },
+    darkPurple: {
+      main: '#6b21a8',
+    },
   },
   typography: {
     h1: {

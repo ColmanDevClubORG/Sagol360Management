@@ -26,6 +26,7 @@ declare module '@mui/material/styles' {
     lightOrange: Palette['primary']
     warmBrown: Palette['primary']
     darkOrange: Palette['primary']
+    darkPurple: Palette['primary']
   }
   interface PaletteOptions {
     purple?: PaletteOptions['primary']
@@ -54,6 +55,7 @@ declare module '@mui/material/styles' {
     lightOrange?: PaletteOptions['primary']
     warmBrown?: PaletteOptions['primary']
     darkOrange?: PaletteOptions['primary']
+    darkPurple?: PaletteOptions['primary']
   }
 }
 

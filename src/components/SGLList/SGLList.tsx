@@ -1,7 +1,6 @@
-import { Fragment } from 'react'
 import type { CSSProperties, Key, ReactNode } from 'react'
 
-interface SGLListWrapperProps<T> {
+interface SGLListProps<T> {
   items: T[]
   renderItem: (item: T) => ReactNode
   getKey: (item: T) => Key
@@ -9,25 +8,23 @@ interface SGLListWrapperProps<T> {
   itemStyle?: CSSProperties
 }
 
-export const SGLListWrapper = <T,>({
+export const SGLList = <T,>({
   items,
   renderItem,
   getKey,
   wrapperStyle,
   itemStyle,
-}: SGLListWrapperProps<T>) => {
+}: SGLListProps<T>) => {
   const content = items.map((item) => {
     const renderedItem = renderItem(item)
     const key = getKey(item)
 
-    return itemStyle ? (
+    return (
       <div key={key} style={itemStyle}>
         {renderedItem}
       </div>
-    ) : (
-      <Fragment key={key}>{renderedItem}</Fragment>
     )
   })
 
-  return wrapperStyle ? <div style={wrapperStyle}>{content}</div> : <>{content}</>
+  return <div style={wrapperStyle}>{content}</div>
 }

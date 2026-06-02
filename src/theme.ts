@@ -17,6 +17,7 @@ declare module '@mui/material/styles' {
     laptop: true
     desktop: true
   }
+
 }
 
 export const theme = createTheme({
@@ -105,6 +106,9 @@ export const theme = createTheme({
     warmBrown: {
       main: '#8a3720',
     },
+    purple50: {
+  main: '#FAF5FF',
+ },
   },
   typography: {
     h1: {

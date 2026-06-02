@@ -1,67 +1,67 @@
 import type { Theme, SxProps } from '@mui/material'
+import type { CSSProperties } from '@mui/material'
 
 export interface MealRecommendationStylesInterface {
-  container: SxProps<Theme>
-  heroImage: SxProps<Theme>
-  content: SxProps<Theme>
-  title: SxProps<Theme>
-  recipe: SxProps<Theme>
-  button: SxProps<Theme>
+  container: CSSProperties
+  heroImage: (imageUrl?: string) => CSSProperties
+  iconContainer: CSSProperties
+  content: CSSProperties
+  buttonWrapper: CSSProperties
+  mealButton: (theme: Theme) => SxProps<Theme>
 }
 
 export const getMealRecommendationStyles = (theme: Theme): MealRecommendationStylesInterface => ({
   container: {
-    backgroundColor: theme.palette.background?.paper,
-    borderRadius: '12px',
-    overflow: 'hidden',
-    boxShadow: theme.shadows[2],
-    marginBottom: '16px',
     display: 'flex',
     flexDirection: 'column',
-  },
+    overflow: 'hidden',
+    marginBottom: theme.spacing(2),
+  } as CSSProperties,
 
-  heroImage: {
+  heroImage: (imageUrl?: string) => ({
     width: '100%',
     height: '180px',
-    backgroundColor: theme.palette.primary?.light,
-  },
+    backgroundColor: theme.palette.lightGrey.main,
+    backgroundImage: imageUrl ? `url(${imageUrl})` : 'none',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+    padding: theme.spacing(1.5),
+  } as CSSProperties),
+
+  iconContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '40px',
+    height: '40px',
+    borderRadius: '50%',
+    backgroundColor: theme.palette.lowOpacityWhite.main,
+  } as CSSProperties,
 
   content: {
-    padding: '16px',
+    padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px',
-    flex: 1,
+    gap: theme.spacing(1),
     textAlign: 'center',
-  },
+  } as CSSProperties,
 
-  title: {
-    fontWeight: 700,
-    fontSize: '18px',
-    color: theme.palette.text?.primary,
-    margin: 0,
-    textAlign: 'center',
-  },
+  buttonWrapper: {
+    padding: theme.spacing(1.5),
+  } as CSSProperties,
 
-  recipe: {
-    fontSize: '13px',
-    color: theme.palette.text?.secondary,
-    margin: 0,
-    lineHeight: '1.5',
-    textAlign: 'center',
-  },
-
-  button: {
-    backgroundColor: theme.palette.primary?.main,
-    color: theme.palette.primary?.contrastText,
-    textTransform: 'none',
-    fontSize: '14px',
-    fontWeight: 600,
-    borderRadius: 0,
-    margin: '12px',
-    marginTop: '8px',
+  mealButton: (theme: Theme) => ({
+    gap: '0.5rem',
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.purple.main,
+    border: `1px solid ${theme.palette.mediumGrey.main}`,
+    width: '100%',
+    transition: 'background-color 0.2s ease',
     '&:hover': {
-      backgroundColor: theme.palette.primary?.dark,
+      backgroundColor: theme.palette.purple50.main,
     },
-  },
+  } as SxProps<Theme>),
 })

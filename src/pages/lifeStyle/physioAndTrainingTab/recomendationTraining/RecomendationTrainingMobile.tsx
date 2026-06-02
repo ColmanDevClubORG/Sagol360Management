@@ -2,7 +2,7 @@ import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { SGLVideoCard } from '@/components/UI/Video/SGLVideoCard'
 import { useTranslation } from 'react-i18next'
 import { BalanceTraining } from '../balanceTraining/BalanceTraining'
-import { rootStyle_mobile } from './style'
+import { rootStyleMobile } from './style'
 import { BALANCE_VIDEO_TIME, STRETCH_VIDEO_TIME } from '@/constants'
 
 export const RecomendationTrainingMobile = () => {
@@ -10,7 +10,7 @@ export const RecomendationTrainingMobile = () => {
 
   return (
     <>
-      <div style={rootStyle_mobile}>
+      <div style={rootStyleMobile}>
         <SGLTypography variant="mediumTitle" color="black">
           {t('lifeStyle.todayRecommendations')}
         </SGLTypography>

@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 
-export const rootStyle_mobile = {
+export const rootStyleMobile = {
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
@@ -8,7 +8,7 @@ export const rootStyle_mobile = {
   paddingBottom: '1rem',
 } as CSSProperties
 
-export const rootStyle_desktop = {
+export const rootStyleDesktop = {
   display: 'flex',
   flexDirection: 'row',
   gap: '1rem',
@@ -16,7 +16,7 @@ export const rootStyle_desktop = {
   paddingBottom: '1rem',
 } as CSSProperties
 
-export const conteiner_desktop = {
+export const conteinerDesktop = {
   display: 'flex',
   flexDirection: 'column',
   flex: 1,
@@ -24,12 +24,12 @@ export const conteiner_desktop = {
   paddingTop: '1rem',
 } as CSSProperties
 
-export const header_desktop = {
+export const headerDesktop = {
   paddingTop: '0.5em',
   paddingBottom: '0.5rem',
 } as CSSProperties
 
-export const videoContainer_desktop = {
+export const videoContainerDesktop = {
   display: 'flex',
   flexDirection: 'column',
   gap: '0.5rem',

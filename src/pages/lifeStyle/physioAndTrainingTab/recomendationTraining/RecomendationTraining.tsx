@@ -4,5 +4,5 @@ import { RecomendationTrainingDesktop } from './RecomendationTrainingDesktop'
 export const RecomendationTraining = () => {
   const isMobile = useIsMobile()
 
-  return <>{isMobile ? <RecomendationTrainingMobile /> : <RecomendationTrainingDesktop />}</>
+  return isMobile ? <RecomendationTrainingMobile /> : <RecomendationTrainingDesktop />
 }

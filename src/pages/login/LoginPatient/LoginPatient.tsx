@@ -59,7 +59,9 @@ export const LoginPatient = () => {
 
   return (
     <div style={styles.loginPatientStyles}>
-      {!qrToken ? (
+      {scannerOpen ? (
+        <QRScanner onSuccess={handleQrSuccess} onClose={() => setScannerOpen(false)} />
+      ) : !qrToken ? (
         <>
           <FormProvider {...methods}>
             <LoginForm

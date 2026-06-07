@@ -4,9 +4,10 @@ import * as styles from './styles'
 
 interface QRScannerProps {
   onSuccess: (value: string) => void
+  onClose?: () => void
 }
 
-export const QRScanner = ({ onSuccess }: QRScannerProps) => {
+export const QRScanner = ({ onSuccess, onClose }: QRScannerProps) => {
   const qrRef = useRef<Html5Qrcode | null>(null)
   const startedRef = useRef(false)
   const stoppedRef = useRef(false)
@@ -46,15 +47,12 @@ export const QRScanner = ({ onSuccess }: QRScannerProps) => {
 
     const startScanner = async () => {
       try {
-        const devices = await Html5Qrcode.getCameras()
-        if (cancelled) return
-        if (!devices?.length) {
-          setLoading(false)
-          console.error('No camera devices found')
-          return
-        }
-        const cameraId = devices[0].id
-        await qr.start(cameraId, { fps: 20, qrbox: 250 }, handleDecode, handleDecodeError)
+        await qr.start(
+          { facingMode: 'environment' },
+          { fps: 20, qrbox: 250 },
+          handleDecode,
+          handleDecodeError,
+        )
         handleScannerStarted()
       } catch (err) {
         handleCameraError(err)
@@ -66,6 +64,11 @@ export const QRScanner = ({ onSuccess }: QRScannerProps) => {
   return (
     <div style={styles.scannerContainer}>
       <div id="reader" />
+      {onClose && (
+        <button onClick={onClose} style={styles.closeButton}>
+          X
+        </button>
+      )}
       {loading && <div style={styles.loadingOverlay}>Requesting camera permission...</div>}
     </div>
   )

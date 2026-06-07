@@ -114,6 +114,9 @@ export const theme = createTheme({
     purple50: {
       main: '#FAF5FF',
     },
+    darkPurple: {
+      main: '#6b21a8',
+    },
   },
   typography: {
     h1: {

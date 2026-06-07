@@ -26,7 +26,7 @@ export type DayStylesProps = {
 }
 
 export const getDayStyles = ({ isSelected, isToday, theme }: DayStylesProps) => {
-  const color = theme.palette.purple.main
+  const color = theme.palette.darkPurple.main
 
   return {
     cursor: 'pointer',

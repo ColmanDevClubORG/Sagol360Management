@@ -37,6 +37,7 @@ export const MetricCard = ({
       <MetricCardHeader titleKey={titleKey} icon={icon} value={sliderValue} colorIcon={colorIcon} />
       <SGLSlider
         onChange={handleUpdate}
+        dir="ltr"
         value={sliderValue}
         min={SLIDER_MIN_VALUE}
         max={SLIDER_MAX_VALUE}

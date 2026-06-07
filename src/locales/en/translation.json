@@ -125,7 +125,11 @@
   "metricsReport.description": "Your report helps us improve your care",
   "metricsReport.sendButton": "Submit daily report",
   "metricsReport.submitSuccess": "Submitted successfully!",
-  "mealRecommendation.viewFullRecipe": "View Full Recipe",
-  "mealRecommendation.close": "Close",
-  "mealRecommendation.dailyMeals": "Daily Meal Recommendations"
+  "dailyReport.title": "My Metrics (PROMs)",
+  "lifeStyle.todayRecommendations": "Today's Recommendations",
+  "lifeStyle.balanceExercises": "Balance Exercises",
+  "lifeStyle.morningStretchingTitle": "Morning Stretching",
+  "lifeStyle.morningStretchingDescription": "Improve Blood Flow and Flexibility",
+  "lifeStyle.balanceTrainingTitle": "Balance Training",
+  "lifeStyle.balanceTrainingDescription": "Strengthen Core Muscles and Posture"
 }

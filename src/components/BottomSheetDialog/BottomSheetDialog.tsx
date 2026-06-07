@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { SwipeableDrawer } from '@mui/material'
 import { AppointmentDetails } from './AppointmentDetails'
 import { TimePreferencePicker } from './TimePreferencePicker'
 import { SlotSelection } from './SlotSelection'
 import type { Appointment, RescheduleFormValues } from './types'
-import * as styles from './styles'
 import { MOCK_SLOTS } from './mockSlots'
+import { SGLAlertDialog } from '@/components/UI/AlertDialog/SGLAlertDialog'
 
 interface BottomSheetDialogProps {
   appointment?: Appointment
@@ -40,16 +39,8 @@ export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetD
   }
   if (!appointment) return null
 
-  const slotProps = { paper: { sx: styles.drawerPaperSx } }
-
   return (
-    <SwipeableDrawer
-      anchor="bottom"
-      open={isOpen}
-      onClose={handleClose}
-      onOpen={() => {}}
-      slotProps={slotProps}
-    >
+    <SGLAlertDialog isOpen={isOpen} onClose={handleClose}>
       <FormProvider {...methods}>
         {step === Step.DETAILS && (
           <AppointmentDetails
@@ -71,6 +62,6 @@ export const BottomSheetDialog = ({ appointment, isOpen, onClose }: BottomSheetD
           />
         )}
       </FormProvider>
-    </SwipeableDrawer>
+    </SGLAlertDialog>
   )
 }

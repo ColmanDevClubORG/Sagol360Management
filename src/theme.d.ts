@@ -31,6 +31,7 @@ declare module '@mui/material/styles' {
     lightBrown: Palette['primary']
     lightWhite: Palette['primary']
     mediumGrey: Palette['primary']
+    lightPurple: Palette['primary']
     midGrey: Palette['primary']
     lowOpacityGrey: Palette['primary']
     lowOpacityPurple: Palette['primary']
@@ -43,6 +44,7 @@ declare module '@mui/material/styles' {
     lightOrange: Palette['primary']
     warmBrown: Palette['primary']
     purple50: Palette['primary']
+    darkOrange: Palette['primary']
   }
   interface PaletteOptions {
     purple?: PaletteOptions['primary']
@@ -55,6 +57,7 @@ declare module '@mui/material/styles' {
     lightBrown?: PaletteOptions['primary']
     lightWhite?: PaletteOptions['primary']
     mediumGrey?: PaletteOptions['primary']
+    lightPurple?: PaletteOptions['primary']
     midGrey?: PaletteOptions['primary']
     lowOpacityGrey?: PaletteOptions['primary']
     lowOpacityPurple?: PaletteOptions['primary']
@@ -67,6 +70,7 @@ declare module '@mui/material/styles' {
     lightOrange?: PaletteOptions['primary']
     warmBrown?: PaletteOptions['primary']
     purple50?: PaletteOptions['primary']
+    darkOrange?: PaletteOptions['primary']
   }
 }
 

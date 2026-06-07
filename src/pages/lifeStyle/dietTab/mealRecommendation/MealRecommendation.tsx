@@ -1,6 +1,7 @@
 import { Typography, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'
 import { useState } from 'react'
 import { useTheme } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import { getMealRecommendationStyles } from './styles'
 import { SGLButton } from '../../../../components/UI/Button/SGLButton'
 import { SGLCard } from '../../../../components/UI/Card/SGLCard'
@@ -15,13 +16,14 @@ interface SGLMealRecommendationProps {
   imageUrl?: string
 }
 
-export const SGLMealRecommendation = ({ 
-  name, 
-  recipe, 
+export const SGLMealRecommendation = ({
+  name,
+  recipe,
   fullRecipe,
-  imageUrl
+  imageUrl,
 }: SGLMealRecommendationProps) => {
   const theme = useTheme()
+  const { t } = useTranslation()
   const styles = getMealRecommendationStyles(theme)
   const [openDialog, setOpenDialog] = useState(false)
 
@@ -31,56 +33,40 @@ export const SGLMealRecommendation = ({
         <div style={styles.container}>
           <div style={styles.heroImage(imageUrl)}>
             <div style={styles.iconContainer}>
-              <SGLLink size={20} color={theme.palette.midGrey.main} strokeWidth={2.5} />
+              <SGLLink {...styles.linkIcon} />
             </div>
           </div>
           <div style={styles.content}>
-            <Typography variant={variantMap.smallTitle}>
-              {name}
-            </Typography>
-            <Typography variant={variantMap.smallText}>
-              {recipe}
-            </Typography>
+            <Typography variant={variantMap.smallTitle}>{name}</Typography>
+            <Typography variant={variantMap.smallText}>{recipe}</Typography>
           </div>
           <div style={styles.buttonWrapper}>
-            <SGLButton 
+            <SGLButton
               onClick={() => setOpenDialog(true)}
               variant="outlined"
-              styles={styles.mealButton(theme)}
+              sx={styles.mealButton(theme)}
             >
               <SGLTypography variant="smallTitle">
-                צפה במתכון המלא
+                {t('mealRecommendation.viewFullRecipe')}
               </SGLTypography>
             </SGLButton>
           </div>
         </div>
       </SGLCard>
 
-      <Dialog
-        open={openDialog}
-        onClose={() => setOpenDialog(false)}
-        maxWidth="tablet"
-        fullWidth
-      >
-        <DialogTitle sx={{ textAlign: 'center', fontWeight: 700 }}>
-          {name}
-        </DialogTitle>
+      <Dialog open={openDialog} onClose={() => setOpenDialog(false)} fullWidth>
+        <DialogTitle sx={styles.dialogTitle}>{name}</DialogTitle>
         <DialogContent>
-          <Typography variant={variantMap.mediumText}>
-            {fullRecipe || recipe}
-          </Typography>
+          <Typography variant={variantMap.mediumText}>{fullRecipe || recipe}</Typography>
         </DialogContent>
         <DialogActions>
-          <SGLButton 
-            onClick={() => setOpenDialog(false)} 
-            fullWidth 
+          <SGLButton
+            onClick={() => setOpenDialog(false)}
+            fullWidth
             variant="contained"
-            styles={{
-              backgroundColor: theme.palette.purple.main,
-              color: 'white',
-            }}
+            sx={styles.closeButton}
           >
-            סגור
+            {t('mealRecommendation.close')}
           </SGLButton>
         </DialogActions>
       </Dialog>

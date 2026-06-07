@@ -2,8 +2,8 @@ import { alpha } from '@mui/material/styles'
 import type { Theme } from '@mui/material/styles'
 import type { CSSProperties } from '@mui/material'
 
-export const cardStyles = (theme: Theme): CSSProperties => ({
-  width: '92%',
+export const cardStyles = (theme: Theme, isMobile: boolean): CSSProperties => ({
+  width: isMobile ? '90%' : '95%',
   margin: '1rem auto',
   background: theme.palette.common.white,
   borderRadius: '1rem',
@@ -38,7 +38,7 @@ export const getDayStyles = ({ isSelected, isToday, theme }: DayStylesProps) => 
     transition: 'all 0.2s ease',
     width: '100%',
     maxWidth: '2.25rem',
-    height: '2.875rem',
+    height: '3rem',
     margin: '0 auto',
 
     backgroundColor: isSelected ? color : isToday ? alpha(color, 0.1) : 'transparent',

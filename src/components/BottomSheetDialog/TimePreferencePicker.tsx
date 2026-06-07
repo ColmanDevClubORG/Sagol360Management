@@ -1,5 +1,3 @@
-import { IconButton } from '@mui/material'
-import CloseIcon from '@mui/icons-material/Close'
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import { useFormContext } from 'react-hook-form'
@@ -15,7 +13,7 @@ interface TimePreferencePickerProps {
   onClose: () => void
 }
 
-export const TimePreferencePicker = ({ onNext, onClose }: TimePreferencePickerProps) => {
+export const TimePreferencePicker = ({ onNext }: TimePreferencePickerProps) => {
   const { t } = useTranslation()
   const { setValue } = useFormContext<RescheduleFormValues>()
 
@@ -28,9 +26,6 @@ export const TimePreferencePicker = ({ onNext, onClose }: TimePreferencePickerPr
     <div style={styles.container}>
       <div style={styles.header}>
         <SGLTypography variant="largeTitle">{t('appointment.whenConvenient')}</SGLTypography>
-        <IconButton onClick={onClose}>
-          <CloseIcon />
-        </IconButton>
       </div>
 
       <div style={styles.options}>

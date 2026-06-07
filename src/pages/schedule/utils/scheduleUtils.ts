@@ -19,6 +19,12 @@ const SCHEDULE_SECTION_DEFINITIONS: ScheduleSectionDefinition[] = [
   { key: 'upcomingWeek', labelKey: 'schedule.upcomingWeek' },
 ]
 
+export const SCHEDULE_SECTION_KEYS = {
+  today: 'today',
+  tomorrow: 'tomorrow',
+  upcomingWeek: 'upcomingWeek',
+} as const
+
 const getMockScheduleDate = (daysFromToday: number) =>
   formatIsoDate(addDays(new Date(), daysFromToday))
 

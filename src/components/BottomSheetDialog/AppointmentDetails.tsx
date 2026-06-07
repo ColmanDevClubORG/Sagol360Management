@@ -1,5 +1,3 @@
-import { IconButton } from '@mui/material'
-import CloseIcon from '@mui/icons-material/Close'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import type { Appointment } from './types'
@@ -16,11 +14,7 @@ interface AppointmentDetailsProps {
   onClose: () => void
 }
 
-export const AppointmentDetails = ({
-  appointment,
-  onChangeDate,
-  onClose,
-}: AppointmentDetailsProps) => {
+export const AppointmentDetails = ({ appointment, onChangeDate }: AppointmentDetailsProps) => {
   const { t } = useTranslation()
   const displayTime = formatDisplayTime(appointment.time)
   const titleKey = getAppointmentTitleKey(appointment.chamber)
@@ -29,9 +23,6 @@ export const AppointmentDetails = ({
     <div style={styles.container}>
       <div style={styles.header}>
         <SGLTypography variant="largeTitle">{t(titleKey)}</SGLTypography>
-        <IconButton onClick={onClose}>
-          <CloseIcon />
-        </IconButton>
       </div>
 
       <div style={styles.row}>

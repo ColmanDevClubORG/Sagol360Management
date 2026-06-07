@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next'
 import { SGLMealRecommendation } from './mealRecommendation'
 
 export const DietTabExample = () => {
+  const { t } = useTranslation()
   const mealsData = [
     {
       name: 'סלמון אפוי',
@@ -39,7 +41,7 @@ export const DietTabExample = () => {
 2. חתוך את הירקות לגדלים נוחים
 3. מיזג את כל החומרים בקערה
 4. מחבל שמן זית וחומץ בחומס בנפרד
-5. מוזج את הרוטב על הסלט
+5. מוזג את הרוטב על הסלט
 6. ערבב ברכות`,
     },
     {
@@ -67,7 +69,7 @@ export const DietTabExample = () => {
 
   return (
     <div style={{ padding: '16px' }}>
-      <h2>המלצות ארוחות יומיות</h2>
+      <h2>{t('mealRecommendation.dailyMeals')}</h2>
       {mealsData.map((meal, index) => (
         <SGLMealRecommendation
           key={index}

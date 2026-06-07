@@ -7,6 +7,7 @@ export const brainHqStyles = {
     flexDirection: 'column',
     justifyContent: 'center',
     gap: '1rem',
+    borderRadius: '1rem',
   } satisfies CSSProperties,
   textContainer: {
     display: 'flex',

@@ -11,20 +11,29 @@ import { Home } from './pages/home/home.tsx'
 import { Schedule } from './pages/schedule/Schedule.tsx'
 import { LifeStyle } from './pages/lifeStyle/LifeStyle.tsx'
 import { DailyReports } from './pages/dailyReports/DailyReports.tsx'
+import { Login } from './pages/login/Login.tsx'
+import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute.tsx'
+import { Navigate } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
+  { path: '/', element: <Navigate to="/login" replace /> },
+  { path: '/login', element: <Login /> },
   {
-    path: '/',
-    element: <MainLayout />,
+    element: <ProtectedRoute />,
     children: [
-      { index: true, element: <Home /> },
-      { path: 'home', element: <Home /> },
-      { path: 'schedule', element: <Schedule /> },
-      { path: 'lifeStyle', element: <LifeStyle /> },
-      { path: 'dailyReports', element: <DailyReports /> },
+      {
+        path: '/',
+        element: <MainLayout />,
+        children: [
+          { path: 'home', element: <Home /> },
+          { path: 'schedule', element: <Schedule /> },
+          { path: 'lifeStyle', element: <LifeStyle /> },
+          { path: 'dailyReports', element: <DailyReports /> },
+        ],
+      },
     ],
   },
 ])

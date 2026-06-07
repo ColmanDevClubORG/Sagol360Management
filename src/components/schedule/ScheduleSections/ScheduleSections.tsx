@@ -18,7 +18,7 @@ export const ScheduleSections = ({ sections, onAppointmentClick }: ScheduleSecti
         if (items.length === 0) return null
 
         return (
-          <div key={key} style={scheduleStyles.section}>
+          <div key={key} style={scheduleStyles.sectionMobile}>
             <div style={scheduleStyles.sectionTitle}>{t(labelKey)}</div>
 
             {items.map((item) => (

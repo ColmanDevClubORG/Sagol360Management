@@ -14,38 +14,29 @@ export const PrintQR = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
+        width: '400px',
       }}
     >
-      <div
-        style={{
-          width: '400px',
-        }}
-      >
-        <SGLCard>
-          <div style={styles.containerStyle}>
-            <SGLImage
-              src="https://www.dangot.com/Media/Uploads/2D-BAROCDE(1).png"
-              alt="QR"
-              styles={{
-                width: '300px',
-                height: '300px',
-                marginTop: '-40px',
-                marginBottom: '-40px',
-              }}
-            />
+      <SGLCard>
+        <div style={styles.containerStyle}>
+          <SGLImage
+            src="https://www.dangot.com/Media/Uploads/2D-BAROCDE(1).png"
+            alt="QR"
+            styles={{
+              width: '300px',
+              height: '300px',
+              marginTop: '-40px',
+              marginBottom: '-40px',
+            }}
+          />
 
-            <SGLTypography styles={styles.textStyle}>{patientNumber}</SGLTypography>
+          <SGLTypography styles={styles.textStyle}>{patientNumber}</SGLTypography>
 
-            <SGLTypography styles={styles.textStyle}>{password}</SGLTypography>
+          <SGLTypography styles={styles.textStyle}>{password}</SGLTypography>
 
-            <SGLButton styles={styles.submitButtonContent}>{t('login.login')}</SGLButton>
-          </div>
-        </SGLCard>
-      </div>
+          <SGLButton styles={styles.submitButtonContent}>{t('login.login')}</SGLButton>
+        </div>
+      </SGLCard>
     </div>
   )
 }

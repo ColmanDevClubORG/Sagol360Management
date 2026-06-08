@@ -25,3 +25,21 @@ export const submitButtonContent: CSSProperties = {
   fontSize: '1rem',
   padding: '0.5rem',
 }
+
+export const pageContainer: CSSProperties = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  minHeight: '100vh',
+}
+
+export const cardContainer: CSSProperties = {
+  width: '400px',
+}
+
+export const qrImageStyle: CSSProperties = {
+  width: '300px',
+  height: '300px',
+  marginTop: '-40px',
+  marginBottom: '-40px',
+}

@@ -8,19 +8,20 @@ import * as styles from './styles'
 export const PrintQR = () => {
   const { t } = useTranslation()
 
-  const patientNumber = '123456'
-  const password = 'add123'
+  const MOCK_PATIENT_NUMBER = '123456'
+  const MOCK_PASSWORD = 'add123'
+
+  const MOCK_TOKEN = 'mock-token'
 
   return (
     <div style={styles.pageContainer}>
       <div style={styles.cardContainer}>
         <SGLCard>
           <div style={styles.containerStyle}>
-            <QRGeneration token="mock-token" />
+            <QRGeneration token={MOCK_TOKEN} />
+            <SGLTypography styles={styles.textStyle}>{MOCK_PATIENT_NUMBER}</SGLTypography>
 
-            <SGLTypography styles={styles.textStyle}>{patientNumber}</SGLTypography>
-
-            <SGLTypography styles={styles.textStyle}>{password}</SGLTypography>
+            <SGLTypography styles={styles.textStyle}>{MOCK_PASSWORD}</SGLTypography>
 
             <SGLButton styles={styles.submitButtonContent}>{t('login.login')}</SGLButton>
           </div>

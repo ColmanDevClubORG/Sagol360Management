@@ -1,7 +1,7 @@
 import { SGLCard } from '../../components/UI/Card/SGLCard'
 import { SGLButton } from '../../components/UI/Button/SGLButton'
 import { SGLTypography } from '../../components/UI/Typography/SGLTypography'
-import { SGLImage } from '../../components/UI/Image/SGLImage'
+import { QRGeneration } from '../login/QRLogin/QRGeneration.tsx'
 import { useTranslation } from 'react-i18next'
 import * as styles from './styles'
 
@@ -12,31 +12,20 @@ export const PrintQR = () => {
   const password = 'add123'
 
   return (
-    <div
-      style={{
-        width: '400px',
-      }}
-    >
-      <SGLCard>
-        <div style={styles.containerStyle}>
-          <SGLImage
-            src="https://www.dangot.com/Media/Uploads/2D-BAROCDE(1).png"
-            alt="QR"
-            styles={{
-              width: '300px',
-              height: '300px',
-              marginTop: '-40px',
-              marginBottom: '-40px',
-            }}
-          />
+    <div style={styles.pageContainer}>
+      <div style={styles.cardContainer}>
+        <SGLCard>
+          <div style={styles.containerStyle}>
+            <QRGeneration token="mock-token" />
 
-          <SGLTypography styles={styles.textStyle}>{patientNumber}</SGLTypography>
+            <SGLTypography styles={styles.textStyle}>{patientNumber}</SGLTypography>
 
-          <SGLTypography styles={styles.textStyle}>{password}</SGLTypography>
+            <SGLTypography styles={styles.textStyle}>{password}</SGLTypography>
 
-          <SGLButton styles={styles.submitButtonContent}>{t('login.login')}</SGLButton>
-        </div>
-      </SGLCard>
+            <SGLButton styles={styles.submitButtonContent}>{t('login.login')}</SGLButton>
+          </div>
+        </SGLCard>
+      </div>
     </div>
   )
 }

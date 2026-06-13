@@ -132,5 +132,11 @@
   "lifeStyle.morningStretchingTitle": "מתיחות בוקר",
   "lifeStyle.morningStretchingDescription": "שיפור זרימת דם וגמישות",
   "lifeStyle.balanceTrainingTitle": "אימון שיווי משקל",
-  "lifeStyle.balanceTrainingDescription": "חיזוק שרירי ליבה ויציבה"
+  "lifeStyle.balanceTrainingDescription": "חיזוק שרירי ליבה ויציבה",
+  "mealRecommendation.viewFullRecipe": "צפה במתכון המלא",
+  "mealRecommendation.close": "סגור",
+  "mealRecommendation.lunch": "ארוחת צהריים מומלצת",
+  "mealRecommendation.breakfast": "ארוחת בוקר מומלצת",
+  "mealRecommendation.dinner": "ארוחת ערב מומלצת",
+  "mealRecommendation.dailyMeals": "הארוחות המומלצות שלך"
 }

@@ -131,5 +131,11 @@
   "lifeStyle.morningStretchingTitle": "Утренняя растяжка",
   "lifeStyle.morningStretchingDescription": "Улучшение кровообращения и гибкости",
   "lifeStyle.balanceTrainingTitle": "Тренировка равновесия",
-  "lifeStyle.balanceTrainingDescription": "Укрепление мышц кора и осанки"
+  "lifeStyle.balanceTrainingDescription": "Укрепление мышц кора и осанки",
+  "mealRecommendation.viewFullRecipe": "Просмотреть полный рецепт",
+  "mealRecommendation.close": "Закрыть",
+  "mealRecommendation.lunch": "Рекомендуемый обед",
+  "mealRecommendation.breakfast": "Рекомендуемый завтрак",
+  "mealRecommendation.dinner": "Рекомендуемый ужин",
+  "mealRecommendation.dailyMeals": "Ваши ежедневные приемы пищи"
 }

@@ -84,5 +84,11 @@
   "lifeStyle.morningStretchingTitle": "تمارين التمدد الصباحية",
   "lifeStyle.morningStretchingDescription": "تحسين تدفق الدم والمرونة",
   "lifeStyle.balanceTrainingTitle": "تمارين التوازن",
-  "lifeStyle.balanceTrainingDescription": "تقوية عضلات الجسم الأساسية وتحسين القوام"
+  "lifeStyle.balanceTrainingDescription": "تقوية عضلات الجسم الأساسية وتحسين القوام",
+  "mealRecommendation.viewFullRecipe": "عرض الوصفة الكاملة",
+  "mealRecommendation.close": "إغلاق",
+  "mealRecommendation.lunch": "غداء موصى به",
+  "mealRecommendation.breakfast": "إفطار موصى به",
+  "mealRecommendation.dinner": "عشاء موصى به",
+  "mealRecommendation.dailyMeals": "وجباتك اليومية"
 }

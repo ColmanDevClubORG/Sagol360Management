@@ -5,6 +5,7 @@ export const DietTabExample = () => {
   const { t } = useTranslation()
   const mealsData = [
     {
+      mealType: 'ארוחת צהריים מומלצת',
       name: 'סלמון אפוי',
       recipe: 'סלמון טרי אפוי עם לימון וצמחי תיבול',
       fullRecipe: `סלמון אפוי עם לימון וצמחי תיבול - מומלץ מאוד לבריאות הלב
@@ -24,6 +25,7 @@ export const DietTabExample = () => {
 6. הגש עם לימון טרי`,
     },
     {
+      mealType: 'חטיף מומלץ',
       name: 'סלט ירוקים',
       recipe: 'תערובת ירוקים טרייה עם עגבניה ומלפפון',
       fullRecipe: `סלט ירוקים טרי ובריא
@@ -45,6 +47,7 @@ export const DietTabExample = () => {
 6. ערבב ברכות`,
     },
     {
+      mealType: 'ארוחת ערב מומלצת',
       name: 'עוף ברוטב עלים',
       recipe: 'עוף צלול עם רוטב עלים טבעי וחומרים מזינים',
       fullRecipe: `עוף ברוטב עלים טבעי
@@ -73,6 +76,7 @@ export const DietTabExample = () => {
       {mealsData.map((meal, index) => (
         <SGLMealRecommendation
           key={index}
+          mealType={meal.mealType}
           name={meal.name}
           recipe={meal.recipe}
           fullRecipe={meal.fullRecipe}

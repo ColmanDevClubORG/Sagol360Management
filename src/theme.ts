@@ -111,6 +111,9 @@ export const theme = createTheme({
     darkOrange: {
       main: '#ef4444',
     },
+    purple50: {
+      main: '#FAF5FF',
+    },
     darkPurple: {
       main: '#6b21a8',
     },

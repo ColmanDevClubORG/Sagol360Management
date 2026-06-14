@@ -131,5 +131,11 @@
   "lifeStyle.morningStretchingTitle": "Morning Stretching",
   "lifeStyle.morningStretchingDescription": "Improve Blood Flow and Flexibility",
   "lifeStyle.balanceTrainingTitle": "Balance Training",
-  "lifeStyle.balanceTrainingDescription": "Strengthen Core Muscles and Posture"
+  "lifeStyle.balanceTrainingDescription": "Strengthen Core Muscles and Posture",
+  "mealRecommendation.viewFullRecipe": "View Full Recipe",
+  "mealRecommendation.close": "Close",
+  "mealRecommendation.lunch": "Recommended Lunch",
+  "mealRecommendation.breakfast": "Recommended Breakfast",
+  "mealRecommendation.dinner": "Recommended Dinner",
+  "mealRecommendation.dailyMeals": "Your Daily Meals"
 }

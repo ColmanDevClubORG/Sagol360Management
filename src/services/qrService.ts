@@ -6,10 +6,11 @@ export const createToken = (userId: string): string => {
   return token
 }
 
-export const verifyToken = (token: string): Promise<{ userId: string }> => {
+export const verifyToken = async (token: string): Promise<{ userId: string }> => {
   const userId = tokenStore.get(token)
+  tokenStore.delete(token)
   if (!userId) {
-    return Promise.reject(new Error('invalid token'))
+    throw new Error('invalid token')
   }
-  return Promise.resolve({ userId })
+  return { userId }
 }

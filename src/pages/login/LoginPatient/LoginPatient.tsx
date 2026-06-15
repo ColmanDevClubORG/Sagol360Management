@@ -7,22 +7,24 @@ import { LoginForm } from '../LoginForm/LoginForm'
 import { QuickLoginQRButton } from './QuickLoginQRButton/QuickLoginQRButton'
 import { LoginSupportInfo } from './LoginSupportInfo/LoginSupportInfo'
 import * as styles from './styles'
-import { useNavigate } from 'react-router-dom'
 import { QRScanner } from '../QRLogin/QRScanner'
-import { useState } from 'react'
 import { QRGeneration } from '../QRLogin/QRGeneration'
-import { createToken, verifyToken } from '@/services/qrService'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { SGLButton } from '@/components/UI/Button/SGLButton'
-import { extractQrToken } from '@/utils/qrUtils'
-import { NAV_ROUTES } from '@/components/NavBar/constants'
+import { useQrLogin } from './useQrLogin'
 
 export const LoginPatient = () => {
   const { t } = useTranslation()
-  const navigate = useNavigate()
-  const [scannerOpen, setScannerOpen] = useState(false)
-  const [scannerError, setScannerError] = useState<string | null>(null)
-  const [qrToken, setQrToken] = useState<string>()
+  const {
+    scannerOpen,
+    scannerError,
+    qrToken,
+    openScanner,
+    closeScanner,
+    generateQrToken,
+    handleQrSuccess,
+    handleBackToLogin,
+  } = useQrLogin()
 
   const loginSchema = createLoginSchema(t)
   const methods = useForm<LoginFormSchema>({
@@ -30,37 +32,14 @@ export const LoginPatient = () => {
   })
 
   const onSubmit = (data: LoginFormSchema) => {
-    console.log('Final Number:', data.serializedNumber)
-    const token = createToken(data.serializedNumber)
-    setQrToken(token)
-
+    generateQrToken(data.serializedNumber)
     methods.reset()
-  }
-
-  const handleQrSuccess = async (result: string) => {
-    try {
-      const token = extractQrToken(result)
-      console.log(NAV_ROUTES.home)
-
-      if (!token) {
-        throw new Error('cant get token')
-      }
-      await verifyToken(token)
-      navigate(NAV_ROUTES.home)
-    } catch {
-      setScannerError(t('login.qrLoginFailed'))
-      setScannerOpen(false)
-    }
-  }
-
-  const handleBackToLogin = () => {
-    setQrToken(undefined)
   }
 
   return (
     <div style={styles.loginPatientStyles}>
       {scannerOpen ? (
-        <QRScanner onSuccess={handleQrSuccess} onClose={() => setScannerOpen(false)} />
+        <QRScanner onSuccess={handleQrSuccess} onClose={closeScanner} />
       ) : !qrToken ? (
         <>
           <FormProvider {...methods}>
@@ -72,19 +51,12 @@ export const LoginPatient = () => {
             />
           </FormProvider>
           <SGLDividerWithText text={t('login.quickLogin')} />
-          <QuickLoginQRButton
-            buttonText={t('login.scanQr')}
-            onClick={() => {
-              setScannerError(null)
-              setScannerOpen(true)
-            }}
-          />
+          <QuickLoginQRButton buttonText={t('login.scanQr')} onClick={openScanner} />
           {scannerError && (
             <SGLTypography styles={styles.errorText} variant="smallText">
               {scannerError}
             </SGLTypography>
           )}
-          {scannerOpen && <QRScanner onSuccess={handleQrSuccess} />}
           <LoginSupportInfo text={t('login.supportInfo')} />
         </>
       ) : (

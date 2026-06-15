@@ -1,6 +1,8 @@
 import { Html5Qrcode } from 'html5-qrcode'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import * as styles from './styles'
+import { SGLButton } from '@/components/UI/Button/SGLButton'
 
 interface QRScannerProps {
   onSuccess: (value: string) => void
@@ -8,41 +10,20 @@ interface QRScannerProps {
 }
 
 export const QRScanner = ({ onSuccess, onClose }: QRScannerProps) => {
-  const qrRef = useRef<Html5Qrcode | null>(null)
-  const startedRef = useRef(false)
-  const stoppedRef = useRef(false)
-  const scannerReadyRef = useRef(false)
+  const { t } = useTranslation()
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    if (startedRef.current) return
-    startedRef.current = true
-
     const qr = new Html5Qrcode('reader')
-    qrRef.current = qr
-
-    const cancelled = false
     let stopped = false
+    let started = false
 
     const handleDecode = async (decodedText: string) => {
       if (stopped) return
       stopped = true
-      stoppedRef.current = true
-      await qr.stop()
+      await qr.stop().catch(() => undefined)
       onSuccess(decodedText)
-    }
-    const handleDecodeError = () => {}
-
-    const handleScannerStarted = () => {
-      scannerReadyRef.current = true
-      if (!cancelled) setLoading(false)
-    }
-
-    const handleCameraError = (err: unknown) => {
-      if (!cancelled) {
-        setLoading(false)
-        console.log((err as Error)?.message || 'Camera access denied or unavailable')
-      }
     }
 
     const startScanner = async () => {
@@ -51,25 +32,34 @@ export const QRScanner = ({ onSuccess, onClose }: QRScannerProps) => {
           { facingMode: 'environment' },
           { fps: 20, qrbox: 250 },
           handleDecode,
-          handleDecodeError,
+          () => {},
         )
-        handleScannerStarted()
+        started = true
+        setLoading(false)
       } catch (err) {
-        handleCameraError(err)
+        setLoading(false)
+        setError((err as Error)?.message || t('login.cameraPermission'))
       }
     }
     startScanner()
-  })
+
+    return () => {
+      if (started && !stopped) {
+        qr.stop().catch(() => undefined)
+      }
+    }
+  }, [])
 
   return (
     <div style={styles.scannerContainer}>
-      <div id="reader" />
+      <div id="reader" style={styles.scannerReader} />
       {onClose && (
-        <button onClick={onClose} style={styles.closeButton}>
+        <SGLButton onClick={onClose} styles={styles.closeButton}>
           X
-        </button>
+        </SGLButton>
       )}
-      {loading && <div style={styles.loadingOverlay}>Requesting camera permission...</div>}
+      {loading && !error && <div style={styles.loadingOverlay}>{t('login.cameraPermission')}</div>}
+      {error && <div style={styles.loadingOverlay}>{error}</div>}
     </div>
   )
 }

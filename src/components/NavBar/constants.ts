@@ -7,7 +7,9 @@ export const NAV_LINKS = [
   { id: 'metrics', href: '/dailyReports', icon: ChartColumn, key: 'nav.metrics' },
 ]
 
-export const NAV_ROUTES = Object.fromEntries(NAV_LINKS.map((l) => [l.id, l.href])) as Record<
-  (typeof NAV_LINKS)[number]['id'],
-  string
->
+export const NAV_ROUTES = {
+  metrics: '/dailyReports',
+  home: '/home',
+} as const
+
+export const CANT_GET_TOKEN = 'cant get token'

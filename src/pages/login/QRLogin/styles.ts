@@ -1,10 +1,16 @@
 import type { CSSProperties } from '@mui/material'
+import { theme } from '@/theme'
 
 export const scannerContainer: CSSProperties = {
   position: 'fixed',
   inset: 0,
-  zIndex: 9999,
-  backgroundColor: '#000',
+  zIndex: 2,
+  backgroundColor: theme.palette.common.black,
+}
+
+export const scannerReader: CSSProperties = {
+  width: '100%',
+  height: '100%',
 }
 
 export const loadingOverlay: CSSProperties = {
@@ -13,17 +19,17 @@ export const loadingOverlay: CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#fff',
-  zIndex: 10001,
+  color: theme.palette.common.white,
+  zIndex: 2,
 }
 
 export const closeButton: CSSProperties = {
   position: 'absolute',
   top: 16,
   right: 16,
-  zIndex: 10000,
-  background: 'rgba(0,0,0,0.5)',
-  color: '#fff',
+  zIndex: 2,
+  background: theme.palette.common.black,
+  color: theme.palette.common.white,
   border: 'none',
   borderRadius: '50%',
   width: 40,

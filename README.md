@@ -17,7 +17,7 @@ Clean: docker rm -f sagol360-container
 
 ## Environment Variables
 
-This project uses environment variables for the API base URL.
+This project uses environment variables for the API base URL and email recipients.
 
 Create a `.env` file in the project root based on `.env.example`:
 
@@ -31,7 +31,11 @@ The `.env` file should contain:
 
 `VITE_API_BASE_URL=http://localhost:3000`
 
+`VITE_ATTENDANCE_EMAIL=example@gmail.com`
+
 `VITE_API_BASE_URL` is used by the frontend API service as the base URL for backend requests.
+
+`VITE_ATTENDANCE_EMAIL` is used as the recipient for attendance update emails.
 
 The `.env` file is ignored by Git and should not be committed.
 Only `.env.example` should be committed, so other developers know which environment variables are required.

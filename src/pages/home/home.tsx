@@ -1,6 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
 import { ProgressCard } from '@/pages/home/progress/ProgressCard'
-import { BottomSheetDialog } from '@/components/BottomSheetDialog/BottomSheetDialog'
 import { DailyTips } from './dailyTips/DailyTips'
 import { CheckIn } from './checkIn/CheckIn'
 import { HomeButtomDesktop, HomeButtomMobile, HomeTopDesktop, HomeTopMobile } from './styles'
@@ -9,39 +7,15 @@ import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { Welcome } from './welcome/Welcome'
-import { apiService } from '@/services/api/api.service'
-import { useState } from 'react'
-import type { Appointment } from '@/components/BottomSheetDialog/types'
+import { AppointmentBottomSheet } from './AppointmentBottomSheet/AppointmentBottomSheet'
 
 export const Home = () => {
-  const [selectedAppointment, setSelectedAppointment] = useState<boolean>(true)
-
-  const patientID = '1622017'
-  const date = '07-06-2026'
-
-  const { data: appointment } = useQuery({
-    queryKey: ['nextAppointment', patientID, date],
-    queryFn: async () => {
-      const response = await apiService.get<Appointment>('/api/appointment/nextAppointment', {
-        params: {
-          patientID,
-          date,
-        },
-      })
-      return response
-    },
-  })
-
   const { t } = useTranslation()
   const isMobile = useIsMobile()
 
   return (
     <>
-      <BottomSheetDialog
-        appointment={appointment}
-        isOpen={selectedAppointment && !!appointment}
-        onClose={() => setSelectedAppointment(false)}
-      />
+      <AppointmentBottomSheet />
       <div style={isMobile ? HomeTopMobile : HomeTopDesktop}>
         <Welcome />
         <ProgressCard value={10} />

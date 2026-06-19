@@ -5,7 +5,7 @@ export const headerStyle = {
   display: 'flex',
   flexDirection: 'column',
   gap: '0.3rem',
-  paddingRight: '5%',
+  paddingInlineStart: '5%',
 } as CSSProperties
 
 export const reportButtonStyle = (theme: Theme) => ({

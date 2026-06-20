@@ -5,7 +5,7 @@ export const layoutContainer: CSSProperties = {
 }
 
 export const desktopContent: CSSProperties = {
-  marginRight: '20%',
+  marginInlineStart: '20%',
   width: '80%',
 }
 

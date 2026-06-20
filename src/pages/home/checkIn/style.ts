@@ -89,8 +89,10 @@ export const warpperTopStyle = {
 export const wrapperTimeIconStyle = (theme: Theme, isRtl: boolean) => {
   return {
     position: 'absolute',
-    top: -40,
-    left: isRtl ? -40 : 255,
+    top: 20,
+    ...(isRtl ? { left: 25 } : { right: 25 }),
+    transform: isRtl ? 'translate(-50%, -50%)' : 'translate(50%, -50%)',
+
     backgroundColor: alpha(theme.palette.background.paper, 0.1),
     height: '8rem',
     width: '8rem',
@@ -104,7 +106,7 @@ export const TimeIconStyle = (theme: Theme, isRtl: boolean) => {
     width: '2.5rem',
     height: '2.5rem',
     top: 60,
-    left: isRtl ? 60 : 23,
+    ...(isRtl ? { left: 55 } : { right: 55 }),
     borderRadius: '0.8rem',
     backgroundColor: alpha(theme.palette.common.white, 0.2),
     display: 'flex',

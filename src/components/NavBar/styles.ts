@@ -4,7 +4,6 @@ import { theme } from '../../theme'
 export const desktopNav: CSSProperties = {
   position: 'fixed',
   top: 0,
-  right: 0,
   height: '100%',
   width: '20%',
   display: 'flex',

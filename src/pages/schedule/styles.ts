@@ -33,7 +33,7 @@ export const scheduleStyles = {
   } satisfies CSSProperties,
   title: {
     display: 'flex',
-    justifyContent: 'right',
+    justifyContent: 'start',
     padding: '2rem 2rem 0 2rem',
   },
 }

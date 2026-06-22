@@ -1,6 +1,8 @@
 import type { Theme } from '@mui/material/styles'
 import type { CSSProperties } from 'react'
 import { alpha } from '@mui/material/styles'
+import type { AttendanceStatus } from '@/types/attendance.types'
+import { ATTENDANCE_STATUS } from '@/constants/attendance.constants'
 
 export const rootStyle = (theme: Theme) => {
   return {
@@ -38,15 +40,20 @@ export const outlinedButtonStyles = (theme: Theme) => {
   } as CSSProperties
 }
 
-export const completedButtonStyle = (theme: Theme) => {
+export const completedButtonStyle = (theme: Theme, attendanceStatus: AttendanceStatus) => {
+  const backgroundColor =
+    attendanceStatus === ATTENDANCE_STATUS.COMING
+      ? theme.palette.success.main
+      : theme.palette.error.main
+
   return {
     gap: '0.5rem',
-    backgroundColor: theme.palette.success.main,
+    backgroundColor,
     color: theme.palette.background.paper,
     width: '100%',
     borderRadius: '0.7rem',
     '&:hover': {
-      backgroundColor: theme.palette.text.primary,
+      backgroundColor,
     },
   } as CSSProperties
 }

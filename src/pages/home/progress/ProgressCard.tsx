@@ -26,7 +26,7 @@ export const ProgressCard = ({ value }: ProgressCardProps) => {
         size={75}
         label={<ProgressLabel value={value} style={specificVariantStyle} />}
       />
-      {isMobile ? undefined : <CheckIn onDone={() => {}} />}
+      {isMobile ? undefined : <CheckIn />}
     </SGLCard>
   )
 }

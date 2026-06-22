@@ -1,6 +1,7 @@
 import { useMutation } from '@tanstack/react-query'
-import { EMAIL_RECIPIENTS_BY_TYPE, type EmailType } from '@/constants/email.constants'
-import { sendEmail, type SendEmailResponse } from '@/services/email/email.service'
+import { EMAIL_RECIPIENTS_BY_TYPE } from '@/constants/email.constants'
+import { sendEmail } from '@/services/email/email.service'
+import type { EmailType, SendEmailResponse } from '@/types/email.types'
 
 export const useSendEmail = <TPayload = Record<string, unknown>>(emailType: EmailType) => {
   return useMutation<SendEmailResponse, Error, TPayload>({

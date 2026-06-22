@@ -5,11 +5,8 @@ import { useTranslation } from 'react-i18next'
 import { theme } from '@/theme'
 import { useSendEmail } from '@/hooks/useSendEmail'
 import { EMAIL_TYPES } from '@/constants/email.constants'
-import {
-  ATTENDANCE_APPOINTMENT_DETAILS,
-  ATTENDANCE_STATUS,
-  type AttendanceStatus,
-} from '@/constants/attendance.constants'
+import { ATTENDANCE_STATUS } from '@/constants/attendance.constants'
+import type { AttendanceStatus, AttendanceUpdatePayload } from '@/types/attendance.types'
 import {
   detailContainerStyle,
   iconContainerStyle,
@@ -23,31 +20,33 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import BusinessIcon from '@mui/icons-material/Business'
 import { CheckInActions } from './CheckInActions'
 import { DOT } from '@/constants/index'
+import { mockAttendanceAppointmentDetails } from './checkIn.mock'
 
 interface CheckInProps {
   onDone: () => void
 }
 
-type AttendanceUpdatePayload = typeof ATTENDANCE_APPOINTMENT_DETAILS & {
-  attendanceStatus: AttendanceStatus
-}
-
 export const CheckIn = ({ onDone }: CheckInProps) => {
   const { t } = useTranslation()
   const [isCheckedIn, setIsCheckedIn] = useState(false)
+  const [hasEmailError, setHasEmailError] = useState(false)
   const { mutate: sendAttendanceEmail, isPending } = useSendEmail<AttendanceUpdatePayload>(
     EMAIL_TYPES.ATTENDANCE_UPDATE,
   )
 
   const sendAttendanceUpdate = (attendanceStatus: AttendanceStatus) => {
+    setHasEmailError(false)
     sendAttendanceEmail(
       {
-        ...ATTENDANCE_APPOINTMENT_DETAILS,
+        ...mockAttendanceAppointmentDetails,
         attendanceStatus,
       },
       {
         onSuccess: () => {
           setIsCheckedIn(attendanceStatus === ATTENDANCE_STATUS.COMING)
+        },
+        onError: () => {
+          setHasEmailError(true)
         },
       },
     )
@@ -76,7 +75,7 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
         <div style={iconContainerStyle}>
           <AccessTimeIcon style={iconStyle(theme)} fontSize="small" />
           <SGLTypography variant="mediumText" color="white">
-            {ATTENDANCE_APPOINTMENT_DETAILS.time}
+            {mockAttendanceAppointmentDetails.time}
           </SGLTypography>
         </div>
         <div style={iconContainerStyle}>
@@ -92,6 +91,13 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
           </SGLTypography>
         </div>
       </div>
+      {hasEmailError ? (
+        <div role="alert">
+          <SGLTypography variant="mediumText" color="white">
+            {t('checkIn.updateFailed')}
+          </SGLTypography>
+        </div>
+      ) : null}
       <CheckInActions
         onDone={onDone}
         onCheckIn={handleCheckIn}

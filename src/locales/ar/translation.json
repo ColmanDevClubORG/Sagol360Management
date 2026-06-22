@@ -83,6 +83,7 @@
   "checkIn.performCheckIn": "تسجيل الحضور",
   "checkIn.notComing": "لن أحضر",
   "checkIn.completedSuccessfully": "تم بنجاح",
+  "checkIn.updateFailed": "تعذر تحديث حالة الحضور. يرجى المحاولة مرة أخرى.",
   "balanceTraining.title": "مصمم لتحسين التوازن",
   "balanceTraining.description": "سلسلة تمارين لتحسين الاستقرار ومنع السقوط، مصممة خصيصًا لاحتياجاتك.",
   "balanceTraining.button": "شاهد مقاطع تدريب التوازن",

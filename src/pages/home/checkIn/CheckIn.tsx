@@ -22,13 +22,9 @@ import { CheckInActions } from './CheckInActions'
 import { DOT } from '@/constants/index'
 import { mockAttendanceAppointmentDetails } from './checkIn.mock'
 
-interface CheckInProps {
-  onDone: () => void
-}
-
-export const CheckIn = ({ onDone }: CheckInProps) => {
+export const CheckIn = () => {
   const { t } = useTranslation()
-  const [isCheckedIn, setIsCheckedIn] = useState(false)
+  const [confirmedAttendanceStatus, setConfirmedAttendanceStatus] = useState<AttendanceStatus>()
   const {
     mutate: sendAttendanceEmail,
     isPending,
@@ -42,15 +38,16 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
         attendanceStatus,
       },
       {
-        onSuccess: () => {
-          setIsCheckedIn(attendanceStatus === ATTENDANCE_STATUS.COMING)
-        },
+        onSuccess: () => setConfirmedAttendanceStatus(attendanceStatus),
       },
     )
   }
 
   const handleCheckIn = () => {
     sendAttendanceUpdate(ATTENDANCE_STATUS.COMING)
+  }
+  const handleCancelTreatment = () => {
+    sendAttendanceUpdate(ATTENDANCE_STATUS.NOT_COMING)
   }
 
   return (
@@ -96,10 +93,9 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
         </div>
       ) : null}
       <CheckInActions
-        onDone={onDone}
+        attendanceStatus={confirmedAttendanceStatus}
         onCheckIn={handleCheckIn}
-        onCancel={() => {}}
-        isCheckedIn={isCheckedIn}
+        onCancel={handleCancelTreatment}
         isPending={isPending}
       />
     </SGLCard>

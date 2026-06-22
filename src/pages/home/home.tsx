@@ -36,7 +36,7 @@ export const Home = () => {
       <div style={isMobile ? HomeTopMobile : HomeTopDesktop}>
         <Welcome />
         <ProgressCard value={10} />
-        {isMobile ? <CheckIn onDone={() => {}} /> : undefined}
+        {isMobile ? <CheckIn /> : undefined}
       </div>
       <div style={isMobile ? HomeButtomMobile : HomeButtomDesktop}>
         <SGLBrainHQ />

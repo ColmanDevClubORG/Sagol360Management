@@ -2,7 +2,7 @@ import { Slider } from '@mui/material'
 import { sliderStyles } from './styles'
 import type { CSSProperties } from 'react'
 import { type SliderProps as MuiSliderProps } from '@mui/material'
-import { useIsRtl } from '@/hooks/useIsRtl'
+import { useDirection } from '@/hooks/useDirection'
 
 interface sliderProps extends Omit<MuiSliderProps, 'onChange'> {
   onChange: (value: number) => void
@@ -10,7 +10,7 @@ interface sliderProps extends Omit<MuiSliderProps, 'onChange'> {
 }
 
 export const SGLSlider = ({ onChange, style, ...props }: sliderProps) => {
-  const isRtl = useIsRtl()
+  const isRtl = useDirection()
   return (
     <Slider
       {...props}

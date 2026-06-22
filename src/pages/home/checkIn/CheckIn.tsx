@@ -21,7 +21,7 @@ import BusinessIcon from '@mui/icons-material/Business'
 import { CheckInActions } from './CheckInActions'
 import { DOT } from '@/constants/index'
 import { mockAttendanceAppointmentDetails } from './checkIn.mock'
-import { useIsRtl } from '@/hooks/useIsRtl'
+import { useDirection } from '@/hooks/useDirection'
 
 export const CheckIn = () => {
   const { t } = useTranslation()
@@ -43,10 +43,7 @@ export const CheckIn = () => {
       },
     )
   }
-  const isRtl = useIsRtl()
-
-  const [isCheckedIn, setIsCheckedIn] = useState(false)
-
+  const isRtl = useDirection()
   const handleCheckIn = () => {
     sendAttendanceUpdate(ATTENDANCE_STATUS.COMING)
   }

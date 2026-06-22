@@ -29,13 +29,13 @@ interface CheckInProps {
 export const CheckIn = ({ onDone }: CheckInProps) => {
   const { t } = useTranslation()
   const [isCheckedIn, setIsCheckedIn] = useState(false)
-  const [hasEmailError, setHasEmailError] = useState(false)
-  const { mutate: sendAttendanceEmail, isPending } = useSendEmail<AttendanceUpdatePayload>(
-    EMAIL_TYPES.ATTENDANCE_UPDATE,
-  )
+  const {
+    mutate: sendAttendanceEmail,
+    isPending,
+    isError,
+  } = useSendEmail<AttendanceUpdatePayload>(EMAIL_TYPES.ATTENDANCE_UPDATE)
 
   const sendAttendanceUpdate = (attendanceStatus: AttendanceStatus) => {
-    setHasEmailError(false)
     sendAttendanceEmail(
       {
         ...mockAttendanceAppointmentDetails,
@@ -44,9 +44,6 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
       {
         onSuccess: () => {
           setIsCheckedIn(attendanceStatus === ATTENDANCE_STATUS.COMING)
-        },
-        onError: () => {
-          setHasEmailError(true)
         },
       },
     )
@@ -91,7 +88,7 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
           </SGLTypography>
         </div>
       </div>
-      {hasEmailError ? (
+      {isError ? (
         <div role="alert">
           <SGLTypography variant="mediumText" color="white">
             {t('checkIn.updateFailed')}

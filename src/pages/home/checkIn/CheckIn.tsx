@@ -1,9 +1,12 @@
 import { SGLCard } from '@/components/UI/Card/SGLCard'
 import { SGLTypography } from '@/components/UI/Typography/SGLTypography'
-import type { CSSProperties } from 'react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { theme } from '@/theme'
+import { useSendEmail } from '@/hooks/useSendEmail'
+import { EMAIL_TYPES } from '@/constants/email.constants'
+import { ATTENDANCE_STATUS } from '@/constants/attendance.constants'
+import type { AttendanceStatus, AttendanceUpdatePayload } from '@/types/attendance.types'
 import {
   detailContainerStyle,
   iconContainerStyle,
@@ -17,18 +20,37 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import BusinessIcon from '@mui/icons-material/Business'
 import { CheckInActions } from './CheckInActions'
 import { DOT } from '@/constants/index'
+import { mockAttendanceAppointmentDetails } from './checkIn.mock'
 
 interface CheckInProps {
   onDone: () => void
-  style?: CSSProperties
 }
 
 export const CheckIn = ({ onDone }: CheckInProps) => {
   const { t } = useTranslation()
   const [isCheckedIn, setIsCheckedIn] = useState(false)
+  const {
+    mutate: sendAttendanceEmail,
+    isPending,
+    isError,
+  } = useSendEmail<AttendanceUpdatePayload>(EMAIL_TYPES.ATTENDANCE_UPDATE)
+
+  const sendAttendanceUpdate = (attendanceStatus: AttendanceStatus) => {
+    sendAttendanceEmail(
+      {
+        ...mockAttendanceAppointmentDetails,
+        attendanceStatus,
+      },
+      {
+        onSuccess: () => {
+          setIsCheckedIn(attendanceStatus === ATTENDANCE_STATUS.COMING)
+        },
+      },
+    )
+  }
 
   const handleCheckIn = () => {
-    setIsCheckedIn(true)
+    sendAttendanceUpdate(ATTENDANCE_STATUS.COMING)
   }
 
   return (
@@ -50,7 +72,7 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
         <div style={iconContainerStyle}>
           <AccessTimeIcon style={iconStyle(theme)} fontSize="small" />
           <SGLTypography variant="mediumText" color="white">
-            18:00
+            {mockAttendanceAppointmentDetails.time}
           </SGLTypography>
         </div>
         <div style={iconContainerStyle}>
@@ -66,7 +88,20 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
           </SGLTypography>
         </div>
       </div>
-      <CheckInActions onDone={onDone} onCheckIn={handleCheckIn} isCheckedIn={isCheckedIn} />
+      {isError ? (
+        <div role="alert">
+          <SGLTypography variant="mediumText" color="white">
+            {t('checkIn.updateFailed')}
+          </SGLTypography>
+        </div>
+      ) : null}
+      <CheckInActions
+        onDone={onDone}
+        onCheckIn={handleCheckIn}
+        onCancel={() => {}}
+        isCheckedIn={isCheckedIn}
+        isPending={isPending}
+      />
     </SGLCard>
   )
 }

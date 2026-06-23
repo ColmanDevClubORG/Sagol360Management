@@ -23,20 +23,10 @@ export const loadingOverlay: CSSProperties = {
   zIndex: 2,
 }
 
-export const closeButton: CSSProperties = {
+export const closeIcon: CSSProperties = {
   position: 'absolute',
   top: 16,
   right: 16,
   zIndex: 2,
-  background: theme.palette.common.black,
   color: theme.palette.common.white,
-  border: 'none',
-  borderRadius: '50%',
-  width: 40,
-  height: 40,
-  fontSize: 24,
-  cursor: 'pointer',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
 }

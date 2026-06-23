@@ -2,7 +2,7 @@ import { Html5Qrcode } from 'html5-qrcode'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import * as styles from './styles'
-import { SGLButton } from '@/components/UI/Button/SGLButton'
+import { SGLCloseIcon } from '@/components/UI/Icons/CloseIcon/SGLCloseIcon'
 
 interface QRScannerProps {
   onSuccess: (value: string) => void
@@ -53,11 +53,7 @@ export const QRScanner = ({ onSuccess, onClose }: QRScannerProps) => {
   return (
     <div style={styles.scannerContainer}>
       <div id="reader" style={styles.scannerReader} />
-      {onClose && (
-        <SGLButton onClick={onClose} styles={styles.closeButton}>
-          X
-        </SGLButton>
-      )}
+      {onClose && <SGLCloseIcon onClick={onClose} styles={styles.closeIcon} />}
       {loading && !error && <div style={styles.loadingOverlay}>{t('login.cameraPermission')}</div>}
       {error && <div style={styles.loadingOverlay}>{error}</div>}
     </div>

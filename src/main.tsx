@@ -16,6 +16,8 @@ import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute.tsx'
 import { Navigate } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { PrintQR } from './pages/QRPrint/PrintQR.tsx'
+import { QR_VERIFY_ROUTE } from './pages/login/QRLogin/constants.ts'
+import { QRVerify } from './pages/login/QRLogin/QRVerify.tsx'
 
 const queryClient = new QueryClient()
 
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
   { path: '/', element: <Navigate to="/login" replace /> },
   { path: '/login', element: <Login /> },
   { path: '/printQR', element: <PrintQR /> },
+  { path: QR_VERIFY_ROUTE, element: <QRVerify /> },
   {
     element: <ProtectedRoute />,
     children: [

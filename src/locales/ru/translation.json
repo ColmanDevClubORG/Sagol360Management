@@ -138,5 +138,7 @@
   "mealRecommendation.lunch": "Рекомендуемый обед",
   "mealRecommendation.breakfast": "Рекомендуемый завтрак",
   "mealRecommendation.dinner": "Рекомендуемый ужин",
-  "mealRecommendation.dailyMeals": "Ваши ежедневные приемы пищи"
+  "mealRecommendation.dailyMeals": "Ваши ежедневные приемы пищи",
+  "lifestyle.tab.diet": "Питание",
+  "lifestyle.tab.physio": "Физиотерапия и тренировки"
 }

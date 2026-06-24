@@ -101,6 +101,7 @@
   "checkIn.performCheckIn": "בצע צ'ק אין",
   "checkIn.notComing": "לא מגיע",
   "checkIn.completedSuccessfully": "בוצע בהצלחה",
+  "checkIn.updateFailed": "לא ניתן לעדכן את סטטוס ההגעה. נסו שוב.",
 
   "metricCard.energyLevel": "רמת אנרגיה",
   "metricCard.sleepQuality": "איכות שינה",

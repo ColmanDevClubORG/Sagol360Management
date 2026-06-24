@@ -3,4 +3,5 @@ export const API_ENDPOINTS = {
   metrics: '/api/metrics/',
   metricsToday: '/api/metrics/today/',
   appointment: '/api/appointment/nextAppointment',
+  email: '/api/email',
 }

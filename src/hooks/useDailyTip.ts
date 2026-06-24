@@ -1,17 +1,13 @@
-import { useEffect, useState } from 'react'
-import { getDailyTip, type DailyTip } from '@/services/api/tips.service'
+import { useQuery } from '@tanstack/react-query'
+import { API_ENDPOINTS } from '@/constants/api.constants'
+import { apiService } from '@/services/api/api.service'
+import type { DailyTip } from '@/services/api/tips.service'
 
 export const useDailyTip = () => {
-  const [tip, setTip] = useState<DailyTip | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['dailyTip'],
+    queryFn: () => apiService.get<DailyTip>(API_ENDPOINTS.tips),
+  })
 
-  useEffect(() => {
-    getDailyTip()
-      .then(setTip)
-      .catch(() => setError('error'))
-      .finally(() => setIsLoading(false))
-  }, [])
-
-  return { tip, isLoading, error }
+  return { tip: data, isLoading, error }
 }

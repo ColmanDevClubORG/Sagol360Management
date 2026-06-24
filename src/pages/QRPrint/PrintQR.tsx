@@ -26,7 +26,9 @@ export const PrintQR = () => {
     refetchOnWindowFocus: false,
     retry: false,
   })
-
+  const handlePrint = () => {
+    window.print()
+  }
   return (
     <div style={styles.pageContainer}>
       <div style={styles.cardContainer}>
@@ -46,7 +48,9 @@ export const PrintQR = () => {
 
             <SGLTypography styles={styles.textStyle}>{MOCK_PASSWORD}</SGLTypography>
 
-            <SGLButton styles={styles.submitButtonContent}>{t('printQR.print')}</SGLButton>
+            <SGLButton styles={styles.submitButtonContent} onClick={handlePrint}>
+              {t('printQR.print')}
+            </SGLButton>
           </div>
         </SGLCard>
       </div>

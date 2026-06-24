@@ -15,12 +15,14 @@ import { Login } from './pages/login/Login.tsx'
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute.tsx'
 import { Navigate } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { PrintQR } from './pages/QRPrint/PrintQR.tsx'
 
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   { path: '/', element: <Navigate to="/login" replace /> },
   { path: '/login', element: <Login /> },
+  { path: '/printQR', element: <PrintQR /> },
   {
     element: <ProtectedRoute />,
     children: [

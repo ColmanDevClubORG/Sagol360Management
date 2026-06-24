@@ -1,17 +1,28 @@
 import { buttonsContainerStyle } from './style'
 import { CheckInOptions } from './CheckInOptions'
 import { CheckedButton } from './CheckedButton'
+import type { AttendanceStatus } from '@/types/attendance.types'
 
 interface CheckInActionsProps {
-  onDone: () => void
+  attendanceStatus?: AttendanceStatus
   onCheckIn: () => void
-  isCheckedIn: boolean
+  onCancel: () => void
+  isPending: boolean
 }
 
-export const CheckInActions = ({ onDone, onCheckIn, isCheckedIn }: CheckInActionsProps) => {
+export const CheckInActions = ({
+  attendanceStatus,
+  onCheckIn,
+  onCancel,
+  isPending,
+}: CheckInActionsProps) => {
   return (
     <div style={buttonsContainerStyle}>
-      {isCheckedIn ? <CheckedButton onDone={onDone} /> : <CheckInOptions onCheckIn={onCheckIn} />}
+      {attendanceStatus ? (
+        <CheckedButton attendanceStatus={attendanceStatus} />
+      ) : (
+        <CheckInOptions onCheckIn={onCheckIn} onCancel={onCancel} isPending={isPending} />
+      )}
     </div>
   )
 }

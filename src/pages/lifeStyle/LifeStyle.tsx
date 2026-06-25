@@ -1,15 +1,13 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Box } from '@mui/material'
 import { BalanceTraining } from './physioAndTrainingTab/balanceTraining/BalanceTraining'
 import { DietTabExample } from './dietTab/DietTabExample'
 import { RecomendationTraining } from './physioAndTrainingTab/recomendationTraining/RecomendationTraining'
 import { SGLBrainHQ } from '@/components/BrainHQ/SGLBrainHQ'
 import { SGLSwitch } from '@/components/UI/SGLSwitch/SGLSwitch'
+import { SGLContainer } from '@/components/UI/Container/SGLContainer'
 import * as styles from './styles'
-
-const TAB_DIET = 'diet'
-const TAB_PHYSIO = 'physio'
+import { TAB_DIET, TAB_PHYSIO } from './constants'
 
 export const LifeStyle = () => {
   const { t } = useTranslation()
@@ -21,18 +19,19 @@ export const LifeStyle = () => {
   ]
 
   return (
-    <Box sx={styles.containerStyle}>
+    <SGLContainer styles={styles.containerStyle}>
       <SGLBrainHQ />
-      <Box sx={styles.switchWrapperStyle}>
+      <SGLContainer styles={styles.switchWrapperStyle}>
         <SGLSwitch options={options} value={activeTab} onChange={setActiveTab} />
-      </Box>
-      {activeTab === TAB_DIET && <DietTabExample />}
-      {activeTab === TAB_PHYSIO && (
+      </SGLContainer>
+      {activeTab === TAB_DIET ? (
+        <DietTabExample />
+      ) : (
         <>
           <BalanceTraining />
           <RecomendationTraining />
         </>
       )}
-    </Box>
+    </SGLContainer>
   )
 }

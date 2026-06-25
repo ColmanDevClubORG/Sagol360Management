@@ -1,4 +1,4 @@
-import { Avatar, type AvatarProps as MuiAvatarProps } from '@mui/material'
+import Avatar, { type AvatarProps as MuiAvatarProps } from '@mui/material/Avatar'
 import type { CSSProperties, ReactNode } from 'react'
 
 export interface SGLAvatarProps extends MuiAvatarProps {

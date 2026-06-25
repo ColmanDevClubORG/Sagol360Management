@@ -106,5 +106,7 @@
   "mealRecommendation.lunch": "غداء موصى به",
   "mealRecommendation.breakfast": "إفطار موصى به",
   "mealRecommendation.dinner": "عشاء موصى به",
-  "mealRecommendation.dailyMeals": "وجباتك اليومية"
+  "mealRecommendation.dailyMeals": "وجباتك اليومية",
+  "lifestyle.tab.diet": "تغذية",
+  "lifestyle.tab.physio": "العلاج الطبيعي والتدريب"
 }

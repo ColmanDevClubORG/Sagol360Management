@@ -145,5 +145,7 @@
   "mealRecommendation.lunch": "Recommended Lunch",
   "mealRecommendation.breakfast": "Recommended Breakfast",
   "mealRecommendation.dinner": "Recommended Dinner",
-  "mealRecommendation.dailyMeals": "Your Daily Meals"
+  "mealRecommendation.dailyMeals": "Your Daily Meals",
+  "lifestyle.tab.diet": "Nutrition",
+  "lifestyle.tab.physio": "Physiotherapy & Training"
 }

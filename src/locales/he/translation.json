@@ -146,5 +146,7 @@
   "mealRecommendation.lunch": "ארוחת צהריים מומלצת",
   "mealRecommendation.breakfast": "ארוחת בוקר מומלצת",
   "mealRecommendation.dinner": "ארוחת ערב מומלצת",
-  "mealRecommendation.dailyMeals": "הארוחות המומלצות שלך"
+  "mealRecommendation.dailyMeals": "הארוחות המומלצות שלך",
+  "lifestyle.tab.diet": "תזונה",
+  "lifestyle.tab.physio": "פיזיותרפיה ואימונים"
 }

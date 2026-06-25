@@ -22,6 +22,6 @@ export const titleStyleMobile = {
 
 export const titleStyleDesktop = {
   display: 'flex',
-  paddingRight: '2.5%',
+  paddingInlineStart: '2.5%',
   paddingTop: '2rem',
 } as CSSProperties

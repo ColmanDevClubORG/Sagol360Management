@@ -21,14 +21,11 @@ import BusinessIcon from '@mui/icons-material/Business'
 import { CheckInActions } from './CheckInActions'
 import { DOT } from '@/constants/index'
 import { mockAttendanceAppointmentDetails } from './checkIn.mock'
+import { useDirection } from '@/hooks/useDirection'
 
-interface CheckInProps {
-  onDone: () => void
-}
-
-export const CheckIn = ({ onDone }: CheckInProps) => {
+export const CheckIn = () => {
   const { t } = useTranslation()
-  const [isCheckedIn, setIsCheckedIn] = useState(false)
+  const [confirmedAttendanceStatus, setConfirmedAttendanceStatus] = useState<AttendanceStatus>()
   const {
     mutate: sendAttendanceEmail,
     isPending,
@@ -42,21 +39,22 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
         attendanceStatus,
       },
       {
-        onSuccess: () => {
-          setIsCheckedIn(attendanceStatus === ATTENDANCE_STATUS.COMING)
-        },
+        onSuccess: () => setConfirmedAttendanceStatus(attendanceStatus),
       },
     )
   }
-
+  const isRtl = useDirection()
   const handleCheckIn = () => {
     sendAttendanceUpdate(ATTENDANCE_STATUS.COMING)
+  }
+  const handleCancelTreatment = () => {
+    sendAttendanceUpdate(ATTENDANCE_STATUS.NOT_COMING)
   }
 
   return (
     <SGLCard style={rootStyle(theme)}>
-      <div style={wrapperTimeIconStyle(theme)}>
-        <div style={TimeIconStyle(theme)}>
+      <div style={wrapperTimeIconStyle(theme, isRtl)}>
+        <div style={TimeIconStyle(theme, isRtl)}>
           <AccessTimeIcon fontSize="medium" style={iconStyle(theme)} />
         </div>
       </div>
@@ -96,10 +94,9 @@ export const CheckIn = ({ onDone }: CheckInProps) => {
         </div>
       ) : null}
       <CheckInActions
-        onDone={onDone}
+        attendanceStatus={confirmedAttendanceStatus}
         onCheckIn={handleCheckIn}
-        onCancel={() => {}}
-        isCheckedIn={isCheckedIn}
+        onCancel={handleCancelTreatment}
         isPending={isPending}
       />
     </SGLCard>

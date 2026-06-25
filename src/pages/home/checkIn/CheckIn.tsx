@@ -21,6 +21,7 @@ import BusinessIcon from '@mui/icons-material/Business'
 import { CheckInActions } from './CheckInActions'
 import { DOT } from '@/constants/index'
 import { mockAttendanceAppointmentDetails } from './checkIn.mock'
+import { useDirection } from '@/hooks/useDirection'
 
 export const CheckIn = () => {
   const { t } = useTranslation()
@@ -42,7 +43,7 @@ export const CheckIn = () => {
       },
     )
   }
-
+  const isRtl = useDirection()
   const handleCheckIn = () => {
     sendAttendanceUpdate(ATTENDANCE_STATUS.COMING)
   }
@@ -52,8 +53,8 @@ export const CheckIn = () => {
 
   return (
     <SGLCard style={rootStyle(theme)}>
-      <div style={wrapperTimeIconStyle(theme)}>
-        <div style={TimeIconStyle(theme)}>
+      <div style={wrapperTimeIconStyle(theme, isRtl)}>
+        <div style={TimeIconStyle(theme, isRtl)}>
           <AccessTimeIcon fontSize="medium" style={iconStyle(theme)} />
         </div>
       </div>

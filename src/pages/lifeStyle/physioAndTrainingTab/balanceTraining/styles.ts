@@ -11,7 +11,7 @@ export const titleRowStyle: CSSProperties = {
   flexDirection: 'row',
   alignItems: 'center',
   gap: '0.5rem',
-  marginRight: '1rem',
+  marginInline: '1rem',
   marginTop: '1rem',
 }
 
@@ -26,7 +26,7 @@ export const typographyStyle: CSSProperties = {
 export const bodyContainerStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
-  marginRight: '1rem',
+  marginInline: '1rem',
   marginTop: '0.5rem',
   gap: '1rem',
   marginBottom: '1rem',
